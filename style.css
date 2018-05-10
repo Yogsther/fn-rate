@@ -1,49 +1,53 @@
-a:link{
+a:link {
     color: white;
 }
 
-a:visited{
+a:visited {
     color: white;
 }
 
-a:hover{ 
+a:hover {
     color: white;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     background-color: black;
     width: 8px;
     border-radius: 1px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background-color: #3a3a3a;
     border-radius: 3px;
-    
 }
 
-body{
+body {
     background: #111;
 }
 
-*{
+* {
     font-family: Fortnitefont, 'Roboto', sans-serif;
 }
 
-#search{
+#search {
     /* Search box */
     margin-left: 5%;
-    width: 50%;
+    width: 30%;
     border: none;
     background: none;
     height: 5vh;
     color: white;
 }
 
-button:focus {outline:0;}
-input:focus {outline:0;}
+button:focus {
+    outline: 0;
+}
 
-#collection{
+input:focus {
+    outline: 0;
+}
+
+#collection {
     width: 44%;
     height: 90vh;
     overflow-y: scroll;
@@ -51,28 +55,66 @@ input:focus {outline:0;}
     margin-left: 5%;
     display: block;
     position: relative;
+    z-index: 1;
 }
 
-.preview{
+.preview {
+    width: 100%;
+}
+
+.state{
+    position: relative;
+    margin: 0;
+    left: 0em;
+    top: 0em;
+}
+
+.preivew-rating{
+    position: absolute;
+    bottom: .3em;
+    right: .3em; 
+    text-align: left;
+    z-index: 100;
+    color: gold;
+    text-shadow: 0px 0px 5px black;
+    font-size: 1.3em;
+    pointer-events: none;
+}
+
+.my-rating{
+    position: absolute;
+    left: .3em;
+    top: 0em; 
+    text-align: left;
+    z-index: 100;
+    color: red;
+    text-shadow: 0px 0px 5px black;
+    font-size: .8em;
+    pointer-events: none;
+}
+
+.container{
+    display: inline-block;
     cursor: pointer;
+    position: relative;
     width: 19%;
-    border-radius: 1px;
+    z-index: 100;
+    border-radius: 0px;
     margin: .5%;
     transition: all .1s;
 }
 
-.preview:hover{
+.container:hover {
     transform: scale(1.1);
-    border-radius: 5px;
+    border-radius: 0px;
     box-shadow: 0px 0px 10px black;
-    z-index: 100;
 }
 
-.preview:active{
-    transform: scale(.95);
+.container:active {
+    transform: scale(.99);
 }
 
-#inspect{
+#inspect {
     display: block;
     padding: 0;
     position: absolute;
@@ -85,7 +127,7 @@ input:focus {outline:0;}
     color: white;
 }
 
-#image-wrap{
+#image-wrap {
     position: relative;
     display: block;
     width: 100%;
@@ -93,7 +135,7 @@ input:focus {outline:0;}
     background: #b24f21;
 }
 
-.full{
+.full {
     height: 25vh;
     margin: 0 auto;
     position: relative;
@@ -101,8 +143,7 @@ input:focus {outline:0;}
     border-radius: 5px;
 }
 
-
-#title{
+#title {
     font-size: 30px;
     display: block;
     left: 10%;
@@ -110,47 +151,54 @@ input:focus {outline:0;}
     padding-bottom: .5em;
 }
 
-#score{
+#score {
     float: right;
     position: relative;
     display: inline;
     padding-top: .2em;
 }
 
-img{
-    user-drag: none; 
-user-select: none;
--moz-user-select: none;
--webkit-user-drag: none;
--webkit-user-select: none;
--ms-user-select: none;
+img {
+    user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
-#rating{
+#rating {
     font-size: 3em;
 }
 
-#outof{
+#outof {
     font-size: 2em;
     color: grey;
 }
 
-.star{
+.star {
     width: 15%;
     max-width: 6em;
     padding-top: 1em;
-    cursor: pointer;   
+    cursor: pointer;
 }
 
-#stars{
+#stars {
     display: inline-block;
 }
 
-.star:hover{}
+.star:hover {}
 
-@font-face{
+@font-face {
     /* Import Fortnite font */
     font-family: Fortnitefont;
     src: url("fonts/fortnitefont.otf") format("opentype");
-  }
-  
+}
+
+#stats {
+    width: 200px;
+    right: 1em;
+    bottom: 1em;
+    position: absolute;
+    text-align: right;
+}

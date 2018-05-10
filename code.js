@@ -2,11 +2,13 @@
 var socket = io.connect("213.66.254.63:25565");
 var skins;
 var thisRating = 0;
-var myAccount;
 var currentSkin = 0;
+var amountOfSkins = 0; // Disregards default outfits.
+var myAccount;
 
 socket.on("skins", data => {
     skins = data;
+    amountOfSkins = 0;
     /* Load skins */
     for(let i = 0; i < skins.length; i++){
         skins[i].img = new Image();
@@ -17,13 +19,12 @@ socket.on("skins", data => {
         skins[i].img.style = 'background-color:' + rarityColors[color];
         skins[i].color = rarityColors[color];
         skins[i].img.draggable='false'
+        if(skins[i].rarity != "common") amountOfSkins++;
         skins[i].img.addEventListener("click", () => {
             inspect(i);
         })
         skins[i].img.className='preview' 
     }
-
-    populateCollection();
     inspect(currentSkin);
  });
 
@@ -31,9 +32,24 @@ socket.on("skins", data => {
     myAccount = acc;
     thisRating = myAccount.account[skins[currentSkin].code];
     updateStars(thisRating);
-
+    updateStats();
+    populateCollection();
+    inspect(currentSkin);
     console.log("Recived account: ", myAccount);
  })
+
+ function updateStats(){
+    var length = 0;
+    var totalRate = 0;
+    Object.keys(myAccount.account).forEach(function (key) {
+        length++;
+        totalRate += myAccount.account[key];
+    });
+    var avrage = Math.round((totalRate / length) * 100) / 100;
+
+    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Avrage rating: " + avrage;
+    
+ }
 
  var rarities = ["common", "uncommon", "rare", "epic", "legendary"];
  function raritySort(a,b) {
@@ -56,8 +72,17 @@ socket.on("skins", data => {
         searches.forEach(s => {
             if(skin.name.toLowerCase().indexOf(s) == -1) skip = true;
         });
-        if(!skip || search == false){
-            document.getElementById("collection").appendChild(skin.img)
+
+        if((!skip || search == false) && skin.rarity != "common"){
+            var rating = skin.rating;
+            //var myRating??
+            var warn = "";
+            if(myAccount !== undefined){
+                if(myAccount.account[skin.code] == undefined) warn = "!";
+            }
+            
+            document.getElementById("collection").innerHTML += "<span id='img_" + i + "' onclick='inspect(" + i + ")' class='container'><span class='preivew-rating'> "+ rating + " </span><span class='my-rating'>" + warn + "</span></span>"
+            document.getElementById("img_"+i).appendChild(skin.img)            
         }
     }
  }

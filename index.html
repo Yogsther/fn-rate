@@ -10,21 +10,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118879212-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-118879212-2');
+    </script>
+
 </head>
 
 <body>
 
     <input type="text" placeholder="Search a skin..." id="search" oninput="populateCollection()">
+    <select>
+        <option value="rarity">Sort by rarity</option>
+        <option value="rating">Sort by global rating</option>
+        <option value="myrating">Sort by your rating</option>
+    </select>
+
     <div id="collection"></div>
     <div id="wrap">
         <div id="inspect">
             <span id="title">SKIN_NAME</span>
             <div id="image-wrap">
-            <img src="img/TRICERA_OPS.png" class="full" alt="Full image" id="full">
-        </div>
+                <img src="img/TRICERA_OPS.png" class="full" alt="Full image" id="full">
+            </div>
 
-        <span id="stars"></span>
-        <span id="score"><span id="rating">4.5</span><span id="outof">/5</span></span>
+            <span id="stars"></span>
+            <span id="score">
+                <span id="rating">4.5</span>
+                <span id="outof">/5</span>
+            </span>
+
+            <div id="stats">
+                <i>Your stats:</i>
+                <br> Rated skins: 20/120
+                <br> Avrage rating: 3.3
+                <br>
+            </div>
 
         </div>
     </div>

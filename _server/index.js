@@ -37,7 +37,6 @@ var server = app.listen(port, function () {
     var update = setInterval(() => {
         users = loadUsers();
         updateGlobalScores()
-        console.log("Updated!");
     }, 10000)
 
     function loadSkins() {
@@ -85,6 +84,7 @@ var server = app.listen(port, function () {
         if (ip.length > 100) return;
         /* Convert IP to string, that can be saved as file in Windows */
         while (ip.indexOf(".") != -1) ip = ip.replace(".", "_");
+        while (ip.indexOf(":") != -1) ip = ip.replace(":", "_");
         ip = ip.split("");
         for (let i = 0; i < ip.length; i++) {
             if (isNaN(ip[i]) && ip[i] != "_") {
@@ -122,7 +122,6 @@ var server = app.listen(port, function () {
 
     function saveUser(id, content) {
         try {
-            console.log("Saved: " + content);
             fs.writeFileSync("users/" + id + ".liv", JSON.stringify(content));
         } catch (e) {
             console.log("ERR: Couldn't write id/ip: " + id);
@@ -136,7 +135,6 @@ var server = app.listen(port, function () {
         } else {
             account.account[skinName] = Math.round(rating);
             saveUser(account.id, account.account);
-            console.log("Saved: " + JSON.stringify(account));
         }
     }
 
@@ -149,14 +147,12 @@ var server = app.listen(port, function () {
             skins[i].rating = 0;
         }
         for (let i = 0; i < users.length; i++) {
-            console.log("users/" + users[i]);
             var user = JSON.parse(fs.readFileSync("users/" + users[i]));
             try {
                 Object.keys(user).forEach(function (key) {
                     skins[getSkinIndexFromCode(key)].votesArr.push(user[key]);
                 });
             } catch (e) {
-                console.log(e)
             }
         }
 
@@ -166,8 +162,7 @@ var server = app.listen(port, function () {
                 var totalVotes = skins[i].votesArr.length;
                 var voteSum = 0;
                 skins[i].votesArr.forEach(vote => voteSum += vote);
-                var rating = Math.round((voteSum / totalVotes) * 10) / 10;
-                console.log(skins[i].name + " : " + rating);
+                var rating = Math.round((voteSum / totalVotes) * 100) / 100;
                 skins[i].rating = rating;
                 skins[i].votes = totalVotes;
             }
@@ -190,7 +185,6 @@ var server = app.listen(port, function () {
     }
 
     function getIP(socket) {
-        //return "12312323";
         return socket.request.connection.remoteAddress;
     }
 
