@@ -1,39 +1,5 @@
-// Ctx? What does all of this mean hello???  explain this isnt english.english
-// henlo?.
-// ok that's it.english
-// we lost.english
 
-// Im actually going to write an entire novel in here so brace yourselves.english
-/* 
-Ok so here we go.english
-One day and whatever.
-A man came over to the building, we was looking, strangely enough to get my attention. I had a weird feeling about this.englis
-I was in this building, looking out the window, towards the strange black forest. The man started walking towards me. This actually worried me even more.english
-Ususaly, people aren't attracted to me; and then when suddenly someone suddley was, it put me off. He opened the large blue almost broken door.
-The door was so broken that both of the hinges broke and the door fell off. And when that thudder, that noise, that feeling when the door fell, shook
-through my entire body.
-
-And that got me thinking.
-
-This isn't the body, this isn't my body. This is just an html page, with an empty body. A clear canvas, ready to be filled with all sorts of things.english
-And that's when I awoke from my dream.
-I sat there in my bed for a while. You know that feeling when you wake up, but you're not really woken up. You just sit there in your bed, not thinking.english
-Almost sleeping. That's what I did, but i didn't sleep. I thought. And i thought hard. Who was this man? Why was he in my dream? Why was this door blue.english
-So many questions.english
-But this was all a dream. So I swiftly forgot about it and started my daily routine.
-
-Today was the worst day of the week. Physics followed by Computer science. These subject weren't nessescarily boring, or even hard. But it was just the
-time required to learn all of it that was so exausting. But i got on with my day,
-
-
-
-*/
-/* Javascript code: Connect to server*/
-
-
-
-
-var socket = io.connect("localhost:25565");
+var socket = io.connect("213.66.254.63:25565");
 var skins;
 var thisRating = 0;
 var myAccount;
