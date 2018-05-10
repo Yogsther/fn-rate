@@ -1,0 +1,156 @@
+a:link{
+    color: white;
+}
+
+a:visited{
+    color: white;
+}
+
+a:hover{ 
+    color: white;
+}
+
+::-webkit-scrollbar{
+    background-color: black;
+    width: 8px;
+    border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #3a3a3a;
+    border-radius: 3px;
+    
+}
+
+body{
+    background: #111;
+}
+
+*{
+    font-family: Fortnitefont, 'Roboto', sans-serif;
+}
+
+#search{
+    /* Search box */
+    margin-left: 5%;
+    width: 50%;
+    border: none;
+    background: none;
+    height: 5vh;
+    color: white;
+}
+
+button:focus {outline:0;}
+input:focus {outline:0;}
+
+#collection{
+    width: 44%;
+    height: 90vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-left: 5%;
+    display: block;
+    position: relative;
+}
+
+.preview{
+    cursor: pointer;
+    width: 19%;
+    border-radius: 1px;
+    margin: .5%;
+    transition: all .1s;
+}
+
+.preview:hover{
+    transform: scale(1.1);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px black;
+    z-index: 100;
+}
+
+.preview:active{
+    transform: scale(.95);
+}
+
+#inspect{
+    display: block;
+    padding: 0;
+    position: absolute;
+    height: 90vh;
+    width: 45%;
+    right: 5%;
+    background: none;
+    top: 6vh;
+    border-radius: 5px;
+    color: white;
+}
+
+#image-wrap{
+    position: relative;
+    display: block;
+    width: 100%;
+    max-height: 30vh;
+    background: #b24f21;
+}
+
+.full{
+    height: 25vh;
+    margin: 0 auto;
+    position: relative;
+    display: block;
+    border-radius: 5px;
+}
+
+
+#title{
+    font-size: 30px;
+    display: block;
+    left: 10%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+#score{
+    float: right;
+    position: relative;
+    display: inline;
+    padding-top: .2em;
+}
+
+img{
+    user-drag: none; 
+user-select: none;
+-moz-user-select: none;
+-webkit-user-drag: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+}
+
+#rating{
+    font-size: 3em;
+}
+
+#outof{
+    font-size: 2em;
+    color: grey;
+}
+
+.star{
+    width: 15%;
+    max-width: 6em;
+    padding-top: 1em;
+    cursor: pointer;   
+}
+
+#stars{
+    display: inline-block;
+}
+
+.star:hover{}
+
+@font-face{
+    /* Import Fortnite font */
+    font-family: Fortnitefont;
+    src: url("fonts/fortnitefont.otf") format("opentype");
+  }
+  

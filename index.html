@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lan</title>
+    <!-- Socket.io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+
+    <input type="text" placeholder="Search a skin..." id="search" oninput="populateCollection()">
+    <div id="collection"></div>
+    <div id="wrap">
+        <div id="inspect">
+            <span id="title">SKIN_NAME</span>
+            <div id="image-wrap">
+            <img src="img/TRICERA_OPS.png" class="full" alt="Full image" id="full">
+        </div>
+
+        <span id="stars"></span>
+        <span id="score"><span id="rating">4.5</span><span id="outof">/5</span></span>
+
+        </div>
+    </div>
+    <script src="code.js"></script>
+
+</body>
+
+</html>
