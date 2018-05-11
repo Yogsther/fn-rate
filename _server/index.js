@@ -85,14 +85,10 @@ var server = app.listen(port, function () {
         /* Convert IP to string, that can be saved as file in Windows */
         while (ip.indexOf(".") != -1) ip = ip.replace(".", "_");
         while (ip.indexOf(":") != -1) ip = ip.replace(":", "_");
-        ip = ip.split("");
-        for (let i = 0; i < ip.length; i++) {
-            if (isNaN(ip[i]) && ip[i] != "_") {
-                ip = ip.splice(i, 1);
-            }
-        }
+        while (ip.indexOf("f") != -1) ip = ip.replace("f", "");
+        /* ip = ip.split("");
 
-        ip = ip.join("");
+        ip = ip.join(""); */
         if (users.indexOf(ip + ".liv") != -1) {
             /* Old user */
             var account = loadUser(ip);
@@ -110,6 +106,7 @@ var server = app.listen(port, function () {
     function loadUser(id) {
         try {
             var acc = JSON.parse(fs.readFileSync("users/" + id + ".liv", "utf8"));
+            console.log("Loaded: " + id);
             return {
                 account: acc,
                 id: id
@@ -122,6 +119,7 @@ var server = app.listen(port, function () {
 
     function saveUser(id, content) {
         try {
+            console.log("Save account:" + id);
             fs.writeFileSync("users/" + id + ".liv", JSON.stringify(content));
         } catch (e) {
             console.log("ERR: Couldn't write id/ip: " + id);
@@ -195,12 +193,14 @@ var server = app.listen(port, function () {
         socket.emit("skins", skins);
         emitUserAccount(socket);
 
+        socket.on("get", () => {
+            socket.emit("skins", skins);
+        })
+
         socket.on("rate", pack => {
             var user = getUser(ip);
             recordRating(pack.skin, user, pack.rating)
-            updateGlobalScores();
             emitUserAccount(socket);
-            socket.emit("skins", skins);
         });
 
         /* END OF SOCKET */

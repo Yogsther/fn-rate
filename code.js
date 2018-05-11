@@ -5,6 +5,8 @@ var thisRating = 0;
 var currentSkin = 0;
 var amountOfSkins = 0; // Disregards default outfits.
 var myAccount;
+var userRequested = false;
+var firstLoad = true;
 
 socket.on("skins", data => {
     skins = data;
@@ -25,6 +27,10 @@ socket.on("skins", data => {
         })
         skins[i].img.className='preview' 
     }
+    if(userRequested){
+        populateCollection();
+        userRequested = false;
+    }
     inspect(currentSkin);
  });
 
@@ -33,7 +39,10 @@ socket.on("skins", data => {
     thisRating = myAccount.account[skins[currentSkin].code];
     updateStars(thisRating);
     updateStats();
-    populateCollection();
+    if(firstLoad){
+        populateCollection()
+        firstLoad = false;
+    }    
     inspect(currentSkin);
     console.log("Recived account: ", myAccount);
  })
@@ -46,9 +55,8 @@ socket.on("skins", data => {
         totalRate += myAccount.account[key];
     });
     var avrage = Math.round((totalRate / length) * 100) / 100;
-
+    if(length >= amountOfSkins) document.title = "FN Rate 🌟"
     document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Avrage rating: " + avrage;
-    
  }
 
  var rarities = ["common", "uncommon", "rare", "epic", "legendary"];
@@ -59,6 +67,23 @@ socket.on("skins", data => {
       return 1;
     return 0;
   }
+
+  function rateSort(a,b) {
+    if (a.rating > b.rating)
+      return -1;
+    if (a.rating < b.rating)
+      return 1;
+    return 0;
+  }
+
+  function sortBy(val){
+    if(val == "rating") skins.sort(rateSort);
+    if(val == "rarity") skins.sort(raritySort);
+    populateCollection();
+    var i = 0;
+    while(skins[i].rarity == "common") i++;
+    inspect(i)
+}
   
  // TODO: Rating sort
  function populateCollection(){
@@ -80,7 +105,6 @@ socket.on("skins", data => {
             if(myAccount !== undefined){
                 if(myAccount.account[skin.code] == undefined) warn = "!";
             }
-            
             document.getElementById("collection").innerHTML += "<span id='img_" + i + "' onclick='inspect(" + i + ")' class='container'><span class='preivew-rating'> "+ rating + " </span><span class='my-rating'>" + warn + "</span></span>"
             document.getElementById("img_"+i).appendChild(skin.img)            
         }
@@ -90,6 +114,7 @@ socket.on("skins", data => {
  
  function inspect(skinIndex){
      currentSkin = skinIndex;
+     
      try{
         thisRating = myAccount.account[skins[currentSkin].code];
         if(thisRating == undefined) thisRating = 0;
@@ -101,6 +126,23 @@ socket.on("skins", data => {
      document.getElementById("full").src = skins[skinIndex].src;
      document.getElementById("image-wrap").style.background = skins[skinIndex].color;
      document.getElementById("rating").innerHTML = skins[skinIndex].rating;
+     var bars = document.getElementsByClassName("bar");
+     var maxStars = 0;
+     var skinVotes = skins[currentSkin].votesArr.slice();
+     var votes = [0, 0, 0, 0, 0]
+     for(let i = 0; i < votes.length; i++){
+        votes[skinVotes[i]-1]++;
+     }
+     for(let i = 0; i < votes.length; i++){
+         if(votes[i] > votes[maxStars]) maxStars = i;
+     }
+     var part = 100 / votes[maxStars];
+     for(let i = 0; i < bars.length; i++){
+        var width = (votes[i] * part);
+        if(isNaN(width)) width = 0;
+        bars[4-i].style.width = width + "%";
+        bars[4-i].innerHTML = votes[i]
+     }
      updateStars(rating);
  }
 
@@ -118,6 +160,12 @@ socket.on("skins", data => {
 
  function rate(rating){
      socket.emit("rate", {skin: skins[currentSkin].code, rating: rating});
+     document.getElementById("img_"+currentSkin).children[1].innerHTML = "";
+ }
+
+ function get(){
+    userRequested = true;
+    socket.emit("get");
  }
 
  function resetStars(){

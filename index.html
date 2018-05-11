@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lan</title>
+    <title>FN Rate</title>
     <!-- Socket.io -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -28,11 +28,13 @@
 <body>
 
     <input type="text" placeholder="Search a skin..." id="search" oninput="populateCollection()">
-    <select>
+    <select oninput="sortBy(this.value)" id="sort">
         <option value="rarity">Sort by rarity</option>
         <option value="rating">Sort by global rating</option>
         <option value="myrating">Sort by your rating</option>
     </select>
+
+    <img src="update.png" onclick="get()" id="update-button" title="Reload stats"></button>
 
     <div id="collection"></div>
     <div id="wrap">
@@ -47,6 +49,16 @@
                 <span id="rating">4.5</span>
                 <span id="outof">/5</span>
             </span>
+
+            <span id="votes">Votes:</span>
+            <br>
+            <div id="bars">
+                5 <div class='bar'>0</div>
+                4 <div class='bar'>0</div>
+                3 <div class='bar'>0</div>
+                2 <div class='bar'>0</div>
+                1 <div class='bar'>0</div>
+            </div>
 
             <div id="stats">
                 <i>Your stats:</i>
