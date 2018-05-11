@@ -159,7 +159,7 @@ socket.on("skins", data => {
      var skinVotes = skins[currentSkin].votesArr.slice();
      var totalVotes = 0;
      var votes = [0, 0, 0, 0, 0]
-     for(let i = 0; i < votes.length; i++){
+     for(let i = 0; i < skinVotes.length; i++){
         votes[skinVotes[i]-1]++;
      }
      votes.forEach(vote => totalVotes+=vote)
