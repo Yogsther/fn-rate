@@ -88,9 +88,9 @@ socket.on("skins", data => {
     return 0;
   }
   function personalRating(a,b) {
-    if (myAccount.account[a.code] > myAccount.account[b.code])
+    if (myAccount.account[a.code] > myAccount.account[b.code] || myAccount.account[a.code] == undefined)
       return -1;
-    if (myAccount.account[a.code] < myAccount.account[b.code])
+    if (myAccount.account[a.code] < myAccount.account[b.code] || myAccount.account[b.code] == undefined)
       return 1;
     return 0;
     }

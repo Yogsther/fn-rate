@@ -51,7 +51,7 @@ input:focus {
     height: 1.5em;
     transition: .2s;
     border: none;
-    top: .3em;
+    top: .4em;
     left: 1em;
     position: relative;
     cursor: pointer;
