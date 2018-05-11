@@ -34,6 +34,12 @@
         <option value="myrating">Sort by your rating</option>
     </select>
 
+    <span style='color:white;'>Background color:</span>
+    <select oninput="setColor(this.value)" id="sort">
+        <option value="rarity">Rarity</option>
+        <option value="rating">Rating</option>
+    </select>
+
     <img src="update.png" onclick="get()" id="update-button" title="Reload stats"></button>
 
     <div id="collection"></div>
@@ -50,7 +56,7 @@
                 <span id="outof">/5</span>
             </span>
 
-            <span id="votes">Votes:</span>
+            <span id="votes">Votes: (<span id="amount">0</span>)</span>
             <br>
             <div id="bars">
                 5 <div class='bar'>0</div>

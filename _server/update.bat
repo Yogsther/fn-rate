@@ -1,2 +1,0 @@
-node update
-pause

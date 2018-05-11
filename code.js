@@ -7,10 +7,13 @@ var amountOfSkins = 0; // Disregards default outfits.
 var myAccount;
 var userRequested = false;
 var firstLoad = true;
+var colorSort = "rarity";
+
 
 socket.on("skins", data => {
     skins = data;
     amountOfSkins = 0;
+    document.getElementById("sort").value = "rarity";
     /* Load skins */
     for(let i = 0; i < skins.length; i++){
         skins[i].img = new Image();
@@ -18,8 +21,17 @@ socket.on("skins", data => {
         var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d"]
         var color = 1;
         for(let j = 0; j < rarityColors.length; j++) if(skins[i].rarity == rarityColors[j]) color = j+1;
-        skins[i].img.style = 'background-color:' + rarityColors[color];
-        skins[i].color = rarityColors[color];
+        color = rarityColors[color];
+        if(colorSort == "rating"){
+            var percent = 1.2 - skins[i].rating / 5;
+            var hue=((1-percent)*120).toString(10);
+            color =  ["hsl(",hue,",100%,50%)"].join("");
+        } 
+
+
+
+        skins[i].img.style = 'background-color:' + color;
+        skins[i].color = color;
         skins[i].img.draggable='false'
         if(skins[i].rarity != "common") amountOfSkins++;
         skins[i].img.addEventListener("click", () => {
@@ -75,10 +87,19 @@ socket.on("skins", data => {
       return 1;
     return 0;
   }
+  function personalRating(a,b) {
+    if (myAccount.account[a.code] > myAccount.account[b.code])
+      return -1;
+    if (myAccount.account[a.code] < myAccount.account[b.code])
+      return 1;
+    return 0;
+    }
+
 
   function sortBy(val){
     if(val == "rating") skins.sort(rateSort);
     if(val == "rarity") skins.sort(raritySort);
+    if(val == "myrating") skins.sort(personalRating)
     populateCollection();
     var i = 0;
     while(skins[i].rarity == "common") i++;
@@ -111,6 +132,13 @@ socket.on("skins", data => {
     }
  }
 
+
+ function setColor(val){
+    if(val == "rarity") colorSort = "rarity";
+    if(val == "rating") colorSort = "rating";
+    get();
+}
+
  
  function inspect(skinIndex){
      currentSkin = skinIndex;
@@ -129,10 +157,12 @@ socket.on("skins", data => {
      var bars = document.getElementsByClassName("bar");
      var maxStars = 0;
      var skinVotes = skins[currentSkin].votesArr.slice();
+     var totalVotes = 0;
      var votes = [0, 0, 0, 0, 0]
      for(let i = 0; i < votes.length; i++){
         votes[skinVotes[i]-1]++;
      }
+     votes.forEach(vote => totalVotes+=vote)
      for(let i = 0; i < votes.length; i++){
          if(votes[i] > votes[maxStars]) maxStars = i;
      }
@@ -144,6 +174,7 @@ socket.on("skins", data => {
         bars[4-i].innerHTML = votes[i]
      }
      updateStars(rating);
+     document.getElementById("amount").innerHTML = totalVotes;
  }
 
  var starsRating = undefined;
