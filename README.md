@@ -6,7 +6,13 @@ Credit to [fnbr.co](https://fnbr.co/) for the images.
 ![Showcase Gif](showcase.gif)
 
 TODO: 
- - [ ] Save sort option when updating stats
+ - [x] Save sort option when updating stats
+ - [ ] Add the no-skins
+ - [ ] Full body images on inspect
+ - [ ] Add half stars
  - [ ] Optmize for mobile
  - [ ] Support other cosmetics
  - [ ] Effects for high rated skins
+
+ BUGS: 
+ - [ ] Safari hitching when hovering over stars
