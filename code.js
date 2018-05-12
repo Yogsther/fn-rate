@@ -54,7 +54,7 @@ socket.on("account", acc => {
         firstLoad = false;
     }
     inspect(currentSkin);
-    console.log("Recived account: ", myAccount);
+    //console.log("Recived account: ", myAccount);
 })
 
 function updateStats() {
@@ -87,6 +87,14 @@ function rateSort(a, b) {
     return 0;
 }
 
+function votes(a, b) {
+    if (a.votesArr.length > b.votesArr.length)
+        return -1;
+    if (a.votesArr.length < b.votesArr.length)
+        return 1;
+    return 0;
+}
+
 function personalRating(a, b) {
     if (myAccount.account[a.code] > myAccount.account[b.code] || myAccount.account[a.code] == undefined)
         return -1;
@@ -99,6 +107,7 @@ function justSort /*lol*/ (val) {
     if (val == "rating") skins.sort(rateSort);
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
+    if (val == "votes") skins.sort(votes);
     sortMode = val;
 }
 
@@ -106,6 +115,7 @@ function sortBy(val) {
     if (val == "rating") skins.sort(rateSort);
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
+    if (val == "votes") skins.sort(votes);
     sortMode = val;
     populateCollection();
     var i = 0;
@@ -145,7 +155,6 @@ function setColor(val) {
     if (val == "rating") colorSort = "rating";
     get();
 }
-
 
 function inspect(skinIndex) {
     currentSkin = skinIndex;

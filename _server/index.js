@@ -23,6 +23,7 @@ var server = app.listen(port, function () {
     var io = socket(server);
     var skins;
     var users = loadUsers();
+    var cachedTotalVotes = 0;
     loadSkins();
 
     var check = setInterval(() => {
@@ -133,8 +134,6 @@ var server = app.listen(port, function () {
         }
     }
 
-
-
     function updateGlobalScores() {
         for (let i = 0; i < skins.length; i++) {
             skins[i].votes = 0;
@@ -151,9 +150,12 @@ var server = app.listen(port, function () {
             }
         }
 
+        var totalVotesCount = 0;
+
         for (let i = 0; i < skins.length; i++) {
             if (skins[i].votesArr.length >= 1) {
                 skins[i].rating = 0;
+                totalVotesCount += skins[i].votesArr.length;
                 var totalVotes = skins[i].votesArr.length;
                 var voteSum = 0;
                 skins[i].votesArr.forEach(vote => voteSum += vote);
@@ -162,7 +164,9 @@ var server = app.listen(port, function () {
                 skins[i].votes = totalVotes;
             }
         }
-        console.log("Updated scores: " + new Date());
+        var newVotes = totalVotesCount - cachedTotalVotes;
+        cachedTotalVotes = totalVotesCount
+        console.log("Updated scores. New votes: " + newVotes + ". v/s: " + (newVotes/10) + ". Total votes: " + cachedTotalVotes);
     }
 
     function getSkinIndexFromCode(code) {
@@ -190,6 +194,7 @@ var server = app.listen(port, function () {
         emitUserAccount(socket);
 
         socket.on("get", () => {
+            emitUserAccount(socket)
             socket.emit("skins", skins);
         })
 

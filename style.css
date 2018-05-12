@@ -142,7 +142,7 @@ input:focus {
     width: 45%;
     right: 5%;
     background: none;
-    top: 6vh;
+    top: 9vh;
     border-radius: 5px;
     color: white;
 }
@@ -217,10 +217,16 @@ img {
 
 #stats {
     width: 200px;
-    right: 1em;
-    bottom: 1em;
-    position: absolute;
+    float: right;
+    position: relative;
     text-align: right;
+}
+
+#header{
+    width: 100%;
+    position: relative;
+    display: block;
+    margin-bottom: .3vh;
 }
 
 .bar{

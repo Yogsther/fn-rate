@@ -26,12 +26,13 @@
 </head>
 
 <body>
-
+    <div id="header">
     <input type="text" placeholder="Search a skin..." id="search" oninput="populateCollection()">
     <select oninput="sortBy(this.value)" id="sort">
         <option value="rating">Sort by global rating</option>
         <option value="rarity">Sort by rarity</option>
         <option value="myrating">Sort by your rating</option>
+        <option value="votes">Sort by amount of votes</option>
     </select>
 
     <span style='color:white; margin-left:2em;'>Background color:</span>
@@ -42,6 +43,7 @@
 
     <img src="update.png" onclick="get()" id="update-button" title="Reload stats"></button>
     <a href="https://github.com/Yogsther/forntite-rate" target="_blank" style='margin-left:2em;'>Fork me</a>
+    </div>
     <div id="collection"></div>
     <div id="wrap">
         <div id="inspect">
