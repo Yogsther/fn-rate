@@ -31,7 +31,7 @@ socket.on("skins", data => {
         skins[i].img.style = 'background-color:' + color;
         skins[i].color = color;
         skins[i].img.draggable = 'false'
-        if (skins[i].rarity != "common") amountOfSkins++;
+        if (skins[i].code != undefined && skins[i].code != "RECRUIT") amountOfSkins++;
         skins[i].img.addEventListener("click", () => {
             inspect(i);
         })
@@ -119,7 +119,7 @@ function sortBy(val) {
     sortMode = val;
     populateCollection();
     var i = 0;
-    while (skins[i].rarity == "common") i++;
+    while (skins[i].code == "RECRUIT") i++;
     inspect(i)
 }
 
@@ -136,14 +136,14 @@ function populateCollection() {
             if (skin.name.toLowerCase().indexOf(s) == -1) skip = true;
         });
 
-        if ((!skip || search == false) && skin.rarity != "common") {
+        if ((!skip || search == false) && skin.code != undefined && skin.code !== "RECRUIT") {
             var rating = skin.rating;
             //var myRating??
             var warn = "";
             if (myAccount !== undefined) {
                 if (myAccount.account[skin.code] == undefined) warn = "!";
             }
-            document.getElementById("collection").innerHTML += "<span id='img_" + i + "' onclick='inspect(" + i + ")' class='container'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
+            document.getElementById("collection").innerHTML += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
             document.getElementById("img_" + i).appendChild(skin.img)
         }
     }

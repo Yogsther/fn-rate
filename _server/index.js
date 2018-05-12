@@ -42,6 +42,18 @@ var server = app.listen(port, function () {
 
     function loadSkins() {
         skins = JSON.parse(fs.readFileSync("skins.txt", "utf8"));
+
+        // Inject default skins
+        for(let i = 0; i < 8; i++){
+            skins.push({
+                name: "Recruit " + (i+1),
+                price: "Default",
+                type: "outfit",
+                src: "img/" + "RECRUIT_" + (i+1) + ".png",
+                rarity: "common"
+            })
+        }
+
         for (let i = 0; i < skins.length; i++) {
             skins[i].code = skins[i].name.split(" ").join("_").toUpperCase();
             var dup = false;
