@@ -1,4 +1,6 @@
-var socket = io.connect("213.66.254.63:25565");
+//var socket = io.connect("213.66.254.63:25565");
+var socket = io.connect("localhost:25565");
+
 var skins;
 var thisRating = 0;
 var currentSkin = 0;
@@ -88,11 +90,15 @@ function rateSort(a, b) {
 }
 
 function votes(a, b) {
-    if (a.votesArr.length > b.votesArr.length)
+    if (a.stars.reduce(add, 0) > b.stars.reduce(add, 0))
         return -1;
-    if (a.votesArr.length < b.votesArr.length)
+    if (a.stars.reduce(add, 0) < b.stars.reduce(add, 0))
         return 1;
     return 0;
+}
+
+function add(a, b) {
+    return a + b;
 }
 
 function personalRating(a, b) {
@@ -123,7 +129,6 @@ function sortBy(val) {
     inspect(i)
 }
 
-// TODO: Rating sort
 function populateCollection() {
     var search = document.getElementById("search").value;
     document.getElementById("collection").innerHTML = "";
@@ -172,12 +177,12 @@ function inspect(skinIndex) {
     document.getElementById("rating").innerHTML = skins[skinIndex].rating;
     var bars = document.getElementsByClassName("bar");
     var maxStars = 0;
-    var skinVotes = skins[currentSkin].votesArr.slice();
+    //var skinVotes = skins[currentSkin].votesArr.slice();
     var totalVotes = 0;
-    var votes = [0, 0, 0, 0, 0]
-    for (let i = 0; i < skinVotes.length; i++) {
+    var votes = skins[currentSkin].stars;
+    /* for (let i = 0; i < skinVotes.length; i++) {
         votes[skinVotes[i] - 1]++;
-    }
+    } */
     votes.forEach(vote => totalVotes += vote)
     for (let i = 0; i < votes.length; i++) {
         if (votes[i] > votes[maxStars]) maxStars = i;

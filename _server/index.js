@@ -3,7 +3,8 @@
 */
 
 /** Choose a port */
-var port = 25565;
+//var port = 25565
+var port = 25565
 
 var express = require("express");
 var socket = require("socket.io");
@@ -149,14 +150,16 @@ var server = app.listen(port, function () {
     function updateGlobalScores() {
         for (let i = 0; i < skins.length; i++) {
             skins[i].votes = 0;
-            skins[i].votesArr = new Array();
+            skins[i].stars = [0, 0, 0, 0, 0];
+            //skins[i].votesArr = new Array();
             skins[i].rating = 0;
         }
         for (let i = 0; i < users.length; i++) {
             var user = JSON.parse(fs.readFileSync("users/" + users[i]));
             try {
                 Object.keys(user).forEach(function (key) {
-                    skins[getSkinIndexFromCode(key)].votesArr.push(user[key]);
+                    //skins[getSkinIndexFromCode(key)].votesArr.push(user[key]);
+                    skins[getSkinIndexFromCode(key)].stars[user[key]-1]++;
                 });
             } catch (e) {
             }
@@ -165,12 +168,17 @@ var server = app.listen(port, function () {
         var totalVotesCount = 0;
 
         for (let i = 0; i < skins.length; i++) {
-            if (skins[i].votesArr.length >= 1) {
+            if (skins[i].stars.reduce(add, 0) >= 1) {
                 skins[i].rating = 0;
-                totalVotesCount += skins[i].votesArr.length;
-                var totalVotes = skins[i].votesArr.length;
+                totalVotesCount += skins[i].stars.reduce(add, 0);
+                //totalVotesCount += skins[i].votesArr.length;
+                var totalVotes = skins[i].stars.reduce(add, 0);
+                //var totalVotes = skins[i].votesArr.length;
                 var voteSum = 0;
-                skins[i].votesArr.forEach(vote => voteSum += vote);
+                //skins[i].votesArr.forEach(vote => voteSum += vote);
+                for(let j = 0; j < skins[i].stars.length; j++){
+                    voteSum += skins[i].stars[j] * (j+1);
+                }
                 var rating = Math.round((voteSum / totalVotes) * 100) / 100;
                 skins[i].rating = rating;
                 skins[i].votes = totalVotes;
@@ -180,6 +188,11 @@ var server = app.listen(port, function () {
         cachedTotalVotes = totalVotesCount
         console.log("Updated scores. New votes: " + newVotes + ". v/s: " + (newVotes/10) + ". Total votes: " + cachedTotalVotes);
     }
+    
+    function add(a, b) {
+        return a + b;
+    }
+    
 
     function getSkinIndexFromCode(code) {
         for (let i = 0; i < skins.length; i++) {
