@@ -151,16 +151,25 @@ input:focus {
     position: relative;
     display: block;
     width: 100%;
+    overflow: hidden;
     max-height: 30vh;
     background: #b24f21;
 }
 
+
 .full {
-    height: 25vh;
-    margin: 0 auto;
+    height: 30vh;
+    float: left;
     position: relative;
-    display: block;
     border-radius: 5px;
+}
+
+#secondary{
+    margin: -6em;
+    top: 5em;
+    position: relative;
+    float: left;
+    height: 40vh;
 }
 
 #title {

@@ -68,7 +68,7 @@ function updateStats() {
     });
     var average = Math.round((totalRate / length) * 100) / 100;
     if (length >= amountOfSkins) document.title = "FN Rate 🌟"
-    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>average rating: " + average;
+    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average;
 }
 
 var rarities = ["common", "uncommon", "rare", "epic", "legendary"];
@@ -173,6 +173,14 @@ function inspect(skinIndex) {
     document.getElementById("stars").innerHTML = "";
     document.getElementById("title").innerHTML = skins[skinIndex].name;
     document.getElementById("full").src = skins[skinIndex].src;
+    var secondaryImage = new Image();
+    secondaryImage.src = "img/full/" + skins[skinIndex].code + ".png";
+    secondaryImage.id = "secondary"
+    secondaryImage.onerror = () => { document.getElementById("secondary-insert").innerHTML = "" };
+    secondaryImage.onload = () => { 
+        document.getElementById("secondary-insert").innerHTML = '';
+        document.getElementById("secondary-insert").appendChild(secondaryImage);
+    };
     document.getElementById("image-wrap").style.background = skins[skinIndex].color;
     document.getElementById("rating").innerHTML = skins[skinIndex].rating;
     var bars = document.getElementsByClassName("bar");

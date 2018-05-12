@@ -7,13 +7,15 @@ Credit to [fnbr.co](https://fnbr.co/) for the images.
 
 TODO: 
  - [x] Save sort option when updating stats
- - [ ] Improve colors for the rate color
- - [ ] Add the no-skins
+ - [x] Add the no-skins
  - [ ] Full body images on inspect
- - [ ] Add half stars
  - [ ] Optmize for mobile
  - [ ] Support other cosmetics
- - [ ] Effects for high rated skins
+ - [ ] Effects for high rated skins~
+ - [ ] Improve colors for the rate color~
+ - [ ] ~~Add half stars~~
 
  BUGS: 
  - [ ] Safari hitching when hovering over stars
+
+ 
