@@ -8,11 +8,10 @@ Credit to [fnbr.co](https://fnbr.co/) for the images.
 TODO: 
  - [x] Save sort option when updating stats
  - [x] Add the no-skins
- - [ ] Full body images on inspect
- - [ ] Optmize for mobile
+ - [x] Full body images on inspect
+ - [ ] Optimize for mobile (In Progress)
  - [ ] Support other cosmetics
- - [ ] Effects for high rated skins~
- - [ ] Improve colors for the rate color~
+ - [ ] ~~Improve colors for the rate color~~
  - [ ] ~~Add half stars~~
 
  BUGS: 
