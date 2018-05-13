@@ -156,6 +156,14 @@ input:focus {
     background: #b24f21;
 }
 
+#both-images-wrap{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    max-width: 50vh;
+    height: 30vh;
+}
+
 
 .full {
     height: 30vh;
@@ -168,7 +176,7 @@ input:focus {
     margin: -6em;
     top: 5em;
     position: relative;
-    float: left;
+    float: right;
     height: 40vh;
 }
 
