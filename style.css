@@ -158,26 +158,38 @@ input:focus {
 
 #both-images-wrap{
     position: relative;
-    display: block;
+    display: flex;
     margin: 0 auto;
-    max-width: 50vh;
+    max-width: 70vh;
     height: 30vh;
 }
 
 
 .full {
-    height: 30vh;
     float: left;
-    position: relative;
-    border-radius: 5px;
+    display: inline-block;
+    width: auto;
+    height: 100%;
 }
 
 #secondary{
-    margin: -6em;
-    top: 5em;
-    position: relative;
     float: right;
-    height: 40vh;
+    display: inline-block;
+    width: auto;
+    transform: scale(1.5);
+    vertical-align: top;
+    top: 8em;
+    margin: -5em;
+    position: relative;
+    height: 100%;
+}
+
+#third{
+    position: relative;
+    margin: 0 auto;
+    display: inline-block;
+    width: auto;
+    height: 100%;
 }
 
 #title {

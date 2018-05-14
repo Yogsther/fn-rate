@@ -21,15 +21,25 @@ socket.on("skins", data => {
         skins[i].img = new Image();
         skins[i].secondImg = new Image();
         skins[i].secondImg.id = "secondary";
+        skins[i].thirdImg = new Image();
+        skins[i].thirdImg.id = "third";
+        try{
+            skins[i].thirdImg.src = "img/featured/" + skins[i].code + ".png";
+        } catch(e){}
         try {
             /* Supress error for skins without secondary image */
             skins[i].secondImg.src = "img/full/" + skins[i].code + ".png";
         } catch (e) {}
         skins[i].hasSecondImage = false;
+        skins[i].hasThirdImage = false;
         skins[i].secondImg.onload = () => {
             skins[i].hasSecondImage = true
             if(currentSkin == i) inspect(i);
         };
+        skins[i].thirdImg.onload = () => {
+            skins[i].hasThirdImage = true;
+            if(currentSkin == i) inspect(i);
+        }
         skins[i].img.src = skins[i].src;
         var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d"]
         var color = 1;
@@ -190,6 +200,13 @@ function inspect(skinIndex) {
     } else {
         document.getElementById("secondary-insert").innerHTML = '';
         document.getElementById("secondary-insert").appendChild(skins[skinIndex].secondImg);
+    }
+
+    if(!skins[skinIndex].hasThirdImage){
+        document.getElementById("third-insert").innerHTML = ""
+    } else {
+        document.getElementById("third-insert").innerHTML = '';
+        document.getElementById("third-insert").appendChild(skins[skinIndex].thirdImg);
     }
 
     document.getElementById("image-wrap").style.background = skins[skinIndex].color;
