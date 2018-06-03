@@ -66,14 +66,15 @@ input:focus {
 }
 
 #collection {
-    width: 44%;
-    height: 90vh;
+    width: 90%;
+    height: 238px;
     overflow-y: scroll;
     overflow-x: hidden;
     margin-left: 5%;
     display: block;
     position: relative;
     z-index: 1;
+    background-color: #111;
 }
 
 .preview {
@@ -115,11 +116,13 @@ input:focus {
     display: inline-block;
     cursor: pointer;
     position: relative;
-    width: 19%;
+    width: 24%;
     min-width: 4em;
     z-index: 100;
     border-radius: 0px;
-    margin: .5%;
+    margin: 0.5%;
+    margin-bottom: 0px;
+    margin-top: 0px;
     transition: all .1s;
 }
 
@@ -136,14 +139,14 @@ input:focus {
 
 #inspect {
     display: block;
-    padding: 0;
-    position: absolute;
-    height: 90vh;
-    width: 45%;
-    right: 5%;
+    margin-bottom: 2%;
+    padding: 0px;
+    position: relative;
+    height: 58vh;
+    width: 90%;
+    right: -5%;
     background: none;
-    top: 9vh;
-    border-radius: 5px;
+    top: 0vh;
     color: white;
 }
 
@@ -158,44 +161,25 @@ input:focus {
 
 #both-images-wrap{
     position: relative;
-    display: flex;
+    display: block;
     margin: 0 auto;
-    max-width: 70vh;
+    max-width: 50vh;
     height: 30vh;
 }
 
 
-#check{
-    height: 30px;
-    transform: scale(0);
-    transition: all .15s;
-}
-
 .full {
+    height: 30vh;
     float: left;
-    display: inline-block;
-    width: auto;
-    height: 100%;
+    position: relative;
 }
 
 #secondary{
+    margin: -6em;
+    top: 5em;
+    position: relative;
     float: right;
-    display: inline-block;
-    width: auto;
-    transform: scale(1.5);
-    vertical-align: top;
-    top: 8em;
-    margin: -5em;
-    position: relative;
-    height: 100%;
-}
-
-#third{
-    position: relative;
-    margin: 0 auto;
-    display: inline-block;
-    width: auto;
-    height: 100%;
+    height: 40vh;
 }
 
 #title {
@@ -251,37 +235,53 @@ img {
 }
 
 #stats {
-    width: 200px;
+    width: 100%;
+    font-size: 1em;
     float: right;
     position: relative;
     text-align: right;
+}
+
+
+#check{
+    height: 30px;
+    transform: scale(0);
+    transition: all .2s;
 }
 
 #header{
     width: 100%;
     position: relative;
     display: block;
-    margin-bottom: .3vh;
+    margin-bottom: .5vh;
+}
+
+#sort {
 }
 
 .bar{
     left: 20px;
-    top: -22px;
+    top: -16px;
     position: relative;
     width: 100%;
-    height: 3vh;
+    height: 2vh;
     background: orange;
     text-align: center;
     color: white;
     text-shadow: 0px 0px 5px black;
     line-height: 1.5em;
     transition: all .3s;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 10px;
 }
 
 #bars{
-    margin-top: 30px;
+    margin-top: -69px;
+    margin:  0 auto;
     position: relative;
-    width: 90%;
+    width: 60%;
+    margin-right: 10px;
+    float: right;
 }
 
 

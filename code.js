@@ -184,13 +184,15 @@ function setColor(val) {
 
 function inspect(skinIndex) {
     currentSkin = skinIndex;
-
     try {
         thisRating = myAccount.account[skins[currentSkin].code];
         if (thisRating == undefined) thisRating = 0;
         updateStars(thisRating);
     } catch (e) {}
     var rating = thisRating;
+    
+    hideConfirm();
+    
     document.getElementById("stars").innerHTML = "";
     document.getElementById("title").innerHTML = skins[skinIndex].name;
     document.getElementById("full").src = skins[skinIndex].src;
@@ -247,12 +249,55 @@ function updateStars(rating) {
     }
 }
 
+document.addEventListener("mousemove", e => {
+    found = false;
+    e.path.forEach(path => {
+        if(path.id == "stars"){
+            found = true;
+        }
+    })
+    if(!found) resetStars();
+})
+
+socket.on("confirmedVote", () => {
+    confirmVote();
+})
+
+function confirmVote(){
+    document.getElementById("check").title = "Vote has been recorded."
+    document.getElementById("check").src = "oh_hi_mark.png"
+    document.getElementById("check").style.transform = "scale(1)";
+}
+
+function pendingVote(){
+    document.getElementById("check").title = "Vote has been sent."
+    document.getElementById("check").src = "unconfirmed.png"
+    document.getElementById("img_" + currentSkin).children[1].innerHTML = "";
+    document.getElementById("check").style.transform = "scale(1)";
+}
+
+function hideConfirm(){
+    document.getElementById("check").style.transform = "scale(0)";
+}
+
+
+function updateAccount(rating){
+    console.log(rating);
+    myAccount.account[skins[currentSkin].code] = rating;
+    thisRating = rating;
+    updateStars(rating);
+}
+
+
 function rate(rating) {
+    if(rating === thisRating) return;
+    rateUpdate = true;
     socket.emit("rate", {
         skin: skins[currentSkin].code,
         rating: rating
     });
-    document.getElementById("img_" + currentSkin).children[1].innerHTML = "";
+    pendingVote();
+    updateAccount(rating);
 }
 
 function get() {
@@ -263,6 +308,8 @@ function get() {
 function resetStars() {
     updateStars(thisRating);
 }
+
+var rateUpdate = false;
 
 
 
