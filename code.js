@@ -11,6 +11,7 @@ var firstLoad = true;
 var colorSort = "rarity";
 var sortMode = "rating";
 
+
 socket.on("skins", data => {
     skins = data;
     justSort(sortMode);
@@ -259,8 +260,10 @@ document.addEventListener("mousemove", e => {
     if(!found) resetStars();
 })
 
-socket.on("confirmedVote", () => {
-    confirmVote();
+socket.on("confirmedVote", pack => {
+    if(skins[currentSkin].code == pack.skin && pack.rating == thisRating){
+        confirmVote();
+    }
 })
 
 function confirmVote(){
@@ -282,7 +285,6 @@ function hideConfirm(){
 
 
 function updateAccount(rating){
-    console.log(rating);
     myAccount.account[skins[currentSkin].code] = rating;
     thisRating = rating;
     updateStars(rating);
