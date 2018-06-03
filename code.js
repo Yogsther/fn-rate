@@ -1,5 +1,4 @@
 var socket = io.connect("213.66.254.63:25565");
-//var socket = io.connect("localhost:25565");
 
 var skins;
 var thisRating = 0;
