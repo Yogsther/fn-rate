@@ -8,7 +8,8 @@
     <title>FN Rate</title>
     <!-- Socket.io -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (min-device-width: 600px)" href="style.css"/>
+    <link rel="stylesheet" media="screen and (max-device-width: 600px)" href="style_mobile.css"/>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118879212-2"></script>
@@ -56,9 +57,12 @@
             </div>
             </div>
 
-            <span id="stars"></span>
+            <span id="stars">
+                
+            </span>
+            <img src="oh_hi_mark.png" alt="" id="check">
             <span id="score">
-                <span id="rating">4.5</span>
+                <span id="rating">?</span>
                 <span id="outof">/5</span>
             </span>
 
