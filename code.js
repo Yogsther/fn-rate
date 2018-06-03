@@ -10,7 +10,6 @@ var firstLoad = true;
 var colorSort = "rarity";
 var sortMode = "rating";
 
-
 socket.on("skins", data => {
     skins = data;
     justSort(sortMode);
@@ -150,11 +149,24 @@ function sortBy(val) {
     inspect(i)
 }
 
+var cosmeticFilter = "all";
+function filter(val){
+    cosmeticFilter = val;
+    populateCollection();
+    inspect(i); 
+}
+
 function populateCollection() {
     var search = document.getElementById("search").value;
     document.getElementById("collection").innerHTML = "";
 
+
     for (let i = 0; i < skins.length; i++) {
+        var skip = false;
+        if(cosmeticFilter != "all"){
+            if(skins[i].type != cosmeticFilter) skip = true; 
+        }
+        if(!skip){
         var skin = skins[i];
         var skip = false;
         var searches = search.toLowerCase().split(" ");
@@ -172,6 +184,7 @@ function populateCollection() {
             document.getElementById("collection").innerHTML += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
             document.getElementById("img_" + i).appendChild(skin.img)
         }
+    }
     }
 }
 
