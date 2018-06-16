@@ -12,10 +12,24 @@ var sortMode = "rating";
 
 socket.on("skins", data => {
     skins = data;
+    
+    // Calculate rating for each skin.
+    skins.forEach(skin => {
+        totalScore = 0;
+        totalVotes = 0;
+        skin.stars.forEach((star, index) => {
+            totalScore+=star * (index+1);
+            totalVotes+=star;
+        })
+        skin.rating = Math.round((totalScore / totalVotes)*10)/10;
+        skin.votes = totalVotes;
+    })
+
     justSort(sortMode);
     amountOfSkins = 0;
     document.getElementById("sort").value = sortMode;
     /* Load skins */
+
     for (let i = 0; i < skins.length; i++) {
         skins[i].img = new Image();
         skins[i].secondImg = new Image();
