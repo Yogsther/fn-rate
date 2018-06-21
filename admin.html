@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin deck: Fortnite Rate</title>
+    <!-- Socket.io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <style>
+        *{
+            font-family:  'Roboto', sans-serif;
+        }
+        body{
+            color: white;
+            background: #111;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="password" id="token" placeholder="Token"> <button> Submit </button>
+    
+    <div id="comments">
+
+
+
+    </div>
+    
+    <script>
+
+        var socket = io.connect("213.66.254.63:25565");
+
+        var token = "";
+        var comments;
+
+        document.addEventListener("keydown", e => {
+            if(e.keyCode == 13){
+                loadComments();
+            }
+        })
+
+        function loadComments(){
+            token = document.getElementById("token").value;
+            localStorage.setItem("token", token);
+
+            socket.emit("adminComments", token)
+        }
+
+        if(localStorage.getItem("token") != undefined){
+            document.getElementById("token").value = localStorage.getItem("token");
+            token = localStorage.getItem("token");
+            loadComments();
+        }
+
+        socket.on("adminComments", recivedComments => {
+            comments = recivedComments;
+            document.getElementById("comments").innerHTML = "";
+            comments.forEach((comment, i) => {
+                document.getElementById("comments").innerHTML += "<span id='insert_" + i +"'><a href='javascript:remove(" + i + ")' style='color:yellow'> [REMOVE] </a> <a href='javascript:ban(" + i + ")' style='color:red'> [BAN] </a><b>" +  comment.username + "</b>: " + comment.message + "<br></span>"
+            })
+        })
+
+        function remove(index){
+            socket.emit("remove", {
+                id: comments[index].id,
+                token: token
+            })
+            document.getElementById("insert_"+index).remove();
+            
+        }
+    
+        function ban(index){
+            var reason = window.prompt("Please enter a reason for ban:");
+            socket.emit("ban", {
+                id: comments[index].id,
+                token: token,
+                reason: reason
+            })
+            location.reload();
+        }
+        
+    </script>
+    
+</body>
+</html>
