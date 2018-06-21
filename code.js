@@ -125,6 +125,17 @@ function rateSort(a, b) {
     return 0;
 }
 
+function commentSort(a, b) {
+    try {
+
+        if (a.comments.length > b.comments.length)
+            return -1;
+        if (a.comments.length < b.comments.length)
+            return 1;
+        return 0;
+    } catch (e) {}
+}
+
 function votes(a, b) {
     if (a.stars.reduce(add, 0) > b.stars.reduce(add, 0))
         return -1;
@@ -150,6 +161,7 @@ function justSort /*lol*/ (val) {
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
     if (val == "votes") skins.sort(votes);
+    if (val == "comments") skins.sort(commentSort);
     sortMode = val;
 }
 
@@ -158,6 +170,7 @@ function sortBy(val) {
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
     if (val == "votes") skins.sort(votes);
+    if (val == "comments") skins.sort(commentSort);
     sortMode = val;
     populateCollection();
     var i = 0;
@@ -241,15 +254,26 @@ function inspect(skinIndex) {
         document.getElementById("third-insert").appendChild(skins[skinIndex].thirdImg);
     }
 
-    if(skins[skinIndex].comments.length > 0){
+    if (skins[skinIndex].comments.length > 0) {
         document.getElementById("comments").innerHTML = "";
     } else {
         document.getElementById("comments").innerHTML = '<span id="no-comments-here"> No comments yet, you can be the first to comment on this skin!</span>';
     }
+    skins[skinIndex].comments.sort(dateSort);
+
+    function dateSort(a, b) {
+        if (a.date > b.date)
+            return -1;
+        if (a.date < b.date)
+            return 1;
+        return 0;
+    }
+
     skins[skinIndex].comments.forEach((comment, index) => {
         document.getElementById("comments").innerHTML += '<div class="comment"> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>';
-        document.getElementById("username_"+index).appendChild(document.createTextNode(comment.username+":"));
-        document.getElementById("message_"+index).appendChild(document.createTextNode(comment.message));
+        document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
+        if (comment.mod) document.getElementById("username_" + index).classList.toggle("adminComment");
+        document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
     })
 
     document.getElementById("image-wrap").style.background = skins[skinIndex].color;
@@ -373,22 +397,23 @@ function updateUsername(newUsername) {
 }
 
 addEventListener("keydown", e => {
-    if(e.keyCode == 13){
-        if(document.getElementById("comment-submission") == document.activeElement) submitComment();
-            else  document.getElementById("comment-submission").focus();
+    if (e.keyCode == 13) {
+        if (document.getElementById("comment-submission") == document.activeElement) submitComment();
+        else document.getElementById("comment-submission").focus();
     }
 })
 
-socket.on("err", error => alert(error) )
+socket.on("err", error => alert(error))
 
 var localComments = 0;
+
 function submitComment() {
     var message = document.getElementById("comment-submission").value;
-    if(message.indexOf("/mod") != -1){
+    if (message.indexOf("/mod") != -1) {
         localStorage.setItem("token", token) = message.split(" ")[1];
         return;
     }
-    if(message.length < 1) return;
+    if (message.length < 1) return;
     var comment = {
         message: message,
         username: username,
@@ -399,10 +424,10 @@ function submitComment() {
 
     document.getElementById("comment-submission").value = "";
 
-    var index = "local_"+localComments;
+    var index = "local_" + localComments;
     localComments++;
-    if(skins[currentSkin].comments.length < 1) document.getElementById("comments").innerHTML = "";
+    if (skins[currentSkin].comments.length < 1) document.getElementById("comments").innerHTML = "";
     document.getElementById("comments").innerHTML = '<div class="comment"> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>' + document.getElementById("comments").innerHTML;
-    document.getElementById("username_"+index).appendChild(document.createTextNode(comment.username+":"));
-    document.getElementById("message_"+index).appendChild(document.createTextNode(comment.message));
+    document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
+    document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
 }

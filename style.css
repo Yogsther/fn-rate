@@ -317,7 +317,11 @@ img {
 }
 
 .username{
-    color: grey !important;
+    color: grey;
+}
+
+.adminComment{
+    color: #f44242 !important;
 }
 
 #no-comments-here{
