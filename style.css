@@ -253,8 +253,10 @@ img {
 #stats {
     width: 200px;
     float: right;
+    display: block;
     position: relative;
     text-align: right;
+    right: 50px;
 }
 
 #header{
@@ -281,8 +283,71 @@ img {
 #bars{
     margin-top: 30px;
     position: relative;
-    width: 90%;
+    width: 40%;
+    display: inline-block;
 }
+
+
+
+#comment-block{
+    margin-top: 30px;
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 30vh;
+    background: black;
+    display: inline-block;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+}
+
+#comments{
+    height: 25vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.comment{
+    overflow: hidden;
+    padding: 5px;
+    margin: 5px;
+    background: #111;
+}
+
+.username{
+    color: grey;
+}
+
+.adminComment{
+    color: #f44242 !important;
+}
+
+#no-comments-here{
+    color: grey;
+    top: 30px;
+    position: relative;
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+
+#comment-submission{
+    overflow: hidden;
+    height: 30px;
+    width: 100%;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    display: inline-block;
+}
+
+
 
 
 #votes{

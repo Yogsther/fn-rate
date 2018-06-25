@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin deck: Fortnite Rate</title>
+    <!-- Socket.io -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <style>
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        body {
+            color: white;
+            background: #111;
+        }
+
+        .insert {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        #comments {
+            position: relative;
+            float: left;
+            top: 50px;
+            width: 60%;
+            display: inline-block;
+            padding: 20px;
+        }
+
+        #suspended-list {
+            padding: 20px;
+            position: relative;
+            top: 50px;
+            width: 30%;
+            display: inline-block;
+
+        }
+
+        #input-box {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: inline-block;
+            height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="input-box">
+        <input type="password" id="token" placeholder="Token">
+        <button> Submit </button>
+    </div>
+
+
+    <div id="comments">
+
+
+
+    </div>
+
+    <div id="suspended-list"></div>
+
+    <script>
+        var socket = io.connect("213.66.254.63:25565");
+
+        var token = "";
+        var comments;
+
+        document.addEventListener("keydown", e => {
+            if (e.keyCode == 13) {
+                loadComments();
+            }
+        })
+
+        function loadComments() {
+            token = document.getElementById("token").value;
+            localStorage.setItem("token", token);
+
+            socket.emit("adminComments", token)
+        }
+
+        if (localStorage.getItem("token") != undefined) {
+            document.getElementById("token").value = localStorage.getItem("token");
+            token = localStorage.getItem("token");
+            loadComments();
+        }
+
+        socket.on("adminComments", recivedComments => {
+            comments = recivedComments;
+            comments.sort(dateSort);
+
+            function dateSort(a, b) {
+                if (a.date > b.date)
+                    return -1;
+                if (a.date < b.date)
+                    return 1;
+                return 0;
+            }
+            document.getElementById("comments").innerHTML = "";
+            comments.forEach((comment, i) => {
+                var date = new Date(comment.date);
+                var seconds = date.getSeconds();
+                var minutes = date.getMinutes();
+                var hours = date.getHours();
+
+                if (seconds.toString().length < 2) seconds = "0" + seconds;
+                if (minutes.toString().length < 2) minutes = "0" + minutes;
+                if (hours.toString().length < 2) hours = "0" + hours;
+                var dateString = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate() +
+                    " - " + hours + ":" + minutes + ":" + seconds
+                document.getElementById("comments").innerHTML += "<span class='insert' id='insert_" + i +
+                    "'><a href='javascript:remove(" + i +
+                    ")' style='color:yellow'> [REMOVE] </a> <a href='javascript:ban(" + i +
+                    ")' style='color:red'> [BAN] </a> " + dateString + " <i>" + comment.skin +
+                    "</i> <b>" + comment.username + "</b>: " + comment.message +
+                    "<br></span>"
+            })
+        })
+
+        var suspendedList = new Array();
+        socket.on("suspendedList", recivedList => {
+            suspendedList = recivedList;
+            document.getElementById("suspended-list").innerHTML = "";
+            suspendedList.forEach((suspension, index) => {
+                document.getElementById("suspended-list").innerHTML +=
+                    '<a style="color:red;" href="javascript:pardon(' + index +
+                    ')"> [PARDON] </a> <a style="color:white" href="javascript:record(' + index +
+                    ')"> [LOG] </a> ' + suspension.username + " -  Reason: " + suspension.reason +
+                    "<br>"
+            })
+        })
+
+        function record(index) {
+            var text = "";
+            suspendedList[index].record.forEach(log => {
+                text += log.message + "\n";
+            })
+            alert(text);
+        }
+
+        function remove(index) {
+            socket.emit("remove", {
+                id: comments[index].id,
+                token: token
+            })
+            document.getElementById("insert_" + index).remove();
+
+        }
+
+        function ban(index) {
+            if(!confirm("Are you sure you want to ban this user?")) return;
+            var reason = window.prompt("Please enter a reason for ban: ", "Spam");
+            socket.emit("ban", {
+                id: comments[index].id,
+                token: token,
+                reason: reason
+            })
+            location.reload();
+        }
+
+        function pardon(index) {
+            socket.emit("pardon", {
+                ip: suspendedList[index].ip,
+                token: token
+            })
+
+        }
+    </script>
+
+</body>
+
+</html>

@@ -12,16 +12,18 @@ var sortMode = "rating";
 
 socket.on("skins", data => {
     skins = data;
-    
+
     // Calculate rating for each skin.
     skins.forEach(skin => {
         totalScore = 0;
         totalVotes = 0;
         skin.stars.forEach((star, index) => {
-            totalScore+=star * (index+1);
-            totalVotes+=star;
+            totalScore += star * (index + 1);
+            totalVotes += star;
         })
-        skin.rating = Math.round((totalScore / totalVotes)*10)/10;
+        skin.exactRating = (totalScore / totalVotes)
+        skin.rating = Math.round((skin.exactRating) * 100) / 100;
+
         skin.votes = totalVotes;
     })
 
@@ -36,9 +38,9 @@ socket.on("skins", data => {
         skins[i].secondImg.id = "secondary";
         skins[i].thirdImg = new Image();
         skins[i].thirdImg.id = "third";
-        try{
+        try {
             skins[i].thirdImg.src = "img/featured/" + skins[i].code + ".png";
-        } catch(e){}
+        } catch (e) {}
         try {
             /* Supress error for skins without secondary image */
             skins[i].secondImg.src = "img/full/" + skins[i].code + ".png";
@@ -47,11 +49,11 @@ socket.on("skins", data => {
         skins[i].hasThirdImage = false;
         skins[i].secondImg.onload = () => {
             skins[i].hasSecondImage = true
-            if(currentSkin == i) inspect(i);
+            if (currentSkin == i) inspect(i);
         };
         skins[i].thirdImg.onload = () => {
             skins[i].hasThirdImage = true;
-            if(currentSkin == i) inspect(i);
+            if (currentSkin == i) inspect(i);
         }
         skins[i].img.src = skins[i].src;
         var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d"]
@@ -123,6 +125,17 @@ function rateSort(a, b) {
     return 0;
 }
 
+function commentSort(a, b) {
+    try {
+
+        if (a.comments.length > b.comments.length)
+            return -1;
+        if (a.comments.length < b.comments.length)
+            return 1;
+        return 0;
+    } catch (e) {}
+}
+
 function votes(a, b) {
     if (a.stars.reduce(add, 0) > b.stars.reduce(add, 0))
         return -1;
@@ -157,6 +170,7 @@ function sortBy(val) {
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
     if (val == "votes") skins.sort(votes);
+    if (val == "comments") skins.sort(commentSort);
     sortMode = val;
     populateCollection();
     var i = 0;
@@ -165,10 +179,11 @@ function sortBy(val) {
 }
 
 var cosmeticFilter = "all";
-function filter(val){
+
+function filter(val) {
     cosmeticFilter = val;
     populateCollection();
-    inspect(i); 
+    inspect(i);
 }
 
 function populateCollection() {
@@ -178,28 +193,28 @@ function populateCollection() {
 
     for (let i = 0; i < skins.length; i++) {
         var skip = false;
-        if(cosmeticFilter != "all"){
-            if(skins[i].type != cosmeticFilter) skip = true; 
+        if (cosmeticFilter != "all") {
+            if (skins[i].type != cosmeticFilter) skip = true;
         }
-        if(!skip){
-        var skin = skins[i];
-        var skip = false;
-        var searches = search.toLowerCase().split(" ");
-        searches.forEach(s => {
-            if (skin.name.toLowerCase().indexOf(s) == -1) skip = true;
-        });
+        if (!skip) {
+            var skin = skins[i];
+            var skip = false;
+            var searches = search.toLowerCase().split(" ");
+            searches.forEach(s => {
+                if (skin.name.toLowerCase().indexOf(s) == -1) skip = true;
+            });
 
-        if ((!skip || search == false) && skin.code != undefined && skin.code !== "RECRUIT") {
-            var rating = skin.rating;
-            //var myRating??
-            var warn = "";
-            if (myAccount !== undefined) {
-                if (myAccount.account[skin.code] == undefined) warn = "!";
+            if ((!skip || search == false) && skin.code != undefined && skin.code !== "RECRUIT") {
+                var rating = skin.rating;
+                //var myRating??
+                var warn = "";
+                if (myAccount !== undefined) {
+                    if (myAccount.account[skin.code] == undefined) warn = "!";
+                }
+                document.getElementById("collection").innerHTML += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
+                document.getElementById("img_" + i).appendChild(skin.img)
             }
-            document.getElementById("collection").innerHTML += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
-            document.getElementById("img_" + i).appendChild(skin.img)
         }
-    }
     }
 }
 
@@ -218,29 +233,52 @@ function inspect(skinIndex) {
         updateStars(thisRating);
     } catch (e) {}
     var rating = thisRating;
-    
+
     hideConfirm();
-    
+
     document.getElementById("stars").innerHTML = "";
     document.getElementById("title").innerHTML = skins[skinIndex].name;
     document.getElementById("full").src = skins[skinIndex].src;
 
-    if(!skins[skinIndex].hasSecondImage){
+    if (!skins[skinIndex].hasSecondImage) {
         document.getElementById("secondary-insert").innerHTML = ""
     } else {
         document.getElementById("secondary-insert").innerHTML = '';
         document.getElementById("secondary-insert").appendChild(skins[skinIndex].secondImg);
     }
 
-    if(!skins[skinIndex].hasThirdImage){
+    if (!skins[skinIndex].hasThirdImage) {
         document.getElementById("third-insert").innerHTML = ""
     } else {
         document.getElementById("third-insert").innerHTML = '';
         document.getElementById("third-insert").appendChild(skins[skinIndex].thirdImg);
     }
 
+    if (skins[skinIndex].comments.length > 0) {
+        document.getElementById("comments").innerHTML = "";
+    } else {
+        document.getElementById("comments").innerHTML = '<span id="no-comments-here"> No comments yet, you can be the first to comment on this skin!</span>';
+    }
+    skins[skinIndex].comments.sort(dateSort);
+
+    function dateSort(a, b) {
+        if (a.date > b.date)
+            return -1;
+        if (a.date < b.date)
+            return 1;
+        return 0;
+    }
+
+    skins[skinIndex].comments.forEach((comment, index) => {
+        document.getElementById("comments").innerHTML += '<div class="comment"> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>';
+        document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
+        if (comment.mod) document.getElementById("username_" + index).classList.toggle("adminComment");
+        document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
+    })
+
     document.getElementById("image-wrap").style.background = skins[skinIndex].color;
     document.getElementById("rating").innerHTML = skins[skinIndex].rating;
+    document.getElementById("rating").title = skins[skinIndex].exactRating;
     var bars = document.getElementsByClassName("bar");
     var maxStars = 0;
     //var skinVotes = skins[currentSkin].votesArr.slice();
@@ -280,38 +318,38 @@ function updateStars(rating) {
 document.addEventListener("mousemove", e => {
     found = false;
     e.path.forEach(path => {
-        if(path.id == "stars"){
+        if (path.id == "stars") {
             found = true;
         }
     })
-    if(!found) resetStars();
+    if (!found) resetStars();
 })
 
 socket.on("confirmedVote", pack => {
-    if(skins[currentSkin].code == pack.skin && pack.rating == thisRating){
+    if (skins[currentSkin].code == pack.skin && pack.rating == thisRating) {
         confirmVote();
     }
 })
 
-function confirmVote(){
+function confirmVote() {
     document.getElementById("check").title = "Vote has been recorded."
     document.getElementById("check").src = "oh_hi_mark.png"
     document.getElementById("check").style.transform = "scale(1)";
 }
 
-function pendingVote(){
+function pendingVote() {
     document.getElementById("check").title = "Vote has been sent."
     document.getElementById("check").src = "unconfirmed.png"
     document.getElementById("img_" + currentSkin).children[1].innerHTML = "";
     document.getElementById("check").style.transform = "scale(1)";
 }
 
-function hideConfirm(){
+function hideConfirm() {
     document.getElementById("check").style.transform = "scale(0)";
 }
 
 
-function updateAccount(rating){
+function updateAccount(rating) {
     myAccount.account[skins[currentSkin].code] = rating;
     thisRating = rating;
     updateStars(rating);
@@ -319,7 +357,7 @@ function updateAccount(rating){
 
 
 function rate(rating) {
-    if(rating === thisRating) return;
+    if (rating === thisRating) return;
     rateUpdate = true;
     socket.emit("rate", {
         skin: skins[currentSkin].code,
@@ -341,16 +379,55 @@ function resetStars() {
 var rateUpdate = false;
 
 
+var username = "Anonymous";
+loadUsername();
 
+function loadUsername() {
+    var newUsername = localStorage.getItem("username");
+    if (newUsername != undefined) {
+        username = newUsername;
+        document.getElementById("username").value = username;
+    }
+}
 
+function updateUsername(newUsername) {
+    // Remember username
+    localStorage.setItem("username", newUsername);
+    username = newUsername;
+}
 
+addEventListener("keydown", e => {
+    if (e.keyCode == 13) {
+        if (document.getElementById("comment-submission") == document.activeElement) submitComment();
+        else document.getElementById("comment-submission").focus();
+    }
+})
 
+socket.on("err", error => alert(error))
 
-/* Basic listener
-socket.on("name", function(package){
-    // Do something
-}); */
+var localComments = 0;
 
-/* Emit to server (example) */
-/* var package = new Object();
-socket.emit("name", package); */
+function submitComment() {
+    var message = document.getElementById("comment-submission").value;
+    if (message.indexOf("/mod") != -1) {
+        localStorage.setItem("token", token) = message.split(" ")[1];
+        return;
+    }
+    if (message.length < 1) return;
+    var comment = {
+        message: message,
+        username: username,
+        skin: skins[currentSkin].code,
+        token: localStorage.getItem("token")
+    }
+    socket.emit("comment", comment)
+
+    document.getElementById("comment-submission").value = "";
+
+    var index = "local_" + localComments;
+    localComments++;
+    if (skins[currentSkin].comments.length < 1) document.getElementById("comments").innerHTML = "";
+    document.getElementById("comments").innerHTML = '<div class="comment"> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>' + document.getElementById("comments").innerHTML;
+    document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
+    document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
+}

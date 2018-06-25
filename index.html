@@ -6,14 +6,14 @@
     <!-- Informations -->
     <meta property="og:description" content="Rate the skins of Fortnite and see what skins are the most appreciated!" />
     <meta property="og:title" content="Fortnite Rate" />
-    <meta property="og:type"  content="website" />
-    <meta property="og:url"   content="http://rate.livfor.it" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://rate.livfor.it" />
     <!-- Image -->
     <meta property="og:image" content="img/CRACKSHOT.png" />
-    <meta property="og:image:alt"    content="Website icon" />
+    <meta property="og:image:alt" content="Website icon" />
     <meta property="og:image:height" content="80" />
     <meta property="og:image:secure_url" content="img/CRACKSHOT.png" />
-    <meta property="og:image:type"  content="image/png" />
+    <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="80" />
     <meta property="og:locale" content="en_GB" />
 
@@ -25,8 +25,8 @@
     <title>FN Rate</title>
     <!-- Socket.io -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-    <link rel="stylesheet" media="screen and (min-device-width: 600px)" href="style.css"/>
-    <link rel="stylesheet" media="screen and (max-device-width: 600px)" href="style_mobile.css"/>
+    <link rel="stylesheet" media="screen and (min-device-width: 1000px)" href="style.css" />
+    <link rel="stylesheet" media="screen and (max-device-width: 1000px)" href="style_mobile.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118879212-2"></script>
@@ -45,70 +45,113 @@
 
 <body>
     <div id="header">
-    <input type="text" placeholder="Search a skin..." id="search" oninput="populateCollection()">
+        <input type="text" placeholder="Search a skin..." id="search" oninput="populateCollection()">
 
-    <span style='color:white; margin-left:2em;'>Filter:</span>
-    <select oninput="filter(this.value)" class="sort">
-        <option value="all">All cosmetics</option>
-        <option value="outfit">Outfits</option>
-        <option value="pickaxe">Pickaxes</option>
-    </select>
+        <div style="display: inline-block">
+            <span style='color:white; margin-left:2em;'>Filter:</span>
+            <select oninput="filter(this.value)" class="sort">
+                <option value="all">All cosmetics</option>
+                <option value="outfit">Outfits</option>
+                <option value="pickaxe">Pickaxes</option>
+            </select>
+        </div>
 
-    <span style='color:white; margin-left:2em;'>Sort by:</span>
-    <select oninput="sortBy(this.value)" id="sort">
-        <option value="rating">Global rating</option>
-        <option value="rarity">Rarity</option>
-        <option value="myrating">Your rating</option>
-        <option value="votes">Amount of votes</option>
-    </select>
+        <div style="display: inline-block">
+            <span style='color:white; margin-left:2em;'>Sort by:</span>
+            <select oninput="sortBy(this.value)" id="sort">
+                <option value="rating">Global rating</option>
+                <option value="rarity">Rarity</option>
+                <option value="myrating">Your rating</option>
+                <option value="votes">Amount of votes</option>
+                <option value="comments">Amount of comments</option>
+            </select>
+        </div>
 
 
-    <span style='color:white; margin-left:2em;'>Color:</span>
-    <select oninput="setColor(this.value)" id="sort">
-        
-        <option value="rarity">Rarity</option>
-        <option value="rating">Rating</option>    </select>
+        <div style="display: inline-block">
+            <span style='color:white; margin-left:2em;'>Color:</span>
+            <select oninput="setColor(this.value)" id="sort">
 
-    <img src="update.png" onclick="get()" id="update-button" title="Reload stats"></button>
-    <a href="https://github.com/Yogsther/forntite-rate" target="_blank" style='margin-left:2em;'>Fork me</a>
+                <option value="rarity">Rarity</option>
+                <option value="rating">Rating</option>
+            </select>
+        </div>
+
+        <div style="display: inline-block">
+            <span style='color:white; margin-left:2em;'>Username:</span>
+            <input maxlength="12" type="text" id="username" value="Anonymous" oninput="updateUsername(this.value)">
+        </div>
+
+
+        <img src="update.png" onclick="get()" id="update-button" title="Reload stats">
+        </button>
+        <a href="https://github.com/Yogsther/forntite-rate" target="_blank" style='margin-left:2em;'>Fork me</a>
     </div>
     <div id="collection"></div>
     <div id="wrap">
         <div id="inspect">
-            <span id="title">SKIN_NAME</span>
+            <span id="title">Tricera Thot</span>
             <div id="image-wrap">
                 <div id="both-images-wrap">
-                <img src="img/TRICERA_OPS.png" class="full" alt="Full image" id="full">
-                <span id="secondary-insert">  <img src="img/full/TRICERA_OPS.png" id="secondary" alt=""> </span>
-                <span id="third-insert"></span>
-            </div>
+                    <img src="img/TRICERA_OPS.png" class="full" alt="Full image" id="full">
+                    <span id="secondary-insert">
+                        <img src="img/full/TRICERA_OPS.png" id="secondary" alt=""> </span>
+                    <span id="third-insert"></span>
+                </div>
             </div>
 
             <span id="stars">
-                
+
             </span>
             <img src="oh_hi_mark.png" alt="" id="check">
             <span id="score">
-                <span id="rating">?</span>
+                <span id="rating">∞</span>
                 <span id="outof">/5</span>
             </span>
 
-            <span id="votes">Votes: (<span id="amount">0</span>)</span>
+            <span id="votes">Votes: (
+                <span id="amount">0</span>)</span>
             <br>
             <div id="bars">
-                5 <div class='bar'>0</div>
-                4 <div class='bar'>0</div>
-                3 <div class='bar'>0</div>
-                2 <div class='bar'>0</div>
-                1 <div class='bar'>0</div>
+                5
+                <div class='bar'>0</div>
+                4
+                <div class='bar'>0</div>
+                3
+                <div class='bar'>0</div>
+                2
+                <div class='bar'>0</div>
+                1
+                <div class='bar'>0</div>
+            </div>
+
+            <div id="comment-block">
+                <div id="comments">
+
+                    <!-- 
+                    <div class="comment">
+                        <span class="username">Olle:</span>
+                        <span class="message">I really like this skin, heyoooo thats some gooood shit!!!! Eyy lmao thats some gooood S H I T </span>
+                    </div>
+                -->
+
+                    <span id="no-comments-here"> No comments yet, you can be the first to comment on this skin! </span>
+
+                </div>
+
+
+                <div id="submit-comment">
+                    <input type="text" maxlength="200" placeholder="Write a comment [ENTER]" id="comment-submission">
+                </div>
             </div>
 
             <div id="stats">
                 <i>Your stats:</i>
                 <br> Rated skins: 20/120
-                <br> Average rating: 3.3
-                <br>
+                <br> Average rating: 5
+                <br> 
             </div>
+
 
         </div>
     </div>
