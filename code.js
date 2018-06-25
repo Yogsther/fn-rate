@@ -144,10 +144,11 @@ function personalRating(a, b) {
 }
 
 function justSort /*lol*/ (val) {
-    if (val == "rating") skins.sort(rateSort);
+    /* if (val == "rating") skins.sort(rateSort);
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
-    if (val == "votes") skins.sort(votes);
+    if (val == "votes") skins.sort(votes); */
+    sortBy(val);
     sortMode = val;
 }
 
