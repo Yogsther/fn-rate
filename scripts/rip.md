@@ -4,7 +4,7 @@
     var col = document.getElementsByClassName("capital");
     var items = new Array();
     var imageSources = "";
-    for(let i = 0; i < col.length; i++){
+    for(let i = 0; i < col.length; i+=2){
         el = col[i].parentElement
         // Rip data
         fnbrSrc = el.children[0].children[0].src

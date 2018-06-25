@@ -12,9 +12,8 @@ var sortMode = "rating";
 
 socket.on("skins", data => {
     skins = data;
-
     // Calculate rating for each skin.
-    skins.forEach(skin => {
+    /* skins.forEach(skin => {
         totalScore = 0;
         totalVotes = 0;
         skin.stars.forEach((star, index) => {
@@ -25,13 +24,12 @@ socket.on("skins", data => {
         skin.rating = Math.round((skin.exactRating) * 100) / 100;
 
         skin.votes = totalVotes;
-    })
+    }) */
 
     justSort(sortMode);
     amountOfSkins = 0;
     document.getElementById("sort").value = sortMode;
     /* Load skins */
-
     for (let i = 0; i < skins.length; i++) {
         skins[i].img = new Image();
         skins[i].secondImg = new Image();
@@ -47,14 +45,18 @@ socket.on("skins", data => {
         } catch (e) {}
         skins[i].hasSecondImage = false;
         skins[i].hasThirdImage = false;
-        skins[i].secondImg.onload = () => {
-            skins[i].hasSecondImage = true
-            if (currentSkin == i) inspect(i);
-        };
-        skins[i].thirdImg.onload = () => {
-            skins[i].hasThirdImage = true;
-            if (currentSkin == i) inspect(i);
-        }
+        try{
+            skins[i].secondImg.onload = () => {
+                skins[i].hasSecondImage = true
+                if (currentSkin == i) inspect(i);
+            };
+        } catch(e){}
+        try{
+            skins[i].thirdImg.onload = () => {
+                skins[i].hasThirdImage = true;
+                if (currentSkin == i) inspect(i);
+            }
+        } catch(e){}
         skins[i].img.src = skins[i].src;
         var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d"]
         var color = 1;
@@ -161,17 +163,17 @@ function justSort /*lol*/ (val) {
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
     if (val == "votes") skins.sort(votes); */
-    sortBy(val);
-    sortMode = val;
+    sortBy(val, true);
 }
 
-function sortBy(val) {
+function sortBy(val, dontLoad) {
     if (val == "rating") skins.sort(rateSort);
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
     if (val == "votes") skins.sort(votes);
     if (val == "comments") skins.sort(commentSort);
     sortMode = val;
+    if(dontLoad !== undefined) return;
     populateCollection();
     var i = 0;
     while (skins[i].code == "RECRUIT") i++;
@@ -213,6 +215,7 @@ function populateCollection() {
                 }
                 document.getElementById("collection").innerHTML += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
                 document.getElementById("img_" + i).appendChild(skin.img)
+                
             }
         }
     }
