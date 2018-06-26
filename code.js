@@ -455,7 +455,7 @@ function submitComment() {
     var index = "local_" + localComments;
     localComments++;
     if (skins[currentSkin].comments.length < 1) document.getElementById("comments").innerHTML = "";
-    document.getElementById("comments").innerHTML = '<div class="comment"> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>' + document.getElementById("comments").innerHTML;
+    document.getElementById("comments").innerHTML = '<div class="comment"> <span class="votes"> <img src="vote_grey.png" alt="" class="upvote" title="Upvote this comment" onclick="alert(' + "'Cannot vote on your own comment.'" + ')"> <span class="karma" title="Local comment">1</span> <img src="vote_grey.png" onclick="alert(' + "'Cannot vote on your own comment.'" + ')" title="Downvote this comment" alt="" class="downvote"> </span> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>' + document.getElementById("comments").innerHTML;
     document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
     document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
 }
