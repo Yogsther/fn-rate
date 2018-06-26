@@ -86,6 +86,14 @@ socket.on("skins", data => {
 
 socket.on("account", acc => {
     myAccount = acc;
+    skins.forEach(skin => {
+        if(skin.comments !== undefined) skin.comments.forEach(comment => {
+            comment.karma = 1 + (comment.upvotes - comment.downvotes);
+            comment.percentage = (1+comment.upvotes) / (comment.upvotes + comment.downvotes + 1);
+            if(myAccount.upvotes.indexOf(comment.id) !== -1) comment.action = "upvote";
+            if(myAccount.downvotes.indexOf(comment.id) !== -1) comment.action = "downvote";
+        })
+    })
     thisRating = myAccount.account[skins[currentSkin].code];
     updateStars(thisRating);
     updateStats();
@@ -262,7 +270,17 @@ function inspect(skinIndex) {
     } else {
         document.getElementById("comments").innerHTML = '<span id="no-comments-here"> No comments yet, you can be the first to comment on this skin!</span>';
     }
+
     skins[skinIndex].comments.sort(dateSort);
+    skins[skinIndex].comments.sort(karmaSort);
+
+    function karmaSort(a, b) {
+        if (a.karma > b.karma)
+            return -1;
+        if (a.karma < b.karma)
+            return 1;
+        return 0;
+    }
 
     function dateSort(a, b) {
         if (a.date > b.date)
@@ -273,7 +291,14 @@ function inspect(skinIndex) {
     }
 
     skins[skinIndex].comments.forEach((comment, index) => {
-        document.getElementById("comments").innerHTML += '<div class="comment"> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>';
+        var downvoteSource = "vote_grey.png";
+        var upvoteSource = "vote_grey.png";
+        if(comment.action == "upvote") upvoteSource = "vote_green.png";
+        if(comment.action == "downvote") downvoteSource = "vote_red.png";
+        var karma = comment.karma;
+        var percentage = comment.percentage;
+        var karmaInfo = (percentage*100)+"% upvoted, " + (comment.upvotes+comment.downvotes) + " total votes."
+        document.getElementById("comments").innerHTML += '<div class="comment"> <span class="votes"> <img src="' + upvoteSource + '" alt="" class="upvote" title="Upvote this comment" onclick="commentVote(this, true)"> <span class="karma" title="' + karmaInfo + '">' + karma + '</span> <img src="' + downvoteSource +'" onclick="commentVote(this, false)" title="Downvote this comment" alt="" class="downvote"> </span> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>';
         document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
         if (comment.mod) document.getElementById("username_" + index).classList.toggle("adminComment");
         document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
@@ -433,4 +458,40 @@ function submitComment() {
     document.getElementById("comments").innerHTML = '<div class="comment"> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>' + document.getElementById("comments").innerHTML;
     document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
     document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
+}
+
+function commentVote(comment, upvote){
+
+    var idString = comment.parentElement.parentElement.children[2].id.substr(8);
+    var commentID = skins[currentSkin].comments[Number(idString)].id;
+
+    var type = "upvote";
+    if(!upvote) type = "downvote";
+
+    
+
+    if(skins[currentSkin].comments[Number(idString)].action == type){
+        if(skins[currentSkin].comments[Number(idString)].action == "downvote") comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 1;
+            else comment.parentElement.children[1].innerHTML -= 1;
+        comment.src = "vote_grey.png";
+        type = "novote";
+    } else if (upvote) {
+        if(skins[currentSkin].comments[Number(idString)].action == "downvote") comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 2;
+            else comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 1;
+        comment.src = "vote_green.png";
+    } else {
+        if(skins[currentSkin].comments[Number(idString)].action == "upvote") comment.parentElement.children[1].innerHTML -= 2;
+            else comment.parentElement.children[1].innerHTML -= 1;
+        comment.src = "vote_red.png";
+    }
+
+    var index = 0;
+    if(upvote) index = 2;
+    comment.parentElement.children[index].src = "vote_grey.png";
+    
+    skins[currentSkin].comments[Number(idString)].action = type;
+    socket.emit("commentVote", {
+        id: commentID,
+        type: type
+    });
 }

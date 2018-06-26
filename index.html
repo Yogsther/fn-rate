@@ -25,8 +25,8 @@
     <title>FN Rate</title>
     <!-- Socket.io -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
-    <link rel="stylesheet" media="screen and (min-device-width: 1000px)" href="style.css" />
-    <link rel="stylesheet" media="screen and (max-device-width: 1000px)" href="style_mobile.css" />
+    <link rel="stylesheet" media="screen and (min-device-width: 750px)" href="style.css" />
+    <link rel="stylesheet" media="screen and (max-device-width: 750px)" href="style_mobile.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118879212-2"></script>
@@ -88,7 +88,9 @@
 
         <img src="update.png" onclick="get()" id="update-button" title="Reload stats">
         </button>
+        <div style="display: inline-block"></div>
         <a href="https://github.com/Yogsther/forntite-rate" target="_blank" style='margin-left:2em;'>Fork me</a>
+    </div>
     </div>
     <div id="collection"></div>
     <div id="wrap">
@@ -130,9 +132,9 @@
 
             <div id="comment-block">
                 <div id="comments">
-
                     <!-- 
                     <div class="comment">
+                        
                         <span class="username">Olle:</span>
                         <span class="message">I really like this skin, heyoooo thats some gooood shit!!!! Eyy lmao thats some gooood S H I T </span>
                     </div>

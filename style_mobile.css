@@ -345,3 +345,50 @@ img {
     bottom: 0px;
     display: inline-block;
 }
+
+
+.votes{
+    display: inline-block;
+    height: 60px;
+    float: left;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.upvote{
+    width: 30px;
+    height: 30px;
+    display: block;
+    position: relative;
+}
+
+.upvote:hover{
+}
+
+.downvote{
+    display: block;
+    height: 30px;
+    transform: rotate(180deg);
+}
+
+.karma{
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -5px;
+    margin-bottom: -5px;
+}
+
+.message{
+    position: relative;
+    width: 80%;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+
+.username{
+    margin-left: 10px;
+    color: grey;
+    position: relative;
+}
