@@ -24,6 +24,8 @@
     <select id="type" oninput="updateName()">
         <option value="outfit">outfit</option>
         <option value="pickaxe">pickaxe</option>
+        <option value="back_bling">back_bling</option>
+        <option value="glider">glider</option>
     </select>
 
     <select id="rarity">
@@ -53,6 +55,8 @@
             code = name.split(" ").join("_").split("/").join("_").toUpperCase();
             dir = "img/";
             if (document.getElementById("type").value == "pickaxe") dir += "pickaxes/";
+            if (document.getElementById("type").value == "glider") dir += "glider/";
+            if (document.getElementById("type").value == "back_bling") dir += "back_bling/";
             src = dir + code + ".png";
             document.getElementById("src").value = src;
             document.getElementById("code").value = code;
