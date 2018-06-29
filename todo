@@ -1,0 +1,10 @@
+
+[DONE] Fix featured and full image
+[DONE] Add animated loading gif when loading images.
+[DONE] Display account karma for users.
+
+
+Optimize test:
+
+Old loadtime: 2:30m
+New loadtime: 

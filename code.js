@@ -10,72 +10,61 @@ var firstLoad = true;
 var colorSort = "rarity";
 var sortMode = "rating";
 
+
+var tips = [
+    "You can change your username at the top of the page!",
+    "You can upvote or downvote comments.",
+    "Keep your comments civil, we delete overly-toxic comments and can suspend disruptive users.",
+    'Under "Your stats" you can find your commenting karma.',
+    "You can search for skins in the top left corner.",
+    "If you find any bugs or want to give a suggestion regarding the website, please contact me on Reddit (u/Yogsther) or Github @ Yogsther"
+]
+
+document.getElementById("no-comments-here").innerText = tips[Math.floor(Math.random()*tips.length)]
+
+var loadingImage = new Image();
+loadingImage.src = "logo_animated.gif";
+
 socket.on("skins", data => {
+    // Save skins locally
     skins = data;
-    // Calculate rating for each skin.
-    /* skins.forEach(skin => {
-        totalScore = 0;
-        totalVotes = 0;
-        skin.stars.forEach((star, index) => {
-            totalScore += star * (index + 1);
-            totalVotes += star;
-        })
-        skin.exactRating = (totalScore / totalVotes)
-        skin.rating = Math.round((skin.exactRating) * 100) / 100;
-
-        skin.votes = totalVotes;
-    }) */
-
+    // Sort skins
     justSort(sortMode);
+    // Initiate counter
     amountOfSkins = 0;
     document.getElementById("sort").value = sortMode;
     /* Load skins */
     for (let i = 0; i < skins.length; i++) {
-        skins[i].img = new Image();
-        skins[i].secondImg = new Image();
-        skins[i].secondImg.id = "secondary";
-        skins[i].thirdImg = new Image();
-        skins[i].thirdImg.id = "third";
-        try {
-            skins[i].thirdImg.src = "img/featured/" + skins[i].code + ".png";
-        } catch (e) {}
-        try {
-            /* Supress error for skins without secondary image */
-            skins[i].secondImg.src = "img/full/" + skins[i].code + ".png";
-        } catch (e) {}
-        skins[i].hasSecondImage = false;
-        skins[i].hasThirdImage = false;
-        try{
-            skins[i].secondImg.onload = () => {
-                skins[i].hasSecondImage = true
-                if (currentSkin == i) inspect(i);
-            };
-        } catch(e){}
-        try{
-            skins[i].thirdImg.onload = () => {
-                skins[i].hasThirdImage = true;
-                if (currentSkin == i) inspect(i);
+        if (skins[i].code === undefined && skins[i].name === undefined) {
+            console.warn("Removed skin: ", skins[i])
+            skins.splice(i, 1);
+        } else {
+            if (skins[i].code === undefined) {
+                skins[i].code = skins[i].name.toUpperCase().split(" ").join("_");
             }
-        } catch(e){}
-        skins[i].img.src = skins[i].src;
-        var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d"]
-        var color = 1;
-        for (let j = 0; j < rarityColors.length; j++)
-            if (skins[i].rarity == rarityColors[j]) color = j + 1;
-        color = rarityColors[color];
-        if (colorSort == "rating") {
-            var percent = 1.2 - skins[i].rating / 5;
-            var hue = ((1 - percent) * 120).toString(10);
-            color = ["hsl(", hue, ",100%,50%)"].join("");
+            skins[i].thumb = new Image();
+            skins[i].codeSource = skins[i].code.split("/").join("_");
+            if (skins[i].type == "glider" || skins[i].type == "umbrella") skins[i].codeSource = skins[i].codeSource.split("'").join("");
+            skins[i].thumb.src = "img/thumbnails/" + skins[i].type + "/" + skins[i].codeSource + ".png";
+            var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d"]
+            var color = 1;
+            for (let j = 0; j < rarityColors.length; j++)
+                if (skins[i].rarity == rarityColors[j]) color = j + 1;
+            color = rarityColors[color];
+            if (colorSort == "rating") {
+                var percent = 1.2 - skins[i].rating / 5;
+                var hue = ((1 - percent) * 120).toString(10);
+                color = ["hsl(", hue, ",100%,50%)"].join("");
+            }
+            skins[i].thumb.style = 'background-color:' + color;
+            skins[i].color = color;
+            skins[i].thumb.draggable = 'false'
+            if (skins[i].code != undefined && skins[i].code != "RECRUIT") amountOfSkins++;
+            skins[i].thumb.addEventListener("click", () => {
+                inspect(i);
+            })
+            skins[i].thumb.className = 'preview'
         }
-        skins[i].img.style = 'background-color:' + color;
-        skins[i].color = color;
-        skins[i].img.draggable = 'false'
-        if (skins[i].code != undefined && skins[i].code != "RECRUIT") amountOfSkins++;
-        skins[i].img.addEventListener("click", () => {
-            inspect(i);
-        })
-        skins[i].img.className = 'preview'
     }
     if (userRequested) {
         populateCollection();
@@ -87,11 +76,11 @@ socket.on("skins", data => {
 socket.on("account", acc => {
     myAccount = acc;
     skins.forEach(skin => {
-        if(skin.comments !== undefined) skin.comments.forEach(comment => {
+        if (skin.comments !== undefined) skin.comments.forEach(comment => {
             comment.karma = 1 + (comment.upvotes - comment.downvotes);
-            comment.percentage = (1+comment.upvotes) / (comment.upvotes + comment.downvotes + 1);
-            if(myAccount.upvotes.indexOf(comment.id) !== -1) comment.action = "upvote";
-            if(myAccount.downvotes.indexOf(comment.id) !== -1) comment.action = "downvote";
+            comment.percentage = (1 + comment.upvotes) / (comment.upvotes + comment.downvotes + 1);
+            if (myAccount.upvotes.indexOf(comment.id) !== -1) comment.action = "upvote";
+            if (myAccount.downvotes.indexOf(comment.id) !== -1) comment.action = "downvote";
         })
     })
     thisRating = myAccount.account[skins[currentSkin].code];
@@ -114,7 +103,7 @@ function updateStats() {
     });
     var average = Math.round((totalRate / length) * 100) / 100;
     if (length >= amountOfSkins) document.title = "FN Rate 🌟"
-    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average;
+    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average +"<br>Karma: " + myAccount.karma + "<br>Amount of comments: " + myAccount.comments.length;
 }
 
 var rarities = ["common", "uncommon", "rare", "epic", "legendary"];
@@ -181,7 +170,7 @@ function sortBy(val, dontLoad) {
     if (val == "votes") skins.sort(votes);
     if (val == "comments") skins.sort(commentSort);
     sortMode = val;
-    if(dontLoad !== undefined) return;
+    if (dontLoad !== undefined) return;
     populateCollection();
     var i = 0;
     while (skins[i].code == "RECRUIT") i++;
@@ -221,9 +210,14 @@ function populateCollection() {
                 if (myAccount !== undefined) {
                     if (myAccount.account[skin.code] == undefined) warn = "!";
                 }
-                document.getElementById("collection").innerHTML += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
-                document.getElementById("img_" + i).appendChild(skin.img)
-                
+                if (skin.code != undefined) {
+                    document.getElementById("collection").innerHTML += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "' onmouseover='shadowColor(" + i + ", this)'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
+                    try {
+                        document.getElementById("img_" + i).appendChild(skin.thumb)
+                    } catch (e) {
+                        console.warn("Problem with skin: " + skin.code, skin);
+                    }
+                }
             }
         }
     }
@@ -235,9 +229,21 @@ function setColor(val) {
     if (val == "rating") colorSort = "rating";
     get();
 }
+/* 
+function shadowColor(index, el){
+    var originalColor = skins[index].color;
+    var shadedColor = shadeColor(originalColor, 50);
+    el.style.boxShadow = "0px 5px 0px " + shadedColor + ";"
+
+    function shadeColor(color, percent) {   
+        var f=parseInt(color.slice(1),16),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=f>>16,G=f>>8&0x00FF,B=f&0x0000FF;
+        return "#"+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
+    }
+} */
 
 function inspect(skinIndex) {
     currentSkin = skinIndex;
+    // Handle rating
     try {
         thisRating = myAccount.account[skins[currentSkin].code];
         if (thisRating == undefined) thisRating = 0;
@@ -247,23 +253,69 @@ function inspect(skinIndex) {
 
     hideConfirm();
 
+    var skin = skins[skinIndex];
     document.getElementById("stars").innerHTML = "";
-    document.getElementById("title").innerHTML = skins[skinIndex].name;
+    document.getElementById("title").innerHTML = skins[skinIndex].name.toUpperCase();
+    var loadingTimeout = setTimeout(() => {
+        document.getElementById("full").src = loadingImage.src;
+    }, 400);
     document.getElementById("full").src = skins[skinIndex].src;
+    clearTimeout(loadingTimeout)
+    // Clear old alt images
+    document.getElementById("secondary-insert").innerHTML = "";
+    document.getElementById("third-insert").innerHTML = "";
+    
+    // Check for alternative images.
+    if (skin.type == "outfit") {
+        var loadingTimeoutOutfit = setTimeout(() => {
+            document.getElementById("secondary-insert").appendChild(loadingImage)
+            document.getElementById("third-insert").appendChild(loadingImage)
+        }, 400);
+        
+        // Skin can have secondary or featured image (Alternative images, if so - display them.) 
+        // Featured image, the one displayed in the item shop
+        skin.featuredImage = new Image();
+        skin.featuredImage.id = "third"
+        skin.featuredImage.src = "img/featured/" + skin.code + ".png";
+        skin.featuredImage.onload = () => {
+            clearTimeout(loadingTimeoutOutfit)
+            document.getElementById("third-insert").innerHTML = "";
+            if (skins[currentSkin] == skin) document.getElementById("third-insert").appendChild(skin.featuredImage);
+        }
 
-    if (!skins[skinIndex].hasSecondImage) {
-        document.getElementById("secondary-insert").innerHTML = ""
-    } else {
-        document.getElementById("secondary-insert").innerHTML = '';
-        document.getElementById("secondary-insert").appendChild(skins[skinIndex].secondImg);
-    }
+        skin.featuredImage.onerror = () => {
+            clearTimeout(loadingTimeoutOutfit)
+            document.getElementById("third-insert").innerHTML = ""
+        }
 
-    if (!skins[skinIndex].hasThirdImage) {
-        document.getElementById("third-insert").innerHTML = ""
-    } else {
-        document.getElementById("third-insert").innerHTML = '';
-        document.getElementById("third-insert").appendChild(skins[skinIndex].thirdImg);
+        // Alt image, aka full body image.
+        skin.altImage = new Image();
+        skin.altImage.id = "secondary"
+        skin.altImage.src = "img/full/" + skin.code + ".png";
+        skin.altImage.onload = () => {
+            clearTimeout(loadingTimeoutOutfit)
+            document.getElementById("secondary-insert").innerHTML = "";
+            if (skins[currentSkin] == skin) document.getElementById("secondary-insert").appendChild(skin.altImage);
+        }
+        skin.altImage.onerror = () => {
+            clearTimeout(loadingTimeoutOutfit)
+            document.getElementById("secondary-insert").innerHTML = ""
+        }
     }
+    /* 
+        if (!skins[skinIndex].hasSecondImage) {
+            document.getElementById("secondary-insert").innerHTML = ""
+        } else {
+            document.getElementById("secondary-insert").innerHTML = '';
+            document.getElementById("secondary-insert").appendChild(skins[skinIndex].secondImg);
+        }
+
+        if (!skins[skinIndex].hasThirdImage) {
+            document.getElementById("third-insert").innerHTML = ""
+        } else {
+            document.getElementById("third-insert").innerHTML = '';
+            document.getElementById("third-insert").appendChild(skins[skinIndex].thirdImg);
+        } */
 
     if (skins[skinIndex].comments.length > 0) {
         document.getElementById("comments").innerHTML = "";
@@ -288,20 +340,23 @@ function inspect(skinIndex) {
         if (a.date < b.date)
             return 1;
         return 0;
-    }
+    }   
+
+    document.getElementById("amount-of-comments").innerText = skins[skinIndex].comments.length;
 
     skins[skinIndex].comments.forEach((comment, index) => {
         var downvoteSource = "vote_grey.png";
         var upvoteSource = "vote_grey.png";
-        if(comment.action == "upvote") upvoteSource = "vote_green.png";
-        if(comment.action == "downvote") downvoteSource = "vote_red.png";
+        if (comment.action == "upvote") upvoteSource = "vote_green.png";
+        if (comment.action == "downvote") downvoteSource = "vote_red.png";
         var karma = comment.karma;
         var percentage = comment.percentage;
-        var karmaInfo = (percentage*100)+"% upvoted, " + (comment.upvotes+comment.downvotes) + " total votes."
-        document.getElementById("comments").innerHTML += '<div class="comment"> <span class="votes"> <img src="' + upvoteSource + '" alt="" class="upvote" title="Upvote this comment" onclick="commentVote(this, true)"> <span class="karma" title="' + karmaInfo + '">' + karma + '</span> <img src="' + downvoteSource +'" onclick="commentVote(this, false)" title="Downvote this comment" alt="" class="downvote"> </span> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>';
+        var karmaInfo = (Math.round((percentage * 100) * 100) / 100) + "% upvoted, " + (comment.upvotes + comment.downvotes) + " total votes."
+        document.getElementById("comments").innerHTML += '<div class="comment"> <span class="votes"> <img src="' + upvoteSource + '" alt="" class="upvote" title="Upvote this comment" onclick="commentVote(this, true)"> <span class="karma" title="' + karmaInfo + '">' + karma + '</span> <img src="' + downvoteSource + '" onclick="commentVote(this, false)" title="Downvote this comment" alt="" class="downvote"> </span> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>';
         document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
         if (comment.mod) document.getElementById("username_" + index).classList.toggle("adminComment");
         document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
+        document.getElementById("username_" + index).title = new Date(comment.date);
     })
 
     document.getElementById("image-wrap").style.background = skins[skinIndex].color;
@@ -339,18 +394,25 @@ function updateStars(rating) {
     for (let i = 0; i < 5; i++) {
         var texture = "img/star_gold.png";
         if (i + 1 > rating) texture = "img/star_grey.png";
-        document.getElementById("stars").innerHTML += "<img src=" + texture + " class='star' onmouseout='resetStars()' onclick='rate(" + (i + 1) + ")' onmouseover='updateStars(" + (i + 1) + ")' >"
+        document.getElementById("stars").innerHTML += "<img src=" + texture + " class='star' onclick='rate(" + (i + 1) + ")' onmouseover='updateStars(" + (i + 1) + ")' >"
     }
 }
 
+var onStars = false;
 document.addEventListener("mousemove", e => {
     found = false;
     e.path.forEach(path => {
         if (path.id == "stars") {
+            onStars = true;
             found = true;
         }
     })
-    if (!found) resetStars();
+    if (!found){
+        onStars = false;
+        setTimeout(() => {
+            if(!onstalled) resetStars();
+        }, 50)
+    }
 })
 
 socket.on("confirmedVote", pack => {
@@ -460,35 +522,35 @@ function submitComment() {
     document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
 }
 
-function commentVote(comment, upvote){
+function commentVote(comment, upvote) {
 
     var idString = comment.parentElement.parentElement.children[2].id.substr(8);
     var commentID = skins[currentSkin].comments[Number(idString)].id;
 
     var type = "upvote";
-    if(!upvote) type = "downvote";
+    if (!upvote) type = "downvote";
 
-    
 
-    if(skins[currentSkin].comments[Number(idString)].action == type){
-        if(skins[currentSkin].comments[Number(idString)].action == "downvote") comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 1;
-            else comment.parentElement.children[1].innerHTML -= 1;
+
+    if (skins[currentSkin].comments[Number(idString)].action == type) {
+        if (skins[currentSkin].comments[Number(idString)].action == "downvote") comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 1;
+        else comment.parentElement.children[1].innerHTML -= 1;
         comment.src = "vote_grey.png";
         type = "novote";
     } else if (upvote) {
-        if(skins[currentSkin].comments[Number(idString)].action == "downvote") comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 2;
-            else comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 1;
+        if (skins[currentSkin].comments[Number(idString)].action == "downvote") comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 2;
+        else comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 1;
         comment.src = "vote_green.png";
     } else {
-        if(skins[currentSkin].comments[Number(idString)].action == "upvote") comment.parentElement.children[1].innerHTML -= 2;
-            else comment.parentElement.children[1].innerHTML -= 1;
+        if (skins[currentSkin].comments[Number(idString)].action == "upvote") comment.parentElement.children[1].innerHTML -= 2;
+        else comment.parentElement.children[1].innerHTML -= 1;
         comment.src = "vote_red.png";
     }
 
     var index = 0;
-    if(upvote) index = 2;
+    if (upvote) index = 2;
     comment.parentElement.children[index].src = "vote_grey.png";
-    
+
     skins[currentSkin].comments[Number(idString)].action = type;
     socket.emit("commentVote", {
         id: commentID,

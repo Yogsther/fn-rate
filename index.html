@@ -84,18 +84,23 @@
             <span style='color:white; margin-left:2em;'>Username:</span>
             <input maxlength="12" type="text" id="username" value="Anonymous" oninput="updateUsername(this.value)">
         </div>
-
-
-        <img src="update.png" onclick="get()" id="update-button" title="Reload stats">
         </button>
-        <div style="display: inline-block"></div>
-        <a href="https://github.com/Yogsther/forntite-rate" target="_blank" style='margin-left:2em;'>Fork me</a>
+        <div style="display: inline-block">
+        <a href="https://github.com/Yogsther/forntite-rate" title="Look at the source for this website." target="_blank" style='margin-left:2em;'>Fork me</a>
+    </div>
+    <div style="display: inline-block">
+        <a href="https://www.reddit.com/u/Yogsther" target="_blank" style='margin-left:2em;' title="Report a bug or submit a suggestion">Contact me</a>
+</div>
     </div>
     </div>
-    <div id="collection"></div>
+    <div id="collection">
+
+        <img src="logo_animated.gif" alt="Loading animation" id="loading_logo">
+
+    </div>
     <div id="wrap">
         <div id="inspect">
-            <span id="title">Tricera Thot</span>
+            <span id="title">TRICERA THOT</span>
             <div id="image-wrap">
                 <div id="both-images-wrap">
                     <img src="img/TRICERA_OPS.png" class="full" alt="Full image" id="full">
@@ -114,7 +119,7 @@
                 <span id="outof">/5</span>
             </span>
 
-            <span id="votes">Votes: (<span id="amount">0</span>)</span>
+            <span id="votes"><span id="amount">0</span> votes, <span id="amount-of-comments"> </span> comments. </span>
             <br>
             <div id="bars">
                 5
@@ -131,16 +136,7 @@
 
             <div id="comment-block">
                 <div id="comments">
-                    <!-- 
-                    <div class="comment">
-                        
-                        <span class="username">Olle:</span>
-                        <span class="message">I really like this skin, heyoooo thats some gooood shit!!!! Eyy lmao thats some gooood S H I T </span>
-                    </div>
-                -->
-
-                    <span id="no-comments-here"> No comments yet, you can be the first to comment on this skin! </span>
-
+                    <span id="no-comments-here"> The page is loading, don't worry. </span>
                 </div>
 
 
@@ -151,8 +147,8 @@
 
             <div id="stats">
                 <i>Your stats:</i>
-                <br> Rated skins: 20/120
-                <br> Average rating: 5
+                <br> Rated skins: 😤/420
+                <br> Average rating: ?
                 <br> 
             </div>
 

@@ -78,6 +78,8 @@ input:focus {
 
 .preview {
     width: 100%;
+    position: absolute;
+    bottom: 0px;
 }
 
 .state{
@@ -116,22 +118,74 @@ input:focus {
     cursor: pointer;
     position: relative;
     width: 19%;
+    padding-top: 19%;
     min-width: 4em;
     z-index: 100;
     border-radius: 0px;
     margin: .5%;
     transition: all .1s;
+    top: 0px;
 }
 
+.legendary{
+    box-shadow: 0px 0px #632c12;
+}
+.legendary:hover{
+    box-shadow: 0px 5px #632c12;
+}
+.legendary:active{
+    box-shadow: 0px 0px #632c12;
+}
+
+.epic{
+    box-shadow: 0px 0px #322457;
+}
+.epic:hover{
+    box-shadow: 0px 5px #322457;
+}
+.epic:active{
+    box-shadow: 0px 0px #322457;
+}
+
+.rare{
+    box-shadow: 0px 0px #003c58;
+}
+.rare:hover{
+    box-shadow: 0px 5px #003c58;
+}
+.rare:active{
+    box-shadow: 0px 0px #003c58;
+}
+
+.uncommon{
+    box-shadow: 0px 0px #244614;
+}
+.uncommon:hover{
+    box-shadow: 0px 5px #244614;
+}
+.uncommon:active{
+    box-shadow: 0px 0px #244614;
+}
+
+.common{
+    box-shadow: 0px 0px #3b3b3b;
+}
+.common:hover{
+    box-shadow: 0px 5px #3b3b3b;
+}
+.common:active{
+    box-shadow: 0px 0px #3b3b3b;
+}
+
+
+
 .container:hover {
-    transform: scale(1.1);
-    border-radius: 0px;
+    top: -5px;
     z-index: 2000;
-    box-shadow: 0px 0px 5px black;
 }
 
 .container:active {
-    transform: scale(.99);
+    top: 0px;
 }
 
 #inspect {
@@ -198,6 +252,13 @@ input:focus {
     height: 100%;
 }
 
+#loading_logo{
+    margin: 0 auto;
+    display: block;
+    top: 20vh;
+    position: relative;
+}
+
 #title {
     font-size: 30px;
     display: block;
@@ -236,6 +297,17 @@ img {
     max-width: 2em;
     padding-top: 1em;
     cursor: pointer;
+    transition: top .1s ease;
+    position: relative;
+    top: 0px;
+}
+
+.star:hover{
+    top: -2px;
+}
+
+.star:active{
+    top: 2px;
 }
 
 #stars {
