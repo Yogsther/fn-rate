@@ -185,6 +185,14 @@ function filter(val) {
     inspect(i);
 }
 
+//var searchTimeout = setTimeout(() => {}, 0);
+function search(){
+    clearTimeout(searchTimeout);
+    var searchTimeout = setTimeout(() => {
+        populateCollection();
+    }, 150);
+}
+
 function populateCollection() {
     var search = document.getElementById("search").value;
     document.getElementById("collection").innerHTML = "";
@@ -211,7 +219,7 @@ function populateCollection() {
                     if (myAccount.account[skin.code] == undefined) warn = "!";
                 }
                 if (skin.code != undefined) {
-                    document.getElementById("collection").innerHTML += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "' onmouseover='shadowColor(" + i + ", this)'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
+                    document.getElementById("collection").innerHTML += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
                     try {
                         document.getElementById("img_" + i).appendChild(skin.thumb)
                     } catch (e) {
@@ -242,6 +250,11 @@ function shadowColor(index, el){
 } */
 
 function inspect(skinIndex) {
+
+    var loadingTimeout = setTimeout(() => {
+        document.getElementById("full").src = loadingImage.src;
+    }, 200);
+    document.getElementById("full").src = "";
     currentSkin = skinIndex;
     // Handle rating
     try {
@@ -256,9 +269,7 @@ function inspect(skinIndex) {
     var skin = skins[skinIndex];
     document.getElementById("stars").innerHTML = "";
     document.getElementById("title").innerHTML = skins[skinIndex].name.toUpperCase();
-    var loadingTimeout = setTimeout(() => {
-        document.getElementById("full").src = loadingImage.src;
-    }, 400);
+    
     document.getElementById("full").src = skins[skinIndex].src;
     clearTimeout(loadingTimeout)
     // Clear old alt images
@@ -270,7 +281,7 @@ function inspect(skinIndex) {
         var loadingTimeoutOutfit = setTimeout(() => {
             document.getElementById("secondary-insert").appendChild(loadingImage)
             document.getElementById("third-insert").appendChild(loadingImage)
-        }, 400);
+        }, 200);
         
         // Skin can have secondary or featured image (Alternative images, if so - display them.) 
         // Featured image, the one displayed in the item shop
