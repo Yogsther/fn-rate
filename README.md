@@ -6,7 +6,7 @@ Up to date with Fortnite v.4.5
 
 ![Showcase Gif](showcase.gif)
 
-####TODO: 
+#### TODO: 
  - [x] Save sort option when updating stats
  - [x] Add the no-skins
  - [x] Full body images on inspect
@@ -20,11 +20,11 @@ Up to date with Fortnite v.4.5
  - [x] Optimized website by using thumbnails for preview, and only loading full images once a skin is inspected.
  
  
- ####BUGS: 
+ #### BUGS: 
  - [ ] Safari hitching when hovering over stars
 
 
- ####Credit: 
+ #### Credit: 
  Images downloaded from FNBR.co, all images are owned by Epic Games.
 
 
