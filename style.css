@@ -47,7 +47,7 @@ input:focus {
     outline: 0;
 }
 
-#update-button{
+#update-button {
     height: 1.5em;
     transition: .2s;
     border: none;
@@ -57,11 +57,11 @@ input:focus {
     cursor: pointer;
 }
 
-#update-button:hover{
+#update-button:hover {
     transform: scale(1.1);
 }
 
-#update-button:active{
+#update-button:active {
     transform: scale(.95);
 }
 
@@ -82,17 +82,17 @@ input:focus {
     bottom: 0px;
 }
 
-.state{
+.state {
     position: relative;
     margin: 0;
     left: 0em;
     top: 0em;
 }
 
-.preivew-rating{
+.preivew-rating {
     position: absolute;
     bottom: .3em;
-    right: .3em; 
+    right: .3em;
     text-align: left;
     z-index: 100;
     color: gold;
@@ -101,10 +101,10 @@ input:focus {
     pointer-events: none;
 }
 
-.my-rating{
+.my-rating {
     position: absolute;
     left: .3em;
-    top: 0em; 
+    top: 0em;
     text-align: left;
     z-index: 100;
     color: red;
@@ -113,7 +113,7 @@ input:focus {
     pointer-events: none;
 }
 
-.container{
+.container {
     display: inline-block;
     cursor: pointer;
     position: relative;
@@ -127,57 +127,120 @@ input:focus {
     top: 0px;
 }
 
-.legendary{
+.legendary-block {
+    background: rgba(201, 93, 47, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(201, 93, 47, 1) 0%, rgba(122, 60, 31, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(201, 93, 47, 1)), color-stop(100%, rgba(122, 60, 31, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(201, 93, 47, 1) 0%, rgba(122, 60, 31, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(201, 93, 47, 1) 0%, rgba(122, 60, 31, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(201, 93, 47, 1) 0%, rgba(122, 60, 31, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(201, 93, 47, 1) 0%, rgba(122, 60, 31, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c95d2f', endColorstr='#7a3c1f', GradientType=1);
+}
+
+.epic-block {
+    background: rgba(125, 78, 201, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(125, 78, 201, 1) 0%, rgba(59, 36, 97, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(125, 78, 201, 1)), color-stop(100%, rgba(59, 36, 97, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(125, 78, 201, 1) 0%, rgba(59, 36, 97, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(125, 78, 201, 1) 0%, rgba(59, 36, 97, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(125, 78, 201, 1) 0%, rgba(59, 36, 97, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(125, 78, 201, 1) 0%, rgba(59, 36, 97, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d4ec9', endColorstr='#3b2461', GradientType=1);
+}
+
+.rare-block {
+    background: rgba(0, 148, 222, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(0, 148, 222, 1) 0%, rgba(0, 87, 130, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0, 148, 222, 1)), color-stop(100%, rgba(0, 87, 130, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 148, 222, 1) 0%, rgba(0, 87, 130, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(0, 148, 222, 1) 0%, rgba(0, 87, 130, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(0, 148, 222, 1) 0%, rgba(0, 87, 130, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(0, 148, 222, 1) 0%, rgba(0, 87, 130, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094de', endColorstr='#005782', GradientType=1);
+}
+
+.uncommon-block {
+    background: rgba(90, 179, 55, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(90, 179, 55, 1) 0%, rgba(56, 107, 34, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(90, 179, 55, 1)), color-stop(100%, rgba(56, 107, 34, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(90, 179, 55, 1) 0%, rgba(56, 107, 34, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(90, 179, 55, 1) 0%, rgba(56, 107, 34, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(90, 179, 55, 1) 0%, rgba(56, 107, 34, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(90, 179, 55, 1) 0%, rgba(56, 107, 34, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ab337', endColorstr='#386b22', GradientType=1);
+}
+
+.common-block {
+    background: rgba(224, 224, 224, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(224, 224, 224, 1) 0%, rgba(122, 122, 122, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(224, 224, 224, 1)), color-stop(100%, rgba(122, 122, 122, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(224, 224, 224, 1) 0%, rgba(122, 122, 122, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(224, 224, 224, 1) 0%, rgba(122, 122, 122, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(224, 224, 224, 1) 0%, rgba(122, 122, 122, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(224, 224, 224, 1) 0%, rgba(122, 122, 122, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#7a7a7a', GradientType=1);
+}
+
+.legendary {
     box-shadow: 0px 0px #632c12;
 }
-.legendary:hover{
+
+.legendary:hover {
     box-shadow: 0px 5px #632c12;
 }
-.legendary:active{
+
+.legendary:active {
     box-shadow: 0px 0px #632c12;
 }
 
-.epic{
+.epic {
     box-shadow: 0px 0px #322457;
 }
-.epic:hover{
+
+.epic:hover {
     box-shadow: 0px 5px #322457;
 }
-.epic:active{
+
+.epic:active {
     box-shadow: 0px 0px #322457;
 }
 
-.rare{
+.rare {
     box-shadow: 0px 0px #003c58;
 }
-.rare:hover{
+
+.rare:hover {
     box-shadow: 0px 5px #003c58;
 }
-.rare:active{
+
+.rare:active {
     box-shadow: 0px 0px #003c58;
 }
 
-.uncommon{
+.uncommon {
     box-shadow: 0px 0px #244614;
 }
-.uncommon:hover{
+
+.uncommon:hover {
     box-shadow: 0px 5px #244614;
 }
-.uncommon:active{
+
+.uncommon:active {
     box-shadow: 0px 0px #244614;
 }
 
-.common{
+.common {
     box-shadow: 0px 0px #3b3b3b;
 }
-.common:hover{
+
+.common:hover {
     box-shadow: 0px 5px #3b3b3b;
 }
-.common:active{
+
+.common:active {
     box-shadow: 0px 0px #3b3b3b;
 }
-
-
 
 .container:hover {
     top: -5px;
@@ -210,7 +273,7 @@ input:focus {
     background: #b24f21;
 }
 
-#both-images-wrap{
+#both-images-wrap {
     position: relative;
     display: flex;
     margin: 0 auto;
@@ -218,8 +281,7 @@ input:focus {
     height: 30vh;
 }
 
-
-#check{
+#check {
     height: 30px;
     transform: scale(0);
     transition: all .15s;
@@ -232,7 +294,7 @@ input:focus {
     height: 100%;
 }
 
-#secondary{
+#secondary {
     float: right;
     display: inline-block;
     width: auto;
@@ -244,7 +306,7 @@ input:focus {
     height: 100%;
 }
 
-#third{
+#third {
     position: relative;
     margin: 0 auto;
     display: inline-block;
@@ -252,7 +314,7 @@ input:focus {
     height: 100%;
 }
 
-#loading_logo{
+#loading_logo {
     margin: 0 auto;
     display: block;
     top: 20vh;
@@ -302,11 +364,11 @@ img {
     top: 0px;
 }
 
-.star:hover{
+.star:hover {
     top: -2px;
 }
 
-.star:active{
+.star:active {
     top: 2px;
 }
 
@@ -331,14 +393,14 @@ img {
     right: 50px;
 }
 
-#header{
+#header {
     width: 100%;
     position: relative;
     display: block;
     margin-bottom: .3vh;
 }
 
-.bar{
+.bar {
     left: 20px;
     top: -22px;
     position: relative;
@@ -352,16 +414,14 @@ img {
     transition: all .3s;
 }
 
-#bars{
+#bars {
     margin-top: 30px;
     position: relative;
     width: 40%;
     display: inline-block;
 }
 
-
-
-#comment-block{
+#comment-block {
     margin-top: 30px;
     position: relative;
     float: right;
@@ -375,13 +435,13 @@ img {
     border-color: black;
 }
 
-#comments{
+#comments {
     height: 25vh;
     overflow-x: hidden;
     overflow-y: auto;
 }
 
-.comment{
+.comment {
     overflow: hidden;
     padding: 5px;
     margin: 5px;
@@ -389,11 +449,11 @@ img {
     background: #111;
 }
 
-.adminComment{
+.adminComment {
     color: #f44242 !important;
 }
 
-#no-comments-here{
+#no-comments-here {
     color: grey;
     top: 30px;
     position: relative;
@@ -403,10 +463,7 @@ img {
     text-align: center;
 }
 
-
-
-
-#comment-submission{
+#comment-submission {
     overflow: hidden;
     height: 30px;
     width: 100%;
@@ -416,17 +473,13 @@ img {
     display: inline-block;
 }
 
-
-
-
-#votes{
+#votes {
     position: relative;
     display: block;
     top: 2em;
 }
 
-
-.votes{
+.votes {
     display: inline-block;
     height: 60px;
     float: left;
@@ -434,23 +487,22 @@ img {
     cursor: pointer;
 }
 
-.upvote{
+.upvote {
     width: 30px;
     height: 30px;
     display: block;
     position: relative;
 }
 
-.upvote:hover{
-}
+.upvote:hover {}
 
-.downvote{
+.downvote {
     display: block;
     height: 30px;
     transform: rotate(180deg);
 }
 
-.karma{
+.karma {
     display: block;
     margin: 0 auto;
     text-align: center;
@@ -458,16 +510,20 @@ img {
     margin-bottom: -5px;
 }
 
-.message{
+.message {
     position: relative;
     width: 80%;
     margin-left: 10px;
     display: inline-block;
 }
 
-
-.username{
+.username {
     margin-left: 10px;
     color: grey;
     position: relative;
+}
+
+#canvas {
+    background: rgba(255, 8, 8, 0.431);
+    position: absolute;
 }

@@ -20,14 +20,56 @@ var tips = [
     "If you find any bugs or want to give a suggestion regarding the website, please contact me on Reddit (u/Yogsther) or Github @ Yogsther"
 ]
 
-document.getElementById("no-comments-here").innerText = tips[Math.floor(Math.random()*tips.length)]
+document.getElementById("no-comments-here").innerText = tips[Math.floor(Math.random() * tips.length)]
 
 var loadingImage = new Image();
 loadingImage.src = "logo_animated.gif";
 
+window.onload = () => {
+    updateCanvas();
+}
+
+window.onresize = () => {
+    updateCanvas();
+};
+
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+
+function updateCanvas() {
+    canvas.width = document.getElementById("image-wrap").offsetWidth;
+    canvas.height = document.getElementById("image-wrap").offsetHeight;
+}
+
+var canvasProgress = 0;
+
+function renderCanvas() {
+    ctx.fillStyle = skins[currentSkin].color;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "rgba(0,0,0,0.2)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    var spacing = .005;
+    var heightOffset = 30;
+    var speed = .05;
+    canvasProgress += speed;
+    for (let i = 0; i < canvas.width; i++) {
+        var height = Math.sin(canvasProgress + spacing * i) * heightOffset;
+        ctx.fillStyle = skins[currentSkin].color;
+        ctx.fillRect(i, canvas.height, 1, height - canvas.height / 2);
+        var increase = .5 / canvas.width;
+        ctx.fillStyle = "rgba(0,0,0," + i * increase + ")";
+        ctx.fillRect(i, canvas.height, 1, height - canvas.height / 2);
+    }
+    requestAnimationFrame(renderCanvas);
+}
+
+
+
 socket.on("skins", data => {
     // Save skins locally
     skins = data;
+    renderCanvas();
     // Sort skins
     justSort(sortMode);
     // Initiate counter
@@ -73,6 +115,8 @@ socket.on("skins", data => {
     inspect(currentSkin);
 });
 
+
+
 socket.on("account", acc => {
     myAccount = acc;
     skins.forEach(skin => {
@@ -103,7 +147,7 @@ function updateStats() {
     });
     var average = Math.round((totalRate / length) * 100) / 100;
     if (length >= amountOfSkins) document.title = "FN Rate 🌟"
-    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average +"<br>Karma: " + myAccount.karma + "<br>Amount of comments: " + myAccount.comments.length;
+    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average + "<br>Karma: " + myAccount.karma + "<br>Amount of comments: " + myAccount.comments.length;
 }
 
 var rarities = ["common", "uncommon", "rare", "epic", "legendary"];
@@ -186,7 +230,7 @@ function filter(val) {
 }
 
 //var searchTimeout = setTimeout(() => {}, 0);
-function search(){
+function search() {
     clearTimeout(searchTimeout);
     var searchTimeout = setTimeout(() => {
         populateCollection();
@@ -195,9 +239,9 @@ function search(){
 
 function populateCollection() {
     var search = document.getElementById("search").value;
-    document.getElementById("collection").innerHTML = "";
+    //document.getElementById("collection").innerHTML = "";
 
-
+    var collectionString = "";
     for (let i = 0; i < skins.length; i++) {
         var skip = false;
         if (cosmeticFilter != "all") {
@@ -219,9 +263,9 @@ function populateCollection() {
                     if (myAccount.account[skin.code] == undefined) warn = "!";
                 }
                 if (skin.code != undefined) {
-                    document.getElementById("collection").innerHTML += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "'><span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
+                    collectionString += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "'> <img class='preview " + skin.rarity + "-block' draggable='false' style='background-color:" + skin.color + "' src=" + JSON.stringify(skin.thumb.src) + "> <span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
                     try {
-                        document.getElementById("img_" + i).appendChild(skin.thumb)
+                        //document.getElementById("img_" + i).appendChild(skin.thumb)
                     } catch (e) {
                         console.warn("Problem with skin: " + skin.code, skin);
                     }
@@ -229,6 +273,7 @@ function populateCollection() {
             }
         }
     }
+    document.getElementById("collection").innerHTML = collectionString;
 }
 
 
@@ -250,7 +295,6 @@ function shadowColor(index, el){
 } */
 
 function inspect(skinIndex) {
-
     var loadingTimeout = setTimeout(() => {
         document.getElementById("full").src = loadingImage.src;
     }, 200);
@@ -269,20 +313,20 @@ function inspect(skinIndex) {
     var skin = skins[skinIndex];
     document.getElementById("stars").innerHTML = "";
     document.getElementById("title").innerHTML = skins[skinIndex].name.toUpperCase();
-    
+
     document.getElementById("full").src = skins[skinIndex].src;
     clearTimeout(loadingTimeout)
     // Clear old alt images
     document.getElementById("secondary-insert").innerHTML = "";
     document.getElementById("third-insert").innerHTML = "";
-    
+
     // Check for alternative images.
     if (skin.type == "outfit") {
         var loadingTimeoutOutfit = setTimeout(() => {
             document.getElementById("secondary-insert").appendChild(loadingImage)
             document.getElementById("third-insert").appendChild(loadingImage)
         }, 200);
-        
+
         // Skin can have secondary or featured image (Alternative images, if so - display them.) 
         // Featured image, the one displayed in the item shop
         skin.featuredImage = new Image();
@@ -338,7 +382,7 @@ function inspect(skinIndex) {
         if (a.date < b.date)
             return 1;
         return 0;
-    }   
+    }
 
     document.getElementById("amount-of-comments").innerText = skins[skinIndex].comments.length;
 
@@ -405,10 +449,10 @@ document.addEventListener("mousemove", e => {
             found = true;
         }
     })
-    if (!found){
+    if (!found) {
         onStars = false;
         setTimeout(() => {
-            if(!onstalled) resetStars();
+            if (!onstalled) resetStars();
         }, 50)
     }
 })

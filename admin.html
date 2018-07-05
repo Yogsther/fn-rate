@@ -13,6 +13,17 @@
     <script src="bad_words.js"></script>
 
     <style>
+        ::-webkit-scrollbar {
+            background-color: black;
+            width: 8px;
+            border-radius: 1px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #3a3a3a;
+            border-radius: 3px;
+        }
+
         * {
             font-family: 'Roboto', sans-serif;
         }
@@ -32,9 +43,18 @@
             margin-bottom: 4px;
             border-radius: 3px;
             background: #111;
+            position: relative;
+            left: 0px;
+            transition: all .1s;
+        }
+
+        .insert:hover {
+            left: 3px;
+            background: #000000;
         }
 
         #comments {
+            overflow: auto;
             position: relative;
             float: left;
             top: 50px;
@@ -75,8 +95,8 @@
         <input type="password" id="token" placeholder="Token">
         <button onclick="loadComments()"> Submit </button>
         <span id="comment-status-info">Showing ? / ?</span>
-        <button onclick="loadMore()" title="Key R also loads 50 more comments."> Load more [R] </button>
-        <button onclick="loadAll()"> Load all (warning)</button>
+        <button onclick="loadMore()" title="Key R also loads 150 more comments."> Load more [R] </button>
+        <button onclick="loadAll()"> Load all</button>
     </div>
 
 
@@ -151,11 +171,12 @@
 
 
 
-        var displayCommentsLength = 50;
+        var displayCommentsLength = 150;
         var filledComments = 0;
 
 
         function fillComments() {
+            var pushString = "";
             for (let i = filledComments; i < displayCommentsLength; i++) {
                 filledComments++;
                 var comment = comments[i];
@@ -177,7 +198,8 @@
                 var usernameColor = "#939393";
                 if (comment.mod) usernameColor = "#ff5959";
                 if (comment.username != "Anonymous") usernameColor = "#82a7ff";
-                document.getElementById("comments").innerHTML += "<span class='insert' id='insert_" + i +
+
+                pushString += "<span class='insert' id='insert_" + i +
                     "'><a href='javascript:remove(" + i +
                     ")' style='color:#ffea63'> [REMOVE] </a> <a href='javascript:ban(" + i +
                     ")' style='color:#ff6262'> [BAN] </a> " + dateString + " <a style='color:white' href='img/" +
@@ -185,12 +207,14 @@
                     "</i></a> <span style='color:" + usernameColor + "'>" + comment.username + ":</span> <b>" + comment
                     .message +
                     " </b>" + warn + "<br></span>"
+
             }
+            document.getElementById("comments").innerHTML += pushString;
             updateStatus();
         }
 
         function loadMore() {
-            displayCommentsLength += 50;
+            displayCommentsLength += 150;
             console.log("Loading", displayCommentsLength)
             fillComments();
         }
@@ -214,7 +238,7 @@
                     '<span class="insert"><a style="color:#ff6262;" href="javascript:pardon(' + index +
                     ')"> [PARDON] </a> <a style="color:white" href="javascript:record(' + index +
                     ')"> [LOG] </a> ' + suspension.username + " -  Reason: " + suspension.reason +
-                    "</span><br>"
+                    "</span>"
             })
         })
 
@@ -227,7 +251,7 @@
                     ')"> [APPEAL] </a> <a style="color:#ff6262" href="javascript:trash(' + index +
                     ')" title="Remove comment from deleted comments, forever lost."> [TRASH] </a>' +
                     comment.username + " -  Message: " + comment.message +
-                    "</span><br>"
+                    "</span>"
             })
         })
 
