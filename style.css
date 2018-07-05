@@ -127,6 +127,10 @@ input:focus {
     top: 0px;
 }
 
+#canvas {
+    position: absolute;
+}
+
 .legendary-block {
     background: rgba(201, 93, 47, 1);
     background: -moz-radial-gradient(center, ellipse cover, rgba(201, 93, 47, 1) 0%, rgba(122, 60, 31, 1) 100%);
@@ -523,7 +527,3 @@ img {
     position: relative;
 }
 
-#canvas {
-    background: rgba(255, 8, 8, 0.431);
-    position: absolute;
-}

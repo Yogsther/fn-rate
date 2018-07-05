@@ -42,10 +42,27 @@ function updateCanvas() {
 }
 
 var canvasProgress = 0;
+var colorProgress = 0;
+var oldColor = "black";
+var transitionOffset = 150;
+var transitionSpeed = 5;
 
 function renderCanvas() {
-    ctx.fillStyle = skins[currentSkin].color;
+    ctx.fillStyle = oldColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if(oldColor !== skins[currentSkin].color){
+        ctx.fillStyle = skins[currentSkin].color;
+        ctx.fillRect(0, 0, colorProgress, canvas.height);
+        colorProgress+=transitionSpeed;
+        transitionSpeed+=5;
+        if(colorProgress > canvas.width+transitionOffset){
+            oldColor = skins[currentSkin].color;
+            colorProgress = 0;
+            transitionSpeed = 5;
+        }
+    }
+    // Black overlay to darken color
     ctx.fillStyle = "rgba(0,0,0,0.2)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -56,6 +73,7 @@ function renderCanvas() {
     for (let i = 0; i < canvas.width; i++) {
         var height = Math.sin(canvasProgress + spacing * i) * heightOffset;
         ctx.fillStyle = skins[currentSkin].color;
+        if(i > colorProgress+transitionOffset) ctx.fillStyle = oldColor;
         ctx.fillRect(i, canvas.height, 1, height - canvas.height / 2);
         var increase = .5 / canvas.width;
         ctx.fillStyle = "rgba(0,0,0," + i * increase + ")";
@@ -296,7 +314,7 @@ function shadowColor(index, el){
 
 function inspect(skinIndex) {
     var loadingTimeout = setTimeout(() => {
-        document.getElementById("full").src = loadingImage.src;
+        //document.getElementById("full").src = loadingImage.src;
     }, 200);
     document.getElementById("full").src = "";
     currentSkin = skinIndex;
@@ -323,8 +341,8 @@ function inspect(skinIndex) {
     // Check for alternative images.
     if (skin.type == "outfit") {
         var loadingTimeoutOutfit = setTimeout(() => {
-            document.getElementById("secondary-insert").appendChild(loadingImage)
-            document.getElementById("third-insert").appendChild(loadingImage)
+            //document.getElementById("secondary-insert").appendChild(loadingImage)
+            //document.getElementById("third-insert").appendChild(loadingImage)
         }, 200);
 
         // Skin can have secondary or featured image (Alternative images, if so - display them.) 
