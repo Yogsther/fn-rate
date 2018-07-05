@@ -313,20 +313,7 @@ function inspect(skinIndex) {
             document.getElementById("secondary-insert").innerHTML = ""
         }
     }
-    /* 
-        if (!skins[skinIndex].hasSecondImage) {
-            document.getElementById("secondary-insert").innerHTML = ""
-        } else {
-            document.getElementById("secondary-insert").innerHTML = '';
-            document.getElementById("secondary-insert").appendChild(skins[skinIndex].secondImg);
-        }
 
-        if (!skins[skinIndex].hasThirdImage) {
-            document.getElementById("third-insert").innerHTML = ""
-        } else {
-            document.getElementById("third-insert").innerHTML = '';
-            document.getElementById("third-insert").appendChild(skins[skinIndex].thirdImg);
-        } */
 
     if (skins[skinIndex].comments.length > 0) {
         document.getElementById("comments").innerHTML = "";
@@ -362,11 +349,11 @@ function inspect(skinIndex) {
         if (comment.action == "downvote") downvoteSource = "vote_red.png";
         var karma = comment.karma;
         var percentage = comment.percentage;
-        var karmaInfo = (Math.round((percentage * 100) * 100) / 100) + "% upvoted, " + (comment.upvotes + comment.downvotes) + " total votes."
+        var karmaInfo = (Math.round((percentage * 100) * 100) / 100) + "% upvoted, " + comment.upvotes + " upvotes, " + comment.downvotes + " downvotes, " + (comment.upvotes + comment.downvotes) + " total votes."
         document.getElementById("comments").innerHTML += '<div class="comment"> <span class="votes"> <img src="' + upvoteSource + '" alt="" class="upvote" title="Upvote this comment" onclick="commentVote(this, true)"> <span class="karma" title="' + karmaInfo + '">' + karma + '</span> <img src="' + downvoteSource + '" onclick="commentVote(this, false)" title="Downvote this comment" alt="" class="downvote"> </span> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>';
         document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
         if (comment.mod) document.getElementById("username_" + index).classList.toggle("adminComment");
-        document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
+        document.getElementById("message_" + index).appendChild(document.createTextNode(censorComment(comment.message)));
         document.getElementById("username_" + index).title = new Date(comment.date);
     })
 

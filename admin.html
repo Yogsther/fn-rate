@@ -9,6 +9,8 @@
     <!-- Socket.io -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- Bad words -->
+    <script src="bad_words.js"></script>
 
     <style>
         * {
@@ -21,12 +23,15 @@
 
         body {
             color: white;
-            background: #111;
+            background: #212121
         }
 
         .insert {
             display: block;
-            margin-bottom: 3px;
+            padding: 10px;
+            margin-bottom: 4px;
+            border-radius: 3px;
+            background: #111;
         }
 
         #comments {
@@ -44,7 +49,14 @@
             top: 50px;
             width: 30%;
             display: inline-block;
+        }
 
+        #deleted-comments {
+            padding: 20px;
+            position: relative;
+            top: 50px;
+            width: 30%;
+            display: inline-block;
         }
 
         #input-box {
@@ -61,17 +73,33 @@
 
     <div id="input-box">
         <input type="password" id="token" placeholder="Token">
-        <button> Submit </button>
+        <button onclick="loadComments()"> Submit </button>
+        <span id="comment-status-info">Showing ? / ?</span>
+        <button onclick="loadMore()" title="Key R also loads 50 more comments."> Load more [R] </button>
+        <button onclick="loadAll()"> Load all (warning)</button>
     </div>
 
 
     <div id="comments">
-
+        Comments:
+        <br>
+        <br>
 
 
     </div>
 
-    <div id="suspended-list"></div>
+    <div id="suspended-list">
+        Suspended users:
+        <br>
+        <br>
+    </div>
+
+    <div id="deleted-comments">
+        Deleted comments:
+        <br>
+        <br>
+    </div>
+
 
     <script>
         var socket = io.connect("213.66.254.63:25565");
@@ -79,16 +107,24 @@
         var token = "";
         var comments;
 
+        // TODO
+        var colors = {
+            red: "",
+            yellow: "",
+        }
+
         document.addEventListener("keydown", e => {
             if (e.keyCode == 13) {
                 loadComments();
+            }
+            if (e.keyCode == 82) {
+                loadMore();
             }
         })
 
         function loadComments() {
             token = document.getElementById("token").value;
             localStorage.setItem("token", token);
-
             socket.emit("adminComments", token)
         }
 
@@ -97,6 +133,7 @@
             token = localStorage.getItem("token");
             loadComments();
         }
+
 
         socket.on("adminComments", recivedComments => {
             comments = recivedComments;
@@ -109,8 +146,20 @@
                     return 1;
                 return 0;
             }
-            document.getElementById("comments").innerHTML = "";
-            comments.forEach((comment, i) => {
+            fillComments();
+        });
+
+
+
+        var displayCommentsLength = 50;
+        var filledComments = 0;
+
+
+        function fillComments() {
+            for (let i = filledComments; i < displayCommentsLength; i++) {
+                filledComments++;
+                var comment = comments[i];
+
                 var date = new Date(comment.date);
                 var seconds = date.getSeconds();
                 var minutes = date.getMinutes();
@@ -119,27 +168,66 @@
                 if (seconds.toString().length < 2) seconds = "0" + seconds;
                 if (minutes.toString().length < 2) minutes = "0" + minutes;
                 if (hours.toString().length < 2) hours = "0" + hours;
-                var dateString = date.getFullYear() + "/" + date.getMonth() + "/" + date.getDate() +
+                var dateString = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() +
                     " - " + hours + ":" + minutes + ":" + seconds
+                var warn = "";
+                if (containesBadWord(comment.message) || containesBadWord(comment.username)) {
+                    warn = "<span style='color:#ff4949'> Explicit warning </span>";
+                }
+                var usernameColor = "#939393";
+                if (comment.mod) usernameColor = "#ff5959";
+                if (comment.username != "Anonymous") usernameColor = "#82a7ff";
                 document.getElementById("comments").innerHTML += "<span class='insert' id='insert_" + i +
                     "'><a href='javascript:remove(" + i +
-                    ")' style='color:yellow'> [REMOVE] </a> <a href='javascript:ban(" + i +
-                    ")' style='color:red'> [BAN] </a> " + dateString + " <i>" + comment.skin +
-                    "</i> <b>" + comment.username + "</b>: " + comment.message +
-                    "<br></span>"
-            })
-        })
+                    ")' style='color:#ffea63'> [REMOVE] </a> <a href='javascript:ban(" + i +
+                    ")' style='color:#ff6262'> [BAN] </a> " + dateString + " <a style='color:white' href='img/" +
+                    comment.skin + ".png'><i>" + comment.skin +
+                    "</i></a> <span style='color:" + usernameColor + "'>" + comment.username + ":</span> <b>" + comment
+                    .message +
+                    " </b>" + warn + "<br></span>"
+            }
+            updateStatus();
+        }
+
+        function loadMore() {
+            displayCommentsLength += 50;
+            console.log("Loading", displayCommentsLength)
+            fillComments();
+        }
+
+        function loadAll() {
+            displayCommentsLength = comments.length;
+            fillComments();
+        }
+
+        function updateStatus() {
+            document.getElementById("comment-status-info").innerText = "Showing " + filledComments + "/" + comments.length;
+        }
+
 
         var suspendedList = new Array();
         socket.on("suspendedList", recivedList => {
             suspendedList = recivedList;
-            document.getElementById("suspended-list").innerHTML = "";
+            //document.getElementById("suspended-list").innerHTML = "";
             suspendedList.forEach((suspension, index) => {
                 document.getElementById("suspended-list").innerHTML +=
-                    '<a style="color:red;" href="javascript:pardon(' + index +
+                    '<span class="insert"><a style="color:#ff6262;" href="javascript:pardon(' + index +
                     ')"> [PARDON] </a> <a style="color:white" href="javascript:record(' + index +
                     ')"> [LOG] </a> ' + suspension.username + " -  Reason: " + suspension.reason +
-                    "<br>"
+                    "</span><br>"
+            })
+        })
+
+        var deletedComments;
+        socket.on("deletedComments", recivedDeletedComments => {
+            deletedComments = recivedDeletedComments;
+            deletedComments.forEach((comment, index) => {
+                document.getElementById("deleted-comments").innerHTML +=
+                    '<span class="insert"><a style="color:#ffea63;" href="javascript:appeal(' + index +
+                    ')"> [APPEAL] </a> <a style="color:#ff6262" href="javascript:trash(' + index +
+                    ')" title="Remove comment from deleted comments, forever lost."> [TRASH] </a>' +
+                    comment.username + " -  Message: " + comment.message +
+                    "</span><br>"
             })
         })
 
@@ -152,7 +240,7 @@
         }
 
         function remove(index) {
-            if(!confirm("Are you sure you want to delete this comment: " + comments[index].message)) return;
+            if (!confirm("Are you sure you want to delete this comment: " + comments[index].message)) return;
             socket.emit("remove", {
                 id: comments[index].id,
                 token: token
@@ -162,7 +250,7 @@
         }
 
         function ban(index) {
-            if(!confirm("Are you sure you want to ban this user?")) return;
+            if (!confirm("Are you sure you want to ban this user?")) return;
             var reason = window.prompt("Please enter a reason for ban: ", "Spam");
             socket.emit("ban", {
                 id: comments[index].id,
