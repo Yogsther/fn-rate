@@ -234,9 +234,9 @@ function sortBy(val, dontLoad) {
     sortMode = val;
     if (dontLoad !== undefined) return;
     populateCollection();
-    var i = 0;
+    /* var i = 0;
     while (skins[i].code == "RECRUIT") i++;
-    inspect(i)
+    inspect(i) */
 }
 
 var cosmeticFilter = "all";
@@ -257,6 +257,7 @@ function search() {
 
 function populateCollection() {
     var search = document.getElementById("search").value;
+    var indexZero = false;
     //document.getElementById("collection").innerHTML = "";
 
     var collectionString = "";
@@ -266,6 +267,7 @@ function populateCollection() {
             if (skins[i].type != cosmeticFilter) skip = true;
         }
         if (!skip) {
+            
             var skin = skins[i];
             var skip = false;
             var searches = search.toLowerCase().split(" ");
@@ -274,6 +276,7 @@ function populateCollection() {
             });
 
             if ((!skip || search == false) && skin.code != undefined && skin.code !== "RECRUIT") {
+                if(indexZero === false) indexZero = i;
                 var rating = skin.rating;
                 //var myRating??
                 var warn = "";
@@ -292,6 +295,7 @@ function populateCollection() {
         }
     }
     document.getElementById("collection").innerHTML = collectionString;
+    inspect(indexZero)
 }
 
 

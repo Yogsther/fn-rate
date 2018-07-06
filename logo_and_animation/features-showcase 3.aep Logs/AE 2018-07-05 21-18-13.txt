@@ -1,0 +1,12 @@
+Adobe After Effects v14.1 Windows 64 render log for project “features-showcase 3.aep”
+
+Rendering started on 2018-07-05 at 21:18:13
+
+  2018-07-05 21:18:13: Starting composition “Comp 1”.
+
+  Output To: D:\showcase-video.mov    2018-07-05 21:20:33: Finished composition “Comp 1”.
+
+
+  Total Time Elapsed: 2 Min, 19 Sec
+Log closed on 2018-07-05 at 21:20:33
+
