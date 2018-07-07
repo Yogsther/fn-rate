@@ -406,8 +406,8 @@ img {
     background: rgb(39, 39, 39);
     position: relative;
     display: block;
-    //border-radius: 0px 0px 5px 5px;
     margin-bottom: .3vh;
+    transition: all .3s;
 }
 
 .header-item{

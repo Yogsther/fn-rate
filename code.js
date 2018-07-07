@@ -41,24 +41,21 @@ window.onresize = () => {
 
 var admin = false;
 
-var colors = ["#ff5680", "#598dff", "#558447"];
+/* var colors = ["#ff5680", "#598dff", "#558447"];
 var themeColor = colors[Math.floor(Math.random() * colors.length)];
-
-/* if (localStorage.getItem("token") !== null){
-    themeColor = "#ff425b";
+ */
+if (localStorage.getItem("token") !== null){
     admin = true;
-} */
+} 
 
 
 function applyThemeColor() {
-
+    //newColor = themeColor;
+    
     var bars = document.getElementsByClassName("bar")
-    for (let el of bars) el.style.background = themeColor;
+    for (let el of bars) el.style.background = newColor;
 
-    newColor = themeColor;
-
-    document.getElementById("header").style.boxShadow = "0px 5px 0px " + themeColor
-
+    document.getElementById("header").style.boxShadow = "0px 5px 0px " + newColor
 }
 
 
@@ -348,6 +345,7 @@ function shadowColor(index, el){
 
 function inspect(skinIndex) {
     newColor = skins[skinIndex].color;
+    applyThemeColor();
     var loadingTimeout = setTimeout(() => {
         //document.getElementById("full").src = loadingImage.src;
     }, 200);
