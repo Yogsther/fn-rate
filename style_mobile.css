@@ -23,6 +23,7 @@ a:hover {
 
 body {
     background: #111;
+    margin: 0px;
 }
 
 * {
@@ -156,7 +157,7 @@ input:focus {
     width: 100%;
     overflow: hidden;
     max-height: 30vh;
-    background: #b24f21;
+    background: #111;
 }
 
 #both-images-wrap{
@@ -253,8 +254,17 @@ img {
     width: 100%;
     position: relative;
     display: block;
+    background: rgb(39, 39, 39);
     margin-bottom: .5vh;
+    border-radius: 0px 0px 5px 5px;
 }
+
+.header-item{
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
 
 #sort {
 }
@@ -451,4 +461,26 @@ img {
     background: -ms-radial-gradient(center, ellipse cover, rgba(224, 224, 224, 1) 0%, rgba(122, 122, 122, 1) 100%);
     background: radial-gradient(ellipse at center, rgba(224, 224, 224, 1) 0%, rgba(122, 122, 122, 1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#7a7a7a', GradientType=1);
+}
+
+
+#loading-main{
+    color: white;
+    font-size: 40px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+
+#loading-tips{
+    color: rgb(148, 148, 148);
+    font-size: 18px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
 }

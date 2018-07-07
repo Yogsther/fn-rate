@@ -23,6 +23,7 @@ a:hover {
 
 body {
     background: #111;
+    margin: 0px;
 }
 
 * {
@@ -32,7 +33,7 @@ body {
 #search {
     /* Search box */
     margin-left: 5%;
-    width: 30%;
+    width: 20%;
     border: none;
     background: none;
     height: 5vh;
@@ -68,6 +69,7 @@ input:focus {
 #collection {
     width: 44%;
     height: 90vh;
+    margin-top: 20px;
     overflow-y: scroll;
     overflow-x: hidden;
     margin-left: 5%;
@@ -274,7 +276,7 @@ input:focus {
     width: 100%;
     overflow: hidden;
     max-height: 30vh;
-    background: #b24f21;
+    background: #111;
 }
 
 #both-images-wrap {
@@ -399,9 +401,19 @@ img {
 
 #header {
     width: 100%;
+    box-shadow: 0px 5px 0px black;
+    z-index: 100;
+    background: rgb(39, 39, 39);
     position: relative;
     display: block;
+    //border-radius: 0px 0px 5px 5px;
     margin-bottom: .3vh;
+}
+
+.header-item{
+    display: inline-block;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .bar {
@@ -527,3 +539,26 @@ img {
     position: relative;
 }
 
+
+#loading-main{
+    color: white;
+    font-size: 40px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    top: 30vh;
+}
+
+
+#loading-tips{
+    color: rgb(148, 148, 148);
+    font-size: 18px;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+    top: 31vh;
+}

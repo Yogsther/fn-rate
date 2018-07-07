@@ -49,7 +49,7 @@
     <div id="header">
         <input type="text" placeholder="Search a skin..." id="search" oninput="search()">
 
-        <div style="display: inline-block">
+        <div class="header-item">
             <span style='color:white; margin-left:2em;'>Filter:</span>
             <select oninput="filter(this.value)" class="sort">
                 <option value="all">All cosmetics</option>
@@ -61,7 +61,7 @@
             </select>
         </div>
 
-        <div style="display: inline-block">
+        <div class="header-item">
             <span style='color:white; margin-left:2em;'>Sort by:</span>
             <select oninput="sortBy(this.value)" id="sort">
                 <option value="rating">Global rating</option>
@@ -73,7 +73,7 @@
         </div>
 
 
-        <div style="display: inline-block">
+        <div class="header-item">
             <span style='color:white; margin-left:2em;'>Color:</span>
             <select oninput="setColor(this.value)" id="sort">
 
@@ -82,22 +82,23 @@
             </select>
         </div>
 
-        <div style="display: inline-block">
+        <div class="header-item">
             <span style='color:white; margin-left:2em;'>Username:</span>
             <input maxlength="12" type="text" id="username" value="Anonymous" oninput="updateUsername(this.value)">
         </div>
         </button>
-        <div style="display: inline-block">
-        <a href="https://github.com/Yogsther/forntite-rate" title="Look at the source for this website." target="_blank" style='margin-left:2em;'>Fork me</a>
-    </div>
-    <div style="display: inline-block">
+       
+    <div class="header-item">
         <a href="https://www.reddit.com/u/Yogsther" target="_blank" style='margin-left:2em;' title="Report a bug or submit a suggestion">Contact me</a>
 </div>
     </div>
     </div>
     <div id="collection">
 
-        <img src="logo_animated.gif" alt="Loading animation" id="loading_logo">
+       <!--  <img src="logo_animated.gif" alt="Loading animation" id="loading_logo">
+        -->
+        <span id="loading-main">Loading...</span>
+        <span id="loading-tips"></span>
 
     </div>
     <div id="wrap">

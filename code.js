@@ -17,21 +17,50 @@ var tips = [
     "Keep your comments civil, we delete overly-toxic comments and can suspend disruptive users.",
     'Under "Your stats" you can find your commenting karma.',
     "You can search for skins in the top left corner.",
-    "If you find any bugs or want to give a suggestion regarding the website, please contact me on Reddit (u/Yogsther) or Github @ Yogsther"
+    "If you find any bugs or want to give a suggestion regarding the website, please contact me on Reddit (u/Yogsther) or Github @ Yogsther",
+    "Sorting by your own rating is a good way to find skins you haven't rated on yet."
 ]
 
-document.getElementById("no-comments-here").innerText = tips[Math.floor(Math.random() * tips.length)]
+
+
+
+document.getElementById("loading-tips").innerText = tips[Math.floor(Math.random() * tips.length)]
 
 var loadingImage = new Image();
 loadingImage.src = "logo_animated.gif";
 
 window.onload = () => {
     updateCanvas();
+    renderCanvas();
+    applyThemeColor();
 }
 
 window.onresize = () => {
     updateCanvas();
 };
+
+var admin = false;
+
+var colors = ["#ff5680", "#598dff", "#558447"];
+var themeColor = colors[Math.floor(Math.random() * colors.length)];
+
+if (localStorage.getItem("token") !== undefined){
+    themeColor = "#ff425b";
+    admin = true;
+}
+
+
+function applyThemeColor() {
+
+    var bars = document.getElementsByClassName("bar")
+    for (let el of bars) el.style.background = themeColor;
+
+    newColor = themeColor;
+
+    document.getElementById("header").style.boxShadow = "0px 5px 0px " + themeColor
+
+}
+
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -44,6 +73,7 @@ function updateCanvas() {
 var canvasProgress = 0;
 var colorProgress = 0;
 var oldColor = "black";
+var newColor = "grey";
 var transitionOffset = 150;
 var transitionSpeed = 5;
 
@@ -51,13 +81,13 @@ function renderCanvas() {
     ctx.fillStyle = oldColor;
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    if(oldColor !== skins[currentSkin].color){
-        ctx.fillStyle = skins[currentSkin].color;
+    if (oldColor !== newColor) {
+        ctx.fillStyle = newColor;
         ctx.fillRect(0, 0, colorProgress, canvas.height);
-        colorProgress+=transitionSpeed;
-        transitionSpeed+=5;
-        if(colorProgress > canvas.width+transitionOffset){
-            oldColor = skins[currentSkin].color;
+        colorProgress += transitionSpeed;
+        transitionSpeed += 5;
+        if (colorProgress > canvas.width + transitionOffset) {
+            oldColor = newColor;
             colorProgress = 0;
             transitionSpeed = 5;
         }
@@ -69,11 +99,11 @@ function renderCanvas() {
     var spacing = .005;
     var heightOffset = 30;
     var speed = .05;
-    canvasProgress += speed;
+    canvasProgress -= speed;
     for (let i = 0; i < canvas.width; i++) {
         var height = Math.sin(canvasProgress + spacing * i) * heightOffset;
-        ctx.fillStyle = skins[currentSkin].color;
-        if(i > colorProgress+transitionOffset) ctx.fillStyle = oldColor;
+        ctx.fillStyle = newColor;
+        if (i > colorProgress + transitionOffset) ctx.fillStyle = oldColor;
         ctx.fillRect(i, canvas.height, 1, height - canvas.height / 2);
         var increase = .5 / canvas.width;
         ctx.fillStyle = "rgba(0,0,0," + i * increase + ")";
@@ -87,7 +117,7 @@ function renderCanvas() {
 socket.on("skins", data => {
     // Save skins locally
     skins = data;
-    renderCanvas();
+
     // Sort skins
     justSort(sortMode);
     // Initiate counter
@@ -267,7 +297,7 @@ function populateCollection() {
             if (skins[i].type != cosmeticFilter) skip = true;
         }
         if (!skip) {
-            
+
             var skin = skins[i];
             var skip = false;
             var searches = search.toLowerCase().split(" ");
@@ -276,7 +306,7 @@ function populateCollection() {
             });
 
             if ((!skip || search == false) && skin.code != undefined && skin.code !== "RECRUIT") {
-                if(indexZero === false) indexZero = i;
+                if (indexZero === false) indexZero = i;
                 var rating = skin.rating;
                 //var myRating??
                 var warn = "";
@@ -295,7 +325,7 @@ function populateCollection() {
         }
     }
     document.getElementById("collection").innerHTML = collectionString;
-    inspect(indexZero)
+    if (indexZero !== false) inspect(indexZero)
 }
 
 
@@ -317,6 +347,7 @@ function shadowColor(index, el){
 } */
 
 function inspect(skinIndex) {
+    newColor = skins[skinIndex].color;
     var loadingTimeout = setTimeout(() => {
         //document.getElementById("full").src = loadingImage.src;
     }, 200);
