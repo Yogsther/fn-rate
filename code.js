@@ -44,10 +44,10 @@ var admin = false;
 var colors = ["#ff5680", "#598dff", "#558447"];
 var themeColor = colors[Math.floor(Math.random() * colors.length)];
 
-if (localStorage.getItem("token") !== undefined){
+/* if (localStorage.getItem("token") !== null){
     themeColor = "#ff425b";
     admin = true;
-}
+} */
 
 
 function applyThemeColor() {
