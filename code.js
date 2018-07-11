@@ -21,9 +21,6 @@ var tips = [
     "Sorting by your own rating is a good way to find skins you haven't rated on yet."
 ]
 
-
-
-
 document.getElementById("loading-tips").innerText = tips[Math.floor(Math.random() * tips.length)]
 
 var loadingImage = new Image();
@@ -127,7 +124,8 @@ socket.on("skins", data => {
                 skins[i].code = skins[i].name.toUpperCase().split(" ").join("_");
             }
             skins[i].thumb = new Image();
-            skins[i].codeSource = skins[i].code.split("/").join("_");
+            skins[i].codeSource = skins[i].code.split("/").join("_").split("#").join("%23");
+
             if (skins[i].type == "glider" || skins[i].type == "umbrella") skins[i].codeSource = skins[i].codeSource.split("'").join("");
             skins[i].thumb.src = "img/thumbnails/" + skins[i].type + "/" + skins[i].codeSource + ".png";
             var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d"]
@@ -305,7 +303,7 @@ function populateCollection() {
                 //var myRating??
                 var warn = "";
                 if (myAccount !== undefined) {
-                    if (myAccount.account[skin.code] == undefined) warn = "!";
+                    if (myAccount.account[skin.code] === undefined && myAccount.account[skins[currentSkin].type + "_TYPE_" + skins[currentSkin].code] === undefined) warn = "!";
                 }
                 if (skin.code != undefined) {
                     collectionString += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "'> <img class='preview " + skin.rarity + "-block' draggable='false' style='background-color:" + skin.color + "' src=" + JSON.stringify(skin.thumb.src) + "> <span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
@@ -350,7 +348,11 @@ function inspect(skinIndex) {
     currentSkin = skinIndex;
     // Handle rating
     try {
-        thisRating = myAccount.account[skins[currentSkin].code];
+        if(myAccount.account[skins[currentSkin].type+"_TYPE_" +skins[currentSkin].code] !== undefined){
+            thisRating = myAccount.account[skins[currentSkin].type+"_TYPE_" +skins[currentSkin].code];
+        } else {
+            thisRating = myAccount.account[skins[currentSkin].code];
+        }
         if (thisRating == undefined) thisRating = 0;
         updateStars(thisRating);
     } catch (e) {}
@@ -530,10 +532,22 @@ function hideConfirm() {
 
 
 function updateAccount(rating) {
+    if(myAccount.account[skins[currentSkin].type+"_TYPE_" +skins[currentSkin].code] === undefined){
+        myAccount.account[skins[currentSkin.code]] = rating;
+    } else {
+        myAccount.account[skins[currentSkin].type+"_TYPE_" +skins[currentSkin].code] = rating;
+    }
     myAccount.account[skins[currentSkin].code] = rating;
     thisRating = rating;
     updateStars(rating);
 }
+
+function getCurrentSkin(){
+    if(myAccount.account)
+    for(let skin of skins){
+        myacc
+    }
+} 
 
 
 function rate(rating) {
