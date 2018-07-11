@@ -1,2325 +1,3718 @@
 [{
-    "name": "CRITERION",
-    "price": "??",
-    "src": "img\/CRITERION.png",
-    "type": "outfit",
-    "rarity": "legendary"
-}, {
-    "name": "OBLIVION",
-    "price": "??",
-    "src": "img\/OBLIVION.png",
-    "type": "outfit",
-    "rarity": "legendary"
-}, {
-    "name": "VERTEX",
-    "price": "??",
-    "src": "img\/VERTEX.png",
-    "type": "outfit",
-    "rarity": "legendary"
-}, {
-    "name": "FIREWORKS TEAM LEADER",
-    "price": "??",
-    "src": "img\/FIREWORKS_TEAM_LEADER.png",
-    "type": "outfit",
-    "rarity": "epic"
-}, {
-    "name": "GUMSHOE",
-    "price": "??",
-    "src": "img\/GUMSHOE.png",
-    "type": "outfit",
-    "rarity": "epic"
-}, {
-    "name": "NOIR",
-    "price": "??",
-    "src": "img\/NOIR.png",
-    "type": "outfit",
-    "rarity": "epic"
-}, {
-    "name": "SLEUTH",
-    "price": "??",
-    "src": "img\/SLEUTH.png",
-    "type": "outfit",
-    "rarity": "epic"
-}, {
-    "name": "STARSPANGLED RANGER",
-    "price": "??",
-    "src": "img\/STARSPANGLED_RANGER.png",
-    "type": "outfit",
-    "rarity": "uncommon"
-}, {
-    "name": "STARSPANGLED TROOPER",
-    "price": "??",
-    "src": "img\/STARSPANGLED_TROOPER.png",
-    "type": "outfit",
-    "rarity": "uncommon"
-}, {
-    "name": "DEFLECTOR",
-    "price": "??",
-    "src": "img\/back_bling\/DEFLECTOR.png",
-    "type": "back_bling",
-    "rarity": "legendary"
-}, {
-    "name": "DESTABILIZER",
-    "price": "??",
-    "src": "img\/back_bling\/DESTABILIZER.png",
-    "type": "back_bling",
-    "rarity": "legendary"
-}, {
-    "name": "STABILIZER",
-    "price": "??",
-    "src": "img\/back_bling\/STABILIZER.png",
-    "type": "back_bling",
-    "rarity": "legendary"
-}, {
-    "name": "BLASTING CAP",
-    "price": "??",
-    "src": "img\/back_bling\/BLASTING_CAP.png",
-    "type": "back_bling",
-    "rarity": "epic"
-}, {
-    "name": "CLUEFINDER",
-    "price": "??",
-    "src": "img\/back_bling\/CLUEFINDER.png",
-    "type": "back_bling",
-    "rarity": "epic"
-}, {
-    "name": "CONFIDENTIAL CASE",
-    "price": "??",
-    "src": "img\/back_bling\/CONFIDENTIAL_CASE.png",
-    "type": "back_bling",
-    "rarity": "epic"
-}, {
-    "name": "EVIDENCE BAG",
-    "price": "??",
-    "src": "img\/back_bling\/EVIDENCE_BAG.png",
-    "type": "back_bling",
-    "rarity": "epic"
-}, {
-    "name": "CRIMSON AXE",
-    "price": "??",
-    "src": "img\/pickaxes\/CRIMSON_AXE.png",
-    "type": "pickaxe",
-    "rarity": "rare"
-}, {
-    "name": "MAGNIFYING AXE",
-    "price": "??",
-    "src": "img\/pickaxes\/MAGNIFYING_AXE.png",
-    "type": "pickaxe",
-    "rarity": "rare"
-}, {
-    "name": "RAZOR EDGE",
-    "price": "??",
-    "src": "img\/pickaxes\/RAZOR_EDGE.png",
-    "type": "pickaxe",
-    "rarity": "rare"
-}, {
-    "name": "VICTORY LAP",
-    "price": "??",
-    "src": "img\/pickaxes\/VICTORY_LAP.png",
-    "type": "pickaxe",
-    "rarity": "uncommon"
-}, {
-    "name": "TERMINUS",
-    "price": "??",
-    "src": "img\/glider\/TERMINUS.png",
-    "type": "glider",
-    "rarity": "epic"
-}, {
-    "name": "VICEROY MARK I",
-    "price": "??",
-    "src": "img\/glider\/VICEROY_MARK_I.png",
-    "type": "glider",
-    "rarity": "epic"
-}, {
-    "name": "FORERUNNER",
-    "price": "??",
-    "src": "img\/glider\/FORERUNNER.png",
-    "type": "glider",
-    "rarity": "rare"
-}, {
-    "rarity": "legendary",
-    "price": "??",
-    "src": "img\/FLYTRAP.png",
-    "name": "Flytrap",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "??",
-    "src": "img\/ROSE_TEAM_LEADER.png",
-    "name": "Rose Team Leader",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "??",
-    "src": "img\/WARPAINT.png",
-    "name": "Warpaint",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "??",
-    "src": "img\/RAPSCALLION.png",
-    "name": "Rapscallion",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "??",
-    "src": "img\/ROYALE_BOMBER.png",
-    "name": "Royale Bomber",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "??",
-    "src": "img\/SCOUNDREL.png",
-    "name": "Scoundrel",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "??",
-    "src": "img\/VENTURA.png",
-    "name": "Ventura",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "??",
-    "src": "img\/JUMPSHOT.png",
-    "name": "Jumpshot",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "??",
-    "src": "img\/TRIPLE_THREAT.png",
-    "name": "Triple Threat",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/BATTLE_HOUND.png",
-    "name": "Battle Hound",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "TIER 70 (S2)",
-    "src": "img\/BLACK_KNIGHT.png",
-    "name": "Black Knight",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "TIER 1 (S4)",
-    "src": "img\/CARBIDE.png",
-    "name": "Carbide",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/CRACKSHOT.png",
-    "name": "Crackshot",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/CUDDLE_TEAM_LEADER.png",
-    "name": "Cuddle Team Leader",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/DARK_VANGUARD.png",
-    "name": "Dark Vanguard",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "TIER 70 (S3)",
-    "src": "img\/DARK_VOYAGER.png",
-    "name": "Dark Voyager",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "??",
-    "src": "img\/FLYTRAP.png",
-    "name": "Flytrap",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "TWITCH PRIME",
-    "src": "img\/HAVOC.png",
-    "name": "Havoc",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/LEVIATHAN.png",
-    "name": "Leviathan",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/LOVE_RANGER.png",
-    "name": "Love Ranger",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/MOISTY_MERMAN.png",
-    "name": "Moisty Merman",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "TIER 100 (S4)",
-    "src": "img\/OMEGA.png",
-    "name": "Omega",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/POWER_CHORD.png",
-    "name": "Power Chord",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/RAPTOR.png",
-    "name": "Raptor",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/RAVEN.png",
-    "name": "Raven",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/RED_KNIGHT.png",
-    "name": "Red Knight",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/REX.png",
-    "name": "Rex",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "??",
-    "src": "img\/ROSE_TEAM_LEADER.png",
-    "name": "Rose Team Leader",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "TIER 100 (S3)",
-    "src": "img\/THE_REAPER.png",
-    "name": "The Reaper",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/TRICERA_OPS.png",
-    "name": "Tricera Ops",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "TIER 71 (S4)",
-    "src": "img\/VALOR.png",
-    "name": "Valor",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "??",
-    "src": "img\/WARPAINT.png",
-    "name": "Warpaint",
-    "type": "outfit"
-}, {
-    "rarity": "legendary",
-    "price": "2000",
-    "src": "img\/WUKONG.png",
-    "name": "Wukong",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/ABSTRAKT.png",
-    "name": "Abstrakt",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/ALPINE_ACE.png",
-    "name": "Alpine Ace",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/ALPINE_ACE_(CAN).png",
-    "name": "Alpine Ace (CAN)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/ALPINE_ACE_(CHN).png",
-    "name": "Alpine Ace (CHN)",
-    "type": "outfit",
-    "code": "ALPINE_ACE_(CHN)"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/ALPINE_ACE_(FRA).png",
-    "name": "Alpine Ace (FRA)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/ALPINE_ACE_(GBR).png",
-    "name": "Alpine Ace (GBR)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/ALPINE_ACE_(GER).png",
-    "name": "Alpine Ace (GER)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/ALPINE_ACE_(KOR).png",
-    "name": "Alpine Ace (KOR)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/ALPINE_ACE_(USA).png",
-    "name": "Alpine Ace (USA)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/BANDOLIER.png",
-    "name": "Bandolier",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TIER 1 (S4)",
-    "src": "img\/BATTLEHAWK.png",
-    "name": "Battlehawk",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/BRITE_GUNNER.png",
-    "name": "Brite Gunner",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/BUNNY_BRAWLER.png",
-    "name": "Bunny Brawler",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/BURNOUT.png",
-    "name": "Burnout",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TIER 87 (S3)",
-    "src": "img\/ELITE_AGENT.png",
-    "name": "Elite Agent",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/FUNK_OPS.png",
-    "name": "Funk Ops",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/GHOUL_TROOPER.png",
-    "name": "Ghoul Trooper",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/GINGER_GUNNER.png",
-    "name": "Ginger Gunner",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/HAZARD_AGENT.png",
-    "name": "Hazard Agent",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/HIGHLAND_WARRIOR.png",
-    "name": "Highland Warrior",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/MERRY_MARAUDER.png",
-    "name": "Merry Marauder",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TIER 1 (S3)",
-    "src": "img\/MISSION_SPECIALIST.png",
-    "name": "Mission Specialist",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/MOGUL_MASTER.png",
-    "name": "Mogul Master",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/MOGUL_MASTER_(CAN).png",
-    "name": "Mogul Master (CAN)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/MOGUL_MASTER_(CHN).png",
-    "name": "Mogul Master (CHN)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/MOGUL_MASTER_(FRA).png",
-    "name": "Mogul Master (FRA)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/MOGUL_MASTER_(GBR).png",
-    "name": "Mogul Master (GBR)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/MOGUL_MASTER_(GER).png",
-    "name": "Mogul Master (GER)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/MOGUL_MASTER_(KOR).png",
-    "name": "Mogul Master (KOR)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/MOGUL_MASTER_(USA).png",
-    "name": "Mogul Master (USA)",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TIER 55 (S3)",
-    "src": "img\/MOONWALKER.png",
-    "name": "Moonwalker",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/RABBIT_RAIDER.png",
-    "name": "Rabbit Raider",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "??",
-    "src": "img\/RAPSCALLION.png",
-    "name": "Rapscallion",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "STARTER PACK",
-    "src": "img\/ROGUE_AGENT.png",
-    "name": "Rogue Agent",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "??",
-    "src": "img\/ROYALE_BOMBER.png",
-    "name": "Royale Bomber",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TIER 23 (S3)",
-    "src": "img\/RUST_LORD.png",
-    "name": "Rust Lord",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "??",
-    "src": "img\/SCOUNDREL.png",
-    "name": "Scoundrel",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/SHADOW_OPS.png",
-    "name": "Shadow Ops",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1200",
-    "src": "img\/SKULL_TROOPER.png",
-    "name": "Skull Trooper",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TIER 56 (S2)",
-    "src": "img\/SPARKLE_SPECIALIST.png",
-    "name": "Sparkle Specialist",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TIER 87 (S4)",
-    "src": "img\/SQUAD_LEADER.png",
-    "name": "Squad Leader",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/STEELSIGHT.png",
-    "name": "Steelsight",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TWITCH PRIME",
-    "src": "img\/SUB_COMMANDER.png",
-    "name": "Sub Commander",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TIER 23 (S4)",
-    "src": "img\/TEKNIQUE.png",
-    "name": "Teknique",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/TOMATOHEAD.png",
-    "name": "Tomatohead",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/TOXIC_TROOPER.png",
-    "name": "Toxic Trooper",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TWITCH PRIME",
-    "src": "img\/TRAILBLAZER.png",
-    "name": "Trailblazer",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "??",
-    "src": "img\/VENTURA.png",
-    "name": "Ventura",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "1500",
-    "src": "img\/VENTURION.png",
-    "name": "Venturion",
-    "type": "outfit"
-}, {
-    "rarity": "epic",
-    "price": "TIER 47 (S4)",
-    "src": "img\/ZOEY.png",
-    "name": "Zoey",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/ABSOLUTE_ZERO.png",
-    "name": "Absolute Zero",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/AERIAL_ASSAULT_TROOPER.png",
-    "name": "Aerial Assault Trooper",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/ARCTIC_ASSASSIN.png",
-    "name": "Arctic Assassin",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "TIER 1 (S2)",
-    "src": "img\/BLUE_SQUIRE.png",
-    "name": "Blue Squire",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "PS PLUS",
-    "src": "img\/BLUE_TEAM_LEADER.png",
-    "name": "Blue Team Leader",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/BRAWLER.png",
-    "name": "Brawler",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/BRILLIANT_STRIKER.png",
-    "name": "Brilliant Striker",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/BRITE_BOMBER.png",
-    "name": "Brite Bomber",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/CHROMIUM.png",
-    "name": "Chromium",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/CIPHER.png",
-    "name": "Cipher",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/CIRCUIT_BREAKER.png",
-    "name": "Circuit Breaker",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/CODENAME_E.L.F..png",
-    "name": "Codename E.L.F.",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/DAZZLE.png",
-    "name": "Dazzle",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/DESPERADO.png",
-    "name": "Desperado",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/DIECAST.png",
-    "name": "Diecast",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/FIRST_STRIKE_SPECIALIST.png",
-    "name": "First strike Specialist",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/HYPERION.png",
-    "name": "Hyperion",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/INFILTRATOR.png",
-    "name": "Infiltrator",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "??",
-    "src": "img\/JUMPSHOT.png",
-    "name": "Jumpshot",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/MIDNIGHT_OPS.png",
-    "name": "Midnight Ops",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/MUNITIONS_EXPERT.png",
-    "name": "Munitions Expert",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/RADIANT_STRIKER.png",
-    "name": "Radiant Striker",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/RECON_EXPERT.png",
-    "name": "Recon Expert",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/RECON_SCOUT.png",
-    "name": "Recon Scout",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/RECON_SPECIALIST.png",
-    "name": "Recon Specialist",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/RED-NOSED_RAIDER.png",
-    "name": "Red-Nosed Raider",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/RENEGADE_RAIDER.png",
-    "name": "Renegade Raider",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "TIER 21 (S2)",
-    "src": "img\/ROYALE_KNIGHT.png",
-    "name": "Royale Knight",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/SASH_SERGEANT.png",
-    "name": "Sash Sergeant",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/SNORKEL_OPS.png",
-    "name": "Snorkel Ops",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/SPECIAL_FORCES.png",
-    "name": "Special Forces",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "1200",
-    "src": "img\/SURVIVAL_SPECIALIST.png",
-    "name": "Survival Specialist",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "price": "??",
-    "src": "img\/TRIPLE_THREAT.png",
-    "name": "Triple Threat",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/ASSAULT_TROOPER.png",
-    "name": "Assault Trooper",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/COMMANDO.png",
-    "name": "Commando",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/CRIMSON_SCOUT.png",
-    "name": "Crimson Scout",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/DEVASTATOR.png",
-    "name": "Devastator",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/DOMINATOR.png",
-    "name": "Dominator",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/HIGHRISE_ASSAULT_TROOPER.png",
-    "name": "Highrise Assault Trooper",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/JUNGLE_SCOUT.png",
-    "name": "Jungle Scout",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/LITESHOW.png",
-    "name": "Liteshow",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/NITELITE.png",
-    "name": "Nitelite",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/NOG_OPS.png",
-    "name": "Nog Ops",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/PATHFINDER.png",
-    "name": "Pathfinder",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/RANGER.png",
-    "name": "Ranger",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/RENEGADE.png",
-    "name": "Renegade",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/SCARLET_DEFENDER.png",
-    "name": "Scarlet Defender",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/SCOUT.png",
-    "name": "Scout",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/SGT._GREEN_CLOVER.png",
-    "name": "Sgt. Green Clover",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/TACTICS_OFFICER.png",
-    "name": "Tactics Officer",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/TOWER_RECON_SPECIALIST.png",
-    "name": "Tower Recon Specialist",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/TRACKER.png",
-    "name": "Tracker",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/TROOPER.png",
-    "name": "Trooper",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/WHIPLASH.png",
-    "name": "Whiplash",
-    "type": "outfit"
-}, {
-    "rarity": "uncommon",
-    "price": "800",
-    "src": "img\/YULETIDE_RANGER.png",
-    "name": "Yuletide Ranger",
-    "type": "outfit"
-}, {
-    "rarity": "common",
-    "price": "DEFAULT",
-    "src": "img\/RECRUIT.png",
-    "name": "Recruit",
-    "type": "outfit"
-}, {
-    "rarity": "common",
-    "price": "DEFAULT",
-    "src": "img\/RECRUIT.png",
-    "name": "Recruit",
-    "type": "outfit"
-}, {
-    "rarity": "common",
-    "price": "DEFAULT",
-    "src": "img\/RECRUIT.png",
-    "name": "Recruit",
-    "type": "outfit"
-}, {
-    "rarity": "common",
-    "price": "DEFAULT",
-    "src": "img\/RECRUIT.png",
-    "name": "Recruit",
-    "type": "outfit"
-}, {
-    "rarity": "common",
-    "price": "DEFAULT",
-    "src": "img\/RECRUIT.png",
-    "name": "Recruit",
-    "type": "outfit"
-}, {
-    "rarity": "common",
-    "price": "DEFAULT",
-    "src": "img\/RECRUIT.png",
-    "name": "Recruit",
-    "type": "outfit"
-}, {
-    "rarity": "common",
-    "price": "DEFAULT",
-    "src": "img\/RECRUIT.png",
-    "name": "Recruit",
-    "type": "outfit"
-}, {
-    "rarity": "common",
-    "price": "DEFAULT",
-    "src": "img\/RECRUIT.png",
-    "name": "Recruit",
-    "type": "outfit"
-}, {
-    "rarity": "rare",
-    "name": "TENDRIL",
-    "price": "???",
-    "src": "img\/pickaxes\/TENDRIL.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "AC\/DC",
-    "price": " TIER 63 (S2)",
-    "src": "img\/pickaxes\/AC_DC.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "BITEMARK",
-    "price": " 1,200",
-    "src": "img\/pickaxes\/BITEMARK.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "BOTTOM FEEDER",
-    "price": " 1,500",
-    "src": "img\/pickaxes\/BOTTOM_FEEDER.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "CANDY AXE",
-    "price": " 1,500",
-    "src": "img\/pickaxes\/CANDY_AXE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "CHOMP JR.",
-    "price": " 1,500",
-    "src": "img\/pickaxes\/CHOMP_JR..png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "DEATH VALLEY",
-    "price": " 1,500",
-    "src": "img\/pickaxes\/DEATH_VALLEY.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "DISCO BRAWL",
-    "price": " 1,500",
-    "src": "img\/pickaxes\/DISCO_BRAWL.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "EVA",
-    "price": " TIER 46 (S3)",
-    "src": "img\/pickaxes\/EVA.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "GLOBAL AXE",
-    "price": " 1,200",
-    "src": "img\/pickaxes\/GLOBAL_AXE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "ONSLAUGHT",
-    "price": " LEVEL 45 (S4)",
-    "src": "img\/pickaxes\/ONSLAUGHT.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "PARTY ANIMAL",
-    "price": " 1,500",
-    "src": "img\/pickaxes\/PARTY_ANIMAL.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "PICK SQUEAK",
-    "price": " 1,500",
-    "src": "img\/pickaxes\/PICK_SQUEAK.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "PINK FLAMINGO",
-    "price": " 1,500",
-    "src": "img\/pickaxes\/PINK_FLAMINGO.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "POT O' GOLD",
-    "price": " 1,200",
-    "src": "img\/pickaxes\/POT_O'_GOLD.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "RAIDER'S REVENGE",
-    "price": " 1,500",
-    "src": "img\/pickaxes\/RAIDER'S_REVENGE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "RAINBOW SMASH",
-    "price": " 1,500",
-    "src": "img\/pickaxes\/RAINBOW_SMASH.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "RENEGADE ROLLER",
-    "price": " 1,200",
-    "src": "img\/pickaxes\/RENEGADE_ROLLER.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "epic",
-    "name": "TRUSTY NO. 2",
-    "price": " TIER 79 (S3)",
-    "src": "img\/pickaxes\/TRUSTY_NO._2.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "AIRFOIL",
-    "price": " 800",
-    "src": "img\/pickaxes\/AIRFOIL.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "ANARCHY AXE",
-    "price": " 800",
-    "src": "img\/pickaxes\/ANARCHY_AXE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "AUTOCLEAVE",
-    "price": " 800",
-    "src": "img\/pickaxes\/AUTOCLEAVE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "AXECALIBUR",
-    "price": " TIER 35 (S2)",
-    "src": "img\/pickaxes\/AXECALIBUR.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "AXERONI",
-    "price": " 800",
-    "src": "img\/pickaxes\/AXERONI.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "BATSICKLE",
-    "price": " 800",
-    "src": "img\/pickaxes\/BATSICKLE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "CARROT STICK",
-    "price": " 800",
-    "src": "img\/pickaxes\/CARROT_STICK.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "CLIFFHANGER",
-    "price": " 800",
-    "src": "img\/pickaxes\/CLIFFHANGER.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "CLOSE SHAVE",
-    "price": " 800",
-    "src": "img\/pickaxes\/CLOSE_SHAVE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "CUTTING EDGE",
-    "price": " 800",
-    "src": "img\/pickaxes\/CUTTING_EDGE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "DIRECTOR'S CUT",
-    "price": " 800",
-    "src": "img\/pickaxes\/DIRECTOR'S_CUT.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "DRAGON AXE",
-    "price": " 800",
-    "src": "img\/pickaxes\/DRAGON_AXE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "EMPIRE AXE",
-    "price": " 800",
-    "src": "img\/pickaxes\/EMPIRE_AXE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "GALE FORCE",
-    "price": " TIER 7 (S4)",
-    "src": "img\/pickaxes\/GALE_FORCE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "GLOW STICK",
-    "price": " 800",
-    "src": "img\/pickaxes\/GLOW_STICK.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "INSTIGATOR",
-    "price": " TWITCH PRIME",
-    "src": "img\/pickaxes\/INSTIGATOR.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "LOLLIPOPPER",
-    "price": " TIER 46 (S4)",
-    "src": "img\/pickaxes\/LOLLIPOPPER.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "NITE OWL",
-    "price": " 800",
-    "src": "img\/pickaxes\/NITE_OWL.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "PERSUADER",
-    "price": " 800",
-    "src": "img\/pickaxes\/PERSUADER.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "PLUNJA",
-    "price": " 800",
-    "src": "img\/pickaxes\/PLUNJA.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "POSITRON",
-    "price": " LEVEL 30 (S4)",
-    "src": "img\/pickaxes\/POSITRON.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "PULSE AXE",
-    "price": " TIER 7 (S2)",
-    "src": "img\/pickaxes\/PULSE_AXE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "REAPER",
-    "price": " 800",
-    "src": "img\/pickaxes\/REAPER.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "SAWTOOTH",
-    "price": " TIER 7 (S3)",
-    "src": "img\/pickaxes\/SAWTOOTH.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "SILVER FANG",
-    "price": " 800",
-    "src": "img\/pickaxes\/SILVER_FANG.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "SKI BOOT",
-    "price": " 800",
-    "src": "img\/pickaxes\/SKI_BOOT.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "SLAM DUNK",
-    "price": " 800",
-    "src": "img\/pickaxes\/SLAM_DUNK.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "SPECTRAL AXE",
-    "price": " 800",
-    "src": "img\/pickaxes\/SPECTRAL_AXE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "SPECTRE",
-    "price": " 800",
-    "src": "img\/pickaxes\/SPECTRE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "SPIKY",
-    "price": " 800",
-    "src": "img\/pickaxes\/SPIKY.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "STOP AXE",
-    "price": " 800",
-    "src": "img\/pickaxes\/STOP_AXE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "TAT AXE",
-    "price": " 800",
-    "src": "img\/pickaxes\/TAT_AXE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "TENDERIZER",
-    "price": " TWITCH PRIME",
-    "src": "img\/pickaxes\/TENDERIZER.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "TENDRIL",
-    "price": "???",
-    "src": "img\/pickaxes\/TENDRIL.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "rare",
-    "name": "TOOTH PICK",
-    "price": " 800",
-    "src": "img\/pickaxes\/TOOTH_PICK.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "uncommon",
-    "name": "ICE BREAKER",
-    "price": " 500",
-    "src": "img\/pickaxes\/ICE_BREAKER.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "uncommon",
-    "name": "LUCKY",
-    "price": " 500",
-    "src": "img\/pickaxes\/LUCKY.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "uncommon",
-    "name": "TACTICAL SPADE",
-    "price": " 500",
-    "src": "img\/pickaxes\/TACTICAL_SPADE.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "uncommon",
-    "name": "YOU SHOULDN'T HAVE!",
-    "price": " 500",
-    "src": "img\/pickaxes\/YOU_SHOULDN'T_HAVE!.png",
-    "type": "pickaxe"
-}, {
-    "rarity": "common",
-    "name": "PICKAXE",
-    "price": " DEFAULT",
-    "src": "img\/pickaxes\/PICKAXE.png",
-    "type": "pickaxe"
-}, {
-    "name": "FATE",
-    "price": "??",
-    "src": "img\/FATE.png",
-    "type": "outfit",
-    "rarity": "legendary"
-}, {
-    "name": "OMEN",
-    "price": "??",
-    "src": "img\/OMEN.png",
-    "type": "outfit",
-    "rarity": "legendary"
-}, {
-    "name": "SKY STALKER",
-    "price": "??",
-    "src": "img\/SKY_STALKER.png",
-    "type": "outfit",
-    "rarity": "legendary"
-}, {
-    "name": "THE VISITOR",
-    "price": "Battlepass season 4",
-    "src": "img\/THE_VISITOR.png",
-    "type": "outfit",
-    "rarity": "legendary"
-}, {
-    "name": "BLUE STRIKER",
-    "price": "Playstation exclusive",
-    "src": "img\/BLUE_STRIKER.png",
-    "type": "outfit",
-    "rarity": "epic"
-}, {
-    "name": "AERIAL THREAT",
-    "price": "???",
-    "src": "img\/AERIAL_THREAT.png",
-    "type": "outfit",
-    "rarity": "rare"
-}, {
-    "name": "CLINICAL CROSSER",
-    "price": "???",
-    "src": "img\/CLINICAL_CROSSER.png",
-    "type": "outfit",
-    "rarity": "rare"
-}, {
-    "name": "DYNAMIC DRIBBLER",
-    "price": "???",
-    "src": "img\/DYNAMIC_DRIBBLER.png",
-    "type": "outfit",
-    "rarity": "rare"
-}, {
-    "name": "FINESSE FINISHER",
-    "price": "???",
-    "src": "img\/FINESSE_FINISHER.png",
-    "type": "outfit",
-    "rarity": "rare"
-}, {
-    "name": "MIDFIELD MAESTRO",
-    "price": "???",
-    "src": "img\/MIDFIELD_MAESTRO.png",
-    "type": "outfit",
-    "rarity": "rare"
-}, {
-    "name": "POISED PLAYMAKER",
-    "price": "???",
-    "src": "img\/POISED_PLAYMAKER.png",
-    "type": "outfit",
-    "rarity": "rare"
-}, {
-    "name": "STALWART SWEEPER",
-    "price": "???",
-    "src": "img\/STALWART_SWEEPER.png",
-    "type": "outfit",
-    "rarity": "rare"
-}, {
-    "name": "SUPER STRIKER",
-    "price": "???",
-    "src": "img\/SUPER_STRIKER.png",
-    "type": "outfit",
-    "rarity": "rare"
-}, {
-    "name": "ORACLE AXE",
-    "price": "???",
-    "src": "img\/pickaxes\/ORACLE_AXE.png",
-    "type": "pickaxe",
-    "rarity": "epic"
-}, {
-    "name": "FATED FRAME",
-    "price": "???",
-    "src": "img\/pickaxes\/FATED_FRAME.png",
-    "type": "pickaxe",
-    "rarity": "rare"
-}, {
-    "name": "PROPELLER AXE",
-    "price": "???",
-    "src": "img\/pickaxes\/PROPELLER_AXE.png",
-    "type": "pickaxe",
-    "rarity": "rare"
-}, {
-    "name": "VUVUZELA",
-    "price": "???",
-    "src": "img\/pickaxes\/VUVUZELA.png",
-    "type": "pickaxe",
-    "rarity": "rare"
-}, {
-    "name": "ELITE CLEAT",
-    "price": "???",
-    "src": "img\/pickaxes\/ELITE_CLEAT.png",
-    "type": "pickaxe",
-    "rarity": "uncommon"
-}, {
-    "name": "Backup Plan",
-    "price": " Twitch Prime",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/BACKUP_PLAN.png",
-    "type": "back_bling",
-    "code": "BACKUP_PLAN"
-}, {
-    "name": "Battle Shroud",
-    "price": "Omen",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/BATTLE_SHROUD.png",
-    "type": "back_bling",
-    "code": "BATTLE_SHROUD"
-}, {
-    "name": "Black Shield",
-    "price": "Black Knight",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/BLACK_SHIELD.png",
-    "type": "back_bling",
-    "code": "BLACK_SHIELD"
-}, {
-    "name": "Cuddle Bow",
-    "price": "Cuddle Team Leader",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/CUDDLE_BOW.png",
-    "type": "back_bling",
-    "code": "CUDDLE_BOW"
-}, {
-    "name": "Dark Matter",
-    "price": " Tier 71 (S3)",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/DARK_MATTER.png",
-    "type": "back_bling",
-    "code": "DARK_MATTER"
-}, {
-    "name": "Dark Void",
-    "price": "Dark Vanguard",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/DARK_VOID.png",
-    "type": "back_bling",
-    "code": "DARK_VOID"
-}, {
-    "name": "Fish Tank",
-    "price": "Leviathan",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/FISH_TANK.png",
-    "type": "back_bling",
-    "code": "FISH_TANK"
-}, {
-    "name": "Hatchling",
-    "price": "Tricera Ops",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/HATCHLING.png",
-    "type": "back_bling",
-    "code": "HATCHLING"
-}, {
-    "name": "Iron Cage",
-    "price": "Raven",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/IRON_CAGE.png",
-    "type": "back_bling",
-    "code": "IRON_CAGE"
-}, {
-    "name": "Last Gasp",
-    "price": "Sky Stalker",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/LAST_GASP.png",
-    "type": "back_bling",
-    "code": "LAST_GASP"
-}, {
-    "name": "Love Wings",
-    "price": "Love Ranger",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/LOVE_WINGS.png",
-    "type": "back_bling",
-    "code": "LOVE_WINGS"
-}, {
-    "name": "Mertank",
-    "price": "Moisty Merman",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/MERTANK.png",
-    "type": "back_bling",
-    "code": "MERTANK"
-}, {
-    "name": "Offworld Rig",
-    "price": " Blockbuster (S4)",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/OFFWORLD_RIG.png",
-    "type": "back_bling",
-    "code": "OFFWORLD_RIG"
-}, {
-    "name": "Ominous Orb",
-    "price": "Fate",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/OMINOUS_ORB.png",
-    "type": "back_bling",
-    "code": "OMINOUS_ORB"
-}, {
-    "name": "Pursuit",
-    "price": "???",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/PURSUIT.png",
-    "type": "back_bling",
-    "code": "PURSUIT"
-}, {
-    "name": "Raptor Satchel",
-    "price": "Raptor",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/RAPTOR_SATCHEL.png",
-    "type": "back_bling",
-    "code": "RAPTOR_SATCHEL"
-}, {
-    "name": "Red Shield",
-    "price": "Red Knight",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/RED_SHIELD.png",
-    "type": "back_bling",
-    "code": "RED_SHIELD"
-}, {
-    "name": "Royale Dragon",
-    "price": " 2,000",
-    "rarity": "legendary",
-    "src": "img\/glider\/ROYALE_DRAGON.png",
-    "type": "glider",
-    "code": "ROYALE_DRAGON"
-}, {
-    "name": "Royale Flags",
-    "price": "Wukong",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/ROYALE_FLAGS.png",
-    "type": "back_bling",
-    "code": "ROYALE_FLAGS"
-}, {
-    "name": "Scaly",
-    "price": "Rex",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/SCALY.png",
-    "type": "back_bling",
-    "code": "SCALY"
-}, {
-    "name": "Six String",
-    "price": "Power Chord",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/SIX_STRING.png",
-    "type": "back_bling",
-    "code": "SIX_STRING"
-}, {
-    "name": "Skirmish",
-    "price": "???",
-    "rarity": "legendary",
-    "src": "img\/back_bling\/SKIRMISH.png",
-    "type": "back_bling",
-    "code": "SKIRMISH"
-}, {
     "name": "Alpine Accessories",
     "price": "Alpine Ace",
     "rarity": "epic",
-    "src": "img\/back_bling\/ALPINE_ACCESSORIES.png",
+    "src": "img/back_bling/ALPINE_ACCESSORIES.png",
     "type": "back_bling",
     "code": "ALPINE_ACCESSORIES"
 }, {
     "name": "Alpine Accessories (CAN)",
     "price": "Alpine Ace (CAN)",
     "rarity": "epic",
-    "src": "img\/back_bling\/ALPINE_ACCESSORIES_(CAN).png",
+    "src": "img/back_bling/ALPINE_ACCESSORIES_(CAN).png",
     "type": "back_bling",
     "code": "ALPINE_ACCESSORIES_(CAN)"
 }, {
     "name": "Alpine Accessories (CHN)",
     "price": "Alpine Ace (CHN)",
     "rarity": "epic",
-    "src": "img\/back_bling\/ALPINE_ACCESSORIES_(CHN).png",
+    "src": "img/back_bling/ALPINE_ACCESSORIES_(CHN).png",
     "type": "back_bling",
     "code": "ALPINE_ACCESSORIES_(CHN)"
 }, {
     "name": "Alpine Accessories (FRA)",
     "price": "Alpine Ace (FRA)",
     "rarity": "epic",
-    "src": "img\/back_bling\/ALPINE_ACCESSORIES_(FRA).png",
+    "src": "img/back_bling/ALPINE_ACCESSORIES_(FRA).png",
     "type": "back_bling",
     "code": "ALPINE_ACCESSORIES_(FRA)"
 }, {
     "name": "Alpine Accessories (GBR)",
     "price": "Alpine Ace (GBR)",
     "rarity": "epic",
-    "src": "img\/back_bling\/ALPINE_ACCESSORIES_(GBR).png",
+    "src": "img/back_bling/ALPINE_ACCESSORIES_(GBR).png",
     "type": "back_bling",
     "code": "ALPINE_ACCESSORIES_(GBR)"
 }, {
     "name": "Alpine Accessories (GER)",
     "price": "Alpine Ace (GER)",
     "rarity": "epic",
-    "src": "img\/back_bling\/ALPINE_ACCESSORIES_(GER).png",
+    "src": "img/back_bling/ALPINE_ACCESSORIES_(GER).png",
     "type": "back_bling",
     "code": "ALPINE_ACCESSORIES_(GER)"
 }, {
     "name": "Alpine Accessories (KOR)",
     "price": "Alpine Ace (KOR)",
     "rarity": "epic",
-    "src": "img\/back_bling\/ALPINE_ACCESSORIES_(KOR).png",
+    "src": "img/back_bling/ALPINE_ACCESSORIES_(KOR).png",
     "type": "back_bling",
     "code": "ALPINE_ACCESSORIES_(KOR)"
 }, {
     "name": "Alpine Accessories (USA)",
     "price": "Alpine Ace (USA)",
     "rarity": "epic",
-    "src": "img\/back_bling\/ALPINE_ACCESSORIES_(USA).png",
+    "src": "img/back_bling/ALPINE_ACCESSORIES_(USA).png",
     "type": "back_bling",
     "code": "ALPINE_ACCESSORIES_(USA)"
-}, {
-    "name": "Astro",
-    "price": " Tier 47 (S3)",
-    "rarity": "epic",
-    "src": "img\/back_bling\/ASTRO.png",
-    "type": "back_bling",
-    "code": "ASTRO"
-}, {
-    "name": "Bear Force One",
-    "price": " 1,500",
-    "rarity": "epic",
-    "src": "img\/glider\/BEAR_FORCE_ONE.png",
-    "type": "glider",
-    "code": "BEAR_FORCE_ONE"
-}, {
-    "name": "Blue Shift",
-    "price": "PS Plus #2",
-    "rarity": "epic",
-    "src": "img\/back_bling\/BLUE_SHIFT.png",
-    "type": "back_bling",
-    "code": "BLUE_SHIFT"
-}, {
-    "name": "Bogey Bag",
-    "price": " Starter Pack #2",
-    "rarity": "epic",
-    "src": "img\/back_bling\/BOGEY_BAG.png",
-    "type": "back_bling",
-    "code": "BOGEY_BAG"
-}, {
-    "name": "Brite Bag",
-    "price": "Brite Gunner",
-    "rarity": "epic",
-    "src": "img\/back_bling\/BRITE_BAG.png",
-    "type": "back_bling",
-    "code": "BRITE_BAG"
-}, {
-    "name": "Buckler",
-    "price": "Highland Warrior",
-    "rarity": "epic",
-    "src": "img\/back_bling\/BUCKLER.png",
-    "type": "back_bling",
-    "code": "BUCKLER"
-}, {
-    "name": "Burgle Bag",
-    "price": "Rapscallion",
-    "rarity": "epic",
-    "src": "img\/back_bling\/BURGLE_BAG.png",
-    "type": "back_bling",
-    "code": "BURGLE_BAG"
-}, {
-    "name": "Catalyst",
-    "price": " Starter Pack",
-    "rarity": "epic",
-    "src": "img\/back_bling\/CATALYST.png",
-    "type": "back_bling",
-    "code": "CATALYST"
-}, {
-    "name": "Cloud Strike",
-    "price": " 1,200",
-    "rarity": "epic",
-    "src": "img\/glider\/CLOUD_STRIKE.png",
-    "type": "glider",
-    "code": "CLOUD_STRIKE"
-}, {
-    "name": "Contagion",
-    "price": "Hazard Agent",
-    "rarity": "epic",
-    "src": "img\/back_bling\/CONTAGION.png",
-    "type": "back_bling",
-    "code": "CONTAGION"
-}, {
-    "name": "Deep Space Lander",
-    "price": " 1,200",
-    "rarity": "epic",
-    "src": "img\/glider\/DEEP_SPACE_LANDER.png",
-    "type": "glider",
-    "code": "DEEP_SPACE_LANDER"
-}, {
-    "name": "Eggshell",
-    "price": "Bunny Brawler",
-    "rarity": "epic",
-    "src": "img\/back_bling\/EGGSHELL.png",
-    "type": "back_bling",
-    "code": "EGGSHELL"
-}, {
-    "name": "Get Down!",
-    "price": " Tier 14 (S2)",
-    "rarity": "epic",
-    "src": "img\/glider\/GET_DOWN!.png",
-    "type": "glider",
-    "code": "GET_DOWN!"
-}, {
-    "name": "Goodie Bag",
-    "price": " Tier 55 (S4)",
-    "rarity": "epic",
-    "src": "img\/back_bling\/GOODIE_BAG.png",
-    "type": "back_bling",
-    "code": "GOODIE_BAG"
-}, {
-    "name": "Hang Time",
-    "price": " 1,200",
-    "rarity": "epic",
-    "src": "img\/glider\/HANG_TIME.png",
-    "type": "glider",
-    "code": "HANG_TIME"
-}, {
-    "name": "Hard Boiled",
-    "price": "Rabbit Raider",
-    "rarity": "epic",
-    "src": "img\/back_bling\/HARD_BOILED.png",
-    "type": "back_bling",
-    "code": "HARD_BOILED"
-}, {
-    "name": "High Octane",
-    "price": " Tier 100 Challenge",
-    "rarity": "epic",
-    "src": "img\/glider\/HIGH_OCTANE.png",
-    "type": "glider",
-    "code": "HIGH_OCTANE"
-}, {
-    "name": "Intrepid",
-    "price": " Tier 79 (S4)",
-    "rarity": "epic",
-    "src": "img\/glider\/INTREPID.png",
-    "type": "glider",
-    "code": "INTREPID"
 }, {
     "name": "Mogul Ski Bag",
     "price": "Mogul Master",
     "rarity": "epic",
-    "src": "img\/back_bling\/MOGUL_SKI_BAG.png",
+    "src": "img/back_bling/MOGUL_SKI_BAG.png",
     "type": "back_bling",
     "code": "MOGUL_SKI_BAG"
 }, {
     "name": "Mogul Ski Bag (CAN)",
     "price": "Mogul Master (CAN)",
     "rarity": "epic",
-    "src": "img\/back_bling\/MOGUL_SKI_BAG_(CAN).png",
+    "src": "img/back_bling/MOGUL_SKI_BAG_(CAN).png",
     "type": "back_bling",
     "code": "MOGUL_SKI_BAG_(CAN)"
 }, {
     "name": "Mogul Ski Bag (CHN)",
     "price": "Mogul Master (CHN)",
     "rarity": "epic",
-    "src": "img\/back_bling\/MOGUL_SKI_BAG_(CHN).png",
+    "src": "img/back_bling/MOGUL_SKI_BAG_(CHN).png",
     "type": "back_bling",
     "code": "MOGUL_SKI_BAG_(CHN)"
 }, {
     "name": "Mogul Ski Bag (FRA)",
     "price": "Mogul Master (FRA)",
     "rarity": "epic",
-    "src": "img\/back_bling\/MOGUL_SKI_BAG_(FRA).png",
+    "src": "img/back_bling/MOGUL_SKI_BAG_(FRA).png",
     "type": "back_bling",
     "code": "MOGUL_SKI_BAG_(FRA)"
 }, {
     "name": "Mogul Ski Bag (GBR)",
     "price": "Mogul Master (GBR)",
     "rarity": "epic",
-    "src": "img\/back_bling\/MOGUL_SKI_BAG_(GBR).png",
+    "src": "img/back_bling/MOGUL_SKI_BAG_(GBR).png",
     "type": "back_bling",
     "code": "MOGUL_SKI_BAG_(GBR)"
 }, {
     "name": "Mogul Ski Bag (GER)",
     "price": "Mogul Master (GER)",
     "rarity": "epic",
-    "src": "img\/back_bling\/MOGUL_SKI_BAG_(GER).png",
+    "src": "img/back_bling/MOGUL_SKI_BAG_(GER).png",
     "type": "back_bling",
     "code": "MOGUL_SKI_BAG_(GER)"
 }, {
     "name": "Mogul Ski Bag (KOR)",
     "price": "Mogul Master (KOR)",
     "rarity": "epic",
-    "src": "img\/back_bling\/MOGUL_SKI_BAG_(KOR).png",
+    "src": "img/back_bling/MOGUL_SKI_BAG_(KOR).png",
     "type": "back_bling",
     "code": "MOGUL_SKI_BAG_(KOR)"
 }, {
     "name": "Mogul Ski Bag (USA)",
     "price": "Mogul Master (USA)",
     "rarity": "epic",
-    "src": "img\/back_bling\/MOGUL_SKI_BAG_(USA).png",
+    "src": "img/back_bling/MOGUL_SKI_BAG_(USA).png",
     "type": "back_bling",
     "code": "MOGUL_SKI_BAG_(USA)"
 }, {
-    "name": "Orbital Shuttle",
-    "price": " 1,200",
-    "rarity": "epic",
-    "src": "img\/glider\/ORBITAL_SHUTTLE.png",
-    "type": "glider",
-    "code": "ORBITAL_SHUTTLE"
+    "src": "img/back_bling/BACKUP_PLAN.png",
+    "name": "Backup Plan",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "Twitch Prime",
+    "code": "BACKUP_PLAN"
 }, {
-    "name": "Pathogen",
-    "price": "Toxic Trooper",
-    "rarity": "epic",
-    "src": "img\/back_bling\/PATHOGEN.png",
-    "type": "back_bling",
-    "code": "PATHOGEN"
+    "src": "img/BATTLE_HOUND.png",
+    "name": "Battle Hound",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "BATTLE_HOUND"
 }, {
-    "name": "Planetary Probe",
-    "price": " 1,200",
-    "rarity": "epic",
-    "src": "img\/glider\/PLANETARY_PROBE.png",
-    "type": "glider",
-    "code": "PLANETARY_PROBE"
+    "src": "img/back_bling/BATTLE_SHROUD.png",
+    "name": "Battle Shroud",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "men",
+    "code": "BATTLE_SHROUD"
 }, {
-    "name": "Pterodactyl",
-    "price": " 1,200",
-    "rarity": "epic",
-    "src": "img\/glider\/PTERODACTYL.png",
-    "type": "glider",
-    "code": "PTERODACTYL"
+    "src": "img/BLACK_KNIGHT.png",
+    "name": "Black Knight",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "Tier 70 (S2)",
+    "code": "BLACK_KNIGHT"
 }, {
-    "name": "Rust Bucket",
-    "price": " 0",
-    "rarity": "epic",
-    "src": "img\/back_bling\/RUST_BUCKET.png",
-    "type": "back_bling",
-    "code": "RUST_BUCKET"
+    "src": "img/back_bling/BLACK_SHIELD.png",
+    "name": "Black Shield",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "lack Knight",
+    "code": "BLACK_SHIELD"
 }, {
-    "name": "Rusty Rider",
-    "price": " 1,200",
-    "rarity": "epic",
-    "src": "img\/glider\/RUSTY_RIDER.png",
-    "type": "glider",
-    "code": "RUSTY_RIDER"
+    "src": "img/CARBIDE.png",
+    "name": "Carbide",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "Tier 1 (S4)",
+    "code": "CARBIDE"
 }, {
-    "name": "Slipstream",
-    "price": " Twitch Prime",
-    "rarity": "epic",
-    "src": "img\/glider\/SLIPSTREAM.png",
-    "type": "glider",
-    "code": "SLIPSTREAM"
+    "src": "img/CRACKSHOT.png",
+    "name": "Crackshot",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "CRACKSHOT"
 }, {
-    "name": "Special Delivery",
-    "price": "Tomatohead",
-    "rarity": "epic",
-    "src": "img\/back_bling\/SPECIAL_DELIVERY.png",
-    "type": "back_bling",
-    "code": "SPECIAL_DELIVERY"
+    "src": "img/back_bling/CRESTED_CAPE.png",
+    "name": "Crested Cape",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "attle Hound",
+    "code": "CRESTED_CAPE"
 }, {
-    "name": "Split Wing",
-    "price": " 1,200",
-    "rarity": "epic",
-    "src": "img\/glider\/SPLIT_WING.png",
-    "type": "glider",
-    "code": "SPLIT_WING"
+    "src": "img/CRITERION.png",
+    "name": "Criterion",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "CRITERION"
 }, {
-    "name": "Steelcast",
-    "price": "Steelsight",
-    "rarity": "epic",
-    "src": "img\/back_bling\/STEELCAST.png",
-    "type": "back_bling",
-    "code": "STEELCAST"
+    "src": "img/back_bling/CUDDLE_BOW.png",
+    "name": "Cuddle Bow",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "uddle Team Leader",
+    "code": "CUDDLE_BOW"
 }, {
-    "name": "Strongbox",
-    "price": "Scoundrel",
-    "rarity": "epic",
-    "src": "img\/back_bling\/STRONGBOX.png",
-    "type": "back_bling",
-    "code": "STRONGBOX"
+    "src": "img/CUDDLE_TEAM_LEADER.png",
+    "name": "Cuddle Team Leader",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "CUDDLE_TEAM_LEADER"
 }, {
-    "name": "Tag Bag",
-    "price": "Abstrakt",
-    "rarity": "epic",
-    "src": "img\/back_bling\/TAG_BAG.png",
-    "type": "back_bling",
-    "code": "TAG_BAG"
+    "src": "img/back_bling/DARK_MATTER.png",
+    "name": "Dark Matter",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "Tier 71 (S3)",
+    "code": "DARK_MATTER"
 }, {
-    "name": "True North",
-    "price": " Twitch Prime",
-    "rarity": "epic",
-    "src": "img\/back_bling\/TRUE_NORTH.png",
-    "type": "back_bling",
-    "code": "TRUE_NORTH"
+    "src": "img/DARK_VANGUARD.png",
+    "name": "Dark Vanguard",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "DARK_VANGUARD"
 }, {
-    "name": "Venus Flyer",
-    "price": " 1,200",
-    "rarity": "epic",
-    "src": "img\/glider\/VENUS_FLYER.png",
-    "type": "glider",
-    "code": "VENUS_FLYER"
+    "src": "img/back_bling/DARK_VOID.png",
+    "name": "Dark Void",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "ark Vanguard",
+    "code": "DARK_VOID"
 }, {
-    "name": "Wings of Valor",
-    "price": " Tier 39 (S4)",
-    "rarity": "epic",
-    "src": "img\/glider\/WINGS_OF_VALOR.png",
-    "type": "glider",
-    "code": "WINGS_OF_VALOR"
+    "src": "img/DARK_VOYAGER.png",
+    "name": "Dark Voyager",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "Tier 70 (S3)",
+    "code": "DARK_VOYAGER"
 }, {
-    "name": "Blue Streak",
-    "price": " PS Plus",
-    "rarity": "rare",
-    "src": "img\/glider\/BLUE_STREAK.png",
-    "type": "glider",
-    "code": "BLUE_STREAK"
+    "src": "img/back_bling/DEFLECTOR.png",
+    "name": "Deflector",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "ertex",
+    "code": "DEFLECTOR"
 }, {
-    "name": "Cozy Coaster",
-    "price": " 800",
-    "rarity": "rare",
-    "src": "img\/glider\/COZY_COASTER.png",
-    "type": "glider",
-    "code": "COZY_COASTER"
+    "src": "img/back_bling/DESTABILIZER.png",
+    "name": "Destabilizer",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "blivion",
+    "code": "DESTABILIZER"
 }, {
-    "name": "Feathered Flyer",
-    "price": " 800",
-    "rarity": "rare",
-    "src": "img\/glider\/FEATHERED_FLYER.png",
-    "type": "glider",
-    "code": "FEATHERED_FLYER"
+    "src": "img/FATE.png",
+    "name": "Fate",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "FATE"
 }, {
-    "name": "Googly",
-    "price": " 800",
-    "rarity": "rare",
-    "src": "img\/glider\/GOOGLY.png",
-    "type": "glider",
-    "code": "GOOGLY"
+    "src": "img/back_bling/FISH_TANK.png",
+    "name": "Fish Tank",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "eviathan",
+    "code": "FISH_TANK"
 }, {
-    "name": "Gum Drop",
-    "price": " 800",
-    "rarity": "rare",
-    "src": "img\/glider\/GUM_DROP.png",
-    "type": "glider",
-    "code": "GUM_DROP"
+    "src": "img/FLYTRAP.png",
+    "name": "Flytrap",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "FLYTRAP"
 }, {
-    "name": "Half Shell",
-    "price": " 800",
-    "rarity": "rare",
-    "src": "img\/glider\/HALF_SHELL.png",
-    "type": "glider",
-    "code": "HALF_SHELL"
+    "src": "img/back_bling/HATCHLING.png",
+    "name": "Hatchling",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "ricera Ops",
+    "code": "HATCHLING"
 }, {
-    "name": "Precision",
-    "price": " Tier 22 (S3)",
-    "rarity": "rare",
-    "src": "img\/back_bling\/PRECISION.png",
-    "type": "back_bling",
-    "code": "PRECISION"
+    "src": "img/HAVOC.png",
+    "name": "Havoc",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "Twitch Prime",
+    "code": "HAVOC"
 }, {
-    "name": "Prismatic",
-    "price": " 800",
-    "rarity": "rare",
-    "src": "img\/glider\/PRISMATIC.png",
-    "type": "glider",
-    "code": "PRISMATIC"
+    "src": "img/back_bling/IRON_CAGE.png",
+    "name": "Iron Cage",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "aven",
+    "code": "IRON_CAGE"
 }, {
-    "name": "Rainbow Rider",
-    "price": " Tier 15 (S3)",
-    "rarity": "rare",
-    "src": "img\/glider\/RAINBOW_RIDER.png",
-    "type": "glider",
-    "code": "RAINBOW_RIDER"
+    "src": "img/back_bling/LAST_GASP.png",
+    "name": "Last Gasp",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "ky Stalker",
+    "code": "LAST_GASP"
 }, {
-    "name": "Royale Shield",
-    "price": "Royale Knight",
-    "rarity": "rare",
-    "src": "img\/back_bling\/ROYALE_SHIELD.png",
-    "type": "back_bling",
-    "code": "ROYALE_SHIELD"
+    "src": "img/LEVIATHAN.png",
+    "name": "Leviathan",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "LEVIATHAN"
 }, {
-    "name": "Squire Shield",
-    "price": "Blue Squire",
-    "rarity": "rare",
-    "src": "img\/back_bling\/SQUIRE_SHIELD.png",
-    "type": "back_bling",
-    "code": "SQUIRE_SHIELD"
+    "src": "img/LOVE_RANGER.png",
+    "name": "Love Ranger",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "LOVE_RANGER"
 }, {
-    "name": "Stage Dive",
-    "price": " 800",
-    "rarity": "rare",
-    "src": "img\/glider\/STAGE_DIVE.png",
-    "type": "glider",
-    "code": "STAGE_DIVE"
+    "src": "img/back_bling/LOVE_WINGS.png",
+    "name": "Love Wings",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "ove Ranger",
+    "code": "LOVE_WINGS"
 }, {
-    "name": "Standard Issue",
-    "price": " Tier 10 (S4)",
-    "rarity": "rare",
-    "src": "img\/back_bling\/STANDARD_ISSUE.png",
-    "type": "back_bling",
-    "code": "STANDARD_ISSUE"
+    "src": "img/back_bling/MERTANK.png",
+    "name": "Mertank",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "oisty Merman",
+    "code": "MERTANK"
 }, {
-    "name": "Starry Flight",
-    "price": " 800",
-    "rarity": "rare",
-    "src": "img\/glider\/STARRY_FLIGHT.png",
-    "type": "glider",
-    "code": "STARRY_FLIGHT"
+    "src": "img/MOISTY_MERMAN.png",
+    "name": "Moisty Merman",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "MOISTY_MERMAN"
 }, {
-    "name": "Sugar Crash",
-    "price": " Tier 15 (S4)",
-    "rarity": "rare",
-    "src": "img\/glider\/SUGAR_CRASH.png",
-    "type": "glider",
-    "code": "SUGAR_CRASH"
+    "src": "img/OBLIVION.png",
+    "name": "Oblivion",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "OBLIVION"
 }, {
-    "name": "Voyager",
-    "price": " 800",
-    "rarity": "rare",
-    "src": "img\/glider\/VOYAGER.png",
-    "type": "glider",
-    "code": "VOYAGER"
+    "src": "img/back_bling/OFFWORLD_RIG.png",
+    "name": "Offworld Rig",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "lockbuster (S4)",
+    "code": "OFFWORLD_RIG"
 }, {
-    "name": "Zephyr",
-    "price": " 800",
-    "rarity": "rare",
-    "src": "img\/glider\/ZEPHYR.png",
-    "type": "glider",
-    "code": "ZEPHYR"
+    "src": "img/OMEGA.png",
+    "name": "Omega",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "Tier 100 (S4)",
+    "code": "OMEGA"
 }, {
-    "name": "Aerial Assault One",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/AERIAL_ASSAULT_ONE.png",
-    "type": "glider",
-    "code": "AERIAL_ASSAULT_ONE"
+    "src": "img/OMEN.png",
+    "name": "Omen",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "OMEN"
 }, {
-    "name": "Carbon",
-    "price": " Tier 39 (S3)",
-    "rarity": "uncommon",
-    "src": "img\/glider\/CARBON.png",
-    "type": "glider",
-    "code": "CARBON"
+    "src": "img/back_bling/OMINOUS_ORB.png",
+    "name": "Ominous Orb",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "ate",
+    "code": "OMINOUS_ORB"
 }, {
-    "name": "Checker",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/CHECKER.png",
-    "type": "glider",
-    "code": "CHECKER"
+    "src": "img/POWER_CHORD.png",
+    "name": "Power Chord",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "POWER_CHORD"
 }, {
-    "name": "Fighter Kite",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/FIGHTER_KITE.png",
-    "type": "glider",
-    "code": "FIGHTER_KITE"
+    "src": "img/back_bling/PURSUIT.png",
+    "name": "Pursuit",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "??",
+    "code": "PURSUIT"
 }, {
-    "name": "Fossil Flyer",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/FOSSIL_FLYER.png",
-    "type": "glider",
-    "code": "FOSSIL_FLYER"
-}, {
-    "name": "Glow Rider",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/GLOW_RIDER.png",
-    "type": "glider",
-    "code": "GLOW_RIDER"
-}, {
-    "name": "Goalbound",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/GOALBOUND.png",
-    "type": "glider",
-    "code": "GOALBOUND"
-}, {
-    "name": "Hot Rod",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/HOT_ROD.png",
-    "type": "glider",
-    "code": "HOT_ROD"
-}, {
-    "name": "Jolly Roger",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/JOLLY_ROGER.png",
-    "type": "glider",
-    "code": "JOLLY_ROGER"
-}, {
-    "name": "Mainframe",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/MAINFRAME.png",
-    "type": "glider",
-    "code": "MAINFRAME"
-}, {
-    "name": "Mako",
-    "price": " Level 25 (S1)",
-    "rarity": "uncommon",
-    "src": "img\/glider\/MAKO.png",
-    "type": "glider",
-    "code": "MAKO"
-}, {
-    "name": "Meltdown",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/MELTDOWN.png",
-    "type": "glider",
-    "code": "MELTDOWN"
-}, {
-    "name": "Modern",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/MODERN.png",
-    "type": "glider",
-    "code": "MODERN"
-}, {
-    "name": "Petunia",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/PETUNIA.png",
-    "type": "glider",
-    "code": "PETUNIA"
-}, {
+    "src": "img/RAPTOR.png",
     "name": "Raptor",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/RAPTOR.png",
-    "type": "glider",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
     "code": "RAPTOR"
 }, {
+    "src": "img/back_bling/RAPTOR_SATCHEL.png",
+    "name": "Raptor Satchel",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "aptor",
+    "code": "RAPTOR_SATCHEL"
+}, {
+    "src": "img/RAVEN.png",
+    "name": "Raven",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "RAVEN"
+}, {
+    "src": "img/RED_KNIGHT.png",
+    "name": "Red Knight",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "RED_KNIGHT"
+}, {
+    "src": "img/back_bling/RED_SHIELD.png",
+    "name": "Red Shield",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "ed Knight",
+    "code": "RED_SHIELD"
+}, {
+    "src": "img/REX.png",
+    "name": "Rex",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "REX"
+}, {
+    "src": "img/ROSE_TEAM_LEADER.png",
+    "name": "Rose Team Leader",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "??",
+    "code": "ROSE_TEAM_LEADER"
+}, {
+    "src": "img/glider/ROYALE_DRAGON.png",
+    "name": "Royale Dragon",
+    "type": "Glider",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "ROYALE_DRAGON"
+}, {
+    "src": "img/back_bling/ROYALE_FLAGS.png",
+    "name": "Royale Flags",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "ukong",
+    "code": "ROYALE_FLAGS"
+}, {
+    "src": "img/back_bling/SCALY.png",
+    "name": "Scaly",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "ex",
+    "code": "SCALY"
+}, {
+    "src": "img/back_bling/SIX_STRING.png",
+    "name": "Six String",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "ower Chord",
+    "code": "SIX_STRING"
+}, {
+    "src": "img/back_bling/SKIRMISH.png",
+    "name": "Skirmish",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "??",
+    "code": "SKIRMISH"
+}, {
+    "src": "img/SKY_STALKER.png",
+    "name": "Sky Stalker",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "SKY_STALKER"
+}, {
+    "src": "img/back_bling/STABILIZER.png",
+    "name": "Stabilizer",
+    "type": "Back Bling",
+    "rarity": "Legendary",
+    "price": "riterion",
+    "code": "STABILIZER"
+}, {
+    "src": "img/THE_REAPER.png",
+    "name": "The Reaper",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "Tier 100 (S3)",
+    "code": "THE_REAPER"
+}, {
+    "src": "img/THE_VISITOR.png",
+    "name": "The Visitor",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "lockbuster (S4)",
+    "code": "THE_VISITOR"
+}, {
+    "src": "img/TRICERA_OPS.png",
+    "name": "Tricera Ops",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "TRICERA_OPS"
+}, {
+    "src": "img/VALOR.png",
+    "name": "Valor",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "Tier 71 (S4)",
+    "code": "VALOR"
+}, {
+    "src": "img/VERTEX.png",
+    "name": "Vertex",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "VERTEX"
+}, {
+    "src": "img/WARPAINT.png",
+    "name": "Warpaint",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "??",
+    "code": "WARPAINT"
+}, {
+    "src": "img/WUKONG.png",
+    "name": "Wukong",
+    "type": "Outfit",
+    "rarity": "Legendary",
+    "price": "2,000",
+    "code": "WUKONG"
+}, {
+    "src": "img/pickaxe/AC_DC.png",
+    "name": "AC/DC",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "Tier 63 (S2)",
+    "code": "AC_DC"
+}, {
+    "src": "img/ABSTRAKT.png",
+    "name": "Abstrakt",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "ABSTRAKT"
+}, {
+    "src": "img/ALPINE_ACE.png",
+    "name": "Alpine Ace",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "ALPINE_ACE"
+}, {
+    "src": "img/ALPINE_ACE_(CAN).png",
+    "name": "Alpine Ace (CAN)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "ALPINE_ACE_(CAN)"
+}, {
+    "src": "img/ALPINE_ACE_(CHN).png",
+    "name": "Alpine Ace (CHN)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "ALPINE_ACE_(CHN)"
+}, {
+    "src": "img/ALPINE_ACE_(FRA).png",
+    "name": "Alpine Ace (FRA)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "ALPINE_ACE_(FRA)"
+}, {
+    "src": "img/ALPINE_ACE_(GBR).png",
+    "name": "Alpine Ace (GBR)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "ALPINE_ACE_(GBR)"
+}, {
+    "src": "img/ALPINE_ACE_(GER).png",
+    "name": "Alpine Ace (GER)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "ALPINE_ACE_(GER)"
+}, {
+    "src": "img/ALPINE_ACE_(KOR).png",
+    "name": "Alpine Ace (KOR)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "ALPINE_ACE_(KOR)"
+}, {
+    "src": "img/ALPINE_ACE_(USA).png",
+    "name": "Alpine Ace (USA)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "ALPINE_ACE_(USA)"
+}, {
+    "src": "img/back_bling/ASTRO.png",
+    "name": "Astro",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "Tier 47 (S3)",
+    "code": "ASTRO"
+}, {
+    "src": "img/BANDOLIER.png",
+    "name": "Bandolier",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "BANDOLIER"
+}, {
+    "src": "img/BATTLEHAWK.png",
+    "name": "Battlehawk",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Tier 1 (S4)",
+    "code": "BATTLEHAWK"
+}, {
+    "src": "img/glider/BEAR_FORCE_ONE.png",
+    "name": "Bear Force One",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "BEAR_FORCE_ONE"
+}, {
+    "src": "img/pickaxe/BITEMARK.png",
+    "name": "Bitemark",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "BITEMARK"
+}, {
+    "src": "img/back_bling/BLASTING_CAP.png",
+    "name": "Blasting Cap",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "ireworks Team Leader",
+    "code": "BLASTING_CAP"
+}, {
+    "src": "img/back_bling/BLUE_SHIFT.png",
+    "name": "Blue Shift",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "S Plus #2",
+    "code": "BLUE_SHIFT"
+}, {
+    "src": "img/BLUE_STRIKER.png",
+    "name": "Blue Striker",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "PS Plus #2",
+    "code": "BLUE_STRIKER"
+}, {
+    "src": "img/back_bling/BOGEY_BAG.png",
+    "name": "Bogey Bag",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "Starter Pack #2",
+    "code": "BOGEY_BAG"
+}, {
+    "src": "img/emote/BOOGIE_DOWN.png",
+    "name": "Boogie Down",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "??",
+    "code": "BOOGIE_DOWN"
+}, {
+    "src": "img/pickaxe/BOTTOM_FEEDER.png",
+    "name": "Bottom Feeder",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "BOTTOM_FEEDER"
+}, {
+    "src": "img/emote/BREAKIN'.png",
+    "name": "Breakin'",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "BREAKIN'"
+}, {
+    "src": "img/back_bling/BRITE_BAG.png",
+    "name": "Brite Bag",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "rite Gunner",
+    "code": "BRITE_BAG"
+}, {
+    "src": "img/BRITE_GUNNER.png",
+    "name": "Brite Gunner",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "BRITE_GUNNER"
+}, {
+    "src": "img/back_bling/BUCKLER.png",
+    "name": "Buckler",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "ighland Warrior",
+    "code": "BUCKLER"
+}, {
+    "src": "img/BUNNY_BRAWLER.png",
+    "name": "Bunny Brawler",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "BUNNY_BRAWLER"
+}, {
+    "src": "img/back_bling/BURGLE_BAG.png",
+    "name": "Burgle Bag",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "apscallion",
+    "code": "BURGLE_BAG"
+}, {
+    "src": "img/BURNOUT.png",
+    "name": "Burnout",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "BURNOUT"
+}, {
+    "src": "img/pickaxe/CANDY_AXE.png",
+    "name": "Candy Axe",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "CANDY_AXE"
+}, {
+    "src": "img/back_bling/CATALYST.png",
+    "name": "Catalyst",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "Starter Pack",
+    "code": "CATALYST"
+}, {
+    "src": "img/pickaxe/CHOMP_JR..png",
+    "name": "Chomp Jr.",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "CHOMP_JR."
+}, {
+    "src": "img/glider/CLOUD_STRIKE.png",
+    "name": "Cloud Strike",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "CLOUD_STRIKE"
+}, {
+    "src": "img/back_bling/CLUEFINDER.png",
+    "name": "Cluefinder",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "oir",
+    "code": "CLUEFINDER"
+}, {
+    "src": "img/back_bling/CONFIDENTIAL_CASE.png",
+    "name": "Confidential Case",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "umshoe",
+    "code": "CONFIDENTIAL_CASE"
+}, {
+    "src": "img/back_bling/CONTAGION.png",
+    "name": "Contagion",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "azard Agent",
+    "code": "CONTAGION"
+}, {
+    "src": "img/pickaxe/DEATH_VALLEY.png",
+    "name": "Death Valley",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "DEATH_VALLEY"
+}, {
+    "src": "img/glider/DEEP_SPACE_LANDER.png",
+    "name": "Deep Space Lander",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "DEEP_SPACE_LANDER"
+}, {
+    "src": "img/pickaxe/DISCO_BRAWL.png",
+    "name": "Disco Brawl",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "DISCO_BRAWL"
+}, {
+    "src": "img/emote/DISCO_FEVER.png",
+    "name": "Disco Fever",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "DISCO_FEVER"
+}, {
+    "src": "img/back_bling/EGGSHELL.png",
+    "name": "Eggshell",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "unny Brawler",
+    "code": "EGGSHELL"
+}, {
+    "src": "img/emote/ELECTRO_SHUFFLE.png",
+    "name": "Electro Shuffle",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "ELECTRO_SHUFFLE"
+}, {
+    "src": "img/ELITE_AGENT.png",
+    "name": "Elite Agent",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Tier 87 (S3)",
+    "code": "ELITE_AGENT"
+}, {
+    "src": "img/pickaxe/EVA.png",
+    "name": "Eva",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "Tier 46 (S3)",
+    "code": "EVA"
+}, {
+    "src": "img/back_bling/EVIDENCE_BAG.png",
+    "name": "Evidence Bag",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "leuth",
+    "code": "EVIDENCE_BAG"
+}, {
+    "src": "img/FIREWORKS_TEAM_LEADER.png",
+    "name": "Fireworks Team Leader",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "FIREWORKS_TEAM_LEADER"
+}, {
+    "src": "img/emote/FREESTYLIN'.png",
+    "name": "Freestylin'",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "Twitch Prime",
+    "code": "FREESTYLIN'"
+}, {
+    "src": "img/emote/FRESH.png",
+    "name": "Fresh",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "FRESH"
+}, {
+    "src": "img/FUNK_OPS.png",
+    "name": "Funk Ops",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "FUNK_OPS"
+}, {
+    "src": "img/glider/GET_DOWN!.png",
+    "name": "Get Down!",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "Tier 14 (S2)",
+    "code": "GET_DOWN!"
+}, {
+    "src": "img/GHOUL_TROOPER.png",
+    "name": "Ghoul Trooper",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "GHOUL_TROOPER"
+}, {
+    "src": "img/GINGER_GUNNER.png",
+    "name": "Ginger Gunner",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "GINGER_GUNNER"
+}, {
+    "src": "img/pickaxe/GLOBAL_AXE.png",
+    "name": "Global Axe",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "GLOBAL_AXE"
+}, {
+    "src": "img/back_bling/GOODIE_BAG.png",
+    "name": "Goodie Bag",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "Tier 55 (S4)",
+    "code": "GOODIE_BAG"
+}, {
+    "src": "img/emote/GROOVE_JAM.png",
+    "name": "Groove Jam",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "Tier 95 (S4)",
+    "code": "GROOVE_JAM"
+}, {
+    "src": "img/GUMSHOE.png",
+    "name": "Gumshoe",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "GUMSHOE"
+}, {
+    "src": "img/glider/HANG_TIME.png",
+    "name": "Hang Time",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "HANG_TIME"
+}, {
+    "src": "img/back_bling/HARD_BOILED.png",
+    "name": "Hard Boiled",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "abbit Raider",
+    "code": "HARD_BOILED"
+}, {
+    "src": "img/HAZARD_AGENT.png",
+    "name": "Hazard Agent",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "HAZARD_AGENT"
+}, {
+    "src": "img/glider/HIGH_OCTANE.png",
+    "name": "High Octane",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "Tier 100 Challenge",
+    "code": "HIGH_OCTANE"
+}, {
+    "src": "img/HIGHLAND_WARRIOR.png",
+    "name": "Highland Warrior",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "HIGHLAND_WARRIOR"
+}, {
+    "src": "img/glider/INTREPID.png",
+    "name": "Intrepid",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "Tier 79 (S4)",
+    "code": "INTREPID"
+}, {
+    "src": "img/MERRY_MARAUDER.png",
+    "name": "Merry Marauder",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "MERRY_MARAUDER"
+}, {
+    "src": "img/MISSION_SPECIALIST.png",
+    "name": "Mission Specialist",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Tier 1 (S3)",
+    "code": "MISSION_SPECIALIST"
+}, {
+    "src": "img/MOGUL_MASTER.png",
+    "name": "Mogul Master",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "MOGUL_MASTER"
+}, {
+    "src": "img/MOGUL_MASTER_(CAN).png",
+    "name": "Mogul Master (CAN)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "MOGUL_MASTER_(CAN)"
+}, {
+    "src": "img/MOGUL_MASTER_(CHN).png",
+    "name": "Mogul Master (CHN)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "MOGUL_MASTER_(CHN)"
+}, {
+    "src": "img/MOGUL_MASTER_(FRA).png",
+    "name": "Mogul Master (FRA)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "MOGUL_MASTER_(FRA)"
+}, {
+    "src": "img/MOGUL_MASTER_(GBR).png",
+    "name": "Mogul Master (GBR)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "MOGUL_MASTER_(GBR)"
+}, {
+    "src": "img/MOGUL_MASTER_(GER).png",
+    "name": "Mogul Master (GER)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "MOGUL_MASTER_(GER)"
+}, {
+    "src": "img/MOGUL_MASTER_(KOR).png",
+    "name": "Mogul Master (KOR)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "MOGUL_MASTER_(KOR)"
+}, {
+    "src": "img/MOGUL_MASTER_(USA).png",
+    "name": "Mogul Master (USA)",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "MOGUL_MASTER_(USA)"
+}, {
+    "src": "img/MOONWALKER.png",
+    "name": "Moonwalker",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Tier 55 (S3)",
+    "code": "MOONWALKER"
+}, {
+    "src": "img/NOIR.png",
+    "name": "Noir",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "NOIR"
+}, {
+    "src": "img/pickaxe/ONSLAUGHT.png",
+    "name": "Onslaught",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "Level 45 (S4)",
+    "code": "ONSLAUGHT"
+}, {
+    "src": "img/pickaxe/ORACLE_AXE.png",
+    "name": "Oracle Axe",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "ORACLE_AXE"
+}, {
+    "src": "img/glider/ORBITAL_SHUTTLE.png",
+    "name": "Orbital Shuttle",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "ORBITAL_SHUTTLE"
+}, {
+    "src": "img/pickaxe/PARTY_ANIMAL.png",
+    "name": "Party Animal",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "PARTY_ANIMAL"
+}, {
+    "src": "img/back_bling/PATHOGEN.png",
+    "name": "Pathogen",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "oxic Trooper",
+    "code": "PATHOGEN"
+}, {
+    "src": "img/pickaxe/PICK_SQUEAK.png",
+    "name": "Pick Squeak",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "PICK_SQUEAK"
+}, {
+    "src": "img/pickaxe/PINK_FLAMINGO.png",
+    "name": "Pink Flamingo",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "PINK_FLAMINGO"
+}, {
+    "src": "img/glider/PLANETARY_PROBE.png",
+    "name": "Planetary Probe",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "PLANETARY_PROBE"
+}, {
+    "src": "img/emote/POP_LOCK.png",
+    "name": "Pop Lock",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "POP_LOCK"
+}, {
+    "src": "img/pickaxe/POT_O'_GOLD.png",
+    "name": "Pot O' Gold",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "POT_O'_GOLD"
+}, {
+    "src": "img/glider/PTERODACTYL.png",
+    "name": "Pterodactyl",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "PTERODACTYL"
+}, {
+    "src": "img/RABBIT_RAIDER.png",
+    "name": "Rabbit Raider",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "RABBIT_RAIDER"
+}, {
+    "src": "img/pickaxe/RAIDER'S_REVENGE.png",
+    "name": "Raider's Revenge",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "RAIDER'S_REVENGE"
+}, {
+    "src": "img/pickaxe/RAINBOW_SMASH.png",
+    "name": "Rainbow Smash",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "RAINBOW_SMASH"
+}, {
+    "src": "img/RAPSCALLION.png",
+    "name": "Rapscallion",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "RAPSCALLION"
+}, {
+    "src": "img/emote/REANIMATED.png",
+    "name": "Reanimated",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "REANIMATED"
+}, {
+    "src": "img/pickaxe/RENEGADE_ROLLER.png",
+    "name": "Renegade Roller",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "RENEGADE_ROLLER"
+}, {
+    "src": "img/emote/ROCK_OUT.png",
+    "name": "Rock Out",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "ROCK_OUT"
+}, {
+    "src": "img/emote/ROCKET_RODEO.png",
+    "name": "Rocket Rodeo",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "ROCKET_RODEO"
+}, {
+    "src": "img/ROGUE_AGENT.png",
+    "name": "Rogue Agent",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Starter Pack",
+    "code": "ROGUE_AGENT"
+}, {
+    "src": "img/ROYALE_BOMBER.png",
+    "name": "Royale Bomber",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "??",
+    "code": "ROYALE_BOMBER"
+}, {
+    "src": "img/back_bling/RUST_BUCKET.png",
+    "name": "Rust Bucket",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "0",
+    "code": "RUST_BUCKET"
+}, {
+    "src": "img/RUST_LORD.png",
+    "name": "Rust Lord",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Tier 23 (S3)",
+    "code": "RUST_LORD"
+}, {
+    "src": "img/glider/RUSTY_RIDER.png",
+    "name": "Rusty Rider",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "RUSTY_RIDER"
+}, {
+    "src": "img/SCOUNDREL.png",
+    "name": "Scoundrel",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "SCOUNDREL"
+}, {
+    "src": "img/SHADOW_OPS.png",
+    "name": "Shadow Ops",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "SHADOW_OPS"
+}, {
+    "src": "img/SKULL_TROOPER.png",
+    "name": "Skull Trooper",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "SKULL_TROOPER"
+}, {
+    "src": "img/SLEUTH.png",
+    "name": "Sleuth",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "SLEUTH"
+}, {
+    "src": "img/glider/SLIPSTREAM.png",
+    "name": "Slipstream",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "Twitch Prime",
+    "code": "SLIPSTREAM"
+}, {
+    "src": "img/SPARKLE_SPECIALIST.png",
+    "name": "Sparkle Specialist",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Tier 56 (S2)",
+    "code": "SPARKLE_SPECIALIST"
+}, {
+    "src": "img/back_bling/SPECIAL_DELIVERY.png",
+    "name": "Special Delivery",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "omatohead",
+    "code": "SPECIAL_DELIVERY"
+}, {
+    "src": "img/glider/SPLIT_WING.png",
+    "name": "Split Wing",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "SPLIT_WING"
+}, {
+    "src": "img/SQUAD_LEADER.png",
+    "name": "Squad Leader",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Tier 87 (S4)",
+    "code": "SQUAD_LEADER"
+}, {
+    "src": "img/emote/SQUAT_KICK.png",
+    "name": "Squat Kick",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "SQUAT_KICK"
+}, {
+    "src": "img/emote/STAR_POWER.png",
+    "name": "Star Power",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "STAR_POWER"
+}, {
+    "src": "img/back_bling/STEELCAST.png",
+    "name": "Steelcast",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "teelsight",
+    "code": "STEELCAST"
+}, {
+    "src": "img/STEELSIGHT.png",
+    "name": "Steelsight",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "STEELSIGHT"
+}, {
+    "src": "img/back_bling/STRONGBOX.png",
+    "name": "Strongbox",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "coundrel",
+    "code": "STRONGBOX"
+}, {
+    "src": "img/SUB_COMMANDER.png",
+    "name": "Sub Commander",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Twitch Prime",
+    "code": "SUB_COMMANDER"
+}, {
+    "src": "img/back_bling/TAG_BAG.png",
+    "name": "Tag Bag",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "bstrakt",
+    "code": "TAG_BAG"
+}, {
+    "src": "img/TEKNIQUE.png",
+    "name": "Teknique",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Tier 23 (S4)",
+    "code": "TEKNIQUE"
+}, {
+    "src": "img/glider/TERMINUS.png",
+    "name": "Terminus",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "TERMINUS"
+}, {
+    "src": "img/emote/THE_ROBOT.png",
+    "name": "The Robot",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "Tier 95 (S3)",
+    "code": "THE_ROBOT"
+}, {
+    "src": "img/TOMATOHEAD.png",
+    "name": "Tomatohead",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "TOMATOHEAD"
+}, {
+    "src": "img/TOXIC_TROOPER.png",
+    "name": "Toxic Trooper",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "TOXIC_TROOPER"
+}, {
+    "src": "img/TRAILBLAZER.png",
+    "name": "Trailblazer",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Twitch Prime",
+    "code": "TRAILBLAZER"
+}, {
+    "src": "img/emote/TRUE_HEART.png",
+    "name": "True Heart",
+    "type": "Emote",
+    "rarity": "Epic",
+    "price": "800",
+    "code": "TRUE_HEART"
+}, {
+    "src": "img/back_bling/TRUE_NORTH.png",
+    "name": "True North",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "Twitch Prime",
+    "code": "TRUE_NORTH"
+}, {
+    "src": "img/pickaxe/TRUSTY_NO._2.png",
+    "name": "Trusty No. 2",
+    "type": "Pickaxe",
+    "rarity": "Epic",
+    "price": "Tier 79 (S3)",
+    "code": "TRUSTY_NO._2"
+}, {
+    "src": "img/VENTURA.png",
+    "name": "Ventura",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "VENTURA"
+}, {
+    "src": "img/back_bling/VENTURA_CAPE.png",
+    "name": "Ventura Cape",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "entura",
+    "code": "VENTURA_CAPE"
+}, {
+    "src": "img/VENTURION.png",
+    "name": "Venturion",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "1,500",
+    "code": "VENTURION"
+}, {
+    "src": "img/back_bling/VENTURION_CAPE.png",
+    "name": "Venturion Cape",
+    "type": "Back Bling",
+    "rarity": "Epic",
+    "price": "enturion",
+    "code": "VENTURION_CAPE"
+}, {
+    "src": "img/glider/VENUS_FLYER.png",
+    "name": "Venus Flyer",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "VENUS_FLYER"
+}, {
+    "src": "img/glider/VICEROY_MARK_I.png",
+    "name": "Viceroy Mark I",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "1,200",
+    "code": "VICEROY_MARK_I"
+}, {
+    "src": "img/WINGMAN.png",
+    "name": "Wingman",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Starter Pack #2",
+    "code": "WINGMAN"
+}, {
+    "src": "img/glider/WINGS_OF_VALOR.png",
+    "name": "Wings of Valor",
+    "type": "Glider",
+    "rarity": "Epic",
+    "price": "Tier 39 (S4)",
+    "code": "WINGS_OF_VALOR"
+}, {
+    "src": "img/ZOEY.png",
+    "name": "Zoey",
+    "type": "Outfit",
+    "rarity": "Epic",
+    "price": "Tier 47 (S4)",
+    "code": "ZOEY"
+}, {
+    "src": "img/ABSOLUTE_ZERO.png",
+    "name": "Absolute Zero",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "ABSOLUTE_ZERO"
+}, {
+    "src": "img/AERIAL_ASSAULT_TROOPER.png",
+    "name": "Aerial Assault Trooper",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "AERIAL_ASSAULT_TROOPER"
+}, {
+    "src": "img/AERIAL_THREAT.png",
+    "name": "Aerial Threat",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "AERIAL_THREAT"
+}, {
+    "src": "img/pickaxe/AIRFOIL.png",
+    "name": "Airfoil",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "AIRFOIL"
+}, {
+    "src": "img/skydiving_trail/ALL-STAR.png",
+    "name": "All-Star",
+    "type": "Skydiving Trail",
+    "rarity": "Rare",
+    "price": "Tier 50 (S3)",
+    "code": "ALL-STAR"
+}, {
+    "src": "img/pickaxe/ANARCHY_AXE.png",
+    "name": "Anarchy Axe",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "ANARCHY_AXE"
+}, {
+    "src": "img/ARCTIC_ASSASSIN.png",
+    "name": "Arctic Assassin",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "ARCTIC_ASSASSIN"
+}, {
+    "src": "img/pickaxe/AUTOCLEAVE.png",
+    "name": "Autocleave",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "AUTOCLEAVE"
+}, {
+    "src": "img/pickaxe/AXECALIBUR.png",
+    "name": "Axecalibur",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "Tier 35 (S2)",
+    "code": "AXECALIBUR"
+}, {
+    "src": "img/pickaxe/AXERONI.png",
+    "name": "Axeroni",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "AXERONI"
+}, {
+    "src": "img/emote/BALLER.png",
+    "name": "Baller",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "BALLER"
+}, {
+    "src": "img/pickaxe/BATSICKLE.png",
+    "name": "Batsickle",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "BATSICKLE"
+}, {
+    "src": "img/emote/BEST_MATES.png",
+    "name": "Best Mates",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "Tier 63 (S3)",
+    "code": "BEST_MATES"
+}, {
+    "src": "img/BLUE_SQUIRE.png",
+    "name": "Blue Squire",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "Tier 1 (S2)",
+    "code": "BLUE_SQUIRE"
+}, {
+    "src": "img/glider/BLUE_STREAK.png",
+    "name": "Blue Streak",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "PS Plus",
+    "code": "BLUE_STREAK"
+}, {
+    "src": "img/BLUE_TEAM_LEADER.png",
+    "name": "Blue Team Leader",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "PS Plus",
+    "code": "BLUE_TEAM_LEADER"
+}, {
+    "src": "img/emote/BONELESS.png",
+    "name": "Boneless",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "BONELESS"
+}, {
+    "src": "img/BRAWLER.png",
+    "name": "Brawler",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "BRAWLER"
+}, {
+    "src": "img/BRILLIANT_STRIKER.png",
+    "name": "Brilliant Striker",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "BRILLIANT_STRIKER"
+}, {
+    "src": "img/BRITE_BOMBER.png",
+    "name": "Brite Bomber",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "BRITE_BOMBER"
+}, {
+    "src": "img/skydiving_trail/BUBBLES.png",
+    "name": "Bubbles",
+    "type": "Skydiving Trail",
+    "rarity": "Rare",
+    "price": "Tier 68 (S3)",
+    "code": "BUBBLES"
+}, {
+    "src": "img/pickaxe/CARROT_STICK.png",
+    "name": "Carrot Stick",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "CARROT_STICK"
+}, {
+    "src": "img/emote/CHICKEN.png",
+    "name": "Chicken",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "CHICKEN"
+}, {
+    "src": "img/CHROMIUM.png",
+    "name": "Chromium",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "CHROMIUM"
+}, {
+    "src": "img/CIPHER.png",
+    "name": "Cipher",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "CIPHER"
+}, {
+    "src": "img/CIRCUIT_BREAKER.png",
+    "name": "Circuit Breaker",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "CIRCUIT_BREAKER"
+}, {
+    "src": "img/pickaxe/CLIFFHANGER.png",
+    "name": "Cliffhanger",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "CLIFFHANGER"
+}, {
+    "src": "img/CLINICAL_CROSSER.png",
+    "name": "Clinical Crosser",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "CLINICAL_CROSSER"
+}, {
+    "src": "img/pickaxe/CLOSE_SHAVE.png",
+    "name": "Close Shave",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "CLOSE_SHAVE"
+}, {
+    "src": "img/CODENAME_E.L.F..png",
+    "name": "Codename E.L.F.",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "CODENAME_E.L.F."
+}, {
+    "src": "img/emote/CONFUSED.png",
+    "name": "Confused",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "CONFUSED"
+}, {
+    "src": "img/glider/COZY_COASTER.png",
+    "name": "Cozy Coaster",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "COZY_COASTER"
+}, {
+    "src": "img/pickaxe/CRIMSON_AXE.png",
+    "name": "Crimson Axe",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "CRIMSON_AXE"
+}, {
+    "src": "img/pickaxe/CUTTING_EDGE.png",
+    "name": "Cutting Edge",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "CUTTING_EDGE"
+}, {
+    "src": "img/emote/DAB.png",
+    "name": "Dab",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "DAB"
+}, {
+    "src": "img/DAZZLE.png",
+    "name": "Dazzle",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "DAZZLE"
+}, {
+    "src": "img/DESPERADO.png",
+    "name": "Desperado",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "DESPERADO"
+}, {
+    "src": "img/DIECAST.png",
+    "name": "Diecast",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "DIECAST"
+}, {
+    "src": "img/pickaxe/DIRECTOR'S_CUT.png",
+    "name": "Director's Cut",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "DIRECTOR'S_CUT"
+}, {
+    "src": "img/pickaxe/DRAGON_AXE.png",
+    "name": "Dragon Axe",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "DRAGON_AXE"
+}, {
+    "src": "img/DYNAMIC_DRIBBLER.png",
+    "name": "Dynamic Dribbler",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "DYNAMIC_DRIBBLER"
+}, {
+    "src": "img/emote/EAGLE.png",
+    "name": "Eagle",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "EAGLE"
+}, {
+    "src": "img/pickaxe/EMPIRE_AXE.png",
+    "name": "Empire Axe",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "EMPIRE_AXE"
+}, {
+    "src": "img/pickaxe/FATED_FRAME.png",
+    "name": "Fated Frame",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "FATED_FRAME"
+}, {
+    "src": "img/glider/FEATHERED_FLYER.png",
+    "name": "Feathered Flyer",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "FEATHERED_FLYER"
+}, {
+    "src": "img/FINESSE_FINISHER.png",
+    "name": "Finesse Finisher",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "FINESSE_FINISHER"
+}, {
+    "src": "img/FIRST_STRIKE_SPECIALIST.png",
+    "name": "First strike Specialist",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "FIRST_STRIKE_SPECIALIST"
+}, {
+    "src": "img/skydiving_trail/FLAMES.png",
+    "name": "Flames",
+    "type": "Skydiving Trail",
+    "rarity": "Rare",
+    "price": "Tier 84 (S3)",
+    "code": "FLAMES"
+}, {
+    "src": "img/emote/FLAPPER.png",
+    "name": "Flapper",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "FLAPPER"
+}, {
+    "src": "img/emote/FLIPPIN'_SEXY.png",
+    "name": "Flippin' Sexy",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "FLIPPIN'_SEXY"
+}, {
+    "src": "img/emote/FLOSS.png",
+    "name": "Floss",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "Tier 49 (S2)",
+    "code": "FLOSS"
+}, {
+    "src": "img/glider/FORERUNNER.png",
+    "name": "Forerunner",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "FORERUNNER"
+}, {
+    "src": "img/pickaxe/GALE_FORCE.png",
+    "name": "Gale Force",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "Tier 7 (S4)",
+    "code": "GALE_FORCE"
+}, {
+    "src": "img/pickaxe/GLOW_STICK.png",
+    "name": "Glow Stick",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "GLOW_STICK"
+}, {
+    "src": "img/glider/GOOGLY.png",
+    "name": "Googly",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "GOOGLY"
+}, {
+    "src": "img/glider/GUM_DROP.png",
+    "name": "Gum Drop",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "GUM_DROP"
+}, {
+    "src": "img/glider/HALF_SHELL.png",
+    "name": "Half Shell",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "HALF_SHELL"
+}, {
+    "src": "img/skydiving_trail/HEARTS.png",
+    "name": "Hearts",
+    "type": "Skydiving Trail",
+    "rarity": "Rare",
+    "price": "Tier 68 (S4)",
+    "code": "HEARTS"
+}, {
+    "src": "img/emote/HOOTENANNY.png",
+    "name": "Hootenanny",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "HOOTENANNY"
+}, {
+    "src": "img/emote/HYPE.png",
+    "name": "Hype",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "Tier 63 (S4)",
+    "code": "HYPE"
+}, {
+    "src": "img/HYPERION.png",
+    "name": "Hyperion",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "HYPERION"
+}, {
+    "src": "img/INFILTRATOR.png",
+    "name": "Infiltrator",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "INFILTRATOR"
+}, {
+    "src": "img/emote/INFINITE_DAB.png",
+    "name": "Infinite Dab",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "INFINITE_DAB"
+}, {
+    "src": "img/pickaxe/INSTIGATOR.png",
+    "name": "Instigator",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "Twitch Prime",
+    "code": "INSTIGATOR"
+}, {
+    "src": "img/JUMPSHOT.png",
+    "name": "Jumpshot",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "JUMPSHOT"
+}, {
+    "src": "img/emote/KICK_UPS.png",
+    "name": "Kick Ups",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "KICK_UPS"
+}, {
+    "src": "img/emote/KISS_KISS.png",
+    "name": "Kiss Kiss",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "KISS_KISS"
+}, {
+    "src": "img/emote/LAUGH_IT_UP.png",
+    "name": "Laugh It Up",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "LAUGH_IT_UP"
+}, {
+    "src": "img/skydiving_trail/LIGHTNING.png",
+    "name": "Lightning",
+    "type": "Skydiving Trail",
+    "rarity": "Rare",
+    "price": "Tier 50 (S4)",
+    "code": "LIGHTNING"
+}, {
+    "src": "img/pickaxe/LOLLIPOPPER.png",
+    "name": "Lollipopper",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "Tier 46 (S4)",
+    "code": "LOLLIPOPPER"
+}, {
+    "src": "img/pickaxe/MAGNIFYING_AXE.png",
+    "name": "Magnifying Axe",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "MAGNIFYING_AXE"
+}, {
+    "src": "img/emote/MAKE_IT_RAIN.png",
+    "name": "Make it Rain",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "MAKE_IT_RAIN"
+}, {
+    "src": "img/MIDFIELD_MAESTRO.png",
+    "name": "Midfield Maestro",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "MIDFIELD_MAESTRO"
+}, {
+    "src": "img/MIDNIGHT_OPS.png",
+    "name": "Midnight Ops",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "MIDNIGHT_OPS"
+}, {
+    "src": "img/MUNITIONS_EXPERT.png",
+    "name": "Munitions Expert",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "MUNITIONS_EXPERT"
+}, {
+    "src": "img/pickaxe/NITE_OWL.png",
+    "name": "Nite Owl",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "NITE_OWL"
+}, {
+    "src": "img/emote/ORANGE_JUSTICE.png",
+    "name": "Orange Justice",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "Tier 26 (S4)",
+    "code": "ORANGE_JUSTICE"
+}, {
+    "src": "img/pickaxe/PERSUADER.png",
+    "name": "Persuader",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "PERSUADER"
+}, {
+    "src": "img/pickaxe/PLUNJA.png",
+    "name": "Plunja",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "PLUNJA"
+}, {
+    "src": "img/POISED_PLAYMAKER.png",
+    "name": "Poised Playmaker",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "POISED_PLAYMAKER"
+}, {
+    "src": "img/emote/POPCORN.png",
+    "name": "Popcorn",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "Tier 31 (S4)",
+    "code": "POPCORN"
+}, {
+    "src": "img/pickaxe/POSITRON.png",
+    "name": "Positron",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "Level 30 (S4)",
+    "code": "POSITRON"
+}, {
+    "src": "img/back_bling/PRECISION.png",
+    "name": "Precision",
+    "type": "Back Bling",
+    "rarity": "Rare",
+    "price": "Tier 22 (S3)",
+    "code": "PRECISION"
+}, {
+    "src": "img/glider/PRISMATIC.png",
+    "name": "Prismatic",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "PRISMATIC"
+}, {
+    "src": "img/pickaxe/PROPELLER_AXE.png",
+    "name": "Propeller Axe",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "PROPELLER_AXE"
+}, {
+    "src": "img/pickaxe/PULSE_AXE.png",
+    "name": "Pulse Axe",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "Tier 7 (S2)",
+    "code": "PULSE_AXE"
+}, {
+    "src": "img/emote/PURE_SALT.png",
+    "name": "Pure Salt",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "PURE_SALT"
+}, {
+    "src": "img/RADIANT_STRIKER.png",
+    "name": "Radiant Striker",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "RADIANT_STRIKER"
+}, {
+    "src": "img/skydiving_trail/RAINBOW.png",
+    "name": "Rainbow",
+    "type": "Skydiving Trail",
+    "rarity": "Rare",
+    "price": "Tier 20 (S3)",
+    "code": "RAINBOW"
+}, {
+    "src": "img/glider/RAINBOW_RIDER.png",
+    "name": "Rainbow Rider",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "Tier 15 (S3)",
+    "code": "RAINBOW_RIDER"
+}, {
+    "src": "img/emote/RAMBUNCTIOUS.png",
+    "name": "Rambunctious",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "RAMBUNCTIOUS"
+}, {
+    "src": "img/emote/RAWR.png",
+    "name": "Rawr",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "RAWR"
+}, {
+    "src": "img/pickaxe/RAZOR_EDGE.png",
+    "name": "Razor Edge",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "RAZOR_EDGE"
+}, {
+    "src": "img/pickaxe/REAPER.png",
+    "name": "Reaper",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "REAPER"
+}, {
+    "src": "img/RECON_EXPERT.png",
+    "name": "Recon Expert",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "RECON_EXPERT"
+}, {
+    "src": "img/RECON_SCOUT.png",
+    "name": "Recon Scout",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "RECON_SCOUT"
+}, {
+    "src": "img/RECON_SPECIALIST.png",
+    "name": "Recon Specialist",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "RECON_SPECIALIST"
+}, {
+    "src": "img/RED-NOSED_RAIDER.png",
+    "name": "Red-Nosed Raider",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "RED-NOSED_RAIDER"
+}, {
+    "src": "img/RENEGADE_RAIDER.png",
+    "name": "Renegade Raider",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "RENEGADE_RAIDER"
+}, {
+    "src": "img/skydiving_trail/RETRO_SCI-FI.png",
+    "name": "Retro Sci-Fi",
+    "type": "Skydiving Trail",
+    "rarity": "Rare",
+    "price": "Tier 20 (S4)",
+    "code": "RETRO_SCI-FI"
+}, {
+    "src": "img/emote/RIDE_THE_PONY.png",
+    "name": "Ride the Pony",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "Tier 20 (S2)",
+    "code": "RIDE_THE_PONY"
+}, {
+    "src": "img/emote/ROCKET_SPINNER.png",
+    "name": "Rocket Spinner",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "ROCKET_SPINNER"
+}, {
+    "src": "img/ROYALE_KNIGHT.png",
+    "name": "Royale Knight",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "Tier 21 (S2)",
+    "code": "ROYALE_KNIGHT"
+}, {
+    "src": "img/back_bling/ROYALE_SHIELD.png",
+    "name": "Royale Shield",
+    "type": "Back Bling",
+    "rarity": "Rare",
+    "price": "oyale Knight",
+    "code": "ROYALE_SHIELD"
+}, {
+    "src": "img/SASH_SERGEANT.png",
+    "name": "Sash Sergeant",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "SASH_SERGEANT"
+}, {
+    "src": "img/pickaxe/SAWTOOTH.png",
+    "name": "Sawtooth",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "Tier 7 (S3)",
+    "code": "SAWTOOTH"
+}, {
+    "src": "img/skydiving_trail/SHOOTING_STAR.png",
+    "name": "Shooting Star",
+    "type": "Skydiving Trail",
+    "rarity": "Rare",
+    "price": "Tier 84 (S4)",
+    "code": "SHOOTING_STAR"
+}, {
+    "src": "img/pickaxe/SILVER_FANG.png",
+    "name": "Silver Fang",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "SILVER_FANG"
+}, {
+    "src": "img/pickaxe/SKI_BOOT.png",
+    "name": "Ski Boot",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "SKI_BOOT"
+}, {
+    "src": "img/pickaxe/SLAM_DUNK.png",
+    "name": "Slam Dunk",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "SLAM_DUNK"
+}, {
+    "src": "img/SNORKEL_OPS.png",
+    "name": "Snorkel Ops",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "SNORKEL_OPS"
+}, {
+    "src": "img/SPECIAL_FORCES.png",
+    "name": "Special Forces",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "SPECIAL_FORCES"
+}, {
+    "src": "img/pickaxe/SPECTRAL_AXE.png",
+    "name": "Spectral Axe",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "SPECTRAL_AXE"
+}, {
+    "src": "img/pickaxe/SPECTRE.png",
+    "name": "Spectre",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "SPECTRE"
+}, {
+    "src": "img/pickaxe/SPIKY.png",
+    "name": "Spiky",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "SPIKY"
+}, {
+    "src": "img/skydiving_trail/SPRAY_PAINT.png",
+    "name": "Spray Paint",
+    "type": "Skydiving Trail",
+    "rarity": "Rare",
+    "price": "Tier 36 (S4)",
+    "code": "SPRAY_PAINT"
+}, {
+    "src": "img/back_bling/SQUIRE_SHIELD.png",
+    "name": "Squire Shield",
+    "type": "Back Bling",
+    "rarity": "Rare",
+    "price": "lue Squire",
+    "code": "SQUIRE_SHIELD"
+}, {
+    "src": "img/glider/STAGE_DIVE.png",
+    "name": "Stage Dive",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "STAGE_DIVE"
+}, {
+    "src": "img/STALWART_SWEEPER.png",
+    "name": "Stalwart Sweeper",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "STALWART_SWEEPER"
+}, {
+    "src": "img/back_bling/STANDARD_ISSUE.png",
+    "name": "Standard Issue",
+    "type": "Back Bling",
+    "rarity": "Rare",
+    "price": "Tier 10 (S4)",
+    "code": "STANDARD_ISSUE"
+}, {
+    "src": "img/glider/STARRY_FLIGHT.png",
+    "name": "Starry Flight",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "STARRY_FLIGHT"
+}, {
+    "src": "img/emote/STEP_IT_UP.png",
+    "name": "Step it Up",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "STEP_IT_UP"
+}, {
+    "src": "img/pickaxe/STOP_AXE.png",
+    "name": "Stop Axe",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "STOP_AXE"
+}, {
+    "src": "img/glider/SUGAR_CRASH.png",
+    "name": "Sugar Crash",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "Tier 15 (S4)",
+    "code": "SUGAR_CRASH"
+}, {
+    "src": "img/SUPER_STRIKER.png",
+    "name": "Super Striker",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "SUPER_STRIKER"
+}, {
+    "src": "img/SURVIVAL_SPECIALIST.png",
+    "name": "Survival Specialist",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "SURVIVAL_SPECIALIST"
+}, {
+    "src": "img/emote/TAKE_THE_L.png",
+    "name": "Take The L",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "Tier 31 (S3)",
+    "code": "TAKE_THE_L"
+}, {
+    "src": "img/pickaxe/TAT_AXE.png",
+    "name": "Tat Axe",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "TAT_AXE"
+}, {
+    "src": "img/pickaxe/TENDERIZER.png",
+    "name": "Tenderizer",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "Twitch Prime",
+    "code": "TENDERIZER"
+}, {
+    "src": "img/pickaxe/TENDRIL.png",
+    "name": "Tendril",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "TENDRIL"
+}, {
+    "src": "img/emote/THE_WORM.png",
+    "name": "The Worm",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "Tier 28 (S2)",
+    "code": "THE_WORM"
+}, {
+    "src": "img/emote/TIDY.png",
+    "name": "Tidy",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "TIDY"
+}, {
+    "src": "img/pickaxe/TOOTH_PICK.png",
+    "name": "Tooth Pick",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "TOOTH_PICK"
+}, {
+    "src": "img/TRIPLE_THREAT.png",
+    "name": "Triple Threat",
+    "type": "Outfit",
+    "rarity": "Rare",
+    "price": "1,200",
+    "code": "TRIPLE_THREAT"
+}, {
+    "src": "img/skydiving_trail/ULTRAMARINE.png",
+    "name": "Ultramarine",
+    "type": "Skydiving Trail",
+    "rarity": "Rare",
+    "price": "Tier 36 (S3)",
+    "code": "ULTRAMARINE"
+}, {
+    "src": "img/glider/VOYAGER.png",
+    "name": "Voyager",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "VOYAGER"
+}, {
+    "src": "img/pickaxe/VUVUZELA.png",
+    "name": "Vuvuzela",
+    "type": "Pickaxe",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "VUVUZELA"
+}, {
+    "src": "img/emote/WIGGLE.png",
+    "name": "Wiggle",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "WIGGLE"
+}, {
+    "src": "img/emote/ZANY.png",
+    "name": "Zany",
+    "type": "Emote",
+    "rarity": "Rare",
+    "price": "500",
+    "code": "ZANY"
+}, {
+    "src": "img/glider/ZEPHYR.png",
+    "name": "Zephyr",
+    "type": "Glider",
+    "rarity": "Rare",
+    "price": "800",
+    "code": "ZEPHYR"
+}, {
+    "src": "img/emoji/#1.png",
+    "name": "#1",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 97 (S3)",
+    "code": "#1"
+}, {
+    "src": "img/emoji/1_HP.png",
+    "name": "1 HP",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 52 (S3)",
+    "code": "1_HP"
+}, {
+    "src": "img/emoji/200_IQ_PLAY.png",
+    "name": "200 IQ Play",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 74 (S3)",
+    "code": "200_IQ_PLAY"
+}, {
+    "src": "img/loading_screen/A_LOOMING_THREAT.png",
+    "name": "A Looming Threat",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "lockbuster #3 (S4)",
+    "code": "A_LOOMING_THREAT"
+}, {
+    "src": "img/emoji/A+.png",
+    "name": "A+",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 54 (S3)",
+    "code": "A+"
+}, {
+    "src": "img/spray/ABSTRACT.png",
+    "name": "Abstract",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 54 (S4)",
+    "code": "ABSTRACT"
+}, {
+    "src": "img/emoji/ACE.png",
+    "name": "Ace",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Play 50 Matches (S4)",
+    "code": "ACE"
+}, {
+    "src": "img/glider/AERIAL_ASSAULT_ONE.png",
+    "name": "Aerial Assault One",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "AERIAL_ASSAULT_ONE"
+}, {
+    "src": "img/loading_screen/AEROSOL_ASSASSINS.png",
+    "name": "Aerosol Assassins",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 60 (S4)",
+    "code": "AEROSOL_ASSASSINS"
+}, {
+    "src": "img/emoji/ANGEL.png",
+    "name": "Angel",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 14 (S4)",
+    "code": "ANGEL"
+}, {
+    "src": "img/spray/ARROW.png",
+    "name": "Arrow",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 42 (S4)",
+    "code": "ARROW"
+}, {
+    "src": "img/ASSAULT_TROOPER.png",
+    "name": "Assault Trooper",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "ASSAULT_TROOPER"
+}, {
+    "src": "img/loading_screen/AT_LAST..._I_AM_FREE.png",
+    "name": "At Last... I Am Free",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "lockbuster #2 (S4)",
+    "code": "AT_LAST..._I_AM_FREE"
+}, {
+    "src": "img/emoji/AWWW.png",
+    "name": "Awww",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 38 (S3)",
+    "code": "AWWW"
+}, {
+    "src": "img/emoji/BABY_SEAL.png",
+    "name": "Baby Seal",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 24 (S4)",
+    "code": "BABY_SEAL"
+}, {
+    "src": "img/emoji/BAITED.png",
+    "name": "Baited",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 47 (S2)",
+    "code": "BAITED"
+}, {
+    "src": "img/emoji/BANANAS.png",
+    "name": "Bananas",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 90 (S4)",
+    "code": "BANANAS"
+}, {
+    "src": "img/loading_screen/BATTLE_ROYALE.png",
+    "name": "Battle Royale",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 30 (S3)",
+    "code": "BATTLE_ROYALE"
+}, {
+    "src": "img/emoji/BOOMBOX.png",
+    "name": "Boombox",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 18 (S2)",
+    "code": "BOOMBOX"
+}, {
+    "src": "img/emote/BREAKING_POINT.png",
+    "name": "Breaking Point",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "BREAKING_POINT"
+}, {
+    "src": "img/emote/BRING_IT.png",
+    "name": "Bring It",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "BRING_IT"
+}, {
+    "src": "img/loading_screen/BRITE_GUNNER.png",
+    "name": "Brite Gunner",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 85 (S4)",
+    "code": "BRITE_GUNNER"
+}, {
+    "src": "img/loading_screen/BRITE_UNICORN.png",
+    "name": "Brite Unicorn",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 44 (S3)",
+    "code": "BRITE_UNICORN"
+}, {
+    "src": "img/emote/BRUSH_YOUR_SHOULDERS.png",
+    "name": "Brush Your Shoulders",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "BRUSH_YOUR_SHOULDERS"
+}, {
+    "src": "img/emoji/BULLSEYE.png",
+    "name": "Bullseye",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 17 (S2)",
+    "code": "BULLSEYE"
+}, {
+    "src": "img/emoji/BUSH.png",
+    "name": "Bush",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 30 (S3)",
+    "code": "BUSH"
+}, {
+    "src": "img/loading_screen/CARBIDE.png",
+    "name": "Carbide",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 6 (S4)",
+    "code": "CARBIDE"
+}, {
+    "src": "img/glider/CARBON.png",
+    "name": "Carbon",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "Tier 39 (S3)",
+    "code": "CARBON"
+}, {
+    "src": "img/emoji/CELEBRATE.png",
+    "name": "Celebrate",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 97 (S4)",
+    "code": "CELEBRATE"
+}, {
+    "src": "img/spray/CHALK_OUTLINE.png",
+    "name": "Chalk Outline",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 29 (S4)",
+    "code": "CHALK_OUTLINE"
+}, {
+    "src": "img/glider/CHECKER.png",
+    "name": "Checker",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "CHECKER"
+}, {
+    "src": "img/emoji/CHICKEN.png",
+    "name": "Chicken",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 52 (S4)",
+    "code": "CHICKEN"
+}, {
+    "src": "img/spray/CIRCLE.png",
+    "name": "Circle",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 34 (S4)",
+    "code": "CIRCLE"
+}, {
+    "src": "img/emoji/CLAPPING.png",
+    "name": "Clapping",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 5 (S2)",
+    "code": "CLAPPING"
+}, {
+    "src": "img/emote/CLICK!.png",
+    "name": "Click!",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "CLICK!"
+}, {
+    "src": "img/COMMANDO.png",
+    "name": "Commando",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "COMMANDO"
+}, {
+    "src": "img/emoji/CRABBY.png",
+    "name": "Crabby",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 64 (S4)",
+    "code": "CRABBY"
+}, {
+    "src": "img/CRIMSON_SCOUT.png",
+    "name": "Crimson Scout",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "CRIMSON_SCOUT"
+}, {
+    "src": "img/emoji/DANCE_PARTY.png",
+    "name": "Dance Party",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 26 (S2)",
+    "code": "DANCE_PARTY"
+}, {
+    "src": "img/DEVASTATOR.png",
+    "name": "Devastator",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "DEVASTATOR"
+}, {
+    "src": "img/emote/DIP.png",
+    "name": "Dip",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "DIP"
+}, {
+    "src": "img/spray/DO_IT!.png",
+    "name": "Do It!",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 56 (S4)",
+    "code": "DO_IT!"
+}, {
+    "src": "img/DOMINATOR.png",
+    "name": "Dominator",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "DOMINATOR"
+}, {
+    "src": "img/emoji/DYNAMITE.png",
+    "name": "Dynamite",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 5 (S4)",
+    "code": "DYNAMITE"
+}, {
+    "src": "img/spray/EEE.png",
+    "name": "EEE",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "3 Pro-Am Swag Bag",
+    "code": "EEE"
+}, {
+    "src": "img/loading_screen/ELITE_AGENT.png",
+    "name": "Elite Agent",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 92 (S3)",
+    "code": "ELITE_AGENT"
+}, {
+    "src": "img/pickaxe/ELITE_CLEAT.png",
+    "name": "Elite Cleat",
+    "type": "Pickaxe",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "ELITE_CLEAT"
+}, {
+    "src": "img/emoji/EXCLAMATION.png",
+    "name": "Exclamation",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 33 (S2)",
+    "code": "EXCLAMATION"
+}, {
+    "src": "img/emote/FACE_PALM.png",
+    "name": "Face Palm",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "FACE_PALM"
+}, {
+    "src": "img/glider/FIGHTER_KITE.png",
+    "name": "Fighter Kite",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "FIGHTER_KITE"
+}, {
+    "src": "img/emote/FINGER_GUNS.png",
+    "name": "Finger Guns",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "FINGER_GUNS"
+}, {
+    "src": "img/emoji/FLAMING_RAGE.png",
+    "name": "Flaming Rage",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 80 (S3)",
+    "code": "FLAMING_RAGE"
+}, {
+    "src": "img/emoji/FLEX.png",
+    "name": "Flex",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 36 (S2)",
+    "code": "FLEX"
+}, {
+    "src": "img/glider/FOSSIL_FLYER.png",
+    "name": "Fossil Flyer",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "FOSSIL_FLYER"
+}, {
+    "src": "img/spray/GG_SMILEY.png",
+    "name": "GG Smiley",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 14 (S4)",
+    "code": "GG_SMILEY"
+}, {
+    "src": "img/glider/GLOW_RIDER.png",
+    "name": "Glow Rider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "GLOW_RIDER"
+}, {
+    "src": "img/glider/GOALBOUND.png",
+    "name": "Goalbound",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "GOALBOUND"
+}, {
+    "src": "img/emoji/GOOD_GAME.png",
+    "name": "Good Game",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 26 (S3)",
+    "code": "GOOD_GAME"
+}, {
+    "src": "img/emote/GUN_SHOW.png",
+    "name": "Gun Show",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "GUN_SHOW"
+}, {
+    "src": "img/loading_screen/HARVESTING_TOOLS.png",
+    "name": "Harvesting Tools",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 12 (S3)",
+    "code": "HARVESTING_TOOLS"
+}, {
+    "src": "img/emoji/HEART_HANDS.png",
+    "name": "Heart Hands",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 11 (S2)",
+    "code": "HEART_HANDS"
+}, {
+    "src": "img/emoji/HEARTBROKEN.png",
+    "name": "Heartbroken",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 14 (S3)",
+    "code": "HEARTBROKEN"
+}, {
+    "src": "img/spray/HEARTS.png",
+    "name": "Hearts",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 22 (S4)",
+    "code": "HEARTS"
+}, {
+    "src": "img/HIGHRISE_ASSAULT_TROOPER.png",
+    "name": "Highrise Assault Trooper",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "HIGHRISE_ASSAULT_TROOPER"
+}, {
+    "src": "img/emoji/HOARDER.png",
+    "name": "Hoarder",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 64 (S3)",
+    "code": "HOARDER"
+}, {
+    "src": "img/emoji/HOT_DAWG.png",
+    "name": "Hot Dawg",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 58 (S3)",
+    "code": "HOT_DAWG"
+}, {
+    "src": "img/glider/HOT_ROD.png",
+    "name": "Hot Rod",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "HOT_ROD"
+}, {
+    "src": "img/pickaxe/ICE_BREAKER.png",
+    "name": "Ice Breaker",
+    "type": "Pickaxe",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "ICE_BREAKER"
+}, {
+    "src": "img/emoji/IN_LOVE.png",
+    "name": "In Love",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 14 (S3)",
+    "code": "IN_LOVE"
+}, {
+    "src": "img/glider/JOLLY_ROGER.png",
+    "name": "Jolly Roger",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "JOLLY_ROGER"
+}, {
+    "src": "img/emote/JUBILATION.png",
+    "name": "Jubilation",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "JUBILATION"
+}, {
+    "src": "img/JUNGLE_SCOUT.png",
+    "name": "Jungle Scout",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "JUNGLE_SCOUT"
+}, {
+    "src": "img/emoji/KABOOM.png",
+    "name": "Kaboom",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 86 (S3)",
+    "code": "KABOOM"
+}, {
+    "src": "img/spray/KISS.png",
+    "name": "Kiss",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 78 (S4)",
+    "code": "KISS"
+}, {
+    "src": "img/loading_screen/LEVIATHAN.png",
+    "name": "Leviathan",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 44 (S4)",
+    "code": "LEVIATHAN"
+}, {
+    "src": "img/emoji/LIGHTS,_CAMERA,_ACTION!.png",
+    "name": "Lights, Camera, Action!",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 8 (S4)",
+    "code": "LIGHTS,_CAMERA,_ACTION!"
+}, {
+    "src": "img/LITESHOW.png",
+    "name": "Liteshow",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "LITESHOW"
+}, {
+    "src": "img/emoji/LOL.png",
+    "name": "Lol",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 2 (S2)",
+    "code": "LOL"
+}, {
+    "src": "img/spray/LOOTED.png",
+    "name": "Looted",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 38 (S4)",
+    "code": "LOOTED"
+}, {
+    "src": "img/pickaxe/LUCKY.png",
+    "name": "Lucky",
+    "type": "Pickaxe",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "LUCKY"
+}, {
+    "src": "img/emoji/MVP.png",
+    "name": "MVP",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 40 (S2)",
+    "code": "MVP"
+}, {
+    "src": "img/glider/MAINFRAME.png",
+    "name": "Mainframe",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "MAINFRAME"
+}, {
+    "src": "img/emoji/MAJESTIC.png",
+    "name": "Majestic",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 90 (S3)",
+    "code": "MAJESTIC"
+}, {
+    "src": "img/glider/MAKO.png",
+    "name": "Mako",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "Level 25 (S1)",
+    "code": "MAKO"
+}, {
+    "src": "img/spray/MASK.png",
+    "name": "Mask",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 80 (S4)",
+    "code": "MASK"
+}, {
+    "src": "img/glider/MELTDOWN.png",
+    "name": "Meltdown",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "MELTDOWN"
+}, {
+    "src": "img/loading_screen/MINIGUN.png",
+    "name": "Minigun",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 60 (S3)",
+    "code": "MINIGUN"
+}, {
+    "src": "img/glider/MODERN.png",
+    "name": "Modern",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "MODERN"
+}, {
+    "src": "img/NITELITE.png",
+    "name": "Nitelite",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "NITELITE"
+}, {
+    "src": "img/NOG_OPS.png",
+    "name": "Nog Ops",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "NOG_OPS"
+}, {
+    "src": "img/emoji/ON_FIRE.png",
+    "name": "On Fire",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 68 (S2)",
+    "code": "ON_FIRE"
+}, {
+    "src": "img/PATHFINDER.png",
+    "name": "Pathfinder",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "PATHFINDER"
+}, {
+    "src": "img/emoji/PEACE.png",
+    "name": "Peace",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 22 (S2)",
+    "code": "PEACE"
+}, {
+    "src": "img/glider/PETUNIA.png",
+    "name": "Petunia",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "PETUNIA"
+}, {
+    "src": "img/emoji/PLOTTING.png",
+    "name": "Plotting",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 46 (S4)",
+    "code": "PLOTTING"
+}, {
+    "src": "img/emoji/POSITIVITY.png",
+    "name": "Positivity",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 42 (S3)",
+    "code": "POSITIVITY"
+}, {
+    "src": "img/emoji/POTATO_AIM.png",
+    "name": "Potato Aim",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 61 (S2)",
+    "code": "POTATO_AIM"
+}, {
+    "src": "img/loading_screen/QUIET_ON_THE_SET!.png",
+    "name": "Quiet On The Set!",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "lockbuster #1 (S4)",
+    "code": "QUIET_ON_THE_SET!"
+}, {
+    "src": "img/emoji/RIP.png",
+    "name": "RIP",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 12 (S2)",
+    "code": "RIP"
+}, {
+    "src": "img/emoji/RABID.png",
+    "name": "Rabid",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 74 (S4)",
+    "code": "RABID"
+}, {
+    "src": "img/emoji/RAGE.png",
+    "name": "Rage",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 19 (S2)",
+    "code": "RAGE"
+}, {
+    "src": "img/emoji/RAINBOW.png",
+    "name": "Rainbow",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 42 (S4)",
+    "code": "RAINBOW"
+}, {
+    "src": "img/spray/RAINBOW.png",
+    "name": "Rainbow",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 10 (S4)",
+    "code": "RAINBOW"
+}, {
+    "src": "img/RANGER.png",
+    "name": "Ranger",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "RANGER"
+}, {
+    "src": "img/glider/RAPTOR.png",
+    "name": "Raptor",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "RAPTOR"
+}, {
+    "src": "img/loading_screen/RAPTOR.png",
+    "name": "Raptor",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 76 (S3)",
+    "code": "RAPTOR"
+}, {
+    "src": "img/loading_screen/RAVEN.png",
+    "name": "Raven",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 92 (S4)",
+    "code": "RAVEN"
+}, {
+    "src": "img/spray/RAVEN.png",
+    "name": "Raven",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 72 (S4)",
+    "code": "RAVEN"
+}, {
+    "src": "img/emote/RED_CARD.png",
+    "name": "Red Card",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "RED_CARD"
+}, {
+    "src": "img/RENEGADE.png",
+    "name": "Renegade",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "RENEGADE"
+}, {
+    "src": "img/emote/RESPECT.png",
+    "name": "Respect",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "Tier 54 (S4)",
+    "code": "RESPECT"
+}, {
+    "src": "img/loading_screen/RETRIBUTION.png",
+    "name": "Retribution",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "lockbuster #4 (S4)",
+    "code": "RETRIBUTION"
+}, {
+    "src": "img/loading_screen/RETROFIT.png",
+    "name": "Retrofit",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "lockbuster #8 (S4)",
+    "code": "RETROFIT"
+}, {
+    "src": "img/loading_screen/REX.png",
+    "name": "Rex",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 12 (S4)",
+    "code": "REX"
+}, {
+    "src": "img/glider/ROADTRIP.png",
     "name": "Roadtrip",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/ROADTRIP.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
     "code": "ROADTRIP"
 }, {
+    "src": "img/emote/ROCK_PAPER_SCISSORS.png",
+    "name": "Rock Paper Scissors",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "ROCK_PAPER_SCISSORS"
+}, {
+    "src": "img/emoji/ROCKET_RIDE.png",
+    "name": "Rocket Ride",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 22 (S3)",
+    "code": "ROCKET_RIDE"
+}, {
+    "src": "img/spray/ROYAL_STROLL.png",
+    "name": "Royal Stroll",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 48 (S4)",
+    "code": "ROYAL_STROLL"
+}, {
+    "src": "img/glider/ROYALE_X.png",
     "name": "Royale X",
-    "price": " Tier 42 (S2)",
-    "rarity": "uncommon",
-    "src": "img\/glider\/ROYALE_X.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "Tier 42 (S2)",
     "code": "ROYALE_X"
 }, {
+    "src": "img/emoji/SALTY.png",
+    "name": "Salty",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 54 (S2)",
+    "code": "SALTY"
+}, {
+    "src": "img/emote/SALUTE.png",
+    "name": "Salute",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "Tier 10 (S3)",
+    "code": "SALUTE"
+}, {
+    "src": "img/SCARLET_DEFENDER.png",
+    "name": "Scarlet Defender",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "SCARLET_DEFENDER"
+}, {
+    "src": "img/SCOUT.png",
+    "name": "Scout",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "SCOUT"
+}, {
+    "src": "img/SGT._GREEN_CLOVER.png",
+    "name": "Sgt. Green Clover",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "SGT._GREEN_CLOVER"
+}, {
+    "src": "img/spray/SHADOW_OPS.png",
+    "name": "Shadow Ops",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 99 (S4)",
+    "code": "SHADOW_OPS"
+}, {
+    "src": "img/loading_screen/SHOWDOWN.png",
+    "name": "Showdown",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "lockbuster #5 (S4)",
+    "code": "SHOWDOWN"
+}, {
+    "src": "img/glider/SIR_GLIDER_THE_BRAVE.png",
     "name": "Sir Glider The Brave",
-    "price": " Tier 35 (S2)",
-    "rarity": "uncommon",
-    "src": "img\/glider\/SIR_GLIDER_THE_BRAVE.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "Tier 35 (S2)",
     "code": "SIR_GLIDER_THE_BRAVE"
 }, {
+    "src": "img/emote/SLOW_CLAP.png",
+    "name": "Slow Clap",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "SLOW_CLAP"
+}, {
+    "src": "img/emote/SNAP.png",
+    "name": "Snap",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "SNAP"
+}, {
+    "src": "img/glider/SNOW_SQUALL.png",
     "name": "Snow Squall",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/SNOW_SQUALL.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
     "code": "SNOW_SQUALL"
 }, {
+    "src": "img/glider/SOLID_STRIDER.png",
     "name": "Solid Strider",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/SOLID_STRIDER.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
     "code": "SOLID_STRIDER"
 }, {
+    "src": "img/spray/SOLO_SHOWDOWN.png",
+    "name": "Solo Showdown",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Play 50 Matches in Solo Showdown",
+    "code": "SOLO_SHOWDOWN"
+}, {
+    "src": "img/emote/SPARKLER.png",
+    "name": "Sparkler",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "SPARKLER"
+}, {
+    "src": "img/loading_screen/SQUAD_LEADER.png",
+    "name": "Squad Leader",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 28 (S4)",
+    "code": "SQUAD_LEADER"
+}, {
+    "src": "img/STAR-SPANGLED_RANGER.png",
+    "name": "Star-Spangled Ranger",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "STAR-SPANGLED_RANGER"
+}, {
+    "src": "img/STAR-SPANGLED_TROOPER.png",
+    "name": "Star-Spangled Trooper",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "STAR-SPANGLED_TROOPER"
+}, {
+    "src": "img/glider/STEADFAST.png",
     "name": "Steadfast",
-    "price": "???",
-    "rarity": "uncommon",
-    "src": "img\/glider\/STEADFAST.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "??",
     "code": "STEADFAST"
 }, {
+    "src": "img/glider/STEALTH.png",
     "name": "Stealth",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/STEALTH.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
     "code": "STEALTH"
 }, {
+    "src": "img/emoji/STEALTHY.png",
+    "name": "Stealthy",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 57 (S2)",
+    "code": "STEALTHY"
+}, {
+    "src": "img/emote/STORM_SALUTATION.png",
+    "name": "Storm Salutation",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "??",
+    "code": "STORM_SALUTATION"
+}, {
+    "src": "img/glider/STORM_SIGIL.png",
     "name": "Storm Sigil",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/STORM_SIGIL.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
     "code": "STORM_SIGIL"
 }, {
+    "src": "img/loading_screen/SUPPLY_DROP.png",
+    "name": "Supply Drop",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 30 (S4)",
+    "code": "SUPPLY_DROP"
+}, {
+    "src": "img/loading_screen/SUPPRESSED_PISTOL.png",
+    "name": "Suppressed Pistol",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 6 (S3)",
+    "code": "SUPPRESSED_PISTOL"
+}, {
+    "src": "img/loading_screen/TACTICAL_SHOTGUN.png",
+    "name": "Tactical Shotgun",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 28 (S3)",
+    "code": "TACTICAL_SHOTGUN"
+}, {
+    "src": "img/pickaxe/TACTICAL_SPADE.png",
+    "name": "Tactical Spade",
+    "type": "Pickaxe",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "TACTICAL_SPADE"
+}, {
+    "src": "img/TACTICS_OFFICER.png",
+    "name": "Tactics Officer",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "TACTICS_OFFICER"
+}, {
+    "src": "img/emote/TAKE_14.png",
+    "name": "Take 14",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "TAKE_14"
+}, {
+    "src": "img/emoji/TEAMWORK.png",
+    "name": "Teamwork",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 22 (S4)",
+    "code": "TEAMWORK"
+}, {
+    "src": "img/spray/TEKNIQUE.png",
+    "name": "Teknique",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 86 (S4)",
+    "code": "TEKNIQUE"
+}, {
+    "src": "img/loading_screen/THAT'S_A_WRAP!.png",
+    "name": "That's a Wrap!",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "lockbuster #6 (S4)",
+    "code": "THAT'S_A_WRAP!"
+}, {
+    "src": "img/loading_screen/THE_VISITOR.png",
+    "name": "The Visitor",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "lockbuster #7 (S4)",
+    "code": "THE_VISITOR"
+}, {
+    "src": "img/emoji/THIEF.png",
+    "name": "Thief",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 8 (S3)",
+    "code": "THIEF"
+}, {
+    "src": "img/spray/THREE_LLAMAS.png",
+    "name": "Three Llamas",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 62 (S4)",
+    "code": "THREE_LLAMAS"
+}, {
+    "src": "img/emote/THUMBS_DOWN.png",
+    "name": "Thumbs Down",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "THUMBS_DOWN"
+}, {
+    "src": "img/emoji/THUMBS_DOWN.png",
+    "name": "Thumbs Down",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 48 (S3)",
+    "code": "THUMBS_DOWN"
+}, {
+    "src": "img/emoji/THUMBS_UP.png",
+    "name": "Thumbs Up",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 46 (S3)",
+    "code": "THUMBS_UP"
+}, {
+    "src": "img/emote/THUMBS_UP.png",
+    "name": "Thumbs Up",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "THUMBS_UP"
+}, {
+    "src": "img/TOWER_RECON_SPECIALIST.png",
+    "name": "Tower Recon Specialist",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "TOWER_RECON_SPECIALIST"
+}, {
+    "src": "img/TRACKER.png",
+    "name": "Tracker",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "TRACKER"
+}, {
+    "src": "img/spray/TRAP_WARNING.png",
+    "name": "Trap Warning",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 70 (S4)",
+    "code": "TRAP_WARNING"
+}, {
+    "src": "img/glider/TRIUMPH.png",
     "name": "Triumph",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/TRIUMPH.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
     "code": "TRIUMPH"
 }, {
+    "src": "img/TROOPER.png",
+    "name": "Trooper",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "TROOPER"
+}, {
+    "src": "img/emote/TRUE_LOVE.png",
+    "name": "True Love",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "TRUE_LOVE"
+}, {
+    "src": "img/spray/TUNNEL.png",
+    "name": "Tunnel",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 94 (S4)",
+    "code": "TUNNEL"
+}, {
+    "src": "img/pickaxe/VICTORY_LAP.png",
+    "name": "Victory Lap",
+    "type": "Pickaxe",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "VICTORY_LAP"
+}, {
+    "src": "img/emoji/VICTORY_ROYALE.png",
+    "name": "Victory Royale",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Win (S4)",
+    "code": "VICTORY_ROYALE"
+}, {
+    "src": "img/glider/WARTHOG.png",
     "name": "Warthog",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/WARTHOG.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
     "code": "WARTHOG"
 }, {
+    "src": "img/glider/WASP.png",
     "name": "Wasp",
-    "price": " 500",
-    "rarity": "uncommon",
-    "src": "img\/glider\/WASP.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Uncommon",
+    "price": "500",
     "code": "WASP"
 }, {
+    "src": "img/emote/WATERWORKS.png",
+    "name": "Waterworks",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "200",
+    "code": "WATERWORKS"
+}, {
+    "src": "img/emote/WAVE.png",
+    "name": "Wave",
+    "type": "Emote",
+    "rarity": "Uncommon",
+    "price": "Tier 5 (S2)",
+    "code": "WAVE"
+}, {
+    "src": "img/WHIPLASH.png",
+    "name": "Whiplash",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "WHIPLASH"
+}, {
+    "src": "img/spray/WINDOW.png",
+    "name": "Window",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 66 (S4)",
+    "code": "WINDOW"
+}, {
+    "src": "img/emoji/WOW.png",
+    "name": "Wow",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 5 (S3)",
+    "code": "WOW"
+}, {
+    "src": "img/spray/X_MARK.png",
+    "name": "X Mark",
+    "type": "Spray",
+    "rarity": "Uncommon",
+    "price": "Tier 3 (S4)",
+    "code": "X_MARK"
+}, {
+    "src": "img/pickaxe/YOU_SHOULDN'T_HAVE!.png",
+    "name": "You Shouldn't Have!",
+    "type": "Pickaxe",
+    "rarity": "Uncommon",
+    "price": "500",
+    "code": "YOU_SHOULDN'T_HAVE!"
+}, {
+    "src": "img/YULETIDE_RANGER.png",
+    "name": "Yuletide Ranger",
+    "type": "Outfit",
+    "rarity": "Uncommon",
+    "price": "800",
+    "code": "YULETIDE_RANGER"
+}, {
+    "src": "img/loading_screen/ZOEY.png",
+    "name": "Zoey",
+    "type": "Loading Screen",
+    "rarity": "Uncommon",
+    "price": "Tier 76 (S4)",
+    "code": "ZOEY"
+}, {
+    "src": "img/emoji/ZZZ.png",
+    "name": "Zzz",
+    "type": "Emoji",
+    "rarity": "Uncommon",
+    "price": "Tier 18 (S4)",
+    "code": "ZZZ"
+}, {
+    "src": "img/emote/DANCE_MOVES.png",
+    "name": "Dance Moves",
+    "type": "Emote",
+    "rarity": "Common",
+    "price": "Default",
+    "code": "DANCE_MOVES"
+}, {
+    "src": "img/glider/FOUNDER'S_GLIDER.png",
     "name": "Founder's Glider",
+    "type": "Glider",
+    "rarity": "Common",
     "price": "STW Beta",
-    "rarity": "common",
-    "src": "img\/glider\/FOUNDERS_GLIDER.png",
-    "type": "glider",
-    "code": "FOUNDERS_GLIDER"
+    "code": "FOUNDER'S_GLIDER"
 }, {
+    "src": "img/umbrella/FOUNDER'S_UMBRELLA.png",
     "name": "Founder's Umbrella",
-    "price": " STW Beta + Win",
-    "rarity": "common",
-    "src": "img\/umbrella\/FOUNDERS_UMBRELLA.png",
-    "type": "umbrella",
-    "code": "FOUNDERS_UMBRELLA"
+    "type": "Umbrella",
+    "rarity": "Common",
+    "price": "STW Beta + Win",
+    "code": "FOUNDER'S_UMBRELLA"
 }, {
+    "src": "img/glider/GLIDER.png",
     "name": "Glider",
-    "price": " Default",
-    "rarity": "common",
-    "src": "img\/glider\/GLIDER.png",
-    "type": "glider",
+    "type": "Glider",
+    "rarity": "Common",
+    "price": "Default",
     "code": "GLIDER"
 }, {
+    "src": "img/umbrella/PAPER_PARASOL.png",
     "name": "Paper Parasol",
-    "price": " Win (S3)",
-    "rarity": "common",
-    "src": "img\/umbrella\/PAPER_PARASOL.png",
-    "type": "umbrella",
+    "type": "Umbrella",
+    "rarity": "Common",
+    "price": "Win (S3)",
     "code": "PAPER_PARASOL"
 }, {
+    "src": "img/pickaxe/PICKAXE.png",
+    "name": "Pickaxe",
+    "type": "Pickaxe",
+    "rarity": "Common",
+    "price": "Default",
+    "code": "PICKAXE"
+}, {
+    "src": "img/umbrella/SNOWFLAKE.png",
     "name": "Snowflake",
-    "price": " Win (S2)",
-    "rarity": "common",
-    "src": "img\/umbrella\/SNOWFLAKE.png",
-    "type": "umbrella",
+    "type": "Umbrella",
+    "rarity": "Common",
+    "price": "Win (S2)",
     "code": "SNOWFLAKE"
 }, {
+    "src": "img/umbrella/THE_UMBRELLA.png",
     "name": "The Umbrella",
-    "price": " Win",
-    "rarity": "common",
-    "src": "img\/umbrella\/THE_UMBRELLA.png",
-    "type": "umbrella",
+    "type": "Umbrella",
+    "rarity": "Common",
+    "price": "Win",
     "code": "THE_UMBRELLA"
 }, {
+    "src": "img/umbrella/WET_PAINT.png",
     "name": "Wet Paint",
-    "price": " Win (S4)",
-    "rarity": "common",
-    "src": "img\/umbrella\/WET_PAINT.png",
-    "type": "umbrella",
+    "type": "Umbrella",
+    "rarity": "Common",
+    "price": "Win (S4)",
     "code": "WET_PAINT"
 }]

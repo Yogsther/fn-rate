@@ -41,9 +41,6 @@ window.onresize = () => {
 
 var admin = false;
 
-/* var colors = ["#ff5680", "#598dff", "#558447"];
-var themeColor = colors[Math.floor(Math.random() * colors.length)];
- */
 if (localStorage.getItem("token") !== null){
     admin = true;
 } 
@@ -509,7 +506,7 @@ document.addEventListener("mousemove", e => {
 })
 
 socket.on("confirmedVote", pack => {
-    if (skins[currentSkin].code == pack.skin && pack.rating == thisRating) {
+    if (pack.skin.indexOf(skins[currentSkin].code) !== -1 && pack.rating == thisRating) {
         confirmVote();
     }
 })
@@ -543,7 +540,7 @@ function rate(rating) {
     if (rating === thisRating) return;
     rateUpdate = true;
     socket.emit("rate", {
-        skin: skins[currentSkin].code,
+        skin: skins[currentSkin].type + "_TYPE_" + skins[currentSkin].code,
         rating: rating
     });
     pendingVote();
@@ -600,7 +597,7 @@ function submitComment() {
     var comment = {
         message: message,
         username: username,
-        skin: skins[currentSkin].code,
+        skin: skins[currentSkin].type + "_TYPE_" + skins[currentSkin].code,
         token: localStorage.getItem("token")
     }
     socket.emit("comment", comment)
