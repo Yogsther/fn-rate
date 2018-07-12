@@ -210,7 +210,6 @@ function rateSort(a, b) {
 
 function commentSort(a, b) {
     try {
-
         if (a.comments.length > b.comments.length)
             return -1;
         if (a.comments.length < b.comments.length)
