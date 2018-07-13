@@ -5,7 +5,8 @@
 } */
 
 var socket = io.connect('213.66.254.63:25565', {
-    secure: true
+    secure: true,
+    rejectUnauthorized : false
 });
 
 var skins;
