@@ -1,8 +1,8 @@
 
 // Enforce https
-if (location.protocol != 'https:') {
+/* if (location.protocol != 'https:') {
     location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-}
+} */
 
 var socket = io.connect('213.66.254.63:25565', {
     secure: true
