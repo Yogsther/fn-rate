@@ -1,4 +1,12 @@
-var socket = io.connect('https://213.66.254.63:25565', {secure: true});
+
+// Enforce https
+if (location.protocol != 'https:') {
+    location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+}
+
+var socket = io.connect('213.66.254.63:25565', {
+    secure: true
+});
 
 var skins;
 var thisRating = 0;
@@ -182,7 +190,7 @@ socket.on("account", acc => {
 })
 
 function updateStats() {
-    if(myAccount == undefined || skins == undefined) return;
+    if (myAccount == undefined || skins == undefined) return;
     var length = 0;
     var totalRate = 0;
     Object.keys(myAccount.account).forEach(function (key) {
