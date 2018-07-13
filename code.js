@@ -1,4 +1,4 @@
-var socket = io.connect("213.66.254.63:25565");
+var socket = io.connect('https://213.66.254.63:25565', {secure: true});
 
 var skins;
 var thisRating = 0;
