@@ -261,9 +261,14 @@ function sortBy(val, dontLoad) {
 }
 
 var cosmeticFilter = "all";
+if(localStorage.getItem("filter") !== null){
+    cosmeticFilter = localStorage.getItem("filter")
+    document.getElementById("filter-options").value = cosmeticFilter;
+}
 
 function filter(val) {
     cosmeticFilter = val;
+    localStorage.setItem("filter", cosmeticFilter);
     populateCollection();
     inspect(i);
 }
