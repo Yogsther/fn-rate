@@ -394,11 +394,11 @@ img {
 
 
 #stats {
-    width: 200px;
+    width: 300px;
     float: right;
     display: block;
     position: relative;
-    text-align: right;
+    text-align: left;
     right: 50px;
 }
 
@@ -564,4 +564,35 @@ img {
     width: 70%;
     text-align: center;
     top: 31vh;
+}
+
+
+.inventory-button{
+    background: none;
+    border-radius: 2px;
+    cursor: pointer;
+    border-color: #e0cd57;
+    position: relative;
+    top: -5px;
+    width: 100px;
+    margin-left: 12px;
+    color: #e0cd57;
+    border-radius: 5px;
+    padding: 5px;
+    border-style: solid;
+    font-size: 20px;
+    transition: all .05s;
+}
+
+.inventory-button-cheked{
+    background: #e0cd57;
+    color: #111;
+}
+
+.inventory-button:hover{
+    transform: scale(1.05);
+}
+
+.inventory-button:active{
+    transform: scale(0.95);
 }

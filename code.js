@@ -9,6 +9,7 @@ var userRequested = false;
 var firstLoad = true;
 var colorSort = "rarity";
 var sortMode = "rating";
+var accountWorth = "?";
 
 
 var tips = [
@@ -38,14 +39,14 @@ window.onresize = () => {
 
 var admin = false;
 
-if (localStorage.getItem("token") !== null){
+if (localStorage.getItem("token") !== null) {
     admin = true;
-} 
+}
 
 
 function applyThemeColor() {
     //newColor = themeColor;
-    
+
     var bars = document.getElementsByClassName("bar")
     for (let el of bars) el.style.background = newColor;
 
@@ -108,6 +109,8 @@ function renderCanvas() {
 socket.on("skins", data => {
     // Save skins locally
     skins = data;
+
+    calculateLockerValue();
 
     // Sort skins
     justSort(sortMode);
@@ -179,6 +182,7 @@ socket.on("account", acc => {
 })
 
 function updateStats() {
+    if(myAccount == undefined || skins == undefined) return;
     var length = 0;
     var totalRate = 0;
     Object.keys(myAccount.account).forEach(function (key) {
@@ -187,7 +191,7 @@ function updateStats() {
     });
     var average = Math.round((totalRate / length) * 100) / 100;
     if (length >= amountOfSkins) document.title = "FN Rate 🌟"
-    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average + "<br>Karma: " + myAccount.karma + "<br>Amount of comments: " + myAccount.comments.length;
+    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average + "<br>Karma: " + myAccount.karma + "<br>Amount of comments: " + myAccount.comments.length + "<br><span title='Account value in V-bucks, not accounting for Battlepass cost, STW cost or Starter packs.'>Account worth (?): " + accountWorth + " V-bucks</span>";
 }
 
 var rarities = ["common", "uncommon", "rare", "epic", "legendary"];
@@ -261,7 +265,7 @@ function sortBy(val, dontLoad) {
 }
 
 var cosmeticFilter = "all";
-if(localStorage.getItem("filter") !== null){
+if (localStorage.getItem("filter") !== null) {
     cosmeticFilter = localStorage.getItem("filter")
     document.getElementById("filter-options").value = cosmeticFilter;
 }
@@ -290,7 +294,10 @@ function populateCollection() {
     for (let i = 0; i < skins.length; i++) {
         var skip = false;
         if (cosmeticFilter != "all") {
-            if (skins[i].type != cosmeticFilter) skip = true;
+
+            if (cosmeticFilter == "locker") {
+                if (locker.indexOf(getSkinCode(skins[i])) == -1) skip = true;
+            } else if (skins[i].type != cosmeticFilter) skip = true;
         }
         if (!skip) {
 
@@ -307,7 +314,8 @@ function populateCollection() {
                 //var myRating??
                 var warn = "";
                 if (myAccount !== undefined) {
-                    if (myAccount.account[skin.code] === undefined && myAccount.account[skins[currentSkin].type + "_TYPE_" + skins[currentSkin].code] === undefined) warn = "!";
+
+                    if (myAccount.account[skin.code] === undefined && myAccount.account[skin.type.toLowerCase() + "_TYPE_" + skin.code] === undefined) warn = "!";
                 }
                 if (skin.code != undefined) {
                     collectionString += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "'> <img class='preview " + skin.rarity + "-block' draggable='false' style='background-color:" + skin.color + "' src=" + JSON.stringify(skin.thumb.src) + "> <span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
@@ -352,8 +360,8 @@ function inspect(skinIndex) {
     currentSkin = skinIndex;
     // Handle rating
     try {
-        if(myAccount.account[skins[currentSkin].type+"_TYPE_" +skins[currentSkin].code] !== undefined){
-            thisRating = myAccount.account[skins[currentSkin].type+"_TYPE_" +skins[currentSkin].code];
+        if (myAccount.account[skins[currentSkin].type + "_TYPE_" + skins[currentSkin].code] !== undefined) {
+            thisRating = myAccount.account[skins[currentSkin].type + "_TYPE_" + skins[currentSkin].code];
         } else {
             thisRating = myAccount.account[skins[currentSkin].code];
         }
@@ -363,6 +371,18 @@ function inspect(skinIndex) {
     var rating = thisRating;
 
     hideConfirm();
+
+    var sign = "+";
+    if (locker.indexOf(getSkinCode(skins[currentSkin])) != -1) {
+        sign = "-";
+        if (document.getElementById("i-own-button").classList.length < 2) document.getElementById("i-own-button").classList.toggle("inventory-button-cheked")
+    } else {
+        if (document.getElementById("i-own-button").classList.length > 1) document.getElementById("i-own-button").classList.toggle("inventory-button-cheked")
+    }
+    // Update button text and colors
+    document.getElementById("i-own-button").innerText = sign + " Locker";
+
+
 
     var skin = skins[skinIndex];
     document.getElementById("stars").innerHTML = "";
@@ -526,7 +546,7 @@ function confirmVote() {
 function pendingVote() {
     document.getElementById("check").title = "Vote has been sent."
     document.getElementById("check").src = "unconfirmed.png"
-    document.getElementById("img_" + currentSkin).children[1].innerHTML = "";
+    document.getElementById("img_" + currentSkin).children[2].innerHTML = "";
     document.getElementById("check").style.transform = "scale(1)";
 }
 
@@ -534,24 +554,23 @@ function hideConfirm() {
     document.getElementById("check").style.transform = "scale(0)";
 }
 
-
 function updateAccount(rating) {
-    if(myAccount.account[skins[currentSkin].type+"_TYPE_" +skins[currentSkin].code] === undefined){
+    if (myAccount.account[skins[currentSkin].type + "_TYPE_" + skins[currentSkin].code] === undefined) {
         myAccount.account[skins[currentSkin.code]] = rating;
     } else {
-        myAccount.account[skins[currentSkin].type+"_TYPE_" +skins[currentSkin].code] = rating;
+        myAccount.account[skins[currentSkin].type + "_TYPE_" + skins[currentSkin].code] = rating;
     }
     myAccount.account[skins[currentSkin].code] = rating;
     thisRating = rating;
     updateStars(rating);
 }
 
-function getCurrentSkin(){
-    if(myAccount.account)
-    for(let skin of skins){
-        myacc
-    }
-} 
+function getCurrentSkin() {
+    if (myAccount.account)
+        for (let skin of skins) {
+            myacc
+        }
+}
 
 
 function rate(rating) {
@@ -664,4 +683,67 @@ function commentVote(comment, upvote) {
         id: commentID,
         type: type
     });
+}
+
+var locker = JSON.parse(localStorage.getItem("locker"));
+if (locker == null) {
+    locker = new Array();
+}
+
+
+function toggleLocker() {
+    var skinCode = getSkinCode(skins[currentSkin]);
+
+    var sign = "-";
+    if (locker.indexOf(skinCode) != -1) {
+        sign = "+";
+        locker.splice(locker.indexOf(skinCode), 1); // Remove item from locker
+    } else {
+        locker.push(skinCode);
+    }
+
+    // Save locker
+    localStorage.setItem("locker", JSON.stringify(locker));
+    // Update button text and colors
+    document.getElementById("i-own-button").innerText = sign + " Locker";
+    document.getElementById("i-own-button").classList.toggle("inventory-button-cheked")
+
+    calculateLockerValue();
+}
+
+
+function calculateLockerValue() {
+    var totalPrice = 0;
+    locker.forEach(lockerItem => {
+        var price = skins[getSkinIndexFromCode(lockerItem)].price;
+        price = price.split(",").join("");
+        if (!isNaN(Number(price))) {
+            // Pure V-bucks cost
+            totalPrice += Number(price);
+        }
+    })
+
+    accountWorth = totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    updateStats();
+}
+
+
+function getSkinCode(skin) {
+    return skin.type.toLowerCase() + "_TYPE_" + skin.code.toUpperCase();
+}
+
+function getSkinIndexFromCode(code) {
+    if (code.indexOf("_TYPE_") != -1) {
+        var type = code.substr(0, code.indexOf("_TYPE_"));
+        var code = code.substr(code.indexOf("_TYPE_") + 6, code.length);
+        for (let i = 0; i < skins.length; i++) {
+            if (code == skins[i].code && type.toLowerCase() == skins[i].type.toLowerCase()) {
+                return i;
+            }
+        }
+    } else {
+        for (let i = 0; i < skins.length; i++) {
+            if (skins[i].code == code) return i;
+        }
+    }
 }

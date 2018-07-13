@@ -256,7 +256,6 @@ img {
     display: block;
     background: rgb(39, 39, 39);
     margin-bottom: .5vh;
-    border-radius: 0px 0px 5px 5px;
 }
 
 .header-item{
@@ -286,8 +285,8 @@ img {
 }
 
 #bars{
-    margin-top: -69px;
-    margin:  0 auto;
+    margin-top: 30px !important;
+    margin: 0 auto;
     position: relative;
     width: 60%;
     margin-right: 10px;
@@ -483,4 +482,35 @@ img {
     margin: 0 auto;
     width: 70%;
     text-align: center;
+}
+
+
+.inventory-button{
+    background: none;
+    border-radius: 2px;
+    cursor: pointer;
+    border-color: #e0cd57;
+    position: relative;
+    top: -5px;
+    width: 100px;
+    margin-left: 12px;
+    color: #e0cd57;
+    border-radius: 5px;
+    padding: 5px;
+    border-style: solid;
+    font-size: 20px;
+    transition: all .05s;
+}
+
+.inventory-button-cheked{
+    background: #e0cd57;
+    color: #111;
+}
+
+.inventory-button:hover{
+    transform: scale(1.05);
+}
+
+.inventory-button:active{
+    transform: scale(0.95);
 }
