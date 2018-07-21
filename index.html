@@ -5,7 +5,7 @@
 
     <!-- Informations -->
     <meta property="og:description" content="Rate the skins of Fortnite and see what skins are the most appreciated!" />
-    <meta property="og:title" content="Fortnite Rate" />
+    <meta property="og:title" content="FN Rate - Rate the skins of Fortnite" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://rate.livfor.it" />
     <!-- Image -->
@@ -22,12 +22,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>FN Rate</title>
+    <title>FN Rate - Rate the skins of Fortnite</title>
     <!-- Filter script -->
     <script src="bad_words.js"></script>
     <!-- Socket.io -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <!-- Styles -->
     <link rel="stylesheet" media="screen and (min-device-width: 750px)" href="style.css" />
+    <!-- Mobile style -->
     <link rel="stylesheet" media="screen and (max-device-width: 750px)" href="style_mobile.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -71,14 +73,14 @@
             <span style='color:white; margin-left:2em;'>Sort by:</span>
             <select oninput="sortBy(this.value)" id="sort">
                 <option value="rating">Global rating</option>
-                <option value="rarity">Rarity</option>
                 <option value="myrating">Your rating</option>
                 <option value="votes">Amount of votes</option>
                 <option value="comments">Amount of comments</option>
+                <option value="rarity">Rarity</option>
             </select>
         </div>
 
-
+        <!-- 
         <div class="header-item">
             <span style='color:white; margin-left:2em;'>Color:</span>
             <select oninput="setColor(this.value)" id="sort">
@@ -86,22 +88,25 @@
                 <option value="rarity">Rarity</option>
                 <option value="rating">Rating</option>
             </select>
-        </div>
+        </div> -->
 
         <div class="header-item">
             <span style='color:white; margin-left:2em;'>Username:</span>
             <input maxlength="12" type="text" id="username" value="Anonymous" oninput="updateUsername(this.value)">
         </div>
         </button>
+
+        <div class="header-item">
+            <a href="https://www.reddit.com/u/Yogsther" target="_blank" style='margin-left:2em;' title="Report a bug or submit a suggestion">Contact me</a>
+        </div>
+
+        <span id="admin-deck-insert"></span>
        
-    <div class="header-item">
-        <a href="https://www.reddit.com/u/Yogsther" target="_blank" style='margin-left:2em;' title="Report a bug or submit a suggestion">Contact me</a>
-</div>
     </div>
     </div>
     <div id="collection">
 
-       <!--  <img src="logo_animated.gif" alt="Loading animation" id="loading_logo">
+        <!--  <img src="logo_animated.gif" alt="Loading animation" id="loading_logo">
         -->
         <span id="loading-main">Loading...</span>
         <span id="loading-tips"></span>
@@ -109,13 +114,14 @@
     </div>
     <div id="wrap">
         <div id="inspect">
-            <span id="title">TRICERA THOT</span>
+            <span id="title">UNKNOWN</span>
             <div id="image-wrap">
                 <canvas id="canvas" width="900" height="400"></canvas>
                 <div id="both-images-wrap">
-                    <img src="img/TRICERA_OPS.png" class="full" alt="Full image" id="full">
+                    <img src="img/UNKNOWN_PLACEHOLDER.png" class="full" alt="Full image" id="full">
                     <span id="secondary-insert">
-                        <img src="img/full/TRICERA_OPS.png" id="secondary" alt=""> </span>
+                        <img src="" id="secondary" alt=""> 
+                    </span>
                     <span id="third-insert"></span>
                 </div>
             </div>
@@ -124,15 +130,18 @@
 
             </span>
             <img src="oh_hi_mark.png" alt="" id="check">
-            <button class="inventory-button" id="i-own-button" title="Click here if you own this skin, you can then sort by your skins and see your accocunt value." onclick="toggleLocker()"> + Locker </button>
+            <button class="inventory-button" id="i-own-button" title="Click here if you own this skin, you can then sort by your skins and see your accocunt value."
+                onclick="toggleLocker()"> + Locker </button>
 
-            
+
             <span id="score">
                 <span id="rating">∞</span>
                 <span id="outof">/5</span>
             </span>
 
-            <span id="votes"><span id="amount">0</span> votes, <span id="amount-of-comments"> </span> comments. </span>
+            <span id="votes">
+                <span id="amount">0</span> votes,
+                <span id="amount-of-comments"> </span> comments. </span>
             <br>
             <div id="bars">
                 5
@@ -162,7 +171,7 @@
                 <i>Your stats:</i>
                 <br> Rated skins: 😤/420
                 <br> Average rating: ?
-                <br> 
+                <br>
             </div>
 
 

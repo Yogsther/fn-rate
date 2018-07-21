@@ -1,17 +1,28 @@
-
 // Enforce https
 /* if (location.protocol != 'https:') {
     location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
 } */
 
+var admin = false;
+var options = {};
+var overwriteInspect = false;
+var currentSkin = undefined;
+
+/* Get URL before connecting to the server to make sure the right skin gets inspected. */
+getULR();
+
+
 var socket = io.connect('213.66.254.63:25565', {
     secure: true,
-    rejectUnauthorized : false
+    rejectUnauthorized: false
 });
+
+/**
+ * Important global variables
+ */
 
 var skins;
 var thisRating = 0;
-var currentSkin = 0;
 var amountOfSkins = 0; // Disregards default outfits.
 var myAccount;
 var userRequested = false;
@@ -42,14 +53,55 @@ window.onload = () => {
     applyThemeColor();
 }
 
+
+var dontPush = false;
+
+window.onpopstate  = function() {
+    getULR();
+    dontPush = true;
+    console.log(options, overwriteInspect)
+    if(!overwriteInspect) return;
+    for(let i = 0; i < skins.length; i++){
+        if(skins[i].code.toLowerCase() == options.skin.toLowerCase() && skins[i].type.toLowerCase() == options.type.toLowerCase()){
+            inspect(i);
+        }
+    }
+   
+}
+
 window.onresize = () => {
     updateCanvas();
 };
 
-var admin = false;
-
 if (localStorage.getItem("token") !== null) {
     admin = true;
+    applyAdmin()
+}
+
+/**
+ * Get URL options. If it directly links to a specific skin, inspect that skin.
+ */
+
+function getULR() {
+    var url = window.location.href;
+    var urlOptions = url.substr(url.indexOf("?") + 1, url.length).split("&");
+
+    if (urlOptions.length > 1) {
+        overwriteInspect = true;
+    } else {
+        currentSkin = 0;
+    }
+
+    urlOptions.forEach(option => {
+        option = option.split("=");
+        options[option[0]] = option[1];
+    })
+}
+
+
+
+function applyAdmin() {
+    document.getElementById("admin-deck-insert").innerHTML = "<div class=\"header-item\"> <a href=\"admin.html\" target=\"_blank\" style='margin-left:2em; color:#ff6262' title=\"Only for moderators.\">Admin deck<\/a> <\/div>";
 }
 
 
@@ -114,7 +166,9 @@ function renderCanvas() {
 }
 
 
-
+/**
+ * When receiving all the skin data from the server
+ */
 socket.on("skins", data => {
     // Save skins locally
     skins = data;
@@ -158,13 +212,18 @@ socket.on("skins", data => {
                 inspect(i);
             })
             skins[i].thumb.className = 'preview'
+            if (overwriteInspect) {
+                if (skins[i].code.toLowerCase() == options.skin.toLowerCase() && skins[i].type.toLowerCase() == options.type.toLowerCase()) {
+                    currentSkin = i;
+                }
+            }
         }
     }
-    if (userRequested) {
+    /* if (userRequested) {
         populateCollection();
         userRequested = false;
-    }
-    inspect(currentSkin);
+    } */
+    
 });
 
 
@@ -186,9 +245,21 @@ socket.on("account", acc => {
         populateCollection()
         firstLoad = false;
     }
-    inspect(currentSkin);
-    //console.log("Recived account: ", myAccount);
+
+    firstInspect();
+    /* inspect(currentSkin); */
+    /* if (!overwriteInspect) inspect(currentSkin); */
 })
+
+function firstInspect(){
+    if(currentSkin === undefined){
+        setTimeout(() => {
+            firstInspect();
+        }, 150); // Wait 150ms, then check again
+    } else {
+        inspect(currentSkin);
+    }
+}
 
 function updateStats() {
     if (myAccount == undefined || skins == undefined) return;
@@ -283,7 +354,6 @@ function filter(val) {
     cosmeticFilter = val;
     localStorage.setItem("filter", cosmeticFilter);
     populateCollection();
-    inspect(i);
 }
 
 //var searchTimeout = setTimeout(() => {}, 0);
@@ -338,7 +408,8 @@ function populateCollection() {
         }
     }
     document.getElementById("collection").innerHTML = collectionString;
-    if (indexZero !== false) inspect(indexZero)
+    if (indexZero !== false && !overwriteInspect) inspect(indexZero)
+    console.log("Populate: " + overwriteInspect + ", index: " + indexZero);
 }
 
 
@@ -359,14 +430,24 @@ function shadowColor(index, el){
     }
 } */
 
+
 function inspect(skinIndex) {
+    currentSkin = skinIndex;
+    /* Update URL for specific skin */
+    var skin = skins[skinIndex];
+    if(dontPush){
+        dontPush = true;
+    } else {
+        window.history.pushState("", "Title", "/?skin="+skin.code.toLowerCase()+"&type="+skin.type.toLowerCase());
+    }
+    
     newColor = skins[skinIndex].color;
     applyThemeColor();
     var loadingTimeout = setTimeout(() => {
         //document.getElementById("full").src = loadingImage.src;
     }, 200);
     document.getElementById("full").src = "";
-    currentSkin = skinIndex;
+
     // Handle rating
     try {
         if (myAccount.account[skins[currentSkin].type + "_TYPE_" + skins[currentSkin].code] !== undefined) {
