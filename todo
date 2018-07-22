@@ -1,16 +1,21 @@
-TODO List for FN Rate
+FN Rate todo list:
 
 -- TODO --
 
-[TODO] Display "Your stats" in an popup (take up less space)
+[TODO, IN PROGRESS] Add an icon the the website (long overdue)
+[TODO, IN PROGRESS] New menu for displaying all options and other information.
 [TODO] Display timeline changes for skin ratings in a graph.
 [TODO] Admin deck: PARDON function
 [TODO] Admin deck: APPEAL function
 [TODO] Admin deck: TRASH function
 
+-- BUGS TODO -- 
+
+[BUG] Can't vote on toys
 
 -- DONE --
 
+[DONE] [BUG] #1 emoji image wont load
 [DONE] Fix featured and full image
 [DONE] Add animated loading gif when loading images.
 [DONE] Display account karma for users.

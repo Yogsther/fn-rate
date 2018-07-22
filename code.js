@@ -204,7 +204,10 @@ socket.on("skins", data => {
                 skins[i].code = skins[i].name.toUpperCase().split(" ").join("_");
             }
             skins[i].thumb = new Image();
-            skins[i].codeSource = skins[i].code.split("/").join("_").split("#").join("%23");
+            /* Supper hashtags, (%23 doesn't work with Github pages for some reason. ) */
+            // TODO, TEMPORARY WILL BE FIXED ONCE SKINS ARE RENEWED
+            skins[i].codeSource = skins[i].code.split("/").join("_").split("#").join("ESC_HASH_");
+            skins[i].src = skins[i].src.split("#").join("ESC_HASH_").split("%23").join("ESC_HASH_");
 
             if (skins[i].type == "glider" || skins[i].type == "umbrella") skins[i].codeSource = skins[i].codeSource.split("'").join("");
             skins[i].thumb.src = "img/thumbnails/" + skins[i].type + "/" + skins[i].codeSource + ".png";
