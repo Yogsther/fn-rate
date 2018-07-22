@@ -5,10 +5,10 @@ TODO List for FN Rate
 [DONE] Fix featured and full image
 [DONE] Add animated loading gif when loading images.
 [DONE] Display account karma for users.
+[DONE] Direct link to skins (using push states and url fragments).
 
 -- TODO --
 
-[TODO, IN PROGRESS] Direct link to skins
 [TODO] Show image previews for comments in admin deck
 [TODO] Display "Your stats" in an popup (take up less space)
 [TODO] Warn if no skins are receivied, server may be down. (Link to contact info)

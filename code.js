@@ -11,11 +11,10 @@ var currentSkin = undefined;
 /* Get URL before connecting to the server to make sure the right skin gets inspected. */
 getULR();
 
-
-var socket = io.connect('213.66.254.63:25565', {
+var socket = io.connect('213.66.254.63:25565', /* {
     secure: true,
     rejectUnauthorized: false
-});
+} */);
 
 /**
  * Important global variables
@@ -30,6 +29,19 @@ var firstLoad = true;
 var colorSort = "rarity";
 var sortMode = "rating";
 var accountWorth = "?";
+
+var errorMessages = [
+    "Can't reach the server!",
+    "Oh no!",
+    "Something went wrong!",
+    "I'm not getting a response!",
+    "It's taking longer than usual!"
+]
+
+var statusCheck = setTimeout(() => {
+    document.getElementById("loading-main").innerText = errorMessages[Math.floor(Math.random()*errorMessages.length)]
+    document.getElementById("loading-tips").innerHTML = "Connecting to the server is taking longer than usual, you can check the server status here: <a href='/status'>rate.livfor.it/status</a>"
+}, 3500);
 
 
 var tips = [
@@ -56,17 +68,15 @@ window.onload = () => {
 
 var dontPush = false;
 
-window.onpopstate  = function() {
+window.onpopstate  = () => {
     getULR();
     dontPush = true;
-    console.log(options, overwriteInspect)
     if(!overwriteInspect) return;
     for(let i = 0; i < skins.length; i++){
         if(skins[i].code.toLowerCase() == options.skin.toLowerCase() && skins[i].type.toLowerCase() == options.type.toLowerCase()){
             inspect(i);
         }
     }
-   
 }
 
 window.onresize = () => {
@@ -409,7 +419,6 @@ function populateCollection() {
     }
     document.getElementById("collection").innerHTML = collectionString;
     if (indexZero !== false && !overwriteInspect) inspect(indexZero)
-    console.log("Populate: " + overwriteInspect + ", index: " + indexZero);
 }
 
 
@@ -435,10 +444,14 @@ function inspect(skinIndex) {
     currentSkin = skinIndex;
     /* Update URL for specific skin */
     var skin = skins[skinIndex];
+
+    /* Update title of page, clearify the history what skins you were viewing. */
+    document.title = "FN Rate - " + skin.name;
+
     if(dontPush){
-        dontPush = true;
+        dontPush = false;
     } else {
-        window.history.pushState("", "Title", "/?skin="+skin.code.toLowerCase()+"&type="+skin.type.toLowerCase());
+        window.history.pushState("", "FN Rate - " + skin.name, "/?skin="+skin.code.toLowerCase()+"&type="+skin.type.toLowerCase());
     }
     
     newColor = skins[skinIndex].color;
