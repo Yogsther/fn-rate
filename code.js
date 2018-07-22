@@ -41,7 +41,11 @@ var errorMessages = [
 var statusCheck = setTimeout(() => {
     document.getElementById("loading-main").innerText = errorMessages[Math.floor(Math.random()*errorMessages.length)]
     document.getElementById("loading-tips").innerHTML = "Connecting to the server is taking longer than usual, you can check the server status here: <a href='/status'>rate.livfor.it/status</a>"
-}, 3500);
+}, 10000 /* Ten seconds */);
+
+socket.on("connection", () => {
+    clearTimeout(statusCheck);
+})
 
 
 var tips = [
