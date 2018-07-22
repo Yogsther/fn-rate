@@ -1,17 +1,19 @@
 TODO List for FN Rate
 
+-- TODO --
+
+[TODO] Display "Your stats" in an popup (take up less space)
+[TODO] Display timeline changes for skin ratings in a graph.
+[TODO] Admin deck: PARDON function
+[TODO] Admin deck: APPEAL function
+[TODO] Admin deck: TRASH function
+
+
 -- DONE --
 
 [DONE] Fix featured and full image
 [DONE] Add animated loading gif when loading images.
 [DONE] Display account karma for users.
 [DONE] Direct link to skins (using push states and url fragments).
-
--- TODO --
-
-[TODO] Show image previews for comments in admin deck
-[TODO] Display "Your stats" in an popup (take up less space)
-[TODO] Warn if no skins are receivied, server may be down. (Link to contact info)
-[TODO] Admin deck: PARDON function
-[TODO] Admin deck: APPEAL function
-[TODO] Admin deck: TRASH function
+[DONE] Warn if no skins are receivied, server may be down. (Link to contact info)
+[DONE] Show image previews for comments in admin deck

@@ -70,7 +70,7 @@ window.onload = () => {
 }
 
 
-var dontPush = false;
+var dontPush = true;
 
 window.onpopstate  = () => {
     getULR();
