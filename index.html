@@ -58,13 +58,24 @@
 </head>
 
 <body>
-   <!--  <span id="overlay-master">
+    <span id="overlay-master">
 
         <div id="overlay-block">
+            <div id="block-header"></div>
             <img src="img/logo_250.png" alt="" id="logo">
+
+
+            <div id="stats">
+                    <span style='font-size: 20px;'>Your stats: </span>
+                    <br> Rated skins: 😤/420
+                    <br> Average rating: ?
+                    <br>
+                </div>
+
+            <button id="close-button" class="btn"> Close </button>
         </div>
 
-    </span> -->
+    </span>
     <div id="header">
         <input type="text" placeholder="Search a skin..." id="search" oninput="search()">
 
@@ -97,7 +108,7 @@
             </select>
         </div>
 
-        <!-- 
+
         <div class="header-item">
             <span style='color:white; margin-left:2em;'>Color:</span>
             <select oninput="setColor(this.value)" id="sort">
@@ -105,7 +116,7 @@
                 <option value="rarity">Rarity</option>
                 <option value="rating">Rating</option>
             </select>
-        </div> -->
+        </div>
 
         <div class="header-item">
             <span style='color:white; margin-left:2em;'>Username:</span>
@@ -184,12 +195,7 @@
                 </div>
             </div>
 
-            <div id="stats">
-                <i>Your stats:</i>
-                <br> Rated skins: 😤/420
-                <br> Average rating: ?
-                <br>
-            </div>
+ 
 
 
         </div>

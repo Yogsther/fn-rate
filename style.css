@@ -393,16 +393,6 @@ img {
 
 
 
-
-#stats {
-    width: 300px;
-    float: right;
-    display: block;
-    position: relative;
-    text-align: left;
-    right: 50px;
-}
-
 #header {
     width: 100%;
     box-shadow: 0px 5px 0px black;
@@ -414,7 +404,7 @@ img {
     transition: all .3s;
 }
 
-.header-item{
+.header-item {
     display: inline-block;
     padding-bottom: 10px;
     padding-top: 10px;
@@ -543,8 +533,7 @@ img {
     position: relative;
 }
 
-
-#loading-main{
+#loading-main {
     color: white;
     font-size: 40px;
     display: block;
@@ -555,8 +544,7 @@ img {
     top: 30vh;
 }
 
-
-#loading-tips{
+#loading-tips {
     color: rgb(148, 148, 148);
     font-size: 18px;
     display: block;
@@ -567,8 +555,7 @@ img {
     top: 31vh;
 }
 
-
-.inventory-button{
+.inventory-button {
     background: none;
     border-radius: 2px;
     cursor: pointer;
@@ -585,35 +572,55 @@ img {
     transition: all .05s;
 }
 
-.inventory-button-cheked{
+.inventory-button-cheked {
     background: #e0cd57;
     color: #111;
 }
 
-.inventory-button:hover{
+.inventory-button:hover {
     transform: scale(1.05);
 }
 
-.inventory-button:active{
+.inventory-button:active {
     transform: scale(0.95);
 }
 
 /* Overlay */
 
-#overlay-block{
+#overlay-block {
     height: 80vh;
     top: 5vh;
     width: 90%;
     max-width: 700px;
     display: block;
-    background: black;
     position: relative;
     margin: 0 auto;
     z-index: 1000;
+    box-shadow: 0px 0px 10px;
     border-radius: 10px;
+    background: #111;
 }
 
-#overlay-master{
+#block-header{
+    background: rgba(246,30,91,1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(246,30,91,1) 0%, rgba(143,13,50,1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(246,30,91,1)), color-stop(100%, rgba(143,13,50,1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(246,30,91,1) 0%, rgba(143,13,50,1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(246,30,91,1) 0%, rgba(143,13,50,1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(246,30,91,1) 0%, rgba(143,13,50,1) 100%);
+    background: radial-gradient(ellipse at center, rgba(246,30,91,1) 0%, rgba(143,13,50,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f61e5b', endColorstr='#8f0d32', GradientType=1 );
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0px 8px 0px  rgba(246,30,91,.3);
+}
+
+#overlay-master {
     display: block;
     position: absolute;
     top: 0px;
@@ -622,8 +629,51 @@ img {
     width: 100%;
 }
 
-#logo{
+#logo {
     margin: 0 auto;
     position: relative;
     display: block;
+    height: 200px;
+}
+
+
+.btn{
+    min-width: 80px;
+    min-height: 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+    background: rgba(246,30,91,1);
+    color: #111;
+    box-shadow: 0px 3px 0px rgba(246,30,91,.3);
+    margin-top: 0px;
+    transition: all .1s;
+    zoom: 1.25;
+}
+
+.btn:hover{
+    margin-bottom: 2px;
+    box-shadow: 0px 5px 0px rgba(246,30,91,.3);
+}
+
+.btn:active{
+    margin-bottom: -2px;
+    box-shadow: 0px 0px 0px rgba(246,30,91,.3);
+}
+
+#close-button{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+
+#stats {
+    width: 90%;
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    margin: 0 auto;
+    display: block;
+    text-align: left;
+    color: white;
 }
