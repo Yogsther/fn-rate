@@ -43,7 +43,7 @@ var statusCheck = setTimeout(() => {
     document.getElementById("loading-tips").innerHTML = "Connecting to the server is taking longer than usual, you can check the server status here: <a href='/status'>rate.livfor.it/status</a>"
 }, 10000 /* Ten seconds */);
 
-socket.on("connection", () => {
+socket.on("connect", () => {
     clearTimeout(statusCheck);
 })
 
@@ -279,6 +279,7 @@ function firstInspect(){
 }
 
 function updateStats() {
+    return; // TODO: FIX
     if (myAccount == undefined || skins == undefined) return;
     var length = 0;
     var totalRate = 0;
