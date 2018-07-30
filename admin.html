@@ -133,6 +133,11 @@
             yellow: "",
         }
 
+        var lastVisit = localStorage.getItem("lastVisit");
+        localStorage.setItem("lastVisit", Date.now());
+        if(isNaN(lastVisit)) lastVisit = 0;
+
+
         document.addEventListener("keydown", e => {
             if (e.keyCode == 13) {
                 loadComments();
@@ -202,17 +207,24 @@
                 if (comment.username != "Anonymous") usernameColor = "#82a7ff";
                 if (comment.mod) usernameColor = "#ff5959";
 
+                var seenComment = "";
+                if(comment.date > lastVisit){
+                    seenComment = "<span style='color:gold;'>New!</span>"
+                }
+
                 var code = comment.skin;
                 var type = code.substr(0, code.indexOf("_TYPE_"));
                     code = code.substr(code.indexOf("_TYPE_") + 6, code.length);
 
+                
+
                 pushString += "<span class='insert' id='insert_" + i +
-                    "'><a href='javascript:remove(" + i +
+                    "'> <a href='javascript:remove(" + i +
                     ")' style='color:#ffea63'> [REMOVE] </a> <a href='javascript:ban(" + i +
                     ")' style='color:#ff6262'> [BAN] </a> " + dateString + " <a style='color:white' target='_blank' href='/?skin=" + code.toLowerCase() + "&type=" + type + "'><i>" + code +
                     " </i><img src='img/thumbnails/"+ type +"/" + code + ".png' height='25' style='padding:-5px; margin-top:-10px;top:5px;position:relative;'></a> <span style='color:" + usernameColor + "'>" + comment.username + ":</span> <b>" + comment
                     .message +
-                    " </b>" + warn + "<br></span>"
+                    " </b>" + warn + " " + seenComment + "<br></span>"
 
             }
             document.getElementById("comments").innerHTML += pushString;

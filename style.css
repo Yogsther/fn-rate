@@ -8,7 +8,7 @@ a:visited {
 }
 
 a:hover {
-    color: white;
+    color: grey;
 }
 
 ::-webkit-scrollbar {
@@ -405,9 +405,17 @@ img {
 }
 
 .header-item {
-    display: inline-block;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    top: 50px;
+    position: relative;
+    display: block;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    left: 0px;
+    transition: left .05s;
+}
+
+.header-item:hover{
+    left: 2px;
 }
 
 .bar {
@@ -623,10 +631,11 @@ img {
 #overlay-master {
     display: block;
     position: absolute;
-    top: 0px;
+    top: -100vh;
     left: 0px;
     height: 100vh;
     width: 100%;
+    transition: top .3s ease-in-out;
 }
 
 #logo {
@@ -647,7 +656,7 @@ img {
     color: #111;
     box-shadow: 0px 3px 0px rgba(246,30,91,.3);
     margin-top: 0px;
-    transition: all .1s;
+    transition: margin-top .1s box-shadow .1s;
     zoom: 1.25;
 }
 
