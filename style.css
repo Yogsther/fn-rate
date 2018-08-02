@@ -631,7 +631,7 @@ img {
 #overlay-master {
     display: block;
     position: absolute;
-    top: -100vh;
+    top: -200vh;
     left: 0px;
     height: 100vh;
     width: 100%;

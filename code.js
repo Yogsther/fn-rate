@@ -154,7 +154,7 @@ function toggleOverlay(){
     var topHeight = "0vh";
     if(overlayOpen){
         action = "hidden";
-        topHeight = "-100vh";
+        topHeight = "-200vh";
     } 
     
     //document.getElementById("overlay-master").style.visibility = action; // Change style
@@ -282,7 +282,7 @@ document.addEventListener("click", (e) => {
 
     if(stop) return;
     if(!found){
-        document.getElementById("overlay-master").style.top = "-100vh";
+        document.getElementById("overlay-master").style.top = "-200vh";
         overlayOpen = false;
     }
 })
