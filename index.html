@@ -66,23 +66,7 @@
             <div id="block-header"></div>
             <img src="img/logo_250.png" alt="" id="logo">
 
-            <div class="header-item">
-                <span style='color:white; margin-left:2em;'>Filter:</span>
-                <select oninput="filter(this.value)" class="sort" id="filter-options">
-                    <option value="all">All cosmetics</option>
-                    <option value="locker">Locker</option>
-                    <option value="outfit">Outfits</option>
-                    <option value="pickaxe">Pickaxes</option>
-                    <option value="glider">Gliders</option>
-                    <option value="umbrella">Umbrellas</option>
-                    <option value="back_bling">Back blings</option>
-                    <option value="emote">Emotes</option>
-                    <option value="emoji">Emojis</option>
-                    <option value="spray">Sprays</option>
-                    <option value="skydiving_trail">Skydiving Trails</option>
-                    <option value="toy">Toys</option>
-                </select>
-            </div>
+          
 
             <div class="header-item">
                 <span style='color:white; margin-left:2em;'>Sort by:</span>
@@ -135,8 +119,27 @@
     </span>
     <div id="header">
         <input type="text" placeholder="Search a skin..." id="search" oninput="search()">
+        
         <a href="javascript:toggleOverlay()" id="ignore" class="right-bar">Options</a>
         <span id="admin-deck-insert" class="right-bar"></span>
+
+        <div class="right-bar">
+            <span style='color:white; margin-left:2em;'>Filter:</span>
+            <select oninput="filter(this.value)" class="sort" id="filter-options">
+                <option value="all">All cosmetics</option>
+                <option value="locker">Locker</option>
+                <option value="outfit">Outfits</option>
+                <option value="pickaxe">Pickaxes</option>
+                <option value="glider">Gliders</option>
+                <option value="umbrella">Umbrellas</option>
+                <option value="back_bling">Back blings</option>
+                <option value="emote">Emotes</option>
+                <option value="emoji">Emojis</option>
+                <option value="spray">Sprays</option>
+                <option value="skydiving_trail">Skydiving Trails</option>
+                <option value="toy">Toys (Broken)</option>
+            </select>
+        </div>
 
     </div>
     </div>
