@@ -1,15 +1,14 @@
-// Enforce https
-/* if (location.protocol != 'https:') {
-    location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-} */
+/**
+ * FN Rate, Olle Kaiser 2018
+ * Front end javascript.
+ */
+
 
 var admin = false;
 var options = {};
 var overwriteInspect = false;
 var currentSkin = undefined;
 var onMobile = mobilecheck();
-
-
 
 /* Get URL before connecting to the server to make sure the right skin gets inspected. */
 getULR();
@@ -20,7 +19,7 @@ var socket = io.connect('213.66.254.63:25565', /* {
 } */);
 
 /**
- * Important global variables
+ * Declare global variables
  */
 
 var skins;
@@ -38,12 +37,12 @@ var errorMessages = [
     "Oh no!",
     "Something went wrong!",
     "I'm not getting a response!",
-    "It's taking longer than usual!"
+    "It's taking longer than usual!",
 ]
 
 var statusCheck = setTimeout(() => {
     document.getElementById("loading-main").innerText = errorMessages[Math.floor(Math.random()*errorMessages.length)]
-    document.getElementById("loading-tips").innerHTML = "Connecting to the server is taking longer than usual, you can check the server status here: <a href='/status'>rate.livfor.it/status</a>"
+    document.getElementById("loading-tips").innerHTML = "Most likley I am doing maintenece, come back in an hour. If it's still not up by then, please contact me on Reddit! (u/Yogsther)"
 }, 10000 /* Ten seconds */);
 
 socket.on("connect", () => {
@@ -70,6 +69,7 @@ window.onload = () => {
     updateCanvas();
     renderCanvas();
     applyThemeColor();
+    initGraphDisplay();
 }
 
 function mobilecheck() {
@@ -94,6 +94,8 @@ window.onpopstate  = () => {
 
 window.onresize = () => {
     updateCanvas();
+    graphCanvas.width = canvas.width;
+    resetCanvas();
 };
 
 if (localStorage.getItem("token") !== null) {
@@ -331,7 +333,15 @@ function updateStats() {
     });
     var average = Math.round((totalRate / length) * 100) / 100;
     if (length >= amountOfSkins) document.title = "FN Rate 🌟"
-    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average + "<br>Karma: " + myAccount.karma + "<br>Amount of comments: " + myAccount.comments.length + "<br><span title='Account value in V-bucks, not accounting for Battlepass cost, STW cost or Starter packs.'>Account worth (?): " + accountWorth + " V-bucks</span>";
+    var lockerScore = 0;
+    var lockerSize = locker.length;
+    locker.forEach(skinCode => {
+        lockerScore += skins[getSkinIndexFromCode(skinCode)].rating;
+    })
+    lockerScore = Math.round(lockerScore*10)/10;
+    var averageLockerRating = Math.round((lockerScore / lockerSize) * 10) / 10;
+    
+    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average + "<br>Karma: " + myAccount.karma + "<br>Amount of comments: " + myAccount.comments.length + "<br><span title='Account value in V-bucks, not accounting for Battlepass cost, STW cost or Starter packs.'>Account worth (?): " + accountWorth + " V-bucks</span><br>Average locker rating: " + averageLockerRating + "<br>Locker score: " + lockerScore + "<br>Locker size: " + lockerSize;
 }
 
 var rarities = ["common", "uncommon", "rare", "epic", "legendary"];
@@ -495,6 +505,8 @@ function inspect(skinIndex) {
     /* Update URL for specific skin */
     var skin = skins[skinIndex];
 
+    
+
     /* Update title of page, clearify the history what skins you were viewing. */
     document.title = "FN Rate - " + skin.name;
 
@@ -627,6 +639,11 @@ function inspect(skinIndex) {
         document.getElementById("message_" + index).appendChild(document.createTextNode(censorComment(comment.message)));
         document.getElementById("username_" + index).title = new Date(comment.date);
     })
+
+
+    graphSettings.data = skin.history;
+    defaultTheme.fg = skin.color;
+    resetGraph();
 
     document.getElementById("image-wrap").style.background = skins[skinIndex].color;
     document.getElementById("rating").innerHTML = skins[skinIndex].rating;

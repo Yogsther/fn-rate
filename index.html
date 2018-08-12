@@ -55,6 +55,8 @@
         gtag('config', 'UA-118879212-2');
     </script>
 
+
+
 </head>
 
 <body>
@@ -133,8 +135,8 @@
     </span>
     <div id="header">
         <input type="text" placeholder="Search a skin..." id="search" oninput="search()">
-        <a href="javascript:toggleOverlay()" id="ignore">Options</a>
-        <span id="admin-deck-insert"></span>
+        <a href="javascript:toggleOverlay()" id="ignore" class="right-bar">Options</a>
+        <span id="admin-deck-insert" class="right-bar"></span>
 
     </div>
     </div>
@@ -159,7 +161,7 @@
                     <span id="third-insert"></span>
                 </div>
             </div>
-
+            <canvas height="200" width="400" id="graph-display"></canvas>
             <span id="stars">
 
             </span>
@@ -190,6 +192,8 @@
                 <div class='bar'>0</div>
             </div>
 
+
+
             <div id="comment-block">
                 <div id="comments">
                     <span id="no-comments-here"> The page is loading, don't worry. </span>
@@ -201,12 +205,20 @@
                 </div>
             </div>
 
+            
+
 
 
 
         </div>
     </div>
+
+
+    <!-- Graph-display -->
+    <script src="graph-display.js"></script>
+    <!-- Main code base -->
     <script src="code.js"></script>
+
 
 </body>
 

@@ -2,9 +2,6 @@ FN Rate todo list:
 
 -- TODO --
 
-[TODO, IN PROGRESS] Add an icon the the website (long overdue)
-[TODO, IN PROGRESS] New menu for displaying all options and other information.
-[TODO] Display timeline changes for skin ratings in a graph.
 [TODO] Admin deck: PARDON function
 [TODO] Admin deck: APPEAL function
 [TODO] Admin deck: TRASH function
@@ -15,6 +12,9 @@ FN Rate todo list:
 
 -- DONE --
 
+[DONE] Display timeline changes for skin ratings in a graph.
+[DONE] Add an icon the the website (long overdue)
+[DONE] New menu for displaying all options and other information.
 [DONE] [BUG] #1 emoji image wont load
 [DONE] Fix featured and full image
 [DONE] Add animated loading gif when loading images.
