@@ -69,7 +69,7 @@ window.onload = () => {
     updateCanvas();
     renderCanvas();
     applyThemeColor();
-    initGraphDisplay();
+    
 }
 
 function mobilecheck() {
@@ -147,6 +147,7 @@ var ctx = canvas.getContext("2d");
 function updateCanvas() {
     canvas.width = document.getElementById("image-wrap").offsetWidth;
     canvas.height = document.getElementById("image-wrap").offsetHeight;
+    initGraphDisplay();
 }
 
 
@@ -501,7 +502,7 @@ function populateCollection() {
                 var warn = "";
                 if (myAccount !== undefined) {
 
-                    if (myAccount.account[skin.code] === undefined && myAccount.account[skin.type.toLowerCase() + "_TYPE_" + skin.code] === undefined) warn = "!";
+                    //if (myAccount.account[skin.code] === undefined && myAccount.account[skin.type.toLowerCase() + "_TYPE_" + skin.code] === undefined) warn = "!";
                 }
                 if (skin.code != undefined) {
                     collectionString += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "'> <img src='img/" + skin.projection.standing + ".png' title='Rating is going " + skin.projection.standing + ".' class='arrow'> <img class='preview " + skin.rarity + "-block' draggable='false' style='background-color:" + skin.color + "' src=" + JSON.stringify(skin.thumb.src) + "> <span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
