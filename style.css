@@ -700,3 +700,17 @@ img {
     position: relative;
     margin-left: 20px;
 }
+
+.arrow{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15%;
+    z-index: 99999;
+}
+
+.standing-profile{
+    height: 40px;
+    position: absolute;
+    margin-left: 2px;
+}

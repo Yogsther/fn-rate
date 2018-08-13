@@ -3,6 +3,7 @@
  * Olle Kaiser, Summer 2018 
  */
 
+var graphReady = false;
 function initGraphDisplay() {
     window.graphCanvas = document.getElementById("graph-display");
     graphCanvas.width = canvas.width;
@@ -23,6 +24,7 @@ function initGraphDisplay() {
 
     graphCanvas.addEventListener("mouseout", e => renderGraph())
 
+    graphReady = true;
     /* Initiate a frame */
     renderGraph();
 }
@@ -30,7 +32,7 @@ function initGraphDisplay() {
 /* Test input data  */
 var driftSkin = JSON.parse('[{"rating":4.36,"date":25533730},{"rating":4.35,"date":25534931},{"rating":4.35,"date":25536132},{"rating":4.35,"date":25537361},{"rating":4.34,"date":25538562},{"rating":4.33,"date":25539846},{"rating":4.32,"date":25541046},{"rating":4.32,"date":25542247},{"rating":4.31,"date":25543448},{"rating":4.31,"date":25544649},{"rating":4.3,"date":25545849},{"rating":4.29,"date":25547050},{"rating":4.3,"date":25548251},{"rating":4.28,"date":25549979},{"rating":4.27,"date":25551236},{"rating":4.27,"date":25552441},{"rating":4.27,"date":25553713},{"rating":4.27,"date":25554929},{"rating":4.28,"date":25556226},{"rating":4.28,"date":25557426},{"rating":4.28,"date":25558626},{"rating":4.26,"date":25559826},{"rating":4.26,"date":25561079},{"rating":4.26,"date":25562279},{"rating":4.25,"date":25563479},{"rating":4.25,"date":25564679},{"rating":4.26,"date":25565879}]')
 var maverickSkin = JSON.parse('[{"rating":3,"date":25539846},{"rating":3.06,"date":25541046},{"rating":3.29,"date":25542247},{"rating":3,"date":25543448},{"rating":3.05,"date":25544649},{"rating":2.96,"date":25545849},{"rating":2.89,"date":25547050},{"rating":2.97,"date":25548251},{"rating":2.97,"date":25549979},{"rating":3.01,"date":25551236},{"rating":3.01,"date":25552441},{"rating":2.97,"date":25553713},{"rating":3.03,"date":25554929},{"rating":3.08,"date":25556226},{"rating":3.01,"date":25557426},{"rating":3.03,"date":25558626},{"rating":3.07,"date":25559826},{"rating":3.02,"date":25561079},{"rating":3.03,"date":25562279},{"rating":3.02,"date":25563479},{"rating":3,"date":25564679},{"rating":2.99,"date":25565879}]')
-var panda = JSON.parse('[{"rating":3.18,"date":25561079},{"rating":3.73,"date":25562279},{"rating":3.6,"date":25563479},{"rating":3.51,"date":25564679},{"rating":3.39,"date":25565879}]');
+var pandaSkin = JSON.parse('[{"rating":3.18,"date":25561079},{"rating":3.73,"date":25562279},{"rating":3.6,"date":25563479},{"rating":3.51,"date":25564679},{"rating":3.39,"date":25565879}]');
 
 /* Default color theme */
 
@@ -64,11 +66,12 @@ function resetGraph() {
 
 
 function renderGraph(position) {
+    if(!graphReady) return;
     var data = graphSettings.data;
     theme = graphSettings.theme;
 
     /* Change the padding on the sides */
-    var padding = 75; // px
+    var padding = 40; // px
     // Fill canvas
     graphCtx.fillStyle = theme.bg;
     graphCtx.fillRect(0, 0, graphCanvas.width, graphCanvas.height);
@@ -151,9 +154,9 @@ function renderGraph(position) {
             graphCtx.textAlign = "left";
             graphCtx.fillStyle = "white";
             if (sideValue >= highestEntry - decrease * 4) {
-                var numString = (Math.round(sideValue * 10) / 10).toString();
+                var numString = (Math.round(sideValue * 100) / 100).toString();
                 if (numString.length == 1) numString += ".0";
-                graphCtx.fillText(numString, 25, i + 10)
+                graphCtx.fillText(numString, 25, i + 5)
                 sideValue -= decrease;
             }
         }

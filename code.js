@@ -95,7 +95,7 @@ window.onpopstate  = () => {
 window.onresize = () => {
     updateCanvas();
     graphCanvas.width = canvas.width;
-    resetCanvas();
+    resetGraph();
 };
 
 if (localStorage.getItem("token") !== null) {
@@ -207,6 +207,33 @@ function renderCanvas() {
 }
 
 
+function getProjection(history, rating){
+    projection = {
+        standing: "stable",
+        percentage: 0
+    }
+    if(history === undefined || history.length == 0) return projection;
+    historyEvents = 5;
+    if(history.length < historyEvents) historyEvents = history.length;
+    var totalScore = 0;
+
+    for(let i = 0; i < historyEvents; i++){
+        // Loop backwards through history amount of historyEvents, typically 5.
+        totalScore+=history[(history.length-(i+1))].rating;
+    }
+    var averageRatingHistory = totalScore / historyEvents;
+
+    var change = Math.abs(rating - averageRatingHistory);
+        projection.percentage = (Math.round((change / averageRatingHistory)*1000)/1000)*100;
+
+    if(averageRatingHistory > rating) projection.standing = "down";
+    if(averageRatingHistory < rating) projection.standing = "up";
+    if(averageRatingHistory == rating || projection.percentage == 0) projection.standing = "stable";
+
+    return projection;
+}
+
+
 /**
  * When receiving all the skin data from the server
  */
@@ -230,6 +257,7 @@ socket.on("skins", data => {
             if (skins[i].code === undefined) {
                 skins[i].code = skins[i].name.toUpperCase().split(" ").join("_");
             }
+            
             skins[i].thumb = new Image();
             /* Supper hashtags, (%23 doesn't work with Github pages for some reason. ) */
             // TODO, TEMPORARY WILL BE FIXED ONCE SKINS ARE RENEWED
@@ -250,6 +278,10 @@ socket.on("skins", data => {
             }
             skins[i].thumb.style = 'background-color:' + color;
             skins[i].color = color;
+
+            skins[i].projection = getProjection(skins[i].history, skins[i].rating);
+
+
             skins[i].thumb.draggable = 'false'
             if (skins[i].code != undefined && skins[i].code != "RECRUIT") amountOfSkins++;
             skins[i].thumb.addEventListener("click", () => {
@@ -439,6 +471,11 @@ function populateCollection() {
     var indexZero = false;
     //document.getElementById("collection").innerHTML = "";
 
+    if(cosmeticFilter === "locker" && locker.length == 0){
+        document.getElementById("collection").innerHTML = '<span id="loading-main">Locker empty!</span><span id="loading-tips">You can add items to your locker by clicking the +Locker button. Then you can evaluate the worth of your account and rating score by checking your stats in the options menu.</span>';
+        return;
+    }
+
     var collectionString = "";
     for (let i = 0; i < skins.length; i++) {
         var skip = false;
@@ -467,7 +504,7 @@ function populateCollection() {
                     if (myAccount.account[skin.code] === undefined && myAccount.account[skin.type.toLowerCase() + "_TYPE_" + skin.code] === undefined) warn = "!";
                 }
                 if (skin.code != undefined) {
-                    collectionString += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "'> <img class='preview " + skin.rarity + "-block' draggable='false' style='background-color:" + skin.color + "' src=" + JSON.stringify(skin.thumb.src) + "> <span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
+                    collectionString += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "'> <img src='img/" + skin.projection.standing + ".png' title='Rating is going " + skin.projection.standing + ".' class='arrow'> <img class='preview " + skin.rarity + "-block' draggable='false' style='background-color:" + skin.color + "' src=" + JSON.stringify(skin.thumb.src) + "> <span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
                     try {
                         //document.getElementById("img_" + i).appendChild(skin.thumb)
                     } catch (e) {
@@ -551,7 +588,10 @@ function inspect(skinIndex) {
 
     var skin = skins[skinIndex];
     document.getElementById("stars").innerHTML = "";
-    document.getElementById("title").innerHTML = skins[skinIndex].name.toUpperCase();
+    var projectionTitle = "<span style='color:#48f142'>(" + skin.projection.percentage + "%) <img src='img/up.png' class='standing-profile'></span>"
+    if(skin.projection.standing == "down")  projectionTitle = "<span style='color:#f04250'>(" + skin.projection.percentage + "%) <img src='img/down.png' class='standing-profile'></span>"
+    if(skin.projection.standing == "stable" || skin.projection.percentage == 0) projectionTitle = " <span style='color:#3d3d3d'>STABLE RATING</span>"
+    document.getElementById("title").innerHTML = skins[skinIndex].name.toUpperCase() + " " + projectionTitle;
 
     document.getElementById("full").src = skins[skinIndex].src;
     clearTimeout(loadingTimeout)
@@ -643,7 +683,7 @@ function inspect(skinIndex) {
 
     graphSettings.data = skin.history;
     defaultTheme.fg = skin.color;
-    resetGraph();
+    if(graphReady)resetGraph();
 
     document.getElementById("image-wrap").style.background = skins[skinIndex].color;
     document.getElementById("rating").innerHTML = skins[skinIndex].rating;

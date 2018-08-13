@@ -602,3 +602,18 @@ img {
     bottom: 25px;
     right: 25px;
 }
+
+
+.arrow{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: 15%;
+    z-index: 99999;
+}
+
+.standing-profile{
+    height: 40px;
+    position: absolute;
+    margin-left: 2px;
+}
