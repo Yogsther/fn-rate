@@ -591,8 +591,8 @@ function inspect(skinIndex) {
     document.getElementById("stars").innerHTML = "";
     var percentage = skin.projection.percentage;
     if(percentage.toString().length > 5) percentage = percentage.toString().substr(0, 4);
-    var projectionTitle = "<span style='color:#48f142'>(" + percentage + "%) <img src='img/up.png' class='standing-profile'></span>"
-    if(skin.projection.standing == "down")  projectionTitle = "<span style='color:#f04250'>(" + percentage + "%) <img src='img/down.png' class='standing-profile'></span>"
+    var projectionTitle = "<span style='color:#48f142'>(" + percentage + "%) <img title='Rating is going up.' src='img/up.png' class='standing-profile'></span>"
+    if(skin.projection.standing == "down")  projectionTitle = "<span style='color:#f04250'>(" + percentage + "%) <img title='Rating is going down.' src='img/down.png' class='standing-profile'></span>"
     if(skin.projection.standing == "stable" || skin.projection.percentage == 0) projectionTitle = " <span style='color:#3d3d3d'>STABLE RATING</span>"
     document.getElementById("title").innerHTML = skins[skinIndex].name.toUpperCase() + " " + projectionTitle;
 
