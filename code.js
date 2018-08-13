@@ -761,7 +761,7 @@ function confirmVote() {
 function pendingVote() {
     document.getElementById("check").title = "Vote has been sent."
     document.getElementById("check").src = "unconfirmed.png"
-    document.getElementById("img_" + currentSkin).children[2].innerHTML = "";
+    //document.getElementById("img_" + currentSkin).children[2].innerHTML = "";
     document.getElementById("check").style.transform = "scale(1)";
 }
 
