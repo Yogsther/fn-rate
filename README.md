@@ -2,9 +2,9 @@
 
 Rate the skins of Fortnite and see what skins are most appreciated!
 
-Up to date with Fortnite v.5.0
+Up to date with Fortnite v.5.2.1
 
-![Showcase Gif](showcase.gif)
+![Showcase Image Screenshot](img/17-8-screenshot.png)
 
 #### TODO: 
  - [x] Save sort option when updating stats
@@ -26,7 +26,7 @@ Up to date with Fortnite v.5.0
 
 
  #### Credit: 
- Images downloaded from FNBR.co, all images are owned by Epic Games.
+ Images sourced from FNBR.co, all skin images are owned by Epic Games.
 
 
  
