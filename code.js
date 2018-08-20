@@ -845,13 +845,26 @@ function submitComment() {
         localStorage.setItem("token", token) = message.split(" ")[1];
         return;
     }
-    if (message.length < 1) return;
+
+    if(message.trim().length == 0){
+        alert("Message does not contain any characters!");
+        return;
+    }
+    if (message.length == 0) return;
+
+
+    if(username == "Anonymous"){
+        username = window.prompt("You have not choosen a username. Please enter a username. You can always change it the options menu!", username);
+        updateUsername(username);
+    }
+
     var comment = {
         message: message,
         username: username,
         skin: skins[currentSkin].type + "_TYPE_" + skins[currentSkin].code,
         token: localStorage.getItem("token")
     }
+
     socket.emit("comment", comment)
 
     document.getElementById("comment-submission").value = "";
