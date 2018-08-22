@@ -300,6 +300,8 @@ input:focus {
     display: inline-block;
     width: auto;
     height: 80%;
+    position: relative;
+    top: 0px;
 }
 
 #secondary {
@@ -713,4 +715,12 @@ img {
     height: 40px;
     position: absolute;
     margin-left: 2px;
+}
+
+.shop-icon{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 15%;
+    z-index: 99999;
 }

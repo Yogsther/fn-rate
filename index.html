@@ -88,14 +88,14 @@
             </div>
 
 
-            <div class="header-item">
+            <!-- <div class="header-item">
                 <span style='color:white; margin-left:2em;'>Color:</span>
                 <select oninput="setColor(this.value)" id="sort">
 
                     <option value="rarity">Rarity</option>
                     <option value="rating">Rating</option>
                 </select>
-            </div>
+            </div> -->
 
             <div class="header-item">
                 <span style='color:white; margin-left:2em;'>Username:</span>
@@ -132,9 +132,10 @@
         <span id="admin-deck-insert" class="right-bar"></span>
 
         <div class="right-bar">
-            <span style='color:white; margin-left:2em;'>Filter:</span>
+            <span style='color:white; margin-left:2em;'>Filter: </span> <span style="color:#ff6262" title="Newly added filter: Item shop! See what skins are in the Item shop right now!"> (New filter!) </span> 
             <select oninput="filter(this.value)" class="sort" id="filter-options">
                 <option value="all">All cosmetics</option>
+                <option value="store">Item Shop</option>
                 <option value="locker">Locker</option>
                 <option value="outfit">Outfits</option>
                 <option value="pickaxe">Pickaxes</option>
