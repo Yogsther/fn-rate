@@ -617,3 +617,12 @@ img {
     position: absolute;
     margin-left: 2px;
 }
+
+
+.shop-icon{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 15%;
+    z-index: 99999;
+}
