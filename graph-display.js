@@ -67,8 +67,15 @@ function resetGraph() {
 
 function renderGraph(position) {
     if(!graphReady) return;
+
     var data = graphSettings.data;
     theme = graphSettings.theme;
+
+    var noData = false;
+    if(data.length == 0){
+        data = [{rating: 0, date: 0}]
+        noData = true;
+    }
 
     /* Change the padding on the sides */
     var padding = 40; // px
@@ -163,7 +170,7 @@ function renderGraph(position) {
     }
 
     /* Draw cursor highlight */
-    if (position !== undefined && isNaN(position)) {
+    if (position !== undefined && isNaN(position) && !noData) {
 
         var nearestPoint = Math.round(position.x / pointDistance) * pointDistance;
         /* Adjust cursor position */
@@ -180,7 +187,7 @@ function renderGraph(position) {
         graphCtx.fillText("Rating: " + inspectedData.rating + ", " + daysAgo + daysAgoMessage, graphCanvas.width - 15, graphCanvas.height - 15)
     }
 
-    if(range == 0){
+    if(range == 0 || data.length == 0){
         graphCtx.textAlign = "center";
         graphCtx.font = "30px Arial";
         graphCtx.fillText("No recorded changes.", graphCanvas.width/2, graphCanvas.height/2);
