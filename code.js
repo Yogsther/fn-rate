@@ -13,7 +13,7 @@ var onMobile = mobilecheck();
 /* Get URL before connecting to the server to make sure the right skin gets inspected. */
 getULR();
 
-var socket = io.connect('213.66.254.63:25565',
+var socket = io.connect('213.66.254.63:8543',
     /* {
     secure: true,
     rejectUnauthorized: false
@@ -44,7 +44,7 @@ var errorMessages = [
 
 var statusCheck = setTimeout(() => {
     document.getElementById("loading-main").innerText = errorMessages[Math.floor(Math.random() * errorMessages.length)]
-    document.getElementById("loading-tips").innerHTML = "Most likley I am doing maintenece, come back in an hour. If it's still not up by then, please contact me on Reddit! (u/Yogsther)"
+    document.getElementById("loading-tips").innerHTML = "Most likley I am doing maintenance, come back in an hour. If it's still not up by then, please contact me on Reddit! (u/Yogsther)"
 }, 10000 /* Ten seconds */ );
 
 socket.on("connect", () => {
