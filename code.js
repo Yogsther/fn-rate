@@ -13,7 +13,7 @@ var onMobile = mobilecheck();
 /* Get URL before connecting to the server to make sure the right skin gets inspected. */
 getULR();
 
-var socket = io.connect('213.66.254.63:8543',
+var socket = io.connect('213.66.254.63:25565',
     /* {
     secure: true,
     rejectUnauthorized: false
