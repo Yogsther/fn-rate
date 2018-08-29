@@ -71,7 +71,10 @@ window.onload = () => {
     updateCanvas();
     renderCanvas();
     applyThemeColor();
-
+    changeOverlay("news")
+    if(lastVisit < news[0].date){
+        toggleOverlay();
+    }
 }
 
 function mobilecheck() {
@@ -102,10 +105,6 @@ window.onresize = () => {
     resetGraph();
 };
 
-if (localStorage.getItem("token") !== null) {
-    admin = true;
-    applyAdmin()
-}
 
 /**
  * Get URL options. If it directly links to a specific skin, inspect that skin.
@@ -130,8 +129,8 @@ function getULR() {
 
 
 function applyAdmin() {
-    document.getElementById("username").style.color = "#ff6262";
-    document.getElementById("admin-deck-insert").innerHTML = " <a href=\"admin.html\" target=\"_blank\" style='color:#ff6262; margin-left:25px;' title=\"Only for moderators.\">Admin deck<\/a> ";
+    document.getElementById("username").style.boxShadow = "5px 0px 0px #cf2445";
+    //document.getElementById("admin-deck-insert").innerHTML = " <a href=\"admin.html\" target=\"_blank\" style='color:#ff6262; margin-left:25px;' title=\"Only for moderators.\">Admin deck<\/a> ";
 }
 
 
@@ -157,7 +156,50 @@ function updateCanvas() {
 
 var overlayOpen = false;
 
+
+/* Have news serverside. */
+var news = [{
+    date: 1535568851943,
+    title: "Introducing Comment Stream",
+    image: "img/news/comment-stream.png",
+    message: "Browse and vote on all comments with comment stream, sort by top voted, newest, oldest or most downvoted. Clicking on a skin will link you to that skin-page. <a href='comments.html'>Click here to check it out!</a>"
+}]
+
+var lastVisit = localStorage.getItem("lastVisit");
+localStorage.setItem("lastVisit", Date.now());
+if (isNaN(lastVisit)) lastVisit = 0;
+
+
+
+function changeOverlay(type) {
+
+    if (type == "options") {
+        document.getElementById("overlay-contents").innerHTML = "<div id=\"header-items\"> <div class=\"header-item\"> <span style='color:white; margin-left:2em;'>Sort by:<\/span> <select oninput=\"sortBy(this.value)\" id=\"sort\"> <option value=\"rating\">Global rating<\/option> <option value=\"myrating\">Your rating<\/option> <option value=\"votes\">Amount of votes<\/option> <option value=\"comments\">Amount of comments<\/option> <option value=\"rarity\">Rarity<\/option> <\/select> <\/div> <!-- <div class=\"header-item\"> <span style='color:white; margin-left:2em;'>Color:<\/span> <select oninput=\"setColor(this.value)\" id=\"sort\"> <option value=\"rarity\">Rarity<\/option> <option value=\"rating\">Rating<\/option> <\/select> <\/div> --> <div class=\"header-item\"> <span style='color:white; margin-left:2em;'>Username:<\/span> <input maxlength=\"12\" type=\"text\" id=\"username\" value=\"Anonymous\" oninput=\"updateUsername(this.value)\"> <\/div> <\/button> <div class=\"header-item\"> <a href=\"https:\/\/www.reddit.com\/u\/Yogsther\" target=\"_blank\" style='margin-left:2em;' title=\"Report a bug or submit a suggestion\">Contact me<\/a> <\/div> <div class=\"header-item\"> <a href=\"\/privacy.html\" target=\"_blank\" style='margin-left:2em;' title=\"Privacy Policy\">Privacy Policy<\/a> <\/div> <\/div> <div id=\"stats\"> <span style='font-size: 20px;'>Your stats: <\/span> <br> Rated skins: ?\/? <br> Average rating: ? <br> <\/div>";
+
+        if (localStorage.getItem("token") !== null) {
+            admin = true;
+            applyAdmin()
+        }
+        updateStats();
+
+        document.getElementById("username").value = username;
+    }
+    if (type == "news") {
+        var newsPrint = "";
+        news.forEach(update => {
+            newsPrint += "<span class='news-insert'><img src='" + update.image + "' class='news-image'></span>" +
+                "<span class='news-title'>" + update.title + "</span><span class='news-message'>" + update.message + "</span>"
+        })
+
+        document.getElementById("overlay-contents").innerHTML = newsPrint;
+    }
+
+
+}
+
+
 function toggleOverlay() {
+
     var action = "visible";
     var topHeight = "0vh";
     if (overlayOpen) {
@@ -253,7 +295,6 @@ socket.on("skins", data => {
     justSort(sortMode);
     // Initiate counter
     amountOfSkins = 0;
-    document.getElementById("sort").value = sortMode;
     /* Load skins */
     for (let i = 0; i < skins.length; i++) {
         if (skins[i].code === undefined && skins[i].name === undefined) {
@@ -340,7 +381,6 @@ socket.on("account", acc => {
     })
     thisRating = myAccount.account[skins[currentSkin].code];
     updateStars(thisRating);
-    updateStats();
     if (firstLoad) {
         populateCollection()
         firstLoad = false;
@@ -430,7 +470,7 @@ function personalRating(a, b) {
     return 0;
 }
 
-function justSort /*lol*/(val) {
+function justSort /*lol*/ (val) {
     /* if (val == "rating") skins.sort(rateSort);
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
@@ -846,7 +886,7 @@ function loadUsername() {
     var newUsername = localStorage.getItem("username");
     if (newUsername != undefined) {
         username = newUsername;
-        document.getElementById("username").value = username;
+
     }
 }
 

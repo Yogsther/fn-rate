@@ -69,6 +69,7 @@ input:focus {
 
 #collection {
     width: 90%;
+    top: 10px;
     height: 238px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -238,7 +239,7 @@ img {
 
 #stats {
     width: 80%;
-    height: 400px;
+    /* height: 400px; */
     top: 70px;
     position: relative;
     margin: 0 auto;
@@ -599,8 +600,8 @@ img {
 
 #close-button{
     position: absolute;
-    bottom: 25px;
-    right: 25px;
+    bottom: 5px;
+    right: 5px;
 }
 
 
@@ -625,4 +626,109 @@ img {
     left: 5px;
     width: 15%;
     z-index: 99999;
+}
+
+
+#selection-items{ 
+    position: relative;
+    display: block;
+}
+
+.selection-button{
+    padding: none;
+    display: inline-block;
+    width: 50%;
+    margin: 0 auto;
+    height: 30px;
+    background: #cf2445;
+    border: none;
+    font-size: 20px;
+    transition: .05s all;
+    cursor: pointer;
+    color: #111;
+}
+
+.selection-button:hover{
+    background: #111;
+    color: #cf2445;
+}
+
+
+#news-button{
+    float: left;
+}
+
+#options-button{
+    float: right;
+
+}
+
+#selection-items{ 
+    position: relative;
+    display: block;
+}
+
+.selection-button{
+    padding: none;
+    display: inline-block;
+    width: 50%;
+    margin: 0 auto;
+    height: 30px;
+    background: #cf2445;
+    border: none;
+    font-size: 20px;
+    transition: .05s all;
+    cursor: pointer;
+    color: #111;
+}
+
+.selection-button:hover{
+    background: #111;
+    color: #cf2445;
+}
+
+
+#news-button{
+    float: left;
+}
+
+#options-button{
+    float: right;
+
+}
+
+.news-image{
+    width: 100%;
+}
+
+
+#username{
+    border: none;
+    height: 20px;
+    padding: 5px;
+}
+
+.news-title{
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    font-size: 25px;
+    color: white;
+}
+
+.news-message{
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+#overlay-contents{
+    overflow-x: hidden;
+    overflow-y: auto;
+    display:block;
+    height: 400px;
+    width: 100%;
 }

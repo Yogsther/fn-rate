@@ -609,7 +609,7 @@ img {
     margin: 0 auto;
     z-index: 1000;
     box-shadow: 0px 0px 10px;
-    border-radius: 10px;
+    border-radius: 3px;
     background: #111;
 }
 
@@ -628,7 +628,7 @@ img {
     width: 100%;
     height: 200px;
     overflow: hidden;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
     box-shadow: 0px 8px 0px  rgba(246,30,91,.3);
 }
 
@@ -639,7 +639,7 @@ img {
     left: 0px;
     height: 100vh;
     width: 100%;
-    transition: top .3s ease-in-out;
+    transition: top .4s ease-in-out;
 }
 
 #logo {
@@ -723,4 +723,74 @@ img {
     left: 5px;
     width: 15%;
     z-index: 99999;
+}
+
+#selection-items{ 
+    position: relative;
+    display: block;
+}
+
+.selection-button{
+    padding: none;
+    display: inline-block;
+    width: 50%;
+    margin: 0 auto;
+    height: 30px;
+    background: #cf2445;
+    border: none;
+    font-size: 20px;
+    transition: .05s all;
+    cursor: pointer;
+    color: #111;
+}
+
+.selection-button:hover{
+    background: #111;
+    color: #cf2445;
+}
+
+
+#news-button{
+    float: left;
+}
+
+#options-button{
+    float: right;
+
+}
+
+.news-image{
+    width: 100%;
+}
+
+
+#username{
+    border: none;
+    height: 20px;
+    padding: 5px;
+}
+
+.news-title{
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    font-size: 25px;
+    color: white;
+}
+
+.news-message{
+    display: block;
+    margin: 0 auto;
+    width: 95%;
+    font-size: 15px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+#overlay-contents{
+    overflow-x: hidden;
+    overflow-y: auto;
+    display:block;
+    height: 420px;
+    width: 100%;
 }

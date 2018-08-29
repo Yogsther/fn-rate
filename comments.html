@@ -40,13 +40,14 @@
         .insert {
             display: block;
             padding: 10px;
-            height: 70px;
+            min-height: 70px;
+            margin: 0 auto;
             margin-bottom: 4px;
             border-radius: 3px;
             background: #111;
             position: relative;
             left: 0px;
-            transition: all .1s;
+            transition: left .2s;
         }
 
         .insert:hover {
@@ -54,13 +55,10 @@
         }
 
         #comments {
-            overflow: auto;
             position: relative;
-            float: left;
+            margin: 0 auto;
+            display: block;
             width: 95%;
-            display: inline-block;
-            padding: 20px;
-
         }
 
         #button {
@@ -82,42 +80,132 @@
 
         .legendary {
             background: #aa5228;
-            background: -moz-linear-gradient(left, #aa5228 0%, #111111 40%);
-            background: -webkit-linear-gradient(left, #aa5228 0%, #111111 40%);
-            background: linear-gradient(to right, #aa5228 0%, #111111 40%);
+            background: -moz-linear-gradient(left, #aa5228 0%, #111111 95%);
+            background: -webkit-linear-gradient(left, #aa5228 0%, #111111 95%);
+            background: linear-gradient(to right, #aa5228 0%, #111111 95%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa5228', endColorstr='#111111', GradientType=1);
         }
 
         .epic {
             background: #6b41a8;
-            background: -moz-linear-gradient(left, #6b41a8 0%, #111111 40%);
-            background: -webkit-linear-gradient(left, #6b41a8 0%, #111111 40%);
-            background: linear-gradient(to right, #6b41a8 0%, #111111 40%);
+            background: -moz-linear-gradient(left, #6b41a8 0%, #111111 95%);
+            background: -webkit-linear-gradient(left, #6b41a8 0%, #111111 95%);
+            background: linear-gradient(to right, #6b41a8 0%, #111111 95%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b41a8', endColorstr='#111111', GradientType=1);
         }
 
         .rare {
             background: #007dbc;
-            background: -moz-linear-gradient(left, #007dbc 0%, #111111 40%);
-            background: -webkit-linear-gradient(left, #007dbc 0%, #111111 40%);
-            background: linear-gradient(to right, #007dbc 0%, #111111 40%);
+            background: -moz-linear-gradient(left, #007dbc 0%, #111111 95%);
+            background: -webkit-linear-gradient(left, #007dbc 0%, #111111 95%);
+            background: linear-gradient(to right, #007dbc 0%, #111111 95%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dbc', endColorstr='#111111', GradientType=1);
         }
 
         .uncommon {
             background: #488c2c;
-            background: -moz-linear-gradient(left, #488c2c 0%, #111111 40%);
-            background: -webkit-linear-gradient(left, #488c2c 0%, #111111 40%);
-            background: linear-gradient(to right, #488c2c 0%, #111111 40%);
+            background: -moz-linear-gradient(left, #488c2c 0%, #111111 95%);
+            background: -webkit-linear-gradient(left, #488c2c 0%, #111111 95%);
+            background: linear-gradient(to right, #488c2c 0%, #111111 95%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#488c2c', endColorstr='#111111', GradientType=1);
         }
 
         .common {
             background: #9d9d9d;
-            background: -moz-linear-gradient(left, #9d9d9d 0%, #111111 40%);
-            background: -webkit-linear-gradient(left, #9d9d9d 0%, #111111 40%);
-            background: linear-gradient(to right, #9d9d9d 0%, #111111 40%);
+            background: -moz-linear-gradient(left, #9d9d9d 0%, #111111 95%);
+            background: -webkit-linear-gradient(left, #9d9d9d 0%, #111111 95%);
+            background: linear-gradient(to right, #9d9d9d 0%, #111111 95%);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9d9d9d', endColorstr='#111111', GradientType=1);
+        }
+
+        .common:hover {
+            background: #9d9d9d;
+            background: -moz-linear-gradient(left, #9d9d9d 0%, #888888 100%);
+            background: -webkit-linear-gradient(left, #9d9d9d 0%, #888888 100%);
+            background: linear-gradient(to right, #9d9d9d 0%, #888888 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9d9d9d', endColorstr='#111111', GradientType=1);
+        }
+
+
+        .legendary:hover {
+            background: #aa5228;
+            background: -moz-linear-gradient(left, #aa5228 0%, #a04d27 100%);
+            background: -webkit-linear-gradient(left, #aa5228 0%, #a04d27 100%);
+            background: linear-gradient(to right, #aa5228 0%, #a04d27 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa5228', endColorstr='#111111', GradientType=1);
+        }
+
+        .epic:hover {
+            background: #6b41a8;
+            background: -moz-linear-gradient(left, #6b41a8 0%, #3f2664 100%);
+            background: -webkit-linear-gradient(left, #6b41a8 0%, #3f2664 100%);
+            background: linear-gradient(to right, #6b41a8 0%, #3f2664 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6b41a8', endColorstr='#111111', GradientType=1);
+        }
+
+        .rare:hover {
+            background: #007dbc;
+            background: -moz-linear-gradient(left, #007dbc 0%, #03547c 100%);
+            background: -webkit-linear-gradient(left, #007dbc 0%, #03547c 100%);
+            background: linear-gradient(to right, #007dbc 0%, #03547c 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#007dbc', endColorstr='#111111', GradientType=1);
+        }
+
+        .uncommon:hover {
+            background: #488c2c;
+            background: -moz-linear-gradient(left, #488c2c 0%, #2a531a 100%);
+            background: -webkit-linear-gradient(left, #488c2c 0%, #2a531a 100%);
+            background: linear-gradient(to right, #488c2c 0%, #2a531a 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#488c2c', endColorstr='#111111', GradientType=1);
+        }
+
+
+
+
+        .votes {
+            position: absolute;
+            height: 80px;
+            right: 20px;
+            top: 13px;
+            cursor: pointer;
+        }
+
+        .upvote {
+            width: 30px;
+            height: 30px;
+            display: block;
+            position: relative;
+        }
+
+        .downvote {
+            display: block;
+            height: 30px;
+            transform: rotate(180deg);
+        }
+
+        .karma {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: -5px;
+            margin-bottom: -5px;
+        }
+
+        .thumbnail-preview {
+            height: 70px;
+            position: relative;
+            margin-right: 10px;
+            top: 0px;
+            left: 0px;
+            display: inline-block;
+            float: left;
+        }
+
+        .comment-text {
+            top: 3px;
+            position: relative;
+            width: 85%;
+            display: block;
         }
     </style>
 </head>
@@ -126,23 +214,25 @@
 
     <div id="header">
 
-        <button id="button" class="btn" onclick="loadAll()">Load all comments</button>
+
+
 
         Sort by:
         <select oninput="filter(this.value)" class="sort" id="filter-options">
-            <option value="new">Newest</option>
-            <option value="old">Oldest</option>
-            <option value="top">Best karma</option>
-            <option value="low">Worst karma</option>
+            <option value="new">New</option>
+            <option value="old">Old</option>
+            <option value="top">Top</option>
+            <option value="low">Worst</option>
         </select>
 
 
-
-
-
-
-
         <span id="comment-status-info">Loading comments...</span>
+
+        <span id="button-placer">
+            <a href='javascript:loadAll()' style='text-decoration: none;color:rgb(124, 124, 124);' title="Load all comments, or just load 150 more commenets by pressing R">
+                | Load all comments</a>
+        </span>
+
 
 
     </div>
@@ -155,17 +245,9 @@
     <script>
         var displayCommentsLength = 150;
         var filledComments = 0;
+        var comments = [];
+
         var socket = io.connect("213.66.254.63:25565");
-
-
-
-        var comments;
-
-        // TODO
-        var colors = {
-            red: "",
-            yellow: "",
-        }
 
         var lastVisit = localStorage.getItem("lastVisit");
         localStorage.setItem("lastVisit", Date.now());
@@ -185,9 +267,27 @@
             socket.emit("commentStream")
         }
 
+
+        /* socket.on("commentStream", recivedComments => {
+            comments = recivedComments;
+            comments.sort(sorts["new"]);
+
+            fillComments();
+        });
+ */
+
         var skins;
+
         socket.on("skins", recivedSkins => {
             skins = recivedSkins;
+
+            comments = new Array();
+            skins.forEach((skin, index) => {
+                skin.comments.forEach(comment => {
+                    comment.skinIndex = index;
+                    comments.push(comment);
+                })
+            })
 
             for (let i = 0; i < skins.length; i++) {
                 var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon",
@@ -200,6 +300,7 @@
 
                 skins[i].color = color;
             }
+
         })
 
         function filter(val) {
@@ -228,7 +329,7 @@
                 if (a.karma < b.karma)
                     return 1;
                 return 0;
-            }, 
+            },
             "low": (a, b) => {
                 if (a.karma < b.karma)
                     return -1;
@@ -237,21 +338,6 @@
                 return 0;
             }
         }
-
-
-
-        socket.on("commentStream", recivedComments => {
-            comments = recivedComments;
-            comments.sort(sorts["new"]);
-
-            fillComments();
-        });
-
-
-
-
-
-
 
         function fillComments(fresh) {
             var pushString = "";
@@ -265,7 +351,19 @@
                 filledComments++;
                 var comment = comments[i];
 
+                var dateString;
                 var date = new Date(comment.date);
+                var time = Date.now() - comment.date;
+                var minutes = time / 1000 / 60;
+                var hours = minutes / 60;
+                var days = hours / 24;
+                var years = days / 365;
+                dateString = Math.round(minutes) + "m";
+                if (hours >= 1) dateString = Math.round(hours) + "h";
+                if (days >= 1) dateString = Math.round(days) + "d";
+                else if (years >= 1) dateString = Math.round(years) + "y";
+
+                /* 
                 var seconds = date.getSeconds();
                 var minutes = date.getMinutes();
                 var hours = date.getHours();
@@ -274,7 +372,7 @@
                 if (minutes.toString().length < 2) minutes = "0" + minutes;
                 if (hours.toString().length < 2) hours = "0" + hours;
                 var dateString = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() +
-                    " - " + hours + ":" + minutes + ":" + seconds
+                    " - " + hours + ":" + minutes + ":" + seconds */
                 var warn = "";
 
 
@@ -288,10 +386,11 @@
                     seenComment = "<span style='color:gold;'>New!</span>"
                 }
 
-                var code = comment.skin;
-                var skinIndex = getSkinIndexFromCode(code);
-                var skin;
-                if (skinIndex == -1) skin = {
+                /* var code = comment.code;
+                var skinIndex = getSkinIndexFromCode(code); */
+                var skin = skins[comment.skinIndex];
+
+                /* if (skinIndex == -1) skin = {
                     code: code,
                     name: code,
                     color: "white",
@@ -300,18 +399,35 @@
                 };
                 else skin = skins[skinIndex];
                 var type = code.substr(0, code.indexOf("_TYPE_"));
-                code = code.substr(code.indexOf("_TYPE_") + 6, code.length);
+                code = code.substr(code.indexOf("_TYPE_") + 6, code.length); */
+
+                var downvoteSource = "vote_grey.png";
+                var upvoteSource = "vote_grey.png";
+                if (comment.action == "upvote") upvoteSource = "vote_green.png";
+                if (comment.action == "downvote") downvoteSource = "vote_red.png";
+                var karma = comment.karma;
+                var percentage = comment.percentage;
+                var karmaInfo = (Math.round((percentage * 100) * 100) / 100) + "% upvoted, " + comment.upvotes +
+                    " upvotes, " + comment.downvotes + " downvotes, " + (comment.upvotes + comment.downvotes) +
+                    " total votes."
+                var votes = ' <span class="votes"> <img src="' + upvoteSource +
+                    '" alt="" id="' + comment.id + '" class="upvote" title="Upvote this comment" onclick="commentVote(this, true)"> <span class="karma" title="' +
+                    karmaInfo + '">' + karma + '</span> <img src="' + downvoteSource +
+                    '" onclick="commentVote(this, false)" title="Downvote this comment" alt="" id="' + comment.id + '" class="downvote">';
 
 
 
                 pushString += "<span class='insert " + skin.rarity.toLowerCase() + "' id='insert_" + i +
                     "'>" + " <a style='color:" + skin.color + "' target='_blank' href='/?skin=" + skin.code +
-                    "&type=" + skin.type + "'><img src='img/thumbnails/" + skin.type + "/" + skin.code +
-                    ".png' style='height:100%;position:relative;top:0xp;left:0px;display:inline-block;float:left;'></a> <span style='color:" +
-                    usernameColor + "'>" + censorComment(comment.username) + "[" + comment.karma + "]" + 
-                    ":</span> <b> <span style='color:#939393;'>" + dateString + "</span><br>" + censorComment(comment
+                    "&type=" + skin.type + "'><img class='thumbnail-preview' title='" + skin.name +
+                    "' src='img/thumbnails/" + skin.type + "/" +
+                    skin.code +
+                    ".png'></a> <span style='color:" +
+                    usernameColor + "'>" + censorComment(comment.username) +
+                    "</span>  <span style='color:#939393;'>" + dateString + "</span><br><span class='comment-text'>" +
+                    censorComment(comment
                         .message) +
-                    " </b>" + warn + " " + seenComment + "<br></span>"
+                    "</span> " + votes + "</span>  </span>";
 
             }
             document.getElementById("comments").innerHTML += pushString;
@@ -332,7 +448,56 @@
                         "downvote";
                 })
             })
+
+            filter("new");
         })
+
+        function getCommentFromID(id){
+            for(let i = 0; i < comments.length; i++){
+                if(comments[i].id == id) return comments[i];
+            }
+        }
+
+        function commentVote(el, upvote) {
+
+            
+            var comment = getCommentFromID(el.id);
+            var commentID = el.id;
+
+            var type = "upvote";
+            if (!upvote) type = "downvote";
+
+
+
+            if (comment.action == type) {
+                if (comment.action == "downvote") el.parentElement.children[
+                    1].innerHTML = Number(el.parentElement.children[1].innerHTML) + 1;
+                else el.parentElement.children[1].innerHTML -= 1;
+                el.src = "vote_grey.png";
+                type = "novote";
+            } else if (upvote) {
+                if (comment.action == "downvote") el.parentElement.children[
+                    1].innerHTML = Number(el.parentElement.children[1].innerHTML) + 2;
+                else el.parentElement.children[1].innerHTML = Number(el.parentElement.children[1].innerHTML) +
+                    1;
+                el.src = "vote_green.png";
+            } else {
+                if (comment.action == "upvote") el.parentElement.children[1]
+                    .innerHTML -= 2;
+                else el.parentElement.children[1].innerHTML -= 1;
+                el.src = "vote_red.png";
+            }
+
+            var index = 0;
+            if (upvote) index = 2;
+            el.parentElement.children[index].src = "vote_grey.png";
+
+            comment.action = type;
+            socket.emit("commentVote", {
+                id: commentID,
+                type: type
+            });
+        }
 
 
 
@@ -374,6 +539,7 @@
 
         function loadAll() {
             displayCommentsLength = comments.length;
+            document.getElementById("button-placer").innerHTML = "";
             fillComments();
         }
 

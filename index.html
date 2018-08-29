@@ -66,52 +66,26 @@
             <div id="block-header"></div>
             <img src="img/logo_250.png" alt="" id="logo">
 
+            <span id="selection-items">
+                <button class="selection-button" id="news-button" onclick="changeOverlay('news')">
+                    NEWS
+                </button>
+
+                <button class="selection-button" id="options-button" onclick="changeOverlay('options')">
+                    OPTIONS
+                </button>
+
+            </span>
+
+            <span id="overlay-contents">
+
+                
+                <img src="" class="news-image" alt="">
 
 
-            <div class="header-item">
-                <span style='color:white; margin-left:2em;'>Sort by:</span>
-                <select oninput="sortBy(this.value)" id="sort">
-                    <option value="rating">Global rating</option>
-                    <option value="myrating">Your rating</option>
-                    <option value="votes">Amount of votes</option>
-                    <option value="comments">Amount of comments</option>
-                    <option value="rarity">Rarity</option>
-                </select>
-            </div>
 
 
-            <!-- <div class="header-item">
-                <span style='color:white; margin-left:2em;'>Color:</span>
-                <select oninput="setColor(this.value)" id="sort">
-
-                    <option value="rarity">Rarity</option>
-                    <option value="rating">Rating</option>
-                </select>
-            </div> -->
-
-            <div class="header-item">
-                <span style='color:white; margin-left:2em;'>Username:</span>
-                <input maxlength="12" type="text" id="username" value="Anonymous" oninput="updateUsername(this.value)">
-            </div>
-            </button>
-
-            <div class="header-item">
-                <a href="https://www.reddit.com/u/Yogsther" target="_blank" style='margin-left:2em;' title="Report a bug or submit a suggestion">Contact me</a>
-            </div>
-
-            <div class="header-item">
-                <a href="/privacy.html" target="_blank" style='margin-left:2em;' title="Privacy Policy">Privacy Policy</a>
-            </div>
-
-
-            <div id="stats">
-                <span style='font-size: 20px;'>Your stats: </span>
-                <br> Rated skins: ?/?
-                <br> Average rating: ?
-                <br>
-            </div>
-
-
+            </span>
 
             <button id="close-button" class="btn" onclick="toggleOverlay()"> Close </button>
         </div>
@@ -120,13 +94,14 @@
     <div id="header">
         <input type="text" placeholder="Search a skin..." id="search" oninput="search()">
 
-        <a href="javascript:toggleOverlay()" id="ignore" class="right-bar">Options</a>
-        <span id="admin-deck-insert" class="right-bar"></span>
+       
+        <a href="javascript:toggleOverlay()" id="ignore" class="right-bar">More</a>
+        <a href="comments.html" id="ignore" class="right-bar">Comment Stream</a>
 
         <div class="right-bar">
             <span style='color:white; margin-left:2em;'>Filter: </span>
             <span style="color:#ff6262" title="Newly added filter: Item shop! See what skins are in the Item shop right now!">
-                </span>
+            </span>
             <select oninput="filter(this.value)" class="sort" id="filter-options">
                 <option value="all">All cosmetics</option>
                 <option value="store">Item Shop</option>
