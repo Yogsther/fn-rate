@@ -430,7 +430,7 @@ function personalRating(a, b) {
     return 0;
 }
 
-function justSort /*lol*/ (val) {
+function justSort /*lol*/(val) {
     /* if (val == "rating") skins.sort(rateSort);
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
@@ -489,7 +489,7 @@ function populateCollection() {
             if (cosmeticFilter == "locker") {
                 if (locker.indexOf(getSkinCode(skins[i])) == -1) skip = true;
             } else if (cosmeticFilter == "store") {
-                if(!skins[i].inStore) skip = true;
+                if (!skins[i].inStore) skip = true;
             } else if (skins[i].type != cosmeticFilter) skip = true;
         }
         if (!skip) {
@@ -512,7 +512,7 @@ function populateCollection() {
                 }
                 if (skin.code != undefined) {
                     var shopIcon = "";
-                    if(skin.inStore) shopIcon = "<img src='img/shop_icon.png' class='shop-icon' title='In the item shop right now!'>"
+                    if (skin.inStore) shopIcon = "<img src='img/shop_icon.png' class='shop-icon' title='In the item shop right now!'>"
                     collectionString += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "'> <img src='img/" + skin.projection.standing + ".png' title='Rating is going " + skin.projection.standing + ".' class='arrow'> " + shopIcon + " <img class='preview " + skin.rarity + "-block' draggable='false' style='background-color:" + skin.color + "' src=" + JSON.stringify(skin.thumb.src) + "> <span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
                     try {
                         //document.getElementById("img_" + i).appendChild(skin.thumb)
@@ -562,7 +562,7 @@ function inspect(skinIndex) {
         window.history.pushState("", "FN Rate - " + skin.name, "/?skin=" + skin.code.toLowerCase() + "&type=" + skin.type.toLowerCase());
     }
 
-    if(skin.type !== "outfit"){
+    if (skin.type !== "outfit") {
         document.getElementById("full").style.top = "-10px";
     } else {
         document.getElementById("full").style.top = "0px";
@@ -883,7 +883,7 @@ function submitComment() {
 
     if (username == "Anonymous" || username.trim().length == 0) {
         username = window.prompt("You have not choosen a username. Please enter a username. You can always change it the options menu!", username);
-        if(username == ""){
+        if (username == "") {
             submitComment();
             return;
         }
