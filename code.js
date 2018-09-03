@@ -159,17 +159,17 @@ function updateCanvas() {
 var overlayOpen = false;
 
 
-/* Have news serverside. */
+/* TODO: Have news serverside. */
 var news = [{
-    date: 1535980485464,
+    date: 1535980623727,
     title: "Introducing Season Filters",
     image: "img/news/season-filters.png",
     message: "You can now filter through the different battle pass seasons of Fortnite, accessed right from the 'Filter' option. The number for each season is the average rating for that season. This was a user submitted suggestion, if you have any suggestions - please do send them to me on reddit /u/Yogsther!",
-}, {
-    date: 1535568851943,
+},{
+    date: 1535708555388,
     title: "Introducing Comment Stream",
     image: "img/news/comment-stream.png",
-    message: "Browse and vote on all comments with comment stream, sort by top voted, newest, oldest or most downvoted. Clicking on a skin will link you to that skin-page. <a href='comments.html'>Click here to check it out!</a>"
+    message: "<b>Update: You can now search comments and usernames!<br></b>Browse and vote on all comments with comment stream, sort by top voted, newest, oldest or most downvoted. Clicking on a skin will link you to that skin-page. <a href='comments'>Click here to check it out!</a>"
 }]
 
 var lastVisit = localStorage.getItem("lastVisit");
@@ -685,7 +685,7 @@ function inspect(skinIndex) {
 
 
     var higherRatedSameCategory = generateSpan((skins[skinIndex].stats.higherRatedSameCategory + 1), skins[skinIndex].type)
-    var higherRatedSkins = generateSpan((skins[skinIndex].stats.higherRatedSkins + 1), "skin")
+    var higherRatedSkins = generateSpan((skins[skinIndex].stats.higherRatedSkins + 1), "rank")
 
     function generateSpan(number, text) {
         const tierColors = ["#e2c75a", "#cecece", "#896b2a", "#7c7c7c"]

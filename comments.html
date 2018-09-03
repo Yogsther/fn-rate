@@ -3,7 +3,7 @@
 
 <head>
 
-    
+
     <!-- Informations -->
     <meta property="og:description" content="Rate the skins of Fortnite and see what skins are the most appreciated!" />
     <meta property="og:title" content="FN Rate - Rate the skins of Fortnite" />
@@ -38,10 +38,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- Bad words -->
     <script src="bad_words.js"></script>
-     <!-- Global site tag (gtag.js) - Google Analytics -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118879212-2"></script>
-     <script>
-         window.dataLayer = window.dataLayer || [];
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118879212-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
  
          function gtag() {
              dataLayer.push(arguments);
@@ -246,6 +246,16 @@
             width: 85%;
             display: block;
         }
+
+
+#search {
+    /* Search box */
+    width: 20%;
+    border: none;
+    background: none;
+    height: 5vh;
+    color: white;
+}
     </style>
 </head>
 
@@ -253,8 +263,7 @@
 
     <div id="header">
 
-
-
+        <input type="text" placeholder="Search..." id="search" oninput="fillComments(true)">
 
         Sort by:
         <select oninput="filter(this.value)" class="sort" id="filter-options">
@@ -265,12 +274,17 @@
         </select>
 
 
+       
+        Show:
+        <select oninput="fillComments(false, this.value)" class="sort" id="filter-options">
+            <option value="150">150</option>
+            <option value="500">500</option>
+            <option value="1000">1000</option>
+            <option value="all">All</option>
+        </select>
+
         <span id="comment-status-info">Loading comments...</span>
 
-        <span id="button-placer">
-            <a href='javascript:loadAll()' style='text-decoration: none;color:rgb(124, 124, 124);' title="Load all comments, or just load 150 more commenets by pressing R">
-                | Load all comments</a>
-        </span>
 
 
 
@@ -291,13 +305,6 @@
         var lastVisit = localStorage.getItem("lastVisit");
         localStorage.setItem("lastVisit", Date.now());
         if (isNaN(lastVisit)) lastVisit = 0;
-
-
-        document.addEventListener("keydown", e => {
-            if (e.keyCode == 82) {
-                loadMore();
-            }
-        })
 
         loadComments();
 
@@ -378,232 +385,269 @@
             }
         }
 
-        function fillComments(fresh) {
+
+
+        var amountOfCommentsDisplaying = 0;
+
+        function fillComments(fresh, amount) {
+
+
+            var search = document.getElementById("search").value;
+
             var pushString = "";
 
             if (fresh) {
+                amountOfCommentsDisplaying = 0;
                 filledComments = 0;
                 document.getElementById("comments").innerHTML = "";
 
             }
-            for (let i = filledComments; i < displayCommentsLength; i++) {
-                filledComments++;
+
+
+            if(amount != undefined){
+                if(amount == "all") amount = comments.length;
+                displayCommentsLength = Number(amount);
+            }
+
+            for (let i = filledComments; filledComments < displayCommentsLength && i < comments.length; i++) {
+
                 var comment = comments[i];
+                var skip = false;
 
-                var dateString;
-                var date = new Date(comment.date);
-                var time = Date.now() - comment.date;
-                var minutes = time / 1000 / 60;
-                var hours = minutes / 60;
-                var days = hours / 24;
-                var years = days / 365;
-                dateString = Math.round(minutes) + "m";
-                if (hours >= 1) dateString = Math.round(hours) + "h";
-                if (days >= 1) dateString = Math.round(days) + "d";
-                else if (years >= 1) dateString = Math.round(years) + "y";
-
-                /* 
-                var seconds = date.getSeconds();
-                var minutes = date.getMinutes();
-                var hours = date.getHours();
-
-                if (seconds.toString().length < 2) seconds = "0" + seconds;
-                if (minutes.toString().length < 2) minutes = "0" + minutes;
-                if (hours.toString().length < 2) hours = "0" + hours;
-                var dateString = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() +
-                    " - " + hours + ":" + minutes + ":" + seconds */
-                var warn = "";
+                if (search) {
+                    var searches = search.toLowerCase().split(" ");
+                    searches.forEach(s => {
+                        if (comment.message.toLowerCase().indexOf(s) == -1 && comment.username.toLowerCase().indexOf(s) == -1) skip = true;
+                }); }
 
 
-                var usernameColor = "lightgrey";
 
-                if (comment.username != "Anonymous") usernameColor = "white";
-                if (comment.mod) usernameColor = "#ff5959";
+                    if (!skip) {
+                        filledComments++;
+                        var dateString;
+                        var date = new Date(comment.date);
+                        var time = Date.now() - comment.date;
+                        var minutes = time / 1000 / 60;
+                        var hours = minutes / 60;
+                        var days = hours / 24;
+                        var years = days / 365;
+                        dateString = Math.round(minutes) + "m";
+                        if (hours >= 1) dateString = Math.round(hours) + "h";
+                        if (days >= 1) dateString = Math.round(days) + "d";
+                        else if (years >= 1) dateString = Math.round(years) + "y";
 
-                var seenComment = "";
-                if (comment.date > lastVisit) {
-                    seenComment = "<span style='color:gold;'>New!</span>"
+                        /* 
+                        var seconds = date.getSeconds();
+                        var minutes = date.getMinutes();
+                        var hours = date.getHours();
+
+                        if (seconds.toString().length < 2) seconds = "0" + seconds;
+                        if (minutes.toString().length < 2) minutes = "0" + minutes;
+                        if (hours.toString().length < 2) hours = "0" + hours;
+                        var dateString = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate() +
+                            " - " + hours + ":" + minutes + ":" + seconds */
+                        var warn = "";
+
+
+                        var usernameColor = "lightgrey";
+
+                        if (comment.username != "Anonymous") usernameColor = "white";
+                        if (comment.mod) usernameColor = "#ff5959";
+
+                        var seenComment = "";
+                        if (comment.date > lastVisit) {
+                            seenComment = "<span style='color:gold;'>New!</span>"
+
+                        }
+
+                        /* var code = comment.code;
+                        var skinIndex = getSkinIndexFromCode(code); */
+                        var skin = skins[comment.skinIndex];
+
+                        /* if (skinIndex == -1) skin = {
+                            code: code,
+                            name: code,
+                            color: "white",
+                            type: "Unknown",
+                            rarity: "common"
+                        };
+                        else skin = skins[skinIndex];
+                        var type = code.substr(0, code.indexOf("_TYPE_"));
+                        code = code.substr(code.indexOf("_TYPE_") + 6, code.length); */
+
+                        var downvoteSource = "vote_grey.png";
+                        var upvoteSource = "vote_grey.png";
+                        if (comment.action == "upvote") upvoteSource = "vote_green.png";
+                        if (comment.action == "downvote") downvoteSource = "vote_red.png";
+                        var karma = comment.karma;
+                        var percentage = comment.percentage;
+                        var karmaInfo = (Math.round((percentage * 100) * 100) / 100) + "% upvoted, " + comment.upvotes +
+                            " upvotes, " + comment.downvotes + " downvotes, " + (comment.upvotes + comment.downvotes) +
+                            " total votes."
+                        var votes = ' <span class="votes"> <img src="' + upvoteSource +
+                            '" alt="" id="' + comment.id +
+                            '" class="upvote" title="Upvote this comment" onclick="commentVote(this, true)"> <span class="karma" title="' +
+                            karmaInfo + '">' + karma + '</span> <img src="' + downvoteSource +
+                            '" onclick="commentVote(this, false)" title="Downvote this comment" alt="" id="' + comment.id +
+                            '" class="downvote">';
+
+
+
+                        pushString += "<span class='insert " + skin.rarity.toLowerCase() + "' id='insert_" + i +
+                            "'>" + " <a style='color:" + skin.color + "' target='_blank' href='/?skin=" + skin.code +
+                            "&type=" + skin.type + "'><img class='thumbnail-preview' title='" + skin.name +
+                            "' src='img/thumbnails/" + skin.type + "/" +
+                            skin.code +
+                            ".png'></a> <span style='color:" +
+                            usernameColor + "'>" + censorComment(comment.username) +
+                            "</span>  <span style='color:#939393;'>" + dateString +
+                            "</span><br><span class='comment-text'>" +
+                            censorComment(comment
+                                .message) +
+                            "</span> " + votes + "</span>  </span>";
+                    }
+                
+
                 }
 
-                /* var code = comment.code;
-                var skinIndex = getSkinIndexFromCode(code); */
-                var skin = skins[comment.skinIndex];
-
-                /* if (skinIndex == -1) skin = {
-                    code: code,
-                    name: code,
-                    color: "white",
-                    type: "Unknown",
-                    rarity: "common"
-                };
-                else skin = skins[skinIndex];
-                var type = code.substr(0, code.indexOf("_TYPE_"));
-                code = code.substr(code.indexOf("_TYPE_") + 6, code.length); */
-
-                var downvoteSource = "vote_grey.png";
-                var upvoteSource = "vote_grey.png";
-                if (comment.action == "upvote") upvoteSource = "vote_green.png";
-                if (comment.action == "downvote") downvoteSource = "vote_red.png";
-                var karma = comment.karma;
-                var percentage = comment.percentage;
-                var karmaInfo = (Math.round((percentage * 100) * 100) / 100) + "% upvoted, " + comment.upvotes +
-                    " upvotes, " + comment.downvotes + " downvotes, " + (comment.upvotes + comment.downvotes) +
-                    " total votes."
-                var votes = ' <span class="votes"> <img src="' + upvoteSource +
-                    '" alt="" id="' + comment.id + '" class="upvote" title="Upvote this comment" onclick="commentVote(this, true)"> <span class="karma" title="' +
-                    karmaInfo + '">' + karma + '</span> <img src="' + downvoteSource +
-                    '" onclick="commentVote(this, false)" title="Downvote this comment" alt="" id="' + comment.id + '" class="downvote">';
-
-
-
-                pushString += "<span class='insert " + skin.rarity.toLowerCase() + "' id='insert_" + i +
-                    "'>" + " <a style='color:" + skin.color + "' target='_blank' href='/?skin=" + skin.code +
-                    "&type=" + skin.type + "'><img class='thumbnail-preview' title='" + skin.name +
-                    "' src='img/thumbnails/" + skin.type + "/" +
-                    skin.code +
-                    ".png'></a> <span style='color:" +
-                    usernameColor + "'>" + censorComment(comment.username) +
-                    "</span>  <span style='color:#939393;'>" + dateString + "</span><br><span class='comment-text'>" +
-                    censorComment(comment
-                        .message) +
-                    "</span> " + votes + "</span>  </span>";
-
+                document.getElementById("comments").innerHTML += pushString;
+                updateStatus();
             }
-            document.getElementById("comments").innerHTML += pushString;
-            updateStatus();
-        }
 
 
-        var myAccount;
-        socket.on("account", acc => {
-            myAccount = acc;
-            skins.forEach(skin => {
-                if (skin.comments !== undefined) skin.comments.forEach(comment => {
-                    comment.karma = 1 + (comment.upvotes - comment.downvotes);
-                    comment.percentage = (1 + comment.upvotes) / (comment.upvotes + comment.downvotes +
-                        1);
-                    if (myAccount.upvotes.indexOf(comment.id) !== -1) comment.action = "upvote";
-                    if (myAccount.downvotes.indexOf(comment.id) !== -1) comment.action =
-                        "downvote";
+            var myAccount;
+            socket.on("account", acc => {
+                myAccount = acc;
+                skins.forEach(skin => {
+                    if (skin.comments !== undefined) skin.comments.forEach(comment => {
+                        comment.karma = 1 + (comment.upvotes - comment.downvotes);
+                        comment.percentage = (1 + comment.upvotes) / (comment.upvotes + comment
+                            .downvotes +
+                            1);
+                        if (myAccount.upvotes.indexOf(comment.id) !== -1) comment.action =
+                            "upvote";
+                        if (myAccount.downvotes.indexOf(comment.id) !== -1) comment.action =
+                            "downvote";
+                    })
                 })
+
+                filter("new");
             })
 
-            filter("new");
-        })
-
-        function getCommentFromID(id){
-            for(let i = 0; i < comments.length; i++){
-                if(comments[i].id == id) return comments[i];
-            }
-        }
-
-        function commentVote(el, upvote) {
-
-            
-            var comment = getCommentFromID(el.id);
-            var commentID = el.id;
-
-            var type = "upvote";
-            if (!upvote) type = "downvote";
-
-
-
-            if (comment.action == type) {
-                if (comment.action == "downvote") el.parentElement.children[
-                    1].innerHTML = Number(el.parentElement.children[1].innerHTML) + 1;
-                else el.parentElement.children[1].innerHTML -= 1;
-                el.src = "vote_grey.png";
-                type = "novote";
-            } else if (upvote) {
-                if (comment.action == "downvote") el.parentElement.children[
-                    1].innerHTML = Number(el.parentElement.children[1].innerHTML) + 2;
-                else el.parentElement.children[1].innerHTML = Number(el.parentElement.children[1].innerHTML) +
-                    1;
-                el.src = "vote_green.png";
-            } else {
-                if (comment.action == "upvote") el.parentElement.children[1]
-                    .innerHTML -= 2;
-                else el.parentElement.children[1].innerHTML -= 1;
-                el.src = "vote_red.png";
-            }
-
-            var index = 0;
-            if (upvote) index = 2;
-            el.parentElement.children[index].src = "vote_grey.png";
-
-            comment.action = type;
-            socket.emit("commentVote", {
-                id: commentID,
-                type: type
-            });
-        }
-
-
-
-
-        function containesBadWord(comment) {
-            for (badWord of bad_words) {
-                if (comment.toLowerCase().indexOf(badWord) != -1) return true;
-            }
-            return false;
-        }
-
-        function censorComment(comment) {
-            for (badWord of bad_words) {
-                var breakPoint = 0;
-                while (comment.toLowerCase().indexOf(badWord) != -1) {
-                    breakPoint++;
-                    if (breakPoint > 50) {
-                        console.warn(
-                            "There was a problem with the censor filter, please report this bug via 'Contact me', Thanks!"
-                        );
-                        break;
-                    }
-                    var index = comment.toLowerCase().indexOf(badWord);
-                    var censorString = new String();
-                    for (let i = 1; i < badWord.length; i++) censorString += "*";
-                    comment = comment.substr(0, index + 1) + censorString + comment.substr(index + badWord.length,
-                        comment.length);
+            function getCommentFromID(id) {
+                for (let i = 0; i < comments.length; i++) {
+                    if (comments[i].id == id) return comments[i];
                 }
             }
-            return comment;
-        }
+
+            function commentVote(el, upvote) {
 
 
-        function loadMore() {
-            displayCommentsLength += 150;
-            console.log("Loading", displayCommentsLength)
-            fillComments();
-        }
+                var comment = getCommentFromID(el.id);
+                var commentID = el.id;
 
-        function loadAll() {
-            displayCommentsLength = comments.length;
-            document.getElementById("button-placer").innerHTML = "";
-            fillComments();
-        }
-
-        function updateStatus() {
-            document.getElementById("comment-status-info").innerText = "Showing " + filledComments + "/" + comments.length;
-        }
+                var type = "upvote";
+                if (!upvote) type = "downvote";
 
 
 
-        function getSkinIndexFromCode(code) {
-            if (code.indexOf("_TYPE_") != -1) {
-                var type = code.substr(0, code.indexOf("_TYPE_"));
-                var code = code.substr(code.indexOf("_TYPE_") + 6, code.length);
-                for (let i = 0; i < skins.length; i++) {
-                    if (code == skins[i].code && type.toLowerCase() == skins[i].type.toLowerCase()) {
-                        return i;
+                if (comment.action == type) {
+                    if (comment.action == "downvote") el.parentElement.children[
+                        1].innerHTML = Number(el.parentElement.children[1].innerHTML) + 1;
+                    else el.parentElement.children[1].innerHTML -= 1;
+                    el.src = "vote_grey.png";
+                    type = "novote";
+                } else if (upvote) {
+                    if (comment.action == "downvote") el.parentElement.children[
+                        1].innerHTML = Number(el.parentElement.children[1].innerHTML) + 2;
+                    else el.parentElement.children[1].innerHTML = Number(el.parentElement.children[1].innerHTML) +
+                        1;
+                    el.src = "vote_green.png";
+                } else {
+                    if (comment.action == "upvote") el.parentElement.children[1]
+                        .innerHTML -= 2;
+                    else el.parentElement.children[1].innerHTML -= 1;
+                    el.src = "vote_red.png";
+                }
+
+                var index = 0;
+                if (upvote) index = 2;
+                el.parentElement.children[index].src = "vote_grey.png";
+
+                comment.action = type;
+                socket.emit("commentVote", {
+                    id: commentID,
+                    type: type
+                });
+            }
+
+
+
+
+            function containesBadWord(comment) {
+                for (badWord of bad_words) {
+                    if (comment.toLowerCase().indexOf(badWord) != -1) return true;
+                }
+                return false;
+            }
+
+            function censorComment(comment) {
+                for (badWord of bad_words) {
+                    var breakPoint = 0;
+                    while (comment.toLowerCase().indexOf(badWord) != -1) {
+                        breakPoint++;
+                        if (breakPoint > 50) {
+                            console.warn(
+                                "There was a problem with the censor filter, please report this bug via 'Contact me', Thanks!"
+                            );
+                            break;
+                        }
+                        var index = comment.toLowerCase().indexOf(badWord);
+                        var censorString = new String();
+                        for (let i = 1; i < badWord.length; i++) censorString += "*";
+                        comment = comment.substr(0, index + 1) + censorString + comment.substr(index + badWord.length,
+                            comment.length);
                     }
                 }
-            } else {
-                for (let i = 0; i < skins.length; i++) {
-                    if (skins[i].code == code) return i;
-                }
+                return comment;
             }
-            return -1;
-        }
+
+
+            function loadMore() {
+                displayCommentsLength += 150;
+                console.log("Loading", displayCommentsLength)
+                fillComments();
+            }
+
+            function loadAll() {
+                displayCommentsLength = comments.length;
+                document.getElementById("button-placer").innerHTML = "";
+                fillComments();
+            }
+
+            function updateStatus() {
+                document.getElementById("comment-status-info").innerText = "Showing " + filledComments + "/" + comments
+                    .length;
+            }
+
+
+
+            function getSkinIndexFromCode(code) {
+                if (code.indexOf("_TYPE_") != -1) {
+                    var type = code.substr(0, code.indexOf("_TYPE_"));
+                    var code = code.substr(code.indexOf("_TYPE_") + 6, code.length);
+                    for (let i = 0; i < skins.length; i++) {
+                        if (code == skins[i].code && type.toLowerCase() == skins[i].type.toLowerCase()) {
+                            return i;
+                        }
+                    }
+                } else {
+                    for (let i = 0; i < skins.length; i++) {
+                        if (skins[i].code == code) return i;
+                    }
+                }
+                return -1;
+            }
     </script>
 
 </body>

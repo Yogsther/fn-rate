@@ -124,7 +124,7 @@ function renderGraph(position) {
 
 
     graphCtx.beginPath();
-    graphCtx.lineWidth = theme.thickness * 1.5;
+    graphCtx.lineWidth = theme.thickness * 1.5 * 0 /* Remove outline.*/;
     graphCtx.strokeStyle = theme.outline;
     /* Draw out outline */
     for (let i = 0; i < progress; i++) {
