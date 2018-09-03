@@ -10,6 +10,8 @@ var overwriteInspect = false;
 var currentSkin = undefined;
 var onMobile = mobilecheck();
 
+var seasonRatings = [];
+
 /* Get URL before connecting to the server to make sure the right skin gets inspected. */
 getULR();
 
@@ -72,7 +74,7 @@ window.onload = () => {
     renderCanvas();
     applyThemeColor();
     changeOverlay("news")
-    if(lastVisit < news[0].date){
+    if (lastVisit < news[0].date) {
         toggleOverlay();
     }
 }
@@ -159,6 +161,11 @@ var overlayOpen = false;
 
 /* Have news serverside. */
 var news = [{
+    date: 1535980485464,
+    title: "Introducing Season Filters",
+    image: "img/news/season-filters.png",
+    message: "You can now filter through the different battle pass seasons of Fortnite, accessed right from the 'Filter' option. The number for each season is the average rating for that season. This was a user submitted suggestion, if you have any suggestions - please do send them to me on reddit /u/Yogsther!",
+}, {
     date: 1535568851943,
     title: "Introducing Comment Stream",
     image: "img/news/comment-stream.png",
@@ -372,13 +379,41 @@ document.addEventListener("click", (e) => {
 socket.on("account", acc => {
     myAccount = acc;
     skins.forEach(skin => {
+        if (skin.price.split(" ")[0].toLowerCase() == "tier" || skin.price.split(" ")[0].toLowerCase() == "level") {
+            var season = Number(skin.price.split(" ")[2][2]);
+            if (seasonRatings[season] == undefined) seasonRatings[season] = new Array();
+            seasonRatings[season].push(skin.rating);
+        }
+
         if (skin.comments !== undefined) skin.comments.forEach(comment => {
-            comment.karma = 1 + (comment.upvotes - comment.downvotes);
+            comment.upvotes++;
+            comment.karma = (comment.upvotes - comment.downvotes);
             comment.percentage = (1 + comment.upvotes) / (comment.upvotes + comment.downvotes + 1);
             if (myAccount.upvotes.indexOf(comment.id) !== -1) comment.action = "upvote";
             if (myAccount.downvotes.indexOf(comment.id) !== -1) comment.action = "downvote";
         })
     })
+
+    for (let i = 1; i < seasonRatings.length; i++) {
+        var totalRating = 0;
+        try {
+            seasonRatings[i].forEach(rating => {
+                totalRating += rating;
+            })
+            seasonRatings[i] = Math.round((totalRating / seasonRatings[i].length) * 100) / 100;
+
+            document.getElementById("filter-options").innerHTML += '<option value="s' + (i) + '">Season ' + (i) + ' (' + seasonRatings[i] + ')</option>'
+        } catch (e) {
+            throw e
+        }
+    }
+
+    if (localStorage.getItem("filter") !== null) {
+        cosmeticFilter = localStorage.getItem("filter")
+        document.getElementById("filter-options").value = cosmeticFilter;
+    }
+
+
     thisRating = myAccount.account[skins[currentSkin].code];
     updateStars(thisRating);
     if (firstLoad) {
@@ -470,7 +505,7 @@ function personalRating(a, b) {
     return 0;
 }
 
-function justSort /*lol*/ (val) {
+function justSort /*lol*/(val) {
     /* if (val == "rating") skins.sort(rateSort);
     if (val == "rarity") skins.sort(raritySort);
     if (val == "myrating") skins.sort(personalRating)
@@ -493,10 +528,7 @@ function sortBy(val, dontLoad) {
 }
 
 var cosmeticFilter = "all";
-if (localStorage.getItem("filter") !== null) {
-    cosmeticFilter = localStorage.getItem("filter")
-    document.getElementById("filter-options").value = cosmeticFilter;
-}
+
 
 function filter(val) {
     cosmeticFilter = val;
@@ -528,6 +560,8 @@ function populateCollection() {
         if (cosmeticFilter != "all") {
             if (cosmeticFilter == "locker") {
                 if (locker.indexOf(getSkinCode(skins[i])) == -1) skip = true;
+            } else if (cosmeticFilter.length == 2 && cosmeticFilter[0] == "s") {
+                if (skins[i].price.split(" ")[2] != "(" + cosmeticFilter.toUpperCase() + ")") skip = true;
             } else if (cosmeticFilter == "store") {
                 if (!skins[i].inStore) skip = true;
             } else if (skins[i].type != cosmeticFilter) skip = true;

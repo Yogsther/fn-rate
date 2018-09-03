@@ -4,7 +4,7 @@
  */
 
 // "Base List of Bad Words in English" that google uses.
-let bad_words = ["asshole", "bastard", "bitch", "boong", "cock", "cocksucker", "cunt", "dick", "fag", "faggot", "fuck", "gook", "motherfucker", "piss", "pussy", "slut", "tits"]
+let bad_words = ["asshole", "bastard", "bitch", "boong", "cock", "cocksucker", "cunt", "dick", "fag", "faggot", "fuck", "gook", "motherfucker", "piss", "pussy", "slut", "tits", "nigga"]
 
 
 function containesBadWord(comment) {
