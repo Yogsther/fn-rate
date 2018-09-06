@@ -161,6 +161,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1536233456999,
+    title: "v.5.40 Skins are here",
+    image: "img/news/5.4_is_here.png",
+    message: "All skins from v.5.40 are here, and all outfits should now display an alternative, featured image. Some skins did this before, but now all skins should do this."
+},{
     date: 1535980623727,
     title: "Introducing Season Filters",
     image: "img/news/season-filters.png",
