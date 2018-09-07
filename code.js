@@ -102,12 +102,14 @@ window.onpopstate = () => {
 }
 
 window.onresize = () => {
-    setTimeout(() => {
+  
         updateCanvas();
         graphCanvas.width = canvas.width;
         resetGraph();
-    }, 250)
+   
 };
+
+
 
 
 /**
@@ -153,7 +155,7 @@ var ctx = canvas.getContext("2d");
 
 function updateCanvas() {
     canvas.width = document.getElementById("image-wrap").offsetWidth;
-    canvas.height = document.getElementById("image-wrap").offsetHeight;
+    canvas.height = document.getElementById("image-wrap").offsetHeight+5;
     initGraphDisplay();
 }
 
@@ -257,13 +259,18 @@ function renderCanvas() {
     var speed = .05;
     canvasProgress -= speed;
     for (let i = 0; i < canvas.width; i++) {
+        ctx.fillStyle = "rgba(0,0,0,.25)";
+        ctx.fillRect(i, canvas.height, 1,( Math.sin(canvasProgress * .9 + spacing * i) * heightOffset - canvas.height / 2)-10);
+
         var height = Math.sin(canvasProgress + spacing * i) * heightOffset;
         ctx.fillStyle = newColor;
         if (i > colorProgress + transitionOffset) ctx.fillStyle = oldColor;
         ctx.fillRect(i, canvas.height, 1, height - canvas.height / 2);
         var increase = .5 / canvas.width;
         ctx.fillStyle = "rgba(0,0,0," + i * increase + ")";
-        ctx.fillRect(i, canvas.height, 1, height - canvas.height / 2);
+        //ctx.fillStyle = "rgba(0,0,0,.5)"
+        ctx.fillRect(i, canvas.height, 1,( height - canvas.height / 2));
+       
     }
     requestAnimationFrame(renderCanvas);
 }
@@ -632,6 +639,10 @@ function inspect(skinIndex) {
     /* Update URL for specific skin */
     var skin = skins[skinIndex];
 
+ /*    updateCanvas();
+    graphCanvas.width = canvas.width;
+    resetGraph(); */
+
 
 
     /* Update title of page, clearify the history what skins you were viewing. */
@@ -781,7 +792,7 @@ function inspect(skinIndex) {
     defaultTheme.fg = skin.color;
     if (graphReady) resetGraph();
 
-    document.getElementById("image-wrap").style.background = skins[skinIndex].color;
+    //document.getElementById("image-wrap").style.background = skins[skinIndex].color;
     document.getElementById("rating").innerHTML = skins[skinIndex].rating;
     document.getElementById("rating").title = skins[skinIndex].exactRating;
     var bars = document.getElementsByClassName("bar");
