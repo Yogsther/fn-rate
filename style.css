@@ -283,9 +283,10 @@ input:focus {
 
 #both-images-wrap {
     position: relative;
-    display: flex;
     margin: 0 auto;
-    max-width: 70vh;
+    width: 70%;
+    min-width: 520px;
+    display: block;
     height: 30vh;
 }
 
@@ -320,6 +321,7 @@ input:focus {
     position: relative;
     margin: 0 auto;
     display: inline-block;
+    float: right;
     width: auto;
     height: 100%;
 }

@@ -102,9 +102,11 @@ window.onpopstate = () => {
 }
 
 window.onresize = () => {
-    updateCanvas();
-    graphCanvas.width = canvas.width;
-    resetGraph();
+    setTimeout(() => {
+        updateCanvas();
+        graphCanvas.width = canvas.width;
+        resetGraph();
+    }, 250)
 };
 
 
@@ -706,7 +708,7 @@ function inspect(skinIndex) {
     document.getElementById("full").src = skins[skinIndex].src;
     clearTimeout(loadingTimeout)
     // Clear old alt images
-    document.getElementById("secondary-insert").innerHTML = "";
+    //document.getElementById("secondary-insert").innerHTML = "";
     document.getElementById("third-insert").innerHTML = "";
 
     // Check for alternative images.
@@ -731,7 +733,7 @@ function inspect(skinIndex) {
             clearTimeout(loadingTimeoutOutfit)
             document.getElementById("third-insert").innerHTML = ""
         }
-
+/* 
         // Alt image, aka full body image.
         skin.altImage = new Image();
         skin.altImage.id = "secondary"
@@ -744,7 +746,7 @@ function inspect(skinIndex) {
         skin.altImage.onerror = () => {
             clearTimeout(loadingTimeoutOutfit)
             document.getElementById("secondary-insert").innerHTML = ""
-        }
+        } */
     }
 
 
