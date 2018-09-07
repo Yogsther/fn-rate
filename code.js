@@ -708,14 +708,11 @@ function inspect(skinIndex) {
     document.getElementById("full").src = skins[skinIndex].src;
     clearTimeout(loadingTimeout)
     // Clear old alt images
-    //document.getElementById("secondary-insert").innerHTML = "";
     document.getElementById("third-insert").innerHTML = "";
 
     // Check for alternative images.
     if (skin.type == "outfit") {
         var loadingTimeoutOutfit = setTimeout(() => {
-            //document.getElementById("secondary-insert").appendChild(loadingImage)
-            //document.getElementById("third-insert").appendChild(loadingImage)
         }, 200);
 
         // Skin can have secondary or featured image (Alternative images, if so - display them.) 
@@ -733,20 +730,7 @@ function inspect(skinIndex) {
             clearTimeout(loadingTimeoutOutfit)
             document.getElementById("third-insert").innerHTML = ""
         }
-/* 
-        // Alt image, aka full body image.
-        skin.altImage = new Image();
-        skin.altImage.id = "secondary"
-        skin.altImage.src = "img/full/" + skin.code + ".png";
-        skin.altImage.onload = () => {
-            clearTimeout(loadingTimeoutOutfit)
-            document.getElementById("secondary-insert").innerHTML = "";
-            if (skins[currentSkin] == skin) document.getElementById("secondary-insert").appendChild(skin.altImage);
-        }
-        skin.altImage.onerror = () => {
-            clearTimeout(loadingTimeoutOutfit)
-            document.getElementById("secondary-insert").innerHTML = ""
-        } */
+
     }
 
 
