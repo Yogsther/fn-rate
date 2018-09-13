@@ -259,8 +259,8 @@ function renderCanvas() {
     var speed = .05;
     canvasProgress -= speed;
     for (let i = 0; i < canvas.width; i++) {
-        ctx.fillStyle = "rgba(0,0,0,.25)";
-        ctx.fillRect(i, canvas.height, 1,( Math.sin(canvasProgress * .9 + spacing * i) * heightOffset - canvas.height / 2)-10);
+        //ctx.fillStyle = "rgba(0,0,0,.25)";
+        //ctx.fillRect(i, canvas.height, 1,( Math.sin(canvasProgress + 0.5 + spacing * i) * heightOffset - canvas.height / 2)-10);
 
         var height = Math.sin(canvasProgress + spacing * i) * heightOffset;
         ctx.fillStyle = newColor;
