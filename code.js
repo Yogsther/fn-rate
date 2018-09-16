@@ -165,6 +165,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1537129069087,
+    title: "New full screen feature",
+    image: "img/news/fullscreen.png",
+    message: "Take a closer look at skins with the new full screen feature. Click the full screen button in the bottom right corner of a skin to view a bigger version of the image(s)."
+},{
     date: 1536233456999,
     title: "v.5.40 Skins are here",
     image: "img/news/5.4_is_here.png",
@@ -213,6 +218,22 @@ function changeOverlay(type) {
 
 }
 
+function fullscreen(){
+    document.getElementById("fullscreen-block").style.visibility = "visible";
+    var skin = skins[currentSkin];
+    if(skin.type == "outfit"){
+        // Two image, split
+        document.getElementById("fullscreen-container").innerHTML = '<div class="fullscreen-viewer-split ' + skin.rarity + '-block"> <img src="' + skin.src + '" alt="" class="fullscreen-img"> </div> <div class="fullscreen-viewer-split  ' + skin.rarity + '-block"> <img src="' + "img/featured/" + skin.code + ".png" + '" alt="" class="fullscreen-img"> </div>';
+    } else {
+        document.getElementById("fullscreen-container").innerHTML = '<div class="fullscreen-viewer ' + skin.rarity + '-block"> <img src="' + skin.src + '" alt="" class="fullscreen-img"> </div>';
+    }
+}
+
+function exitFullscreen(){
+    document.getElementById("fullscreen-block").style.visibility = "hidden";
+}
+
+
 
 function toggleOverlay() {
 
@@ -231,7 +252,7 @@ function toggleOverlay() {
 var canvasProgress = 0;
 var colorProgress = 0;
 var oldColor = "black";
-var newColor = "grey";
+var newColor = "#303030";
 var transitionOffset = 150;
 var transitionSpeed = 5;
 
@@ -370,9 +391,19 @@ socket.on("skins", data => {
 
 });
 
+document.addEventListener("click", e => {
+    var stop = false;
+    var found = false;
+    e.path.forEach(el => {
+        if (el.id == "fullscreen-block") found = true;
+        if (el.id == "full-icon-button") stop = true;
+    })
+    if(stop) return;
+    if(!found) exitFullscreen();
+})
 
 document.addEventListener("click", (e) => {
-
+//fullscreen-block
     if (!overlayOpen) return;
     var found = false;
     var stop = false;
@@ -654,11 +685,11 @@ function inspect(skinIndex) {
         window.history.pushState("", "FN Rate - " + skin.name, "/?skin=" + skin.code.toLowerCase() + "&type=" + skin.type.toLowerCase());
     }
 
-    if (skin.type !== "outfit") {
+    /* if (skin.type !== "outfit") {
         document.getElementById("full").style.top = "-10px";
     } else {
         document.getElementById("full").style.top = "0px";
-    }
+    } */
 
     newColor = skins[skinIndex].color;
     applyThemeColor();

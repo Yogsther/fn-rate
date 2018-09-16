@@ -60,6 +60,19 @@
 </head>
 
 <body>
+
+    <span id="fullscreen-overlay-master">
+
+        <div id="fullscreen-block">
+            <div id="fullscreen-container">
+       
+            </div>
+            <a href="javascript:exitFullscreen()" id="close-fullscreen">Close</a>
+
+        </div>
+
+    </span>
+
     <span id="overlay-master">
 
         <div id="overlay-block">
@@ -144,10 +157,13 @@
             <div id="image-wrap">
                 <canvas id="canvas" width="900" height="400"></canvas>
                 <div id="both-images-wrap">
-                    <img src="img/UNKNOWN_PLACEHOLDER.png" class="full" alt="Full image" id="full">
-               
-                    <span id="third-insert"></span>
+                    <img src="img/unknown/BLACK_KNIGHT_UNKNOWN.png" class="full" alt="Full image" id="full">
+                    <span id="third-insert">
+                        <img src="img/unknown/BLACK_KNIGHT_UNKNOWN_FEATURED.png" alt="" id="third">
+                    </span>
+                    
                 </div>
+                <img src="img/fullscreen-icon.svg" alt="Fullscreen icon" id="full-icon-button" title="View skin in fullscreen" onclick="fullscreen()">
             </div>
             <canvas height="200" width="400" id="graph-display"></canvas>
             <span id="stars">
