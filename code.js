@@ -165,6 +165,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1537284163946,
+    title: "v.5.41 is here",
+    image: "img/news/5.41_is_here.png",
+    message: "Fortnite's v.5.41 skins have been added to the database. A new rarity (Dark colour, Unknown) has been added to FN Rate, this is for skins that doesn't have a known rarity."
+},{
     date: 1537129069087,
     title: "New full screen feature",
     image: "img/news/fullscreen.png",
@@ -355,7 +360,7 @@ socket.on("skins", data => {
 
             if (skins[i].type == "glider" || skins[i].type == "umbrella") skins[i].codeSource = skins[i].codeSource.split("'").join("");
             skins[i].thumb.src = "img/thumbnails/" + skins[i].type + "/" + skins[i].codeSource + ".png";
-            var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d"]
+            var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d", "unknown", "#303030"]
             var color = 1;
             for (let j = 0; j < rarityColors.length; j++)
                 if (skins[i].rarity == rarityColors[j]) color = j + 1;
@@ -502,7 +507,7 @@ function updateStats() {
     document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average + "<br>Karma: " + myAccount.karma + "<br>Amount of comments: " + myAccount.comments.length + "<br><span title='Account value in V-bucks, not accounting for Battlepass cost, STW cost or Starter packs.'>Account worth (?): " + accountWorth + " V-bucks</span><br>Average locker rating: " + averageLockerRating + "<br>Locker score: " + lockerScore + "<br>Locker size: " + lockerSize;
 }
 
-var rarities = ["common", "uncommon", "rare", "epic", "legendary"];
+var rarities = ["common", "uncommon", "rare", "epic", "legendary", "unknown"];
 
 function raritySort(a, b) {
     if (rarities.indexOf(a.rarity) > rarities.indexOf(b.rarity))

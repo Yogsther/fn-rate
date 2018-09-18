@@ -2,7 +2,7 @@
 
 Rate the skins of Fortnite and see what skins are most appreciated!
 
-Up to date with Fortnite v.5.2.1
+Up to date with Fortnite v.5.41
 
 ![Showcase Image Screenshot](img/17-8-screenshot.png)
 
@@ -19,14 +19,6 @@ Up to date with Fortnite v.5.2.1
  - [x] Added karma system to comments (Upvote and downvote)
  - [x] Optimized website by using thumbnails for preview, and only loading full images once a skin is inspected.
  - [x] Added all current cosmetics in-game.
- 
- 
- #### BUGS: 
- - [ ] Safari hitching when hovering over stars
-
-
- #### Credit: 
- Images sourced from FNBR.co, all skin images are owned by Epic Games.
-
+ - [ ] Add a "Respond to comment's" System
 
  
