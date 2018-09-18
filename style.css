@@ -35,6 +35,7 @@ body {
     /* Search box */
     margin-left: 5%;
     width: 20%;
+    max-width: 200px;
     border: none;
     background: none;
     height: 5vh;
@@ -84,6 +85,8 @@ input:focus {
     position: absolute;
     bottom: 0px;
 }
+
+
 
 .state {
     position: relative;
@@ -142,7 +145,7 @@ input:focus {
     background: -o-radial-gradient(center, ellipse cover, #303030 0%, #0f0f0f 100%);
     background: -ms-radial-gradient(center, ellipse cover, #303030 0%, #0f0f0f 100%);
     background: radial-gradient(ellipse at center, #303030 0%, #0f0f0f 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c95d2f', endColorstr='#7a3c1f', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c95d2f', endColorstr='#7a3c1f', GradientType=1);
 }
 
 
@@ -154,7 +157,7 @@ input:focus {
     background: -o-radial-gradient(center, ellipse cover, rgba(201, 93, 47, 1) 0%, rgba(122, 60, 31, 1) 100%);
     background: -ms-radial-gradient(center, ellipse cover, rgba(201, 93, 47, 1) 0%, rgba(122, 60, 31, 1) 100%);
     background: radial-gradient(ellipse at center, rgba(201, 93, 47, 1) 0%, rgba(122, 60, 31, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c95d2f', endColorstr='#7a3c1f', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c95d2f', endColorstr='#7a3c1f', GradientType=1);
 }
 
 .epic-block {
@@ -165,7 +168,7 @@ input:focus {
     background: -o-radial-gradient(center, ellipse cover, rgba(125, 78, 201, 1) 0%, rgba(59, 36, 97, 1) 100%);
     background: -ms-radial-gradient(center, ellipse cover, rgba(125, 78, 201, 1) 0%, rgba(59, 36, 97, 1) 100%);
     background: radial-gradient(ellipse at center, rgba(125, 78, 201, 1) 0%, rgba(59, 36, 97, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d4ec9', endColorstr='#3b2461', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7d4ec9', endColorstr='#3b2461', GradientType=1);
 }
 
 .rare-block {
@@ -176,7 +179,7 @@ input:focus {
     background: -o-radial-gradient(center, ellipse cover, rgba(0, 148, 222, 1) 0%, rgba(0, 87, 130, 1) 100%);
     background: -ms-radial-gradient(center, ellipse cover, rgba(0, 148, 222, 1) 0%, rgba(0, 87, 130, 1) 100%);
     background: radial-gradient(ellipse at center, rgba(0, 148, 222, 1) 0%, rgba(0, 87, 130, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0094de', endColorstr='#005782', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0094de', endColorstr='#005782', GradientType=1);
 }
 
 .uncommon-block {
@@ -187,7 +190,7 @@ input:focus {
     background: -o-radial-gradient(center, ellipse cover, rgba(90, 179, 55, 1) 0%, rgba(56, 107, 34, 1) 100%);
     background: -ms-radial-gradient(center, ellipse cover, rgba(90, 179, 55, 1) 0%, rgba(56, 107, 34, 1) 100%);
     background: radial-gradient(ellipse at center, rgba(90, 179, 55, 1) 0%, rgba(56, 107, 34, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5ab337', endColorstr='#386b22', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#5ab337', endColorstr='#386b22', GradientType=1);
 }
 
 .common-block {
@@ -198,7 +201,7 @@ input:focus {
     background: -o-radial-gradient(center, ellipse cover, rgba(224, 224, 224, 1) 0%, rgba(122, 122, 122, 1) 100%);
     background: -ms-radial-gradient(center, ellipse cover, rgba(224, 224, 224, 1) 0%, rgba(122, 122, 122, 1) 100%);
     background: radial-gradient(ellipse at center, rgba(224, 224, 224, 1) 0%, rgba(122, 122, 122, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#7a7a7a', GradientType=1);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e0e0e0', endColorstr='#7a7a7a', GradientType=1);
 }
 
 .legendary {
@@ -432,7 +435,7 @@ img {
     transition: left .05s;
 }
 
-.header-item:hover{
+.header-item:hover {
     left: 2px;
 }
 
@@ -613,15 +616,15 @@ img {
 
 /* Overlay */
 
-#block-header{
-    background: rgba(246,30,91,1);
-    background: -moz-radial-gradient(center, ellipse cover, rgba(246,30,91,1) 0%, rgba(143,13,50,1) 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(246,30,91,1)), color-stop(100%, rgba(143,13,50,1)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(246,30,91,1) 0%, rgba(143,13,50,1) 100%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(246,30,91,1) 0%, rgba(143,13,50,1) 100%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(246,30,91,1) 0%, rgba(143,13,50,1) 100%);
-    background: radial-gradient(ellipse at center, rgba(246,30,91,1) 0%, rgba(143,13,50,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f61e5b', endColorstr='#8f0d32', GradientType=1 );
+#block-header {
+    background: rgba(246, 30, 91, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(246, 30, 91, 1) 0%, rgba(143, 13, 50, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(246, 30, 91, 1)), color-stop(100%, rgba(143, 13, 50, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(246, 30, 91, 1) 0%, rgba(143, 13, 50, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(246, 30, 91, 1) 0%, rgba(143, 13, 50, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(246, 30, 91, 1) 0%, rgba(143, 13, 50, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(246, 30, 91, 1) 0%, rgba(143, 13, 50, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f61e5b', endColorstr='#8f0d32', GradientType=1);
     position: absolute;
     top: 0px;
     left: 0px;
@@ -629,7 +632,7 @@ img {
     height: 200px;
     overflow: hidden;
     border-radius: 3px 3px 0px 0px;
-    box-shadow: 0px 8px 0px  rgba(246,30,91,.3);
+    box-shadow: 0px 8px 0px rgba(246, 30, 91, .3);
 }
 
 #overlay-master {
@@ -650,31 +653,31 @@ img {
 }
 
 
-.btn{
+.btn {
     min-width: 80px;
     min-height: 30px;
     border: none;
     cursor: pointer;
     border-radius: 2px;
-    background: rgba(246,30,91,1);
+    background: rgba(246, 30, 91, 1);
     color: #111;
-    box-shadow: 0px 3px 0px rgba(246,30,91,.3);
+    box-shadow: 0px 3px 0px rgba(246, 30, 91, .3);
     margin-top: 0px;
     transition: margin-top .1s box-shadow .1s;
     zoom: 1.25;
 }
 
-.btn:hover{
+.btn:hover {
     margin-bottom: 2px;
-    box-shadow: 0px 5px 0px rgba(246,30,91,.3);
+    box-shadow: 0px 5px 0px rgba(246, 30, 91, .3);
 }
 
-.btn:active{
+.btn:active {
     margin-bottom: -2px;
-    box-shadow: 0px 0px 0px rgba(246,30,91,.3);
+    box-shadow: 0px 0px 0px rgba(246, 30, 91, .3);
 }
 
-#close-button{
+#close-button {
     position: absolute;
     bottom: 25px;
     right: 25px;
@@ -691,11 +694,11 @@ img {
     color: rgb(180, 180, 180);
 }
 
-#graph-display{
+#graph-display {
     box-shadow: 0px 0px 10px black;
 }
 
-.right-bar{
+.right-bar {
     float: right;
     top: 1.45vh;
     right: 80px;
@@ -703,7 +706,7 @@ img {
     margin-left: 20px;
 }
 
-.arrow{
+.arrow {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -711,13 +714,13 @@ img {
     z-index: 99999;
 }
 
-.standing-profile{
+.standing-profile {
     height: 40px;
     position: absolute;
     margin-left: 2px;
 }
 
-.shop-icon{
+.shop-icon {
     position: absolute;
     bottom: 5px;
     left: 5px;
@@ -725,12 +728,12 @@ img {
     z-index: 99999;
 }
 
-#selection-items{ 
+#selection-items {
     position: relative;
     display: block;
 }
 
-.selection-button{
+.selection-button {
     padding: none;
     display: inline-block;
     width: 50%;
@@ -744,33 +747,33 @@ img {
     color: #111;
 }
 
-.selection-button:hover{
+.selection-button:hover {
     background: #111;
     color: #cf2445;
 }
 
 
-#news-button{
+#news-button {
     float: left;
 }
 
-#options-button{
+#options-button {
     float: right;
 
 }
 
-.news-image{
+.news-image {
     width: 100%;
 }
 
 
-#username{
+#username {
     border: none;
     height: 20px;
     padding: 5px;
 }
 
-.news-title{
+.news-title {
     display: block;
     margin: 0 auto;
     width: 95%;
@@ -778,7 +781,7 @@ img {
     color: white;
 }
 
-.news-message{
+.news-message {
     display: block;
     margin: 0 auto;
     width: 95%;
@@ -787,10 +790,10 @@ img {
     margin-bottom: 30px;
 }
 
-#overlay-contents{
+#overlay-contents {
     overflow-x: hidden;
     overflow-y: auto;
-    display:block;
+    display: block;
     height: 390px;
     width: 100%;
     position: relative;
@@ -813,7 +816,7 @@ img {
 }
 
 
-#full-icon-button{
+#full-icon-button {
     height: 30px;
     position: absolute;
     bottom: 15px;
@@ -824,29 +827,29 @@ img {
 }
 
 
-#full-icon-button:hover{
+#full-icon-button:hover {
     bottom: 17px;
     opacity: 1;
 }
 
-#full-icon-button:active{
+#full-icon-button:active {
     bottom: 13px;
     opacity: .5;
 }
 
-#fullscreen-overlay-master{
+#fullscreen-overlay-master {
     position: relative;
     margin: 0 auto;
     display: block;
     width: 80%;
 }
 
-#fullscreen-block{
+#fullscreen-block {
     display: block;
     position: absolute;
     top: 30px;
     left: 0px;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
     border-radius: 5px;
     width: 100%;
     z-index: 99999999;
@@ -854,12 +857,12 @@ img {
     padding-bottom: 20px;
 }
 
-#fullscreen-container{
+#fullscreen-container {
     position: relative;
     display: block;
 }
 
-.fullscreen-viewer{
+.fullscreen-viewer {
     width: 50%;
     margin-top: 50px !important;
     position: relative;
@@ -868,7 +871,7 @@ img {
     border-radius: 5px;
 }
 
-.fullscreen-viewer-split{
+.fullscreen-viewer-split {
     border-radius: 5px;
     width: 45%;
     margin-left: 3.333% !important;
@@ -879,17 +882,115 @@ img {
     display: inline-block;
 }
 
-.fullscreen-img{
+.fullscreen-img {
     width: 100%;
     margin: 0 auto;
     display: block;
     position: relative;
 }
 
-#close-fullscreen{
+#close-fullscreen {
     font-size: 20px;
     position: relative;
     float: right;
     margin-top: 10px;
     margin-right: 3.333% !important;
+}
+
+
+
+
+.preview-selected-rare {
+    background: linear-gradient(270deg,  #2c5263, #007eb8) !important;
+    background-size: 400% 400% !important;
+
+    -webkit-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -moz-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -o-animation: SelectedCycle 3s ease-in-out infinite !important;
+    animation: SelectedCycle 3s ease-in-out infinite !important;
+
+}
+
+.preview-selected-common {
+    background: linear-gradient(270deg,  #3d3d3d, #9d9d9d) !important;
+    background-size: 400% 400% !important;
+
+    -webkit-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -moz-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -o-animation: SelectedCycle 3s ease-in-out infinite !important;
+    animation: SelectedCycle 3s ease-in-out infinite !important;
+
+}
+
+.preview-selected-unknown {
+    background: linear-gradient(270deg, #000000, #303030) !important;
+    background-size: 400% 400% !important;
+
+    -webkit-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -moz-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -o-animation: SelectedCycle 3s ease-in-out infinite !important;
+    animation: SelectedCycle 3s ease-in-out infinite !important;
+
+}
+
+.preview-selected-epic {
+    background: linear-gradient(270deg, #382258, #6b41a8) !important;
+    background-size: 400% 400% !important;
+
+    -webkit-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -moz-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -o-animation: SelectedCycle 3s ease-in-out infinite !important;
+    animation: SelectedCycle 3s ease-in-out infinite !important;
+
+}
+.preview-selected-legendary {
+    background: linear-gradient(270deg, #5f2d16, #aa5228) !important;
+    background-size: 400% 400% !important;
+
+    -webkit-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -moz-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -o-animation: SelectedCycle 3s ease-in-out infinite !important;
+    animation: SelectedCycle 3s ease-in-out infinite !important;
+
+}
+.preview-selected-uncommon {
+    background: linear-gradient(270deg, #285019,#488c2c) !important;
+    background-size: 400% 400% !important;
+
+    -webkit-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -moz-animation: SelectedCycle 3s ease-in-out infinite !important;
+    -o-animation: SelectedCycle 3s ease-in-out infinite !important;
+    animation: SelectedCycle 3s ease-in-out infinite !important;
+
+}
+
+@-webkit-keyframes SelectedCycle {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes SelectedCycle {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-o-keyframes SelectedCycle {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes SelectedCycle { 
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+
+#search-showing{
+    color: #8a8a8a;
+    font-size: 15px;
+}
+
+.date-ago{
+    float: right;
+    color: rgb(83, 83, 83) !important;
 }

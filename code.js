@@ -102,11 +102,11 @@ window.onpopstate = () => {
 }
 
 window.onresize = () => {
-  
-        updateCanvas();
-        graphCanvas.width = canvas.width;
-        resetGraph();
-   
+
+    updateCanvas();
+    graphCanvas.width = canvas.width;
+    resetGraph();
+
 };
 
 
@@ -155,7 +155,7 @@ var ctx = canvas.getContext("2d");
 
 function updateCanvas() {
     canvas.width = document.getElementById("image-wrap").offsetWidth;
-    canvas.height = document.getElementById("image-wrap").offsetHeight+5;
+    canvas.height = document.getElementById("image-wrap").offsetHeight + 5;
     initGraphDisplay();
 }
 
@@ -165,28 +165,28 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
-    date: 1537284163946,
-    title: "v.5.41 is here",
+    date: 1537303890417,
+    title: "v.5.41 is here!",
     image: "img/news/5.41_is_here.png",
-    message: "Fortnite's v.5.41 skins have been added to the database. A new rarity (Dark colour, Unknown) has been added to FN Rate, this is for skins that doesn't have a known rarity."
+    message: "Fortnite's v.5.41 skins have been added to the database. A new rarity (Dark colour, Unknown) has been added to FN Rate, this is for skins that doesn't have a known rarity. New filter options: Filter by gender. Some major improvements have been made to the comment loader, this means the website will feel much quicker now!"
 },{
     date: 1537129069087,
-    title: "New full screen feature",
+    title: "New full screen feature!",
     image: "img/news/fullscreen.png",
     message: "Take a closer look at skins with the new full screen feature. Click the full screen button in the bottom right corner of a skin to view a bigger version of the image(s)."
-},{
+}, {
     date: 1536233456999,
-    title: "v.5.40 Skins are here",
+    title: "v.5.40 Skins are here!",
     image: "img/news/5.4_is_here.png",
     message: "All skins from v.5.40 are here, and all outfits should now display an alternative, featured image. Some skins did this before, but now all skins should do this."
-},{
+}, {
     date: 1535980623727,
-    title: "Introducing Season Filters",
+    title: "Introducing Season Filters!",
     image: "img/news/season-filters.png",
     message: "You can now filter through the different battle pass seasons of Fortnite, accessed right from the 'Filter' option. The number for each season is the average rating for that season. This was a user submitted suggestion, if you have any suggestions - please do send them to me on reddit /u/Yogsther!",
-},{
+}, {
     date: 1535708555388,
-    title: "Introducing Comment Stream",
+    title: "Introducing Comment Stream!",
     image: "img/news/comment-stream.png",
     message: "<b>Update: You can now search comments and usernames!<br></b>Browse and vote on all comments with comment stream, sort by top voted, newest, oldest or most downvoted. Clicking on a skin will link you to that skin-page. <a href='comments'>Click here to check it out!</a>"
 }]
@@ -223,10 +223,10 @@ function changeOverlay(type) {
 
 }
 
-function fullscreen(){
+function fullscreen() {
     document.getElementById("fullscreen-block").style.visibility = "visible";
     var skin = skins[currentSkin];
-    if(skin.type == "outfit"){
+    if (skin.type == "outfit") {
         // Two image, split
         document.getElementById("fullscreen-container").innerHTML = '<div class="fullscreen-viewer-split ' + skin.rarity + '-block"> <img src="' + skin.src + '" alt="" class="fullscreen-img"> </div> <div class="fullscreen-viewer-split  ' + skin.rarity + '-block"> <img src="' + "img/featured/" + skin.code + ".png" + '" alt="" class="fullscreen-img"> </div>';
     } else {
@@ -234,7 +234,7 @@ function fullscreen(){
     }
 }
 
-function exitFullscreen(){
+function exitFullscreen() {
     document.getElementById("fullscreen-block").style.visibility = "hidden";
 }
 
@@ -295,8 +295,8 @@ function renderCanvas() {
         var increase = .5 / canvas.width;
         ctx.fillStyle = "rgba(0,0,0," + i * increase + ")";
         //ctx.fillStyle = "rgba(0,0,0,.5)"
-        ctx.fillRect(i, canvas.height, 1,( height - canvas.height / 2));
-       
+        ctx.fillRect(i, canvas.height, 1, (height - canvas.height / 2));
+
     }
     requestAnimationFrame(renderCanvas);
 }
@@ -403,12 +403,12 @@ document.addEventListener("click", e => {
         if (el.id == "fullscreen-block") found = true;
         if (el.id == "full-icon-button") stop = true;
     })
-    if(stop) return;
-    if(!found) exitFullscreen();
+    if (stop) return;
+    if (!found) exitFullscreen();
 })
 
 document.addEventListener("click", (e) => {
-//fullscreen-block
+    //fullscreen-block
     if (!overlayOpen) return;
     var found = false;
     var stop = false;
@@ -434,6 +434,11 @@ socket.on("account", acc => {
             if (seasonRatings[season] == undefined) seasonRatings[season] = new Array();
             seasonRatings[season].push(skin.rating);
         }
+        if (skin.type == "outfit") {
+            if (males.indexOf(skin.code.toLowerCase()) != -1) skin.sex = "male";
+            else skin.sex = "female";
+        }
+
 
         if (skin.comments !== undefined) skin.comments.forEach(comment => {
             comment.upvotes++;
@@ -594,6 +599,124 @@ function search() {
     }, 150);
 }
 
+const males = [
+    "black_knight",
+    "ragnarok",
+    "omega",
+    "drift",
+    "raven",
+    "wild_card",
+    "galaxy",
+    "skull_trooper",
+    "the_reaper",
+    "overtaker",
+    "battle_hound",
+    "raptor",
+    "omen",
+    "beef_boss",
+    "archetype",
+    "sushi_master",
+    "nite_nite",
+    "love_ranger",
+    "dark_voyager",
+    "merry_marauder",
+    "musha",
+    "enforcer",
+    "rex",
+    "magnus",
+    "wukong",
+    "sky_stalker",
+    "cloaked_star",
+    "bandolier",
+    "to_be_determined",
+    "abstrakt",
+    "leviathan",
+    "jumpshot",
+    "tomatohead",
+    "venturion",
+    "burnout",
+    "crackshot",
+    "noir",
+    "the_visitor",
+    "garrison",
+    "chomp_sr.",
+    "carbide",
+    "brite_gunner",
+    "funk_ops",
+    "toxic_trooper",
+    "vertex",
+    "wingman",
+    "midfield_maestro",
+    "rogue_agent",
+    "maverick",
+    "squad_leader",
+    "alpine_ace_(can)",
+    "sledgehammer",
+    "moisty_merman",
+    "havoc",
+    "rabbit_raider",
+    "grill_sergeant",
+    "hacivat",
+    "liteshow",
+    "rust_lord",
+    "triage_trooper",
+    "wreck_raider",
+    "royale_bomber",
+    "blue_squire",
+    "sleuth",
+    "super_striker",
+    "alpine_ace_(fra)",
+    "alpine_ace_(usa)",
+    "blue_striker",
+    "moniker",
+    "battlehawk",
+    "alpine_ace_(ger)",
+    "mullet_marauder",
+    "circuit_breaker",
+    "alpine_ace_(gbr)",
+    "armadillo",
+    "stage_slayer",
+    "yuletide_ranger",
+    "warpaint",
+    "diecast",
+    "scoundrel",
+    "alpine_ace",
+    "flytrap",
+    "far_out_man",
+    "alpine_ace_(chn)",
+    "alpine_ace_(kor)",
+    "stalwart_sweeper",
+    "codename_e.l.f.",
+    "sun_tan_specialist",
+    "sash_sergeant",
+    "star-spangled_trooper",
+    "absolute_zero",
+    "hyperion",
+    "backbone",
+    "aerial_threat",
+    "first_strike_specialist",
+    "special_forces",
+    "masked_fury",
+    "midnight_ops",
+    "desperado",
+    "recruit_1", "radiant_striker",
+    "aerial_assault_trooper",
+    "sub_commander",
+    "crimson_scout",
+    "mission_specialist",
+    "recon_scout",
+    "recruit_6",
+    "trooper",
+    "recruit_8",
+    "recruit_7",
+    "infiltrator",
+    "devastator",
+    "ranger",
+    "scout",
+    "tracker",
+    "highrise_assault_trooper"
+]
+
 function populateCollection() {
     var search = document.getElementById("search").value;
     var indexZero = false;
@@ -603,7 +726,7 @@ function populateCollection() {
         document.getElementById("collection").innerHTML = '<span id="loading-main">Locker empty!</span><span id="loading-tips">You can add items to your locker by clicking the +Locker button. Then you can evaluate the worth of your account and rating score by checking your stats in the options menu.</span>';
         return;
     }
-
+    var populatedItems = 0;
     var collectionString = "";
     for (let i = 0; i < skins.length; i++) {
         var skip = false;
@@ -614,10 +737,17 @@ function populateCollection() {
                 if (skins[i].price.split(" ")[2] != "(" + cosmeticFilter.toUpperCase() + ")") skip = true;
             } else if (cosmeticFilter == "store") {
                 if (!skins[i].inStore) skip = true;
+
+            } else if (cosmeticFilter == "male" || cosmeticFilter == "female") {
+                if (skins[i].type != "outfit") {
+                    skip = true;
+                } else {
+                    if (skins[i].sex != cosmeticFilter) skip = true;
+                }
             } else if (skins[i].type != cosmeticFilter) skip = true;
         }
         if (!skip) {
-
+            populatedItems++;
             var skin = skins[i];
             var skip = false;
             var searches = search.toLowerCase().split(" ");
@@ -637,7 +767,7 @@ function populateCollection() {
                 if (skin.code != undefined) {
                     var shopIcon = "";
                     if (skin.inStore) shopIcon = "<img src='img/shop_icon.png' class='shop-icon' title='In the item shop right now!'>"
-                    collectionString += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ")' class='container " + skin.rarity + "'> <img src='img/" + skin.projection.standing + ".png' title='Rating is going " + skin.projection.standing + ".' class='arrow'> " + shopIcon + " <img class='preview " + skin.rarity + "-block' draggable='false' style='background-color:" + skin.color + "' src=" + JSON.stringify(skin.thumb.src) + "> <span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
+                    collectionString += "<span title='" + skins[i].name + "' id='img_" + i + "' onclick='inspect(" + i + ", this)' class='container " + skin.rarity + "'> <img src='img/" + skin.projection.standing + ".png' title='Rating is going " + skin.projection.standing + ".' class='arrow'> " + shopIcon + " <img class='preview " + skin.rarity + "-block' draggable='false' style='background-color:" + skin.color + "' src=" + JSON.stringify(skin.thumb.src) + "> <span class='preivew-rating'> " + rating + " </span><span class='my-rating'>" + warn + "</span></span>"
                     try {
                         //document.getElementById("img_" + i).appendChild(skin.thumb)
                     } catch (e) {
@@ -647,6 +777,7 @@ function populateCollection() {
             }
         }
     }
+    document.getElementById("search-showing").innerText = populatedItems + " items";
     document.getElementById("collection").innerHTML = collectionString;
     if (indexZero !== false && !overwriteInspect) inspect(indexZero)
 }
@@ -668,16 +799,44 @@ function shadowColor(index, el){
         return "#"+(0x1000000+(Math.round((t-R)*p)+R)*0x10000+(Math.round((t-G)*p)+G)*0x100+(Math.round((t-B)*p)+B)).toString(16).slice(1);
     }
 } */
+/* 
+var blocks = document.getElementsByClassName("preview");
+var lastSkin = undefined;
+ */
 
 
-function inspect(skinIndex) {
+var lastElement = undefined;
+
+function inspect(skinIndex, el) {
     currentSkin = skinIndex;
     /* Update URL for specific skin */
     var skin = skins[skinIndex];
 
- /*    updateCanvas();
-    graphCanvas.width = canvas.width;
-    resetGraph(); */
+   
+    try {
+        
+        lastElement.classList.remove("preview-selected-"+lastElement.classList[1].substr(0, lastElement.classList[1].indexOf("-")));
+    } catch (e) {}
+
+    if (el !== undefined) {
+        el = el.children[1 + (el.childElementCount - 4)];
+        el.classList.toggle("preview-selected-"+skin.rarity);
+        lastElement = el;
+    } else {
+        blocks = document.getElementsByClassName("preview");
+        for (let i = 0; i < blocks.length; i++) {
+            if (skin.name == blocks[i].parentElement.title) {
+                blocks[i].classList.toggle("preview-selected-"+skin.rarity);
+                lastElement = blocks[i];
+                break;
+            }
+        }
+    }
+
+
+    /*    updateCanvas();
+       graphCanvas.width = canvas.width;
+       resetGraph(); */
 
 
 
@@ -759,8 +918,7 @@ function inspect(skinIndex) {
 
     // Check for alternative images.
     if (skin.type == "outfit") {
-        var loadingTimeoutOutfit = setTimeout(() => {
-        }, 200);
+        var loadingTimeoutOutfit = setTimeout(() => {}, 200);
 
         // Skin can have secondary or featured image (Alternative images, if so - display them.) 
         // Featured image, the one displayed in the item shop
@@ -781,11 +939,7 @@ function inspect(skinIndex) {
     }
 
 
-    if (skins[skinIndex].comments.length > 0) {
-        document.getElementById("comments").innerHTML = "";
-    } else {
-        document.getElementById("comments").innerHTML = '<span id="no-comments-here"> No comments yet, you can be the first to comment on this skin!</span>';
-    }
+
 
     skins[skinIndex].comments.sort(dateSort);
     skins[skinIndex].comments.sort(karmaSort);
@@ -807,6 +961,7 @@ function inspect(skinIndex) {
     }
 
     document.getElementById("amount-of-comments").innerText = skins[skinIndex].comments.length;
+    var commentsString = "";
 
     skins[skinIndex].comments.forEach((comment, index) => {
         var downvoteSource = "vote_grey.png";
@@ -816,12 +971,40 @@ function inspect(skinIndex) {
         var karma = comment.karma;
         var percentage = comment.percentage;
         var karmaInfo = (Math.round((percentage * 100) * 100) / 100) + "% upvoted, " + comment.upvotes + " upvotes, " + comment.downvotes + " downvotes, " + (comment.upvotes + comment.downvotes) + " total votes."
-        document.getElementById("comments").innerHTML += '<div class="comment"> <span class="votes"> <img src="' + upvoteSource + '" alt="" class="upvote" title="Upvote this comment" onclick="commentVote(this, true)"> <span class="karma" title="' + karmaInfo + '">' + karma + '</span> <img src="' + downvoteSource + '" onclick="commentVote(this, false)" title="Downvote this comment" alt="" class="downvote"> </span> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>';
+
+        var dateString;
+        var date = new Date(comment.date);
+        var time = Date.now() - comment.date;
+        var minutes = time / 1000 / 60;
+        var hours = minutes / 60;
+        var days = hours / 24;
+        var years = days / 365;
+        dateString = Math.round(minutes) + "m";
+        if (hours >= 1) dateString = Math.round(hours) + "h";
+        if (days >= 1) dateString = Math.round(days) + "d";
+        else if (years >= 1) dateString = Math.round(years) + "y";
+
+        var modClass = "";
+        if (comment.mod) modClass = "adminComment";
+        commentsString += '<div class="comment"> <span class="votes"> <img src="' + upvoteSource + '" alt="" class="upvote" title="Upvote this comment" onclick="commentVote(this, true)"> <span class="karma" title="' + karmaInfo + '">' + karma + '</span> <img src="' + downvoteSource + '" onclick="commentVote(this, false)" title="Downvote this comment" alt="" class="downvote"> </span> <span class="username ' + modClass + '" id="username_' + index + '" title="' + new Date(comment.date) + '">' + sanitizeHTML(comment.username) + ": <span class='date-ago'>" + dateString + "</span>" + '</span> <span class="message" id="message_' + index + '">' + sanitizeHTML(comment.message) + '</span> </div>';
+
+        //document.getElementById("username_" + index).appendChild(document.createTextNode());
+
+        //document.getElementById("message_" + index).appendChild(document.createTextNode(censorComment(comment.message)));
+        //document.getElementById("username_" + index).title = ;
+
+        /* document.getElementById("comments").innerHTML += '<div class="comment"> <span class="votes"> <img src="' + upvoteSource + '" alt="" class="upvote" title="Upvote this comment" onclick="commentVote(this, true)"> <span class="karma" title="' + karmaInfo + '">' + karma + '</span> <img src="' + downvoteSource + '" onclick="commentVote(this, false)" title="Downvote this comment" alt="" class="downvote"> </span> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>';
         document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
         if (comment.mod) document.getElementById("username_" + index).classList.toggle("adminComment");
         document.getElementById("message_" + index).appendChild(document.createTextNode(censorComment(comment.message)));
-        document.getElementById("username_" + index).title = new Date(comment.date);
+        document.getElementById("username_" + index).title = new Date(comment.date); */
     })
+
+    if (skins[skinIndex].comments.length > 0) {
+        document.getElementById("comments").innerHTML = commentsString;
+    } else {
+        document.getElementById("comments").innerHTML = '<span id="no-comments-here"> No comments yet, you can be the first to comment on this skin!</span>';
+    }
 
 
     graphSettings.data = skin.history;
@@ -855,6 +1038,12 @@ function inspect(skinIndex) {
     updateStars(rating);
     document.getElementById("amount").innerHTML = totalVotes;
 }
+
+function sanitizeHTML(str) {
+    var temp = document.createElement('div');
+    temp.textContent = str;
+    return temp.innerHTML;
+};
 
 var starsRating = undefined;
 

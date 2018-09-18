@@ -129,7 +129,7 @@ input:focus {
     transition: all .1s;
 }
 
-.container:hover {
+/* .container:hover {
     transform: scale(1.1);
     border-radius: 0px;
     z-index: 2000;
@@ -138,7 +138,7 @@ input:focus {
 
 .container:active {
     transform: scale(.99);
-}
+} */
 
 #inspect {
     display: block;
@@ -264,6 +264,7 @@ img {
     display: block;
     background: rgb(39, 39, 39);
     margin-bottom: .5vh;
+    height: 80px;
 }
 
 .header-item {
@@ -273,6 +274,7 @@ img {
     padding-bottom: 5px;
     padding-top: 5px;
     left: 0px;
+    width: 100%;
     transition: all .05s;
 }
 
@@ -783,7 +785,8 @@ img {
     position: absolute;
     top: 30px;
     left: 0px;
-    background: rgba(0,0,0,0.98);
+    background: rgba(0,0,0,0.9);
+    border-radius: 5px;
     width: 100%;
     z-index: 99999999;
     visibility: hidden;
@@ -796,11 +799,12 @@ img {
 }
 
 .fullscreen-viewer{
-    width: 50%;
+    width: 90%;
     margin-top: 50px !important;
     position: relative;
     margin: 0 auto;
     position: relative;
+    border-radius: 5px;
 }
 
 .fullscreen-viewer-split{
@@ -811,6 +815,7 @@ img {
     margin: 0 auto;
     position: relative;
     display: block;
+    border-radius: 5px;
 }
 
 .fullscreen-img{
@@ -835,4 +840,43 @@ img {
     right: 80px;
     position: relative;
     margin-left: 20px;
+}
+
+
+
+.preview-selected {
+    background: linear-gradient(270deg, #161616, rgb(49, 49, 49)) !important;
+    background-size: 400% 400% !important;
+
+    -webkit-animation: SelectedCycle 1s ease-in-out infinite !important;
+    -moz-animation: SelectedCycle 1s ease-in-out infinite !important;
+    -o-animation: SelectedCycle 1s ease-in-out infinite !important;
+    animation: SelectedCycle 1s ease-in-out infinite !important;
+
+}
+
+@-webkit-keyframes SelectedCycle {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-moz-keyframes SelectedCycle {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@-o-keyframes SelectedCycle {
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+@keyframes SelectedCycle { 
+    0%{background-position:0% 51%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 51%}
+}
+
+#search-showing{
+    color: #8a8a8a;
+    font-size: 15px;
 }

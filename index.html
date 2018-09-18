@@ -106,14 +106,13 @@
     </span>
     <div id="header">
         <input type="text" placeholder="Search a skin..." id="search" oninput="search()">
-
+        <span id="search-showing"></span>
        
         <a href="javascript:toggleOverlay()" id="ignore" class="right-bar">More</a>
         <a href="comments" id="ignore" class="right-bar">Comment Stream</a>
 
         <div class="right-bar">
-            <span style='color:white; margin-left:2em;'>Filter: </span>
-            <span style="color:#ff6262" title="Newly added filter: Item shop! See what skins are in the Item shop right now!">
+            <span style='color:white;'>Filter: </span>
             </span>
             <select oninput="filter(this.value)" class="sort" id="filter-options">
                 <option value="all">All cosmetics</option>
@@ -129,6 +128,8 @@
                 <option value="spray">Sprays</option>
                 <option value="skydiving_trail">Skydiving Trails</option>
                 <option value="toy">Toys (Broken)</option>
+                <option value="female">Female outfits</option>
+                <option value="male">Male outfits</option>
                 <!-- Seasons filter -->
                 <!-- <option value="s1">Season 1</option> -->
                 
