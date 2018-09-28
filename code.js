@@ -165,11 +165,16 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1538140956901,
+    title: "Season 6",
+    image: "img/news/season-6.png",
+    message: "All season 6 skins, items and new pets have been added!"
+}, {
     date: 1537303890417,
     title: "v.5.41 is here!",
     image: "img/news/5.41_is_here.png",
     message: "Fortnite's v.5.41 skins have been added to the database. A new rarity (Dark colour, Unknown) has been added to FN Rate, this is for skins that doesn't have a known rarity. New filter options: Filter by gender. Some major improvements have been made to the comment loader, this means the website will feel much quicker now!"
-},{
+}, {
     date: 1537129069087,
     title: "New full screen feature!",
     image: "img/news/fullscreen.png",
@@ -812,21 +817,21 @@ function inspect(skinIndex, el) {
     /* Update URL for specific skin */
     var skin = skins[skinIndex];
 
-   
+
     try {
-        
-        lastElement.classList.remove("preview-selected-"+lastElement.classList[1].substr(0, lastElement.classList[1].indexOf("-")));
+
+        lastElement.classList.remove("preview-selected-" + lastElement.classList[1].substr(0, lastElement.classList[1].indexOf("-")));
     } catch (e) {}
 
     if (el !== undefined) {
         el = el.children[1 + (el.childElementCount - 4)];
-        el.classList.toggle("preview-selected-"+skin.rarity);
+        el.classList.toggle("preview-selected-" + skin.rarity);
         lastElement = el;
     } else {
         blocks = document.getElementsByClassName("preview");
         for (let i = 0; i < blocks.length; i++) {
             if (skin.name == blocks[i].parentElement.title) {
-                blocks[i].classList.toggle("preview-selected-"+skin.rarity);
+                blocks[i].classList.toggle("preview-selected-" + skin.rarity);
                 lastElement = blocks[i];
                 break;
             }
