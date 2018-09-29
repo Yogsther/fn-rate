@@ -2,7 +2,7 @@
 
 Rate the skins of Fortnite and see what skins are most appreciated!
 
-Up to date with Fortnite v.5.41
+Up to date with Fortnite v.6.0
 
 ![Showcase Image Screenshot](img/17-8-screenshot.png)
 
@@ -19,6 +19,7 @@ Up to date with Fortnite v.5.41
  - [x] Added karma system to comments (Upvote and downvote)
  - [x] Optimized website by using thumbnails for preview, and only loading full images once a skin is inspected.
  - [x] Added all current cosmetics in-game.
- - [ ] Add a "Respond to comment's" System
+ - [ ] Move all data to mySQL
+ - [ ] Add a "Reply to comment's" System
 
  
