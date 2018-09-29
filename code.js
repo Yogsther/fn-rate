@@ -719,7 +719,12 @@ const males = [
     "ranger",
     "scout",
     "tracker",
-    "highrise_assault_trooper"
+    "highrise_assault_trooper",
+    "dire",
+    "dj_yonder",
+    "giddy-up",
+    "ludwig",
+    
 ]
 
 function populateCollection() {
