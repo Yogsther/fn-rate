@@ -2,7 +2,7 @@
 
 Rate the skins of Fortnite and see what skins are most appreciated!
 
-Up to date with Fortnite v.6.0
+Up to date with Fortnite v.6.01
 
 ![Showcase Image Screenshot](img/17-8-screenshot.png)
 

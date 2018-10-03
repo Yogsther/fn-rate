@@ -69,6 +69,7 @@ document.getElementById("loading-tips").innerText = tips[Math.floor(Math.random(
 var loadingImage = new Image();
 loadingImage.src = "logo_animated.gif";
 
+
 window.onload = () => {
     updateCanvas();
     renderCanvas();
@@ -163,8 +164,15 @@ function updateCanvas() {
 var overlayOpen = false;
 
 
+
+
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1538600152179,
+    title: "v.6.01 and bug fixes!",
+    image: "img/news/601-and-bug-fixes.jpg",
+    message: "All new skins from v.6.01 and season 6 music kits are here. TOYS are no longer broken! (All votes were counted but not displayed)"
+},{
     date: 1538140956901,
     title: "Season 6",
     image: "img/news/season-6.png",
@@ -724,7 +732,9 @@ const males = [
     "dj_yonder",
     "giddy-up",
     "ludwig",
-    
+    "hay_man",
+    "maximilian",
+    "double_helix"
 ]
 
 function populateCollection() {
