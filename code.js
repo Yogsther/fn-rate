@@ -164,10 +164,13 @@ function updateCanvas() {
 var overlayOpen = false;
 
 
-
-
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1539177428925,
+    title: "Halloween skins are in!",
+    image: "img/news/halloween.png",
+    message: "The very anticipated halloween skins are finally here!"
+},{
     date: 1538600152179,
     title: "v.6.01 and bug fixes!",
     image: "img/news/601-and-bug-fixes.jpg",
