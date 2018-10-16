@@ -737,7 +737,12 @@ const males = [
     "ludwig",
     "hay_man",
     "maximilian",
-    "double_helix"
+    "double_helix",
+    "plague",
+    "jack_gourdon",
+    "hollowhead",
+    "spider_knight",
+    "guan_yu"
 ]
 
 function populateCollection() {
