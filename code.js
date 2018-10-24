@@ -15,12 +15,7 @@ var seasonRatings = [];
 /* Get URL before connecting to the server to make sure the right skin gets inspected. */
 getULR();
 
-var socket = io.connect('213.66.254.63:3074',
-    /* {
-    secure: true,
-    rejectUnauthorized: false
-} */
-);
+var socket = io.connect('nut.livfor.it:3074');
 
 /**
  * Declare global variables
@@ -166,6 +161,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1540403020909,
+    title: "New skins!",
+    image: "img/news/week-43-news.png",
+    message: "All skins from v.6.20 are here!"
+},{
     date: 1539177428925,
     title: "Halloween skins are in!",
     image: "img/news/halloween.png",
