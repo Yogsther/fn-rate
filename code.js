@@ -159,8 +159,15 @@ function updateCanvas() {
 var overlayOpen = false;
 
 
+
+
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1541437555524,
+    title: "6.21 skins added!",
+    image: "img/news/621-new-skins.png",
+    message: "All skins from v.6.21 are here! :)"
+},{
     date: 1540403020909,
     title: "New skins!",
     image: "img/news/week-43-news.png",
@@ -742,7 +749,18 @@ const males = [
     "jack_gourdon",
     "hollowhead",
     "spider_knight",
-    "guan_yu"
+    "guan_yu",
+    "reflex",
+    "ruckus",
+    "shogun",
+    "growler",
+    "deadfire",
+    "summit_striker",
+    "sanctum",
+    "dante",
+    "frostbite",
+    "brainiac",
+    "patch_patroller"
 ]
 
 function populateCollection() {
