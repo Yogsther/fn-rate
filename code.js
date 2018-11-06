@@ -163,6 +163,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1541536946358,
+    title: "Fortnite x NFL!",
+    image: "img/news/nfl-update.png",
+    message: "All news cosmetic items from v.6.22 have been added, including the new NFL special's"
+},{
     date: 1541437555524,
     title: "6.21 skins added!",
     image: "img/news/621-new-skins.png",
@@ -380,6 +385,7 @@ socket.on("skins", data => {
             // TODO, TEMPORARY WILL BE FIXED ONCE SKINS ARE RENEWED
             skins[i].codeSource = skins[i].code.split("/").join("_").split("#").join("ESC_HASH_");
             skins[i].src = skins[i].src.split("#").join("ESC_HASH_").split("%23").join("ESC_HASH_");
+            if(skins[i].type == "outfit") skins[i].src = "img/" + skins[i].src.substr(skins[i].src.lastIndexOf("/"))
 
             if (skins[i].type == "glider" || skins[i].type == "umbrella") skins[i].codeSource = skins[i].codeSource.split("'").join("");
             skins[i].thumb.src = "img/thumbnails/" + skins[i].type + "/" + skins[i].codeSource + ".png";
