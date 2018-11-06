@@ -161,6 +161,7 @@ var overlayOpen = false;
 
 
 
+
 /* TODO: Have news serverside. */
 var news = [{
     date: 1541536946358,
@@ -766,7 +767,13 @@ const males = [
     "dante",
     "frostbite",
     "brainiac",
-    "patch_patroller"
+    "patch_patroller",
+    "a.i.m.",
+    "end_zone",
+    "gridiron",
+    "spike",
+    "strong_guard",
+    "striped_soldier"
 ]
 
 function populateCollection() {
