@@ -164,6 +164,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1541775745770,
+    title: "We have updated our privacy policy!",
+    image: "img/news/privacy-update.png",
+    message: 'The header "Used in research" has been added. Please review it here: <a href="/privacy">rate.livfor.it/privacy</a>' 
+},{
     date: 1541536946358,
     title: "Fortnite x NFL!",
     image: "img/news/nfl-update.png",
