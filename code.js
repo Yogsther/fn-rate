@@ -167,7 +167,7 @@ var news = [{
     date: 1542220837345,
     title: "1000+ items in Fortnite!",
     image: "img/news/1000-items.png",
-    message: "It's official, Fortnite now has more that 1000 cosmetic items (1020)!" 
+    message: "It's official, Fortnite now has more than 1000 cosmetic items (1020)!" 
 },{
     date: 1541775745770,
     title: "We have updated our privacy policy!",
