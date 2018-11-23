@@ -159,11 +159,13 @@ function updateCanvas() {
 var overlayOpen = false;
 
 
-
-
-
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1542980165952,
+    title: "Bundles and Tender Defender!",
+    image: "img/news/bundle.png",
+    message: "Bundles can be found under the 'bundle' filter." 
+},{
     date: 1542220837345,
     title: "1000+ items in Fortnite!",
     image: "img/news/1000-items.png",
