@@ -642,6 +642,7 @@ function search() {
 }
 
 const males = [
+    "tender_defender",
     "black_knight",
     "ragnarok",
     "omega",
