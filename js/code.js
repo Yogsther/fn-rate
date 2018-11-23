@@ -61,9 +61,6 @@ var tips = [
 
 document.getElementById("loading-tips").innerText = tips[Math.floor(Math.random() * tips.length)]
 
-var loadingImage = new Image();
-loadingImage.src = "logo_animated.gif";
-
 
 window.onload = () => {
     updateCanvas();
@@ -932,9 +929,7 @@ function inspect(skinIndex, el) {
 
     newColor = skins[skinIndex].color;
     applyThemeColor();
-    var loadingTimeout = setTimeout(() => {
-        //document.getElementById("full").src = loadingImage.src;
-    }, 200);
+
     document.getElementById("full").src = "";
 
     // Handle rating
@@ -987,7 +982,6 @@ function inspect(skinIndex, el) {
     document.getElementById("title").innerHTML = "<span style='color:" + skins[skinIndex].color + "'>" + skins[skinIndex].name.toUpperCase() + "</span>" + higherRatedSameCategory + " " + higherRatedSkins + projectionTitle;
 
     document.getElementById("full").src = skins[skinIndex].src;
-    clearTimeout(loadingTimeout)
     // Clear old alt images
     document.getElementById("third-insert").innerHTML = "";
 
@@ -1039,10 +1033,10 @@ function inspect(skinIndex, el) {
     var commentsString = "";
 
     skins[skinIndex].comments.forEach((comment, index) => {
-        var downvoteSource = "vote_grey.png";
-        var upvoteSource = "vote_grey.png";
-        if (comment.action == "upvote") upvoteSource = "vote_green.png";
-        if (comment.action == "downvote") downvoteSource = "vote_red.png";
+        var downvoteSource = "img/vote_grey.png";
+        var upvoteSource = "img/vote_grey.png";
+        if (comment.action == "upvote") upvoteSource = "img/vote_green.png";
+        if (comment.action == "downvote") downvoteSource = "img/vote_red.png";
         var karma = comment.karma;
         var percentage = comment.percentage;
         var karmaInfo = (Math.round((percentage * 100) * 100) / 100) + "% upvoted, " + comment.upvotes + " upvotes, " + comment.downvotes + " downvotes, " + (comment.upvotes + comment.downvotes) + " total votes."
@@ -1158,13 +1152,13 @@ socket.on("confirmedVote", pack => {
 
 function confirmVote() {
     document.getElementById("check").title = "Vote has been recorded."
-    document.getElementById("check").src = "oh_hi_mark.png"
+    document.getElementById("check").src = "img/oh_hi_mark.png"
     document.getElementById("check").style.transform = "scale(1)";
 }
 
 function pendingVote() {
     document.getElementById("check").title = "Vote has been sent."
-    document.getElementById("check").src = "unconfirmed.png"
+    document.getElementById("check").src = "img/unconfirmed.png"
     //document.getElementById("img_" + currentSkin).children[2].innerHTML = "";
     document.getElementById("check").style.transform = "scale(1)";
 }
@@ -1280,7 +1274,7 @@ function submitComment() {
     var index = "local_" + localComments;
     localComments++;
     if (skins[currentSkin].comments.length < 1) document.getElementById("comments").innerHTML = "";
-    document.getElementById("comments").innerHTML = '<div class="comment"> <span class="votes"> <img src="vote_grey.png" alt="" class="upvote" title="Upvote this comment" onclick="alert(' + "'Cannot vote on your own comment.'" + ')"> <span class="karma" title="Local comment">1</span> <img src="vote_grey.png" onclick="alert(' + "'Cannot vote on your own comment.'" + ')" title="Downvote this comment" alt="" class="downvote"> </span> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>' + document.getElementById("comments").innerHTML;
+    document.getElementById("comments").innerHTML = '<div class="comment"> <span class="votes"> <img src="img/vote_grey.png" alt="" class="upvote" title="Upvote this comment" onclick="alert(' + "'Cannot vote on your own comment.'" + ')"> <span class="karma" title="Local comment">1</span> <img src="img/vote_grey.png" onclick="alert(' + "'Cannot vote on your own comment.'" + ')" title="Downvote this comment" alt="" class="downvote"> </span> <span class="username" id="username_' + index + '"></span> <span class="message" id="message_' + index + '"></span> </div>' + document.getElementById("comments").innerHTML;
     document.getElementById("username_" + index).appendChild(document.createTextNode(comment.username + ":"));
     document.getElementById("message_" + index).appendChild(document.createTextNode(comment.message));
 }
@@ -1298,21 +1292,21 @@ function commentVote(comment, upvote) {
     if (skins[currentSkin].comments[Number(idString)].action == type) {
         if (skins[currentSkin].comments[Number(idString)].action == "downvote") comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 1;
         else comment.parentElement.children[1].innerHTML -= 1;
-        comment.src = "vote_grey.png";
+        comment.src = "img/vote_grey.png";
         type = "novote";
     } else if (upvote) {
         if (skins[currentSkin].comments[Number(idString)].action == "downvote") comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 2;
         else comment.parentElement.children[1].innerHTML = Number(comment.parentElement.children[1].innerHTML) + 1;
-        comment.src = "vote_green.png";
+        comment.src = "img/vote_green.png";
     } else {
         if (skins[currentSkin].comments[Number(idString)].action == "upvote") comment.parentElement.children[1].innerHTML -= 2;
         else comment.parentElement.children[1].innerHTML -= 1;
-        comment.src = "vote_red.png";
+        comment.src = "img/vote_red.png";
     }
 
     var index = 0;
     if (upvote) index = 2;
-    comment.parentElement.children[index].src = "vote_grey.png";
+    comment.parentElement.children[index].src = "img/vote_grey.png";
 
     skins[currentSkin].comments[Number(idString)].action = type;
     socket.emit("commentVote", {

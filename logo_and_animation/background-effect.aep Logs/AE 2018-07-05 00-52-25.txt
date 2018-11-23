@@ -1,12 +1,0 @@
-Adobe After Effects v14.1 Windows 64 render log for project “background-effect.aep”
-
-Rendering started on 2018-07-05 at 00:52:25
-
-  2018-07-05 00:52:25: Starting composition “Comp 1”.
-
-  Output To: D:\loading_animation_rate_livfor_it_video.mov    2018-07-05 00:52:28: Finished composition “Comp 1”.
-
-
-  Total Time Elapsed: 3 Seconds
-Log closed on 2018-07-05 at 00:52:28
-
