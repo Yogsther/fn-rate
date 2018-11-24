@@ -471,10 +471,10 @@
                         var type = code.substr(0, code.indexOf("_TYPE_"));
                         code = code.substr(code.indexOf("_TYPE_") + 6, code.length); */
 
-                        var downvoteSource = "vote_grey.png";
-                        var upvoteSource = "vote_grey.png";
-                        if (comment.action == "upvote") upvoteSource = "vote_green.png";
-                        if (comment.action == "downvote") downvoteSource = "vote_red.png";
+                        var downvoteSource = "img/vote_grey.png";
+                        var upvoteSource = "img/vote_grey.png";
+                        if (comment.action == "upvote") upvoteSource = "img/vote_green.png";
+                        if (comment.action == "downvote") downvoteSource = "img/vote_red.png";
                         var karma = comment.karma;
                         var percentage = comment.percentage;
                         var karmaInfo = (Math.round((percentage * 100) * 100) / 100) + "% upvoted, " + comment.upvotes +
@@ -551,24 +551,24 @@
                     if (comment.action == "downvote") el.parentElement.children[
                         1].innerHTML = Number(el.parentElement.children[1].innerHTML) + 1;
                     else el.parentElement.children[1].innerHTML -= 1;
-                    el.src = "vote_grey.png";
+                    el.src = "img/vote_grey.png";
                     type = "novote";
                 } else if (upvote) {
                     if (comment.action == "downvote") el.parentElement.children[
                         1].innerHTML = Number(el.parentElement.children[1].innerHTML) + 2;
                     else el.parentElement.children[1].innerHTML = Number(el.parentElement.children[1].innerHTML) +
                         1;
-                    el.src = "vote_green.png";
+                    el.src = "img/vote_green.png";
                 } else {
                     if (comment.action == "upvote") el.parentElement.children[1]
                         .innerHTML -= 2;
                     else el.parentElement.children[1].innerHTML -= 1;
-                    el.src = "vote_red.png";
+                    el.src = "img/vote_red.png";
                 }
 
                 var index = 0;
                 if (upvote) index = 2;
-                el.parentElement.children[index].src = "vote_grey.png";
+                el.parentElement.children[index].src = "img/vote_grey.png";
 
                 comment.action = type;
                 socket.emit("commentVote", {
