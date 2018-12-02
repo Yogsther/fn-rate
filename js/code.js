@@ -155,9 +155,13 @@ function updateCanvas() {
 
 var overlayOpen = false;
 
-
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1543753782334,
+    title: "Winter is here!",
+    image: "img/news/winter-is-here.png",
+    message: "The latest fortnite skins have been added." 
+},{
     date: 1542980165952,
     title: "Bundles and Tender Defender!",
     image: "img/news/bundle.png",
