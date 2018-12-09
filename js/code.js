@@ -1,8 +1,6 @@
 /**
  * FN Rate, Olle Kaiser 2018
- * Front end javascript.
  */
-
 
 var admin = false;
 var options = {};
@@ -95,11 +93,9 @@ window.onpopstate = () => {
 }
 
 window.onresize = () => {
-
     updateCanvas();
     graphCanvas.width = canvas.width;
     resetGraph();
-
 };
 
 
@@ -157,6 +153,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1544369059117,
+    title: "Season 7!",
+    image: "img/news/season-7.png",
+    message: "All skins and the new wraps have been added - Also, there have now been 100,000 unique visitors to the site, thanks for using FN Rate!" 
+},{
     date: 1543753782334,
     title: "Winter is here!",
     image: "img/news/winter-is-here.png",
@@ -790,7 +791,15 @@ const males = [
     "striped_soldier",
     "castor",
     "taro",
-    "riot"
+    "riot",
+    "mothmando",
+    "longshot",
+    "cloudbreaker",
+    "trog",
+    "sgt._winter",
+    "zenith",
+    "the_ice_king",
+
 ]
 
 function populateCollection() {
