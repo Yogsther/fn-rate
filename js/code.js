@@ -153,6 +153,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1545400769600,
+    title: "New skins!",
+    image: "img/news/more-skins-12-21.png",
+    message: "The latest skins have been added to the site." 
+},{
     date: 1544369059117,
     title: "Season 7!",
     image: "img/news/season-7.png",
@@ -799,6 +804,12 @@ const males = [
     "sgt._winter",
     "zenith",
     "the_ice_king",
+    "frozen_love_ranger",
+    "frozen_raven",
+    "cloaked_shadow",
+    "slushy_soldier",
+    "prodigy",
+    "red-nosed_ranger"
 
 ]
 
