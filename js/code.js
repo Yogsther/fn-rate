@@ -156,7 +156,7 @@ var news = [{
     date: 1546182316830,
     title: "New skins!",
     image: "img/news/even-more-new-skins.png",
-    message: "The latest skins have been added to the site. I'm also investigating why ratings are not tracked on wraps, will be back soon with answers!" 
+    message: "The latest skins have been added to the site. Sorry for not updating the site in a while, I was away on the holiday!" 
 },{
     date: 1545400769600,
     title: "New skins!",
