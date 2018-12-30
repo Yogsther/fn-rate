@@ -153,6 +153,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1546182316830,
+    title: "New skins!",
+    image: "img/news/even-more-new-skins.png",
+    message: "The latest skins have been added to the site. I'm also investigating why ratings are not tracked on wraps, will be back soon with answers!" 
+},{
     date: 1545400769600,
     title: "New skins!",
     image: "img/news/more-skins-12-21.png",
@@ -649,6 +654,9 @@ function search() {
 }
 
 const males = [
+    "krampus",
+    "fishstick",
+    "grimbles",
     "tender_defender",
     "black_knight",
     "ragnarok",
@@ -1340,6 +1348,8 @@ function commentVote(comment, upvote) {
 }
 
 var locker = JSON.parse(localStorage.getItem("locker"));
+    emitLocker();
+
 if (locker == null) {
     locker = new Array();
 }
@@ -1400,4 +1410,8 @@ function getSkinIndexFromCode(code) {
             if (skins[i].code == code) return i;
         }
     }
+}
+
+function emitLocker(){
+    socket.emit("lockerPush", locker);
 }
