@@ -739,7 +739,7 @@ img {
 .selection-button {
     padding: none;
     display: inline-block;
-    width: 50%;
+    width: 33.3333%;
     margin: 0 auto;
     height: 30px;
     background: #cf2445;
@@ -997,4 +997,11 @@ img {
 .date-ago{
     float: right;
     color: rgb(83, 83, 83) !important;
+}
+
+#suggestion-box-wrap{
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
 }

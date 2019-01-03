@@ -639,7 +639,7 @@ img {
 .selection-button{
     padding: none;
     display: inline-block;
-    width: 50%;
+    width: 33.333%;
     margin: 0 auto;
     height: 30px;
     background: #cf2445;

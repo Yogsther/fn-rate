@@ -99,8 +99,6 @@ window.onresize = () => {
 };
 
 
-
-
 /**
  * Get URL options. If it directly links to a specific skin, inspect that skin.
  */
@@ -153,6 +151,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1546551535686,
+    title: "Introducing the Suggestion Box!",
+    image: "img/news/suggestion-box.png",
+    message: "Do you have a suggestion for the site or maybe a question you would like answered? Send it via the Suggestion Box! The suggestion box is located above this post, between NEWS and OPTIONS." 
+},{
     date: 1546182316830,
     title: "New skins!",
     image: "img/news/even-more-new-skins.png",
@@ -249,6 +252,16 @@ localStorage.setItem("lastVisit", Date.now());
 if (isNaN(lastVisit)) lastVisit = 0;
 
 
+function submitSuggestion(){
+    socket.emit("suggestion", {
+        name: document.getElementById("suggestion-username").value,
+        text: document.getElementById("suggestion-text").value
+    })
+    document.getElementById("suggestion-status").innerHTML = "Sent!";
+    document.getElementById("suggestion-username").value = "";
+    document.getElementById("suggestion-text").value = "";
+}
+
 
 function changeOverlay(type) {
 
@@ -271,6 +284,10 @@ function changeOverlay(type) {
         })
 
         document.getElementById("overlay-contents").innerHTML = newsPrint;
+    }
+
+    if(type == "suggestionbox"){
+        document.getElementById("overlay-contents").innerHTML = '<div id="suggestion-box-wrap"> <h2 style="color:white;"> Send in a suggestion for the website or ask a question!</h2> <textarea name="" id="suggestion-text" style="width:100%;height:20vh;" placeholder="Suggestion or Question"></textarea> <span style="color:white;">Optionally, you can enter your name or alias if you would like credit for your suggestion or want me to be able to respond to any question via ex. Reddit.</span> <input type="text" id="suggestion-username" placeholder="Username (Reddit, FN-Rate or other)" style="width:100%;height:40px;margin-top:10px;position:relative;"> <button style="width:90px;height:40px;margin-top:10px;position:relative;" onclick="submitSuggestion()">Send in!</button> <span id="suggestion-status" style="color:white;"></span>';
     }
 
 
@@ -1261,7 +1278,7 @@ function updateUsername(newUsername) {
 addEventListener("keydown", e => {
     if (e.keyCode == 13) {
         if (document.getElementById("comment-submission") == document.activeElement) submitComment();
-        else document.getElementById("comment-submission").focus();
+        else if(!overlayOpen) document.getElementById("comment-submission").focus();
     }
 })
 

@@ -17,11 +17,9 @@
     <meta property="og:image:width" content="80" />
     <meta property="og:locale" content="en_GB" />
 
-
     <!-- Fav icon and manifesto -->
     <meta name="msapplication-TileColor" content="#f3195e">
     <meta name="theme-color" content="#f3195e">
-
 
     <link rel="icon" type="image/png" href="img/logo_250.png">
 
@@ -51,8 +49,6 @@
         gtag('config', 'UA-118879212-2');
     </script>
 
-
-
 </head>
 
 <body>
@@ -79,6 +75,10 @@
                     NEWS
                 </button>
 
+                <button class="selection-button" id="news-button" onclick="changeOverlay('suggestionbox')">
+                    SUGGESTION BOX
+                </button>
+
                 <button class="selection-button" id="options-button" onclick="changeOverlay('options')">
                     OPTIONS
                 </button>
@@ -86,11 +86,9 @@
             </span>
 
             <span id="overlay-contents">
-
+               
                 
-                <img src="" class="news-image" alt="">
-
-
+    
             </span>
             <span id="footer">
                 <button id="close-button" class="btn" onclick="toggleOverlay()"> Close </button>
