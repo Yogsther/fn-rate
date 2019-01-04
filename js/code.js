@@ -151,6 +151,11 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1546624857877,
+    title: "New skins, and S7 umbrella added!",
+    image: "img/news/snowfall.png",
+    message: "Latest skins added. Thanks to FinalPlayer who reminded me to add S7 umbrella!" 
+},{
     date: 1546551535686,
     title: "Introducing the Suggestion Box!",
     image: "img/news/suggestion-box.png",
