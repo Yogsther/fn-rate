@@ -38,12 +38,12 @@ var errorMessages = [
 ]
 
 var statusCheck = setTimeout(() => {
-    document.getElementById("loading-main").innerText = errorMessages[Math.floor(Math.random() * errorMessages.length)]
+    document.getElementById("loading-main").innerHTML = errorMessages[Math.floor(Math.random() * errorMessages.length)]
     document.getElementById("loading-tips").innerHTML = "Most likley I am doing maintenance, come back in an hour. If it's still not up by then, please contact me on Reddit! (u/Yogsther)"
 }, 10000 /* Ten seconds */  ); 
 
 socket.on("connect", () => {
-    document.getElementById("loading-main").innerText = "Downloading content..."
+    document.getElementById("loading-main").innerHTML = "Downloading content..."
     document.getElementById("loading-tips").innerHTML = "Server is online, downloading skin-data."
 
     clearTimeout(statusCheck);
