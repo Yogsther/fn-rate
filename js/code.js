@@ -152,8 +152,15 @@ function updateCanvas() {
 
 var overlayOpen = false;
 
+
+
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1548088426670,
+    title: "New skins added!",
+    image: "img/news/new-skins-21-01-2019.png",
+    message: "Latest skins added. Sorry for the late addition and server instabilities, the website should be running more stable from now on and skins will be added faster!" 
+},{
     date: 1546624857877,
     title: "New skins, and S7 umbrella added!",
     image: "img/news/snowfall.png",
@@ -679,6 +686,13 @@ function search() {
 }
 
 const males = [
+    "jaeger",
+    "verge",
+    "cobalt",
+    "tech_ops",
+    "cabbie",
+    "malcore",
+    "paradox",
     "krampus",
     "fishstick",
     "grimbles",
