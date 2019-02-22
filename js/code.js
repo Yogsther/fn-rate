@@ -691,6 +691,15 @@ function search() {
 }
 
 const males = [
+    "revolt",
+    "heartbreaker",
+    "lil_whip",
+    "firewalker",
+    "kitbash",
+    "marshmello",
+    "fallen_love_ranger",
+    "snowfoot",
+    "the_prisoner",
     "jaeger",
     "verge",
     "cobalt",
