@@ -14,6 +14,7 @@ var seasonRatings = [];
 getULR();
 
 var socket = io.connect('flip.livfor.it:3074');
+//var socket = io.connect('192.168.8.130:3074');
 
 /**
  * Declare global variables
@@ -156,11 +157,16 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1551386251709,
+    title: "Season 8!",
+    image: "img/news/season-8.png",
+    message: "Season 8 is here! All the skins have been added! (Tip: You can select 'Season 8' in the filter options)" 
+},{
     date: 1550358000000,
     title: "Check out my new website, <a href='http://flip.livfor.it'>flip.livfor.it</a>",
     image: "img/news/flip.png",
     message: "<b><a href='http://flip.livfor.it'>Click here to visit it!</a></b> I created a new website where you can create and share animations.<br> It works on mobile and PC. Creating a new account just takes a few seconds and no email is required! You can like others flip notes and follow users.<br><br>If you wish to apply as a moderator, please PM me on Reddit (u/Yogsther) or Github (@Yogsther). <br><br>I will still keep this website updated, all the latest skins have also been added." 
-},,{
+},{
     date: 1548088426670,
     title: "New skins added!",
     image: "img/news/new-skins-21-01-2019.png",
