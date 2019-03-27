@@ -13,7 +13,7 @@ var seasonRatings = [];
 /* Get URL before connecting to the server to make sure the right skin gets inspected. */
 getULR();
 
-var socket = io.connect('ip.ygstr:3074');
+var socket = io.connect('ip.ygstr.com:3074');
 //var socket = io.connect('192.168.8.130:3074');
 
 /**
