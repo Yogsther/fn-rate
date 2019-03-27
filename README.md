@@ -1,4 +1,4 @@
-### Rate Fortnite [rate.livfor.it](http://rate.livfor.it/)
+### Rate Fortnite [rate.ygstr.com](http://rate.YGSTR.COM/)
 
 Rate the skins of Fortnite and see what skins are most appreciated!
 
