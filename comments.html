@@ -29,7 +29,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Comment Stream - FN Rate</title>
     <!-- Socket.io -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+    <script src="js/commets.js"></script>
+    <script src="js/skins.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!-- Bad words -->
     <script src="js/bad_words.js"></script>
@@ -294,20 +295,10 @@
     <script>
         var displayCommentsLength = 150;
         var filledComments = 0;
-        var comments = [];
-
-        var socket = io.connect("flip.livfor.it:3074");
 
         var lastVisit = localStorage.getItem("lastVisit");
         localStorage.setItem("lastVisit", Date.now());
         if (isNaN(lastVisit)) lastVisit = 0;
-
-        loadComments();
-
-
-        function loadComments() {
-            socket.emit("commentStream")
-        }
 
 
         /* socket.on("commentStream", recivedComments => {
@@ -318,10 +309,6 @@
         });
  */
 
-        var skins;
-
-        socket.on("skins", recivedSkins => {
-            skins = recivedSkins;
 
             comments = new Array();
             skins.forEach((skin, index) => {
@@ -342,8 +329,6 @@
 
                 skins[i].color = color;
             }
-
-        })
 
         function filter(val) {
             comments.sort(sorts[val]);
@@ -510,25 +495,7 @@
                 updateStatus();
             }
 
-
-            var myAccount;
-            socket.on("account", acc => {
-                myAccount = acc;
-                skins.forEach(skin => {
-                    if (skin.comments !== undefined) skin.comments.forEach(comment => {
-                        comment.karma = 1 + (comment.upvotes - comment.downvotes);
-                        comment.percentage = (1 + comment.upvotes) / (comment.upvotes + comment
-                            .downvotes +
-                            1);
-                        if (myAccount.upvotes.indexOf(comment.id) !== -1) comment.action =
-                            "upvote";
-                        if (myAccount.downvotes.indexOf(comment.id) !== -1) comment.action =
-                            "downvote";
-                    })
-                })
-
-                filter("new");
-            })
+            filter("new");
 
             function getCommentFromID(id) {
                 for (let i = 0; i < comments.length; i++) {
@@ -537,6 +504,9 @@
             }
 
             function commentVote(el, upvote) {
+
+                alert("Website is archived. Check news for more information.")
+                return;
 
 
                 var comment = getCommentFromID(el.id);

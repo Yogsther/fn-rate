@@ -13,8 +13,6 @@ var seasonRatings = [];
 /* Get URL before connecting to the server to make sure the right skin gets inspected. */
 getULR();
 
-var socket = io.connect('flip.livfor.it:3074');
-//var socket = io.connect('192.168.8.130:3074');
 
 /**
  * Declare global variables
@@ -38,17 +36,6 @@ var errorMessages = [
     "It's taking longer than usual!",
 ]
 
-var statusCheck = setTimeout(() => {
-    document.getElementById("loading-main").innerHTML = errorMessages[Math.floor(Math.random() * errorMessages.length)]
-    document.getElementById("loading-tips").innerHTML = "Most likley I am doing maintenance, come back in an hour. If it's still not up by then, please contact me on Reddit! (u/Yogsther)"
-}, 10000 /* Ten seconds */  ); 
-
-socket.on("connect", () => {
-    document.getElementById("loading-main").innerHTML = "Downloading content..."
-    document.getElementById("loading-tips").innerHTML = "Server is online, downloading skin-data."
-
-    clearTimeout(statusCheck);
-})
 
 
 var tips = [
@@ -72,6 +59,7 @@ window.onload = () => {
     if (lastVisit < news[0].date) {
         toggleOverlay();
     }
+    loadArchivedSkins();
 }
 
 function mobilecheck() {
@@ -157,91 +145,91 @@ var overlayOpen = false;
 
 /* TODO: Have news serverside. */
 var news = [{
+    date: 1555798744493,
+    title: "Archived",
+    message: "Sadly, today the servers for FN Rate went down. This is because of the cost and time that is required to run them. You can still browse all the skins and comments, but it's not possible to vote on skins, vote on comments or comment on skins. No new Fortnite skins will be added to the site.",
+    image: "img/news/archived.png"
+}, {
     date: 1551386251709,
     title: "Season 8!",
     image: "img/news/season-8.png",
-    message: "Season 8 is here! All the skins have been added! (Tip: You can select 'Season 8' in the filter options)" 
-},{
-    date: 1550358000000,
-    title: "Check out my new website, <a href='http://flip.livfor.it'>flip.livfor.it</a>",
-    image: "img/news/flip.png",
-    message: "<b><a href='http://flip.livfor.it'>Click here to visit it!</a></b> I created a new website where you can create and share animations.<br> It works on mobile and PC. Creating a new account just takes a few seconds and no email is required! You can like others flip notes and follow users.<br><br>If you wish to apply as a moderator, please PM me on Reddit (u/Yogsther) or Github (@Yogsther). <br><br>I will still keep this website updated, all the latest skins have also been added." 
-},{
+    message: "Season 8 is here! All the skins have been added! (Tip: You can select 'Season 8' in the filter options)"
+}, {
     date: 1548088426670,
     title: "New skins added!",
     image: "img/news/new-skins-21-01-2019.png",
-    message: "Latest skins added. Sorry for the late addition and server instabilities, the website should be running more stable from now on and skins will be added faster!" 
-},{
+    message: "Latest skins added. Sorry for the late addition and server instabilities, the website should be running more stable from now on and skins will be added faster!"
+}, {
     date: 1546624857877,
     title: "New skins, and S7 umbrella added!",
     image: "img/news/snowfall.png",
-    message: "Latest skins added. Thanks to FinalPlayer who reminded me to add S7 umbrella!" 
-},{
+    message: "Latest skins added. Thanks to FinalPlayer who reminded me to add S7 umbrella!"
+}, {
     date: 1546551535686,
     title: "Introducing the Suggestion Box!",
     image: "img/news/suggestion-box.png",
-    message: "Do you have a suggestion for the site or maybe a question you would like answered? Send it via the Suggestion Box! The suggestion box is located above this post, between NEWS and OPTIONS." 
-},{
+    message: "Do you have a suggestion for the site or maybe a question you would like answered? Send it via the Suggestion Box! The suggestion box is located above this post, between NEWS and OPTIONS."
+}, {
     date: 1546182316830,
     title: "New skins!",
     image: "img/news/even-more-new-skins.png",
-    message: "The latest skins have been added to the site. Sorry for not updating the site in a while, I was away on the holiday!" 
-},{
+    message: "The latest skins have been added to the site. Sorry for not updating the site in a while, I was away on the holiday!"
+}, {
     date: 1545400769600,
     title: "New skins!",
     image: "img/news/more-skins-12-21.png",
-    message: "The latest skins have been added to the site." 
-},{
+    message: "The latest skins have been added to the site."
+}, {
     date: 1544369059117,
     title: "Season 7!",
     image: "img/news/season-7.png",
-    message: "All skins and the new wraps have been added - Also, there have now been 100,000 unique visitors to the site, thanks for using FN Rate!" 
-},{
+    message: "All skins and the new wraps have been added - Also, there have now been 100,000 unique visitors to the site, thanks for using FN Rate!"
+}, {
     date: 1543753782334,
     title: "Winter is here!",
     image: "img/news/winter-is-here.png",
-    message: "The latest fortnite skins have been added." 
-},{
+    message: "The latest fortnite skins have been added."
+}, {
     date: 1542980165952,
     title: "Bundles and Tender Defender!",
     image: "img/news/bundle.png",
-    message: "Bundles can be found under the 'bundle' filter." 
-},{
+    message: "Bundles can be found under the 'bundle' filter."
+}, {
     date: 1542220837345,
     title: "1000+ items in Fortnite!",
     image: "img/news/1000-items.png",
-    message: "It's official, Fortnite now has more than 1000 cosmetic items (1020)!" 
-},{
+    message: "It's official, Fortnite now has more than 1000 cosmetic items (1020)!"
+}, {
     date: 1541775745770,
     title: "We have updated our privacy policy!",
     image: "img/news/privacy-update.png",
-    message: 'The header "Used in research" has been added. Please review it here: <a href="/privacy">rate.livfor.it/privacy</a>' 
-},{
+    message: 'The header "Used in research" has been added. Please review it here: <a href="/privacy">rate.livfor.it/privacy</a>'
+}, {
     date: 1541536946358,
     title: "Fortnite x NFL!",
     image: "img/news/nfl-update.png",
     message: "All news cosmetic items from v.6.22 have been added, including the new NFL special's"
-},{
+}, {
     date: 1541437555524,
     title: "6.21 skins added!",
     image: "img/news/621-new-skins.png",
     message: "All skins from v.6.21 are here! :)"
-},{
+}, {
     date: 1540403020909,
     title: "New skins!",
     image: "img/news/week-43-news.png",
     message: "All skins from v.6.20 are here!"
-},{
+}, {
     date: 1539177428925,
     title: "Halloween skins are in!",
     image: "img/news/halloween.png",
     message: "The very anticipated halloween skins are finally here!"
-},{
+}, {
     date: 1538600152179,
     title: "v.6.01 and bug fixes!",
     image: "img/news/601-and-bug-fixes.jpg",
     message: "All new skins from v.6.01 and season 6 music kits are here. TOYS are no longer broken! (All votes were counted but not displayed)"
-},{
+}, {
     date: 1538140956901,
     title: "Season 6",
     image: "img/news/season-6.png",
@@ -278,7 +266,13 @@ localStorage.setItem("lastVisit", Date.now());
 if (isNaN(lastVisit)) lastVisit = 0;
 
 
-function submitSuggestion(){
+function alertArchive() {
+    alert("Website has been archived. Read more in news. Therefore, this function is no longer available.")
+}
+
+function submitSuggestion() {
+    alertArchive();
+    return;
     socket.emit("suggestion", {
         name: document.getElementById("suggestion-username").value,
         text: document.getElementById("suggestion-text").value
@@ -312,7 +306,7 @@ function changeOverlay(type) {
         document.getElementById("overlay-contents").innerHTML = newsPrint;
     }
 
-    if(type == "suggestionbox"){
+    if (type == "suggestionbox") {
         document.getElementById("overlay-contents").innerHTML = '<div id="suggestion-box-wrap"> <h2 style="color:white;"> Send in a suggestion for the website or ask a question!</h2> <textarea name="" id="suggestion-text" style="width:100%;height:20vh;" placeholder="Suggestion or Question"></textarea> <span style="color:white;">Optionally, you can enter your name or alias if you would like credit for your suggestion or want me to be able to respond to any question via ex. Reddit.</span> <input type="text" id="suggestion-username" placeholder="Username (Reddit, FN-Rate or other)" style="width:100%;height:40px;margin-top:10px;position:relative;"> <button style="width:90px;height:40px;margin-top:10px;position:relative;" onclick="submitSuggestion()">Send in!</button> <span id="suggestion-status" style="color:white;"></span>';
     }
 
@@ -428,70 +422,70 @@ function getProjection(history, rating) {
 /**
  * When receiving all the skin data from the server
  */
-socket.on("skins", data => {
-    // Save skins locally
-    skins = data;
 
-    calculateLockerValue();
+//calculateLockerValue();
 
-    // Sort skins
-    justSort(sortMode);
-    // Initiate counter
-    amountOfSkins = 0;
-    /* Load skins */
-    for (let i = 0; i < skins.length; i++) {
-        if (skins[i].code === undefined && skins[i].name === undefined) {
-            console.warn("Removed skin: ", skins[i])
-            skins.splice(i, 1);
-        } else {
-            if (skins[i].code === undefined) {
-                skins[i].code = skins[i].name.toUpperCase().split(" ").join("_");
-            }
+function loadArchivedSkins(){
+    
+// Sort skins
+justSort(sortMode);
+// Initiate counter
+amountOfSkins = 0;
+/* Load skins */
+for (let i = 0; i < skins.length; i++) {
+    if (skins[i].code === undefined && skins[i].name === undefined) {
+        console.warn("Removed skin: ", skins[i])
+        skins.splice(i, 1);
+    } else {
+        if (skins[i].code === undefined) {
+            skins[i].code = skins[i].name.toUpperCase().split(" ").join("_");
+        }
 
-            skins[i].thumb = new Image();
-            /* Supper hashtags, (%23 doesn't work with Github pages for some reason. ) */
-            // TODO, TEMPORARY WILL BE FIXED ONCE SKINS ARE RENEWED
-            skins[i].codeSource = skins[i].code.split("/").join("_").split("#").join("ESC_HASH_");
-            skins[i].src = skins[i].src.split("#").join("ESC_HASH_").split("%23").join("ESC_HASH_");
-            if(skins[i].type == "outfit") skins[i].src = "img/" + skins[i].src.substr(skins[i].src.lastIndexOf("/"))
+        skins[i].thumb = new Image();
+        /* Supper hashtags, (%23 doesn't work with Github pages for some reason. ) */
+        // TODO, TEMPORARY WILL BE FIXED ONCE SKINS ARE RENEWED
+        skins[i].codeSource = skins[i].code.split("/").join("_").split("#").join("ESC_HASH_");
+        skins[i].src = skins[i].src.split("#").join("ESC_HASH_").split("%23").join("ESC_HASH_");
+        if (skins[i].type == "outfit") skins[i].src = "img/" + skins[i].src.substr(skins[i].src.lastIndexOf("/"))
 
-            if (skins[i].type == "glider" || skins[i].type == "umbrella") skins[i].codeSource = skins[i].codeSource.split("'").join("");
-            skins[i].thumb.src = "img/thumbnails/" + skins[i].type + "/" + skins[i].codeSource + ".png";
-            var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d", "unknown", "#303030"]
-            var color = 1;
-            for (let j = 0; j < rarityColors.length; j++)
-                if (skins[i].rarity == rarityColors[j]) color = j + 1;
-            color = rarityColors[color];
-            if (colorSort == "rating") {
-                var percent = 1.2 - skins[i].rating / 5;
-                var hue = ((1 - percent) * 120).toString(10);
-                color = ["hsl(", hue, ",100%,50%)"].join("");
-            }
-            skins[i].thumb.style = 'background-color:' + color;
-            skins[i].color = color;
+        if (skins[i].type == "glider" || skins[i].type == "umbrella") skins[i].codeSource = skins[i].codeSource.split("'").join("");
+        skins[i].thumb.src = "img/thumbnails/" + skins[i].type + "/" + skins[i].codeSource + ".png";
+        var rarityColors = ["legendary", "#aa5228", "epic", "#6b41a8", "rare", "#007dbc", "uncommon", "#488c2c", "common", "#9d9d9d", "unknown", "#303030"]
+        var color = 1;
+        for (let j = 0; j < rarityColors.length; j++)
+            if (skins[i].rarity == rarityColors[j]) color = j + 1;
+        color = rarityColors[color];
+        if (colorSort == "rating") {
+            var percent = 1.2 - skins[i].rating / 5;
+            var hue = ((1 - percent) * 120).toString(10);
+            color = ["hsl(", hue, ",100%,50%)"].join("");
+        }
+        skins[i].thumb.style = 'background-color:' + color;
+        skins[i].color = color;
 
-            skins[i].projection = getProjection(skins[i].history, skins[i].rating);
+        skins[i].projection = getProjection(skins[i].history, skins[i].rating);
 
 
-            skins[i].thumb.draggable = 'false'
-            if (skins[i].code != undefined && skins[i].code != "RECRUIT") amountOfSkins++;
-            skins[i].thumb.addEventListener("click", () => {
-                inspect(i);
-            })
-            skins[i].thumb.className = 'preview'
-            if (overwriteInspect) {
-                if (skins[i].code.toLowerCase() == options.skin.toLowerCase() && skins[i].type.toLowerCase() == options.type.toLowerCase()) {
-                    currentSkin = i;
-                }
+        skins[i].thumb.draggable = 'false'
+        if (skins[i].code != undefined && skins[i].code != "RECRUIT") amountOfSkins++;
+        skins[i].thumb.addEventListener("click", () => {
+            inspect(i);
+        })
+        skins[i].thumb.className = 'preview'
+        if (overwriteInspect) {
+            if (skins[i].code.toLowerCase() == options.skin.toLowerCase() && skins[i].type.toLowerCase() == options.type.toLowerCase()) {
+                currentSkin = i;
             }
         }
     }
-    /* if (userRequested) {
-        populateCollection();
-        userRequested = false;
-    } */
+}
+populateCollection();
+}
+/* if (userRequested) {
+    populateCollection();
+    userRequested = false;
+} */
 
-});
 
 document.addEventListener("click", e => {
     var stop = false;
@@ -522,7 +516,7 @@ document.addEventListener("click", (e) => {
     }
 })
 
-
+/* 
 socket.on("account", acc => {
     myAccount = acc;
     skins.forEach(skin => {
@@ -576,7 +570,6 @@ socket.on("account", acc => {
     firstInspect();
     /* inspect(currentSkin); */
     /* if (!overwriteInspect) inspect(currentSkin); */
-})
 
 function firstInspect() {
     if (currentSkin === undefined) {
@@ -606,7 +599,7 @@ function updateStats() {
     lockerScore = Math.round(lockerScore * 10) / 10;
     var averageLockerRating = Math.round((lockerScore / lockerSize) * 10) / 10;
 
-    document.getElementById("stats").innerHTML = "<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average + "<br>Karma: " + myAccount.karma + "<br>Amount of comments: " + myAccount.comments.length + "<br><span title='Account value in V-bucks, not accounting for Battlepass cost, STW cost or Starter packs.'>Account worth (?): " + accountWorth + " V-bucks</span><br>Average locker rating: " + averageLockerRating + "<br>Locker score: " + lockerScore + "<br>Locker size: " + lockerSize;
+    document.getElementById("stats").innerHTML ="" ///"<i>Your stats:<br></i>Rated skins: " + length + "/" + amountOfSkins + "<br>Average rating: " + average + "<br>Karma: " + myAccount.karma + "<br>Amount of comments: " + myAccount.comments.length + "<br><span title='Account value in V-bucks, not accounting for Battlepass cost, STW cost or Starter packs.'>Account worth (?): " + accountWorth + " V-bucks</span><br>Average locker rating: " + averageLockerRating + "<br>Locker score: " + lockerScore + "<br>Locker size: " + lockerSize;
 }
 
 var rarities = ["common", "uncommon", "rare", "epic", "legendary", "unknown"];
@@ -1235,11 +1228,11 @@ document.addEventListener("mousemove", e => {
     }
 })
 
-socket.on("confirmedVote", pack => {
+/* socket.on("confirmedVote", pack => {
     if (pack.skin.indexOf(skins[currentSkin].code) !== -1 && pack.rating == thisRating) {
         confirmVote();
     }
-})
+}) */
 
 function confirmVote() {
     document.getElementById("check").title = "Vote has been recorded."
@@ -1278,6 +1271,8 @@ function getCurrentSkin() {
 
 
 function rate(rating) {
+    alertArchive();
+    return;
     if (rating === thisRating) return;
     rateUpdate = true;
     socket.emit("rate", {
@@ -1289,6 +1284,7 @@ function rate(rating) {
 }
 
 function get() {
+    return;
     userRequested = true;
     socket.emit("get");
 }
@@ -1320,15 +1316,17 @@ function updateUsername(newUsername) {
 addEventListener("keydown", e => {
     if (e.keyCode == 13) {
         if (document.getElementById("comment-submission") == document.activeElement) submitComment();
-        else if(!overlayOpen) document.getElementById("comment-submission").focus();
+        else if (!overlayOpen) document.getElementById("comment-submission").focus();
     }
 })
 
-socket.on("err", error => alert(error))
+//socket.on("err", error => alert(error))
 
 var localComments = 0;
 
 function submitComment() {
+    alertArchive();
+    return;
     var message = document.getElementById("comment-submission").value;
     if (message.indexOf("/mod") != -1) {
         localStorage.setItem("token", token) = message.split(" ")[1];
@@ -1371,7 +1369,8 @@ function submitComment() {
 }
 
 function commentVote(comment, upvote) {
-
+    alertArchive();
+    return;
     var idString = comment.parentElement.parentElement.children[2].id.substr(8);
     var commentID = skins[currentSkin].comments[Number(idString)].id;
 
@@ -1407,7 +1406,7 @@ function commentVote(comment, upvote) {
 }
 
 var locker = JSON.parse(localStorage.getItem("locker"));
-    emitLocker();
+emitLocker();
 
 if (locker == null) {
     locker = new Array();
@@ -1471,6 +1470,7 @@ function getSkinIndexFromCode(code) {
     }
 }
 
-function emitLocker(){
+function emitLocker() {
+    return;
     socket.emit("lockerPush", locker);
 }
