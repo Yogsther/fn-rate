@@ -13,7 +13,6 @@ var seasonRatings = [];
 /* Get URL before connecting to the server to make sure the right skin gets inspected. */
 getULR();
 
-
 /**
  * Declare global variables
  */
